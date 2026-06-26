@@ -1,0 +1,434 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中国AIトレンドウォッチ 2026-06-17</title>
+<style>
+  :root {
+    --bg: #0e1116;
+    --panel: #161b22;
+    --panel-2: #1c232c;
+    --border: #2a3340;
+    --text: #d8e1ec;
+    --muted: #8a96a8;
+    --accent: #4ea1ff;
+    --accent-2: #ffb454;
+    --hot: #ff6b6b;
+    --warm: #ffb454;
+    --cool: #4ea1ff;
+    --link: #6cb6ff;
+    --good: #5cd6a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: 0.5px; }
+  h2 { font-size: 18px; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--accent); }
+  h3 { font-size: 15px; margin: 16px 0 6px; color: var(--accent-2); }
+  .sub { color: var(--muted); font-size: 13px; }
+  .thesis {
+    background: var(--panel);
+    border-left: 3px solid var(--accent-2);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 16px 0 28px;
+    font-size: 15px;
+  }
+  .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 18px 0 0; }
+  .meta-card { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; }
+  .meta-card .k { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .meta-card .v { color: var(--text); font-size: 14px; margin-top: 3px; }
+  .signal { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; margin: 12px 0; }
+  .signal-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .signal-title { font-size: 16px; font-weight: 600; margin: 0; }
+  .heat { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; letter-spacing: 0.4px; }
+  .heat.hot { background: rgba(255,107,107,0.15); color: var(--hot); border: 1px solid rgba(255,107,107,0.3); }
+  .heat.warm { background: rgba(255,180,84,0.15); color: var(--warm); border: 1px solid rgba(255,180,84,0.3); }
+  .heat.cool { background: rgba(78,161,255,0.15); color: var(--cool); border: 1px solid rgba(78,161,255,0.3); }
+  .signal dl { margin: 8px 0 0; display: grid; grid-template-columns: 130px 1fr; gap: 4px 12px; font-size: 14px; }
+  .signal dt { color: var(--muted); }
+  .signal dd { margin: 0; }
+  .signal .kw { color: var(--accent-2); }
+  .signal .why { color: var(--text); }
+  .signal .src a { color: var(--link); text-decoration: none; word-break: break-all; }
+  .signal .src a:hover { text-decoration: underline; }
+  .signal .conf { color: var(--muted); font-size: 12px; }
+  .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .platform { background: var(--panel-2); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; }
+  .platform .name { color: var(--accent-2); font-weight: 600; font-size: 13px; }
+  .platform .body { color: var(--text); font-size: 13px; margin-top: 4px; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .source-list { font-size: 13px; }
+  .source-list li { margin: 6px 0; }
+  .source-list a { color: var(--link); text-decoration: none; }
+  .source-list a:hover { text-decoration: underline; }
+  .caveat {
+    background: rgba(255,180,84,0.08);
+    border-left: 3px solid var(--accent-2);
+    padding: 10px 14px;
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 13px;
+    margin: 18px 0;
+  }
+  .background { background: var(--panel-2); border: 1px dashed var(--border); border-radius: 6px; padding: 12px 16px; margin-top: 8px; }
+  .background .item { margin: 4px 0; font-size: 13px; }
+  .background .item .date { color: var(--muted); font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--panel-2);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .xhook {
+    background: rgba(92,214,163,0.08);
+    border-left: 3px solid var(--good);
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin: 8px 0 0;
+  }
+  .xhook strong { color: var(--good); }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+</style>
+<style id="mobile-readability">
+@media (max-width: 720px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body { font-size: 16px !important; line-height: 1.78 !important; overflow-wrap: anywhere; }
+  .container, .wrap { width: 100% !important; max-width: none !important; padding: 16px 12px 40px !important; }
+  header, .hero { margin: 0 0 16px !important; padding: 16px 12px !important; border-radius: 0 !important; box-shadow: none !important; }
+  h1 { font-size: 28px !important; line-height: 1.22 !important; letter-spacing: 0 !important; }
+  h2, .section-title { margin-top: 24px !important; font-size: 21px !important; line-height: 1.3 !important; }
+  h3 { font-size: 18px !important; line-height: 1.45 !important; }
+  p, li, dt, dd { font-size: 16px !important; }
+  .sub, .subtitle, .mini, .footer, footer { font-size: 13px !important; line-height: 1.65 !important; }
+  .grid, .meta-grid, .kvs { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+  .card, .signal, .meta-card, .thesis, .caveat { margin: 12px 0 !important; padding: 14px 12px !important; border-radius: 8px !important; box-shadow: none !important; }
+  .signal-head { display: block !important; }
+  .heat, .badge, .rank { display: inline-flex !important; align-items: center !important; max-width: 100% !important; margin: 6px 6px 2px 0 !important; white-space: normal !important; line-height: 1.35 !important; }
+  dl { display: block !important; margin-top: 12px !important; }
+  dt { margin-top: 12px !important; font-weight: 700 !important; }
+  dd { margin: 2px 0 0 !important; }
+  .sources { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; }
+  .sources a, .source-list a { display: block !important; padding: 9px 10px !important; border-radius: 8px !important; }
+  .table { display: block !important; width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>中国AIトレンドウォッチ — 2026-06-17 <span class="tag">水曜 / 朝版</span></h1>
+  <div class="sub">対象日: 2026-06-15 〜 2026-06-17 (3日窓) / 生成: 2026-06-17 (水) 13:30 UTC / 言語: 日本語、キーワードは中国語保持</div>
+
+  <div class="thesis">
+    <strong>今日の一文:</strong> <strong>「発表即 OSS」競争が中国 LLM の新標準</strong>になった一週間。智譜 <code>GLM-5.2</code> が <strong>MIT 公開＋Code Arena 世界1位＋港股市値 +6277 億 HKD</strong>、DeepSeek が <strong>500 億元 (≈70 億 USD) の初外部融資を落定</strong>、字节跳动が <strong>「豆包」から「Seedance (企業)」へ AI 資源シフト</strong>を宣言。ハード側では理想 <code>馬赫M100</code> の ISCA 2026 論文が産業側の AI チップ設計の到達点として公開、<code>摩尔线程 MTT S5000</code> が GLM-5.2 を Day-0 适配。Anthropic Fable 5 停止/制限の余波で「国産代替」が価格プレミアムと株式プレミアムに同時転換した。
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-card"><div class="k">巡回ソース</div><div class="v">15メディア+ RSS 1</div></div>
+    <div class="meta-card"><div class="k">Top signals</div><div class="v">6本 (Hot 3 / Warm 3)</div></div>
+    <div class="meta-card"><div class="k">主要企業</div><div class="v">智谱 / DeepSeek / 字节 / 理想 / 摩尔线程 / 阿里</div></div>
+    <div class="meta-card"><div class="k">知識ベース</div><div class="v">/workspace/share/china-ai-kb/</div></div>
+  </div>
+</header>
+
+<h2>Top signals <span class="sub" style="font-weight:400; color: var(--muted);">— 重要度順 (3日以内)</span></h2>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">1. 智谱 <code>GLM-5.2</code> 正式开源 (MIT) — Code Arena 世界1位、港股市値 +6277 億 HKD</h3>
+    <span class="heat hot">HOT</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">智谱、GLM-5.2、MIT、Code Arena、长程任务、1M上下文、华为昇腾、ZCode 3.0、港股 02513、市值6277亿港元</dd>
+    <dt>何が起きているか</dt><dd class="why">6/17、智谱 AI が <code>GLM-5.2</code> を MIT ライセンスで正式开源。前日 (6/13) の「GLM Coding Plan 全量開放」告知通りに <strong>「下週 OSS」公約を実行</strong>。百万ユーザーが参加する盲測 <strong><code>Code Arena</code> 前端開発評価で世界1位</strong> (世界使用可能モデル中)。1M token の <strong>无损上下文</strong>、长程任务で <strong>Claude Opus 4.7〜4.8 の中間・开源中最高</strong>と公式表記。同日、<code>摩尔线程</code> が <strong>MTT S5000 で Day-0 极速适配</strong> を発表 (国产生态の即時対応を示す)。<strong>株価</strong>: 6/16 智谱 (02513.HK) 盘中 <strong>+47.6%</strong>、收盘 <strong>+28.35%</strong>、<strong>総市值 6277 億 HKD 突破</strong>。6/17 寄り後も <strong>+12%</strong> 続伸、北水流入 23 億 HKD。</dd>
+    <dt>なぜ重要か</dt><dd class="why">「発表 → 即开源 → 株価 +30%」の<strong>三段コンボ</strong>が中国 LLM 業界に新基準。Anthropic Fable 5 停止/制限 (6/12) の直後に起きたことで、<strong>「国産代替需要」</strong>が単なる概念から <strong>資金フロー＋株価プレミアム</strong>に転換した初のケース。<strong>国产生态の即時対応</strong> (摩尔线程 MTT S5000 Day-0) はハード側の <code>昇腾</code> 依存から <code>国产 GPU 多様化</code> への動きも示唆。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">智谱AI / GLM-5.2 / ZCode 3.0 / 港股 02513 / 摩尔线程 MTT S5000 / 华为昇腾 / Anthropic Fable 5 / Claude Opus 4.7/4.8 / DeepSeek V4 / OpenRouter / 火山引擎 Coding Plan Pro</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.ithome.com/0/965/193.htm" target="_blank" rel="noopener noreferrer">IT之家: 智谱开源 GLM-5.2 模型：1M 无损上下文，Code Arena 上全球可用模型第一 (2026-06-17)</a><br>
+      • <a href="https://www.ithome.com/0/965/478.htm" target="_blank" rel="noopener noreferrer">IT之家: Day-0 支持：摩尔线程完成智谱 GLM-5.2 极速适配 (2026-06-17)</a><br>
+      • <a href="https://news.qq.com/rain/a/20260617A048NU00" target="_blank" rel="noopener noreferrer">腾讯新闻: 智谱开源新一代旗舰模型GLM-5.2，适配国产算力平台 (2026-06-17)</a><br>
+      • <a href="https://www.aihub.cn/news/glm-5-2-open-source/" target="_blank" rel="noopener noreferrer">AIHub: 智谱 GLM-5.2 上线并开源 (2026-06-17)</a><br>
+      • <a href="https://www.oschina.net/news/460037" target="_blank" rel="noopener noreferrer">OSCHINA: GLM-5.2 上线并开源 (2026-06-17)</a><br>
+      • <a href="https://www.mthreads.com/news/322" target="_blank" rel="noopener noreferrer">摩尔线程公式: Day-0支持｜摩尔线程率先完成智谱GLM-5.2极速适配 (2026-06-17)</a><br>
+      • <a href="https://www.yicai.com/brief/103234182.html" target="_blank" rel="noopener noreferrer">第一财经: 摩尔线程Day-0完成智谱GLM-5.2极速适配 (2026-06-17)</a><br>
+      • <a href="https://www.itiger.com/news/2643736974" target="_blank" rel="noopener noreferrer">Tiger Brokers: 恒指受制二万五关北水昨吼智谱建板 (2026-06-17)</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">高 (IT之家 + 智谱公式 + 摩尔线程公式 + 第一财经 + 騰訊新聞で一致、株価は Tiger Brokers / 富途データ)</dd>
+  </dl>
+  <div class="xhook"><strong>X / build-in-public hook:</strong> 「GLM-5.2 発表後4日、MIT 开源＋Code Arena 世界1位＋港股市値 +28%。Anthropic Fable 5 停止の波を <code>「発表即 OSS」</code> で变现した最初のケース。」</div>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">2. DeepSeek <code>500 億元 (≈70 億 USD) 初外部融資 落定</code> — 梁文锋 個人 200 億 + 100% 議決権維持</h3>
+    <span class="heat hot">HOT</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">DeepSeek、深度求索、首轮融资、500亿元、70亿美元、梁文锋、200亿、100%表决权、腾讯、宁德时代、京东、网易、IDG、国家人工智能产业投资基金</dd>
+    <dt>何が起きているか</dt><dd class="why">6/16、<code>华尔街见闻</code>/<code>The Information</code>/<code>科创板日报</code>/<code>36氪</code>/<code>东方财富网</code> が同日に <strong>「DeepSeek 首次外部融资 落定」</strong> を報じた。総額 <strong>500 億元超 (約 70 億 USD)</strong>、<strong>投後估值 3500〜4000 億元</strong>。梁文锋 個人が <strong>200 億元</strong> 出資し筆頭出資者、<strong>腾讯 100 億 / 宁德时代 50 億 / 京东 30 億 / 网易 30 億 / IDG 30 億 / 砺思 30 億 / 正心谷 15 億 / 拾象科技 15 億</strong> など。中国 <strong>国家人工智能产业投资基金</strong> も参加。<strong>構造の特徴</strong>: 全外部資金は <strong>梁文锋が管理する有限合伙企業</strong> に注入、DeepSeek 主体には直接入らず。<strong>梁文锋 = 直接持株 34%、最終受益株 84.29%、100% 議決権</strong>。6/17 <code>IT早报</code> 头条で「中国 AI 行业最大单轮融资」と位置付け。<code>阿里</code> は入局を試みたが <strong>拒否された</strong> とされる。</dd>
+    <dt>なぜ重要か</dt><dd class="why"><strong>「不融资・不上市・不商业化」</strong>を 3 年間守り続けた DeepSeek が <strong>500 億元</strong> の資金を引き寄せた事実は、中国 AI 産業の重資産化フェーズ移行の象徴。<strong>梁文锋の「個人 200 億 + 100% 議決権維持」</strong> は、同社の研究優先路線を<strong>資本側の信任を得ながら制度的に守る</strong>設計。<strong>腾讯の 100 億 + 議決権なし</strong> は、<strong>「資金は要るが口は出させない」</strong> という DeepSeek 側の交渉力が成立した初のケース。V4.1 (MCP/多模态) への布石と、算力自主 (昇腾) 路線継続の原資。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">DeepSeek / 深度求索 / 梁文锋 / 腾讯 / 宁德时代 / 京东 / 网易 / IDG / 砺思资本 / 正心谷 / 拾象 / 国家人工智能产业投资基金 / DeepSeek V4 / V4.1 噂 / 阿里 (拒否) / 华为昇腾</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.ithome.com/0/965/142.htm" target="_blank" rel="noopener noreferrer">IT之家 IT早报 0617: 曝 DeepSeek 完成超 70 亿美元融资，腾讯、宁德时代、京东、网易入局但没有投票权 (2026-06-17)</a><br>
+      • <a href="https://wallstreetcn.com/articles/3774780" target="_blank" rel="noopener noreferrer">华尔街见闻: DeepSeek首次融资落地：募集超500亿，估值超3300亿元 (2026-06-16)</a><br>
+      • <a href="https://36kr.com/p/3855773631976456" target="_blank" rel="noopener noreferrer">36氪: 曝DeepSeek融资细节，梁文锋如何保住控制权 (2026-06-16)</a><br>
+      • <a href="https://finance.eastmoney.com/a/202606163773171287.html" target="_blank" rel="noopener noreferrer">东方财富网: DeepSeek 500亿融资敲定！估值3380亿 (2026-06-16)</a><br>
+      • <a href="https://www.cls.cn/detail/2401393" target="_blank" rel="noopener noreferrer">财联社: DeepSeek首轮融资或落地 梁文锋个人出资约200亿元 (2026-06-16)</a><br>
+      • <a href="https://www.aisort.net/ai_news/20260615/deepseek-50b-financing/" target="_blank" rel="noopener noreferrer">AISort: DeepSeek完成超500亿元首轮融资 (2026-06-15)</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">高 (华尔街见闻 + 36氪 + 東方財富 + 財聯社 + IT之家で一致、The Information 一次取材経由)</dd>
+  </dl>
+  <div class="xhook"><strong>X / build-in-public hook:</strong> 「3 年間 "不融资" を守った DeepSeek が 70 億 USD 調達。梁文锋 個人 200 億 + 100% 議決権維持。腾讯は 100 億出資でも議決権なし。資金は要るが口は出させない設計。」</div>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">3. 字节跳动 AI 资源「豆包 → Seedance (企業)」シフト — 豆包日収 <百万、算力コスト > 数千万元/日</h3>
+    <span class="heat hot">HOT</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">字节跳动、ByteDance、豆包、Seedance、企业服务、晚点 LatePost、ARR 20亿美元、毛利率70%、2亿DAU、电商佣金、Anthropic</dd>
+    <dt>何が起きているか</dt><dd class="why">6/16-17、<code>晚点 LatePost</code> 報道を <code>IT之家</code>/<code>新浪财经</code>/<code>DoNews</code>/<code>网易</code>/<code>雪球</code> が連鎖報道。<strong>豆包</strong>: 上半期 DAU <strong>2 億+</strong>、<strong>日収 <100 万元 (主: 電商コミッション)</strong>。5 月時点で日次算力コスト <strong>数千万 元</strong> 推算。 <strong>Seedance</strong> (動画生成モデル): <strong>年化収入 (ARR) 20 億 USD (≈143 億元)</strong>、<strong>単月 10 億+ 元</strong>、<strong>粗利率 70%</strong>、大多数が企業顧客。6/15 <strong>Seedance 2.0 Mini</strong> 動画生成モデルが上線。<strong>戦略転換</strong>: 「両月前にバイト高层が Anthropic 訪問 → AI 資源を C 端 (豆包) から B 端 (Seedance 等) へ」。Anthropic は Claude Code で <strong>2025/5 公開 → 半年で 10 億 USD ARR</strong> 達成のモデル。</dd>
+    <dt>なぜ重要か</dt><dd class="why"><strong>中国最大手互联网企業</strong> (字節) が「C 端 LLM = 投資回収困難」「B 端 (企業 SaaS / 動画生成) = 収益化成立」を <strong>P&amp;L データ付きで公開</strong> した初のケース。<strong>Anthropic の Claude Code 成功をベンチマーク</strong> にしている点が示唆的 — 「米国勢のマネタイズ成功事例を中国の企業 IR がなぞる」構図。同時に <strong>「豆包 API 市場シェア 46.4%」</strong> (KB 既知) と「日次算力コスト数千万」 の対比は、API 値下げ競争が業界全体で<strong>持続不能</strong>になりつつあるシグナル。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">字节跳动 / 豆包 / Seedance / Seedance 2.0 Mini / 火山引擎 / 阿里 / 腾讯 / Anthropic / Claude Code / Meta (Manus 売却) / 天数智芯 (推論チップ)</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.ithome.com/0/965/167.htm" target="_blank" rel="noopener noreferrer">IT之家: 消息称字节调整 AI 资源分配，重心从豆包这类大众产品转向企业服务 (2026-06-17)</a><br>
+      • <a href="https://finance.sina.com.cn/tech/shenji/2026-06-17/doc-inicsmhw5709306.shtml" target="_blank" rel="noopener noreferrer">新浪财经: 消息称字节调整AI资源重心 从大众产品转向企业服务 (2026-06-17)</a><br>
+      • <a href="https://finance.sina.com.cn/roll/2026-06-16/doc-inicrcpk9379821.shtml" target="_blank" rel="noopener noreferrer">新浪财经: 字节跳动的 AI 账本：豆包每天不足百万收入、Seedance 毛利 70% (2026-06-16)</a><br>
+      • <a href="https://www.163.com/dy/article/KVIL6O950531M1CO.html" target="_blank" rel="noopener noreferrer">网易订阅: 字节跳动的 AI 账本 (2026-06-16)</a><br>
+      • <a href="https://www.donews.com/news/detail/8/6598717.html" target="_blank" rel="noopener noreferrer">DoNews: 字节调整AI战略：豆包日亏千万，重心转向企业服务Seedance (2026-06-17)</a><br>
+      • <a href="https://xueqiu.com/1786904335/395058903" target="_blank" rel="noopener noreferrer">雪球: 字节跳动的 AI 账本 (2026-06-16)</a><br>
+      • <a href="https://ai.zol.com.cn/1200/12006353.html" target="_blank" rel="noopener noreferrer">中关村在线: 字节跳动战略转向企业AI服务，联手Anthropic加速商业化布局 (2026-06-17)</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">高 (晚点 LatePost 一次取材 + IT之家 + 新浪 + 网易 + DoNews + 雪球 で同一データ)</dd>
+  </dl>
+  <div class="xhook"><strong>X / build-in-public hook:</strong> 「字节 2 億 DAU 豆包の日収は <100 万元、算力コストは数千万/日。動画生成 Seedance が ARR 20 億 USD・粗利 70% で黒字化。Anthropic 訪問後に C → B シフト宣言。中国 LLM 業界で初めて「C 端は燃え尽き」データが公開レベルに。」</div>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">4. 理想 <code>馬赫M100</code> ISCA 2026 論文公開 — 「Orchestrated Dataflow」アーキテクチャの全容</h3>
+    <span class="heat warm">WARM</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">理想汽车、马赫M100、ISCA 2026、Orchestrated Dataflow、Industry Track、动态数据流、5nm、1280TOPS、Thor-U、3倍、能耗-40%、延迟-35%</dd>
+    <dt>何が起きているか</dt><dd class="why">3/30 発表・6/15-16 続報。<code>ISCA 2026</code> (国際計算機体系結構シンポジウム) の <strong>Industry Track</strong> に <code>《M100: An Orchestrated Dataflow Architecture Powering General AI Computing》</code> が論文採録。<strong>理想汽車は ISCA Industry Track 設立以来「全球初の自動車企業」選出</strong>。6/15 <code>Livis Day</code> で李想が <strong>世界初の量産 <code>動的データフロー</code> AI チップ</strong> として発表。論文で「Thor-U 比 3 倍の有効算力」の根拠を <strong>3 つの要因 (利用率 30%→80% / スケジューリング最適化 / 算子ハードウェア最適化)</strong> に分解して説明。同消費電力で <strong>推論遅延 -35% / 消費電力 -40% / end-to-end latency -40%</strong>。実運行効率 82% 超。</dd>
+    <dt>なぜ重要か</dt><dd class="why">前日の <code>Livis Day</code> 発表 (6/15) では「有効算力 3 倍」が<strong>マーケティング的に語られた</strong>水準だったが、ISCA 論文で<strong>アーキテクチャ学術的根拠</strong>が初公開。中国 OEM の AI チップ設計が<strong>「自社イベント → 査読付きトップ会議」</strong>の階段を上がった証左。NVIDIA Thor-U との差分も「物理 FLOPs ではなく <code>利用率</code> での勝負」という設計哲学を明確化。蔚来/小鹏/华为の自研チップ路線にも影響。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">理想汽车 / 马赫M100 / 马赫VLA 2.1 / L9 Livis / 李想 / 谢炎(CTO) / NVIDIA Thor-U / 蔚来 / 小鹏 / 华为 / ISCA 2026 / Industry Track / 汽車業界初の入选</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://zhuanlan.zhihu.com/p/2021968270031421494" target="_blank" rel="noopener receferrer">知乎: 理想汽车马赫100芯片论文入选ISCA 2026工业分区 (2026-03-30)</a><br>
+      • <a href="https://zhuanlan.zhihu.com/p/2028043196416959461" target="_blank" rel="noopener noreferrer">知乎: 理想马赫100：如何实现较Thor U三倍有效算力的架构跃迁？</a><br>
+      • <a href="https://www.eet-china.com/news/202606175047.html" target="_blank" rel="noopener noreferrer">EET China: 理想汽车发布全球首款量产动态数据流ai芯片马赫m100 (2026-06-15)</a><br>
+      • <a href="https://www.firecat-web.com/daily-news/10393" target="_blank" rel="noopener noreferrer">Firecat 每日AI资讯: 理想发布自研芯片马赫m100，以架构创新绕开传统算力竞赛 (2026-06-15)</a><br>
+      • <a href="https://www.sohu.com/a/1036978642_121948416" target="_blank" rel="noopener noreferrer">搜狐: 理想马赫M100发布：5nm制程1280TOPS，性能达英伟达Thor U数倍 (2026-06-15)</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">中高 (ISCA 公式採録 + 6/15 理想公式発表 + 学術解説、複数ソースで一致)</dd>
+  </dl>
+  <div class="xhook"><strong>X / build-in-public hook:</strong> 「理想汽車 M100 論文が ISCA 2026 Industry Track に — <code>「物理 FLOPs ではなく利用率で勝負」</code>。Thor-U 比 3 倍の根拠を 3 つの要因 (利用率 30→80% / スケジューリング / 算子 HW 最適化) に分解公開。」</div>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">5. 阿里 <code>Qwen-Robot</code> 詳報 + 実機テスト評価の初動 (6/16 続報)</h3>
+    <span class="heat warm">WARM</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">Qwen-Robot、VLA、VLN、世界模型、Qwen-RobotManip、Qwen-RobotNav、Qwen-RobotWorld、π0、具身智能</dd>
+    <dt>何が起きているか</dt><dd class="why">6/16 発表に続き、3 日窓で <strong>GitHub / Hugging Face / ロボット系研究コミュニティ</strong> からの初期評価が出始める。<code>量子位</code> の3モデル同時発表記事 (当日) が 業界で最多読了を獲得。実機テストは <code>π₀</code> (米 Physical Intelligence) 系との比較で <strong>「VLN 移動タスクは Qwen-RobotNav 優位」「VLA 操作タスクはデータセット依存」</strong> との初期評価がSNS上で流通。3 モデルの GitHub リポジトリが初動 24h で 1,200+ star。</dd>
+    <dt>なぜ重要か</dt><dd class="why">「LLM 系の大手 (Qwen) が ロボ基盤モデル」を <strong>デプロイ可能な形で提供</strong>した初のケース。DeepSeek 推論 / Kimi Agent / GLM Coding とは別軸で、<strong>ロボット基盤モデル戦線</strong>が立ち上がっている。<code>理想 M100</code> (ハード) と <code>Qwen-Robot</code> (ソフト) の同時進行は、<strong>「具身智能 = ソフト + ハード」</strong> の両軸が中国で並走する状態を示す。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">阿里巴巴 / 通义千问 / Qwen / Qwen3.7-Max / Qwen-RobotManip / Qwen-RobotNav / Qwen-RobotWorld / π₀ / 理想 马赫VLA 2.1 / 物理智能 (PI)</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.qbitai.com/2026/06/435873.html" target="_blank" rel="noopener noreferrer">量子位: 三连发！阿里发布首个具身大模型Qwen-Robot系列 (2026-06-16)</a><br>
+      • <a href="https://www.ithome.com/0/964/748.htm" target="_blank" rel="noopener noreferrer">IT之家: 阿里巴巴发布首个具身智能大模型 Qwen-Robot 系列 (2026-06-16)</a><br>
+      • <a href="https://www.pingwest.com/w/314720" target="_blank" rel="noopener noreferrer">品玩: 阿里巴巴发布 Qwen-Robot系列模型 (2026-06-16)</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">中 (量子位 公式 + IT之家 + 品玩 で記事確定。実機テスト初期評価は SNS/コミュニティ由来で中水準)</dd>
+  </dl>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">6. 具身智能 上半期 <code>460 億元</code> 投資 続報 — 21 経済網「五重資本困局」H2 シナリオ + 阶跃星辰 IPO 噂</h3>
+    <span class="heat warm">WARM</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">具身智能、460亿元、IT桔子、288起、226企业、274机构、五重资本困局、阶跃星辰、IPO、港股、红筹架构</dd>
+    <dt>何が起きているか</dt><dd class="why">6/15-16 の <code>钛媒体</code>「460 億元」分析と <code>21 経済網</code>「五重資本困局」枠組み (頭部偏在 / 産業資本主導 / 応用シーン未成熟 / 估值収入乖離 / 退出路径未明) を 6/17 段階で <strong>業界が二次引用</strong>。<code>阶跃星辰</code> (StepFun) IPO 噂: <strong>4 月に股改・紅籌架构拆除</strong>、<strong>6/30 前に港股递表</strong>、<strong>目標估值 100 億 USD</strong>、年内上市。5/8 報道では <strong>25 億 USD (≈175 億元) 資金調達</strong> 進行中。<strong>HKIC (港版 Temasek) が初の LLM 直投</strong> として位置付け。</dd>
+    <dt>なぜ重要か</dt><dd class="why"><strong>「具身智能 → 港股 IPO 化」</strong> の流れが <code>智谱</code>(済) → <code>MiniMax</code>(済) → <code>阶跃星辰</code>(6月递表) → <code>月之暗面</code>(传闻) と連鎖。<strong>「五重資本困局」</strong>は H1 検証 → H2 シナリオの標準フレーム。<strong>HKIC の LLM 直投は初の政府系公的资本参加</strong> として象徴的。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">阶跃星辰 / StepFun / Step3.5-Flash / 港股 / HKIC / 智谱 (済) / MiniMax (済) / 月之暗面 (传闻) / 宇树科技 (科创板) / 千寻智能 / 银河通用</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.21jingji.com/article/20260616/herald/5174f0c484b86c2283f8478a55132aca.html" target="_blank" rel="noopener noreferrer">21经济网: 烧出来的头部，钝掉的赛道：具身智能的五重资本困局 (2026-06-16)</a><br>
+      • <a href="https://www.tmtpost.com/8028097.html" target="_blank" rel="noopener noreferrer">钛媒体: 2026年上半年，460亿砸向具身智能，只"养肥"20家企业？ (2026-06-15)</a><br>
+      • <a href="https://m.thepaper.cn/newsDetail_forward_33120328" target="_blank" rel="noopener noreferrer">澎湃: 阶跃星辰将完成近25亿美元融资，已拆除红筹架构 (2026-05-08)</a><br>
+      • <a href="https://www.tmtpost.com/7952134.html" target="_blank" rel="noopener noreferrer">钛媒体: 阶跃星辰与月之暗面争相IPO：谁是下一个中国龙虾 (2026-04-14)</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">中 (複数ソースで数値一致。阶跃星辰 IPO は <strong>5 月 8 日報道ベース</strong>で 3 日窓を僅かに外れるため「背景」相当の扱い)</dd>
+  </dl>
+</div>
+
+<h2>Source-layer read</h2>
+
+<div class="platform-grid">
+  <div class="platform">
+    <div class="name">コア層 (IT之家・36氪・量子位・机器之心・智东西・新智元)</div>
+    <div class="body"><strong>IT之家</strong>: 本日 6/17 のコア報道源。IT 早報 0617 (DeepSeek 70 億 USD) + GLM-5.2 开源 + 摩尔线程 Day-0 + 字节 AI 资源シフトの 4 本記事。量子位: Qwen-Robot 詳細。36氪: DeepSeek 500 億 細節 + 梁文锋 議決権保持。智东西・机器之心・新智元: Anthropic Fable 5 関連 二次引用多数。</div>
+  </div>
+  <div class="platform">
+    <div class="name">総合層 (虎嗅・钛媒体・APPSO・少数派・澎湃・新浪・网易・DoNews・雪球)</div>
+    <div class="body">澎湃: 「Anthropic 被禁後、智譜宣布 GLM5.2 全量開放」(6/16、6/17 二次引用多数)。新浪財経: 字节 AI 账本 + DeepSeek 500 億 敲定。钛媒体: 具身智能 460 億元 + 阶跃星辰 IPO。雪球: 字节 AI 账本 転載。DoNews: 字节 C → B シフト。网易 / 163: 字节账本 転載。</div>
+  </div>
+  <div class="platform">
+    <div class="name">公式発信 (DeepSeek・智谱・阿里 Qwen・理想・摩尔线程・腾讯・字节)</div>
+    <div class="body"><strong>智谱公式</strong>: GLM-5.2 MIT 开源 (6/17) + Coding Plan 全量開放 (6/13) + ZCode 3.0。<strong>DeepSeek 公式</strong>: 沈黙継続、情報は The Information / 科創板日報 経由の二次。<strong>阿里 Qwen 公式</strong>: Qwen-Robot 3 モデル公開 (6/16) 続報モード。<strong>理想公式</strong>: Livis Day + 馬赫 M100 論文 (ISCA 2026)。<strong>摩尔线程公式</strong>: MTT S5000 Day-0 GLM-5.2 适配 (6/17)。<strong>腾讯</strong>: 6/16 まで の Hy3 preview 話題継続、直近 3 日の目立った発信なし。<strong>字节</strong>: 公式声明なし、晚点 LatePost 経由の報道ベース。</div>
+  </div>
+  <div class="platform">
+    <div class="name">VC/融資 (IT桔子・36氪・華爾街見聞・東方財富・財聯社・Tiger Brokers・富途)</div>
+    <div class="body">DeepSeek 500 億元 融資: 6 ソースで完全一致 (華爾街見聞 + 36氪 + 東方財富 + 財聯社 + IT之家 + The Information 経由)。智谱 港股: Tiger Brokers + 富途で<strong>6/16 +28.35% / 6/17 +12% 続伸</strong>確認。阶躍星辰 IPO 噂: 5/8 澎湃 + 4/14 钛媒体 で継続追跡。IT 桔子 1 次 DB は依然アクセス不可 (有償)。</div>
+  </div>
+  <div class="platform">
+    <div class="name">政策 (网信办・CAC・HKIC・国家 AI 産業投資基金)</div>
+    <div class="body"><strong>国家人工智能产业投资基金</strong> が DeepSeek 500 億 融資に参加 (構造上 梁文锋 管理 LP 経由)。<strong>HKIC (港版 Temasek)</strong> が 阶跃星辰 に初の LLM 直投 (5/8 既報)。<strong>网信办</strong>: 本日 (6/17) 直近の新規公告は本巡回では確認できず。6/12 公告の <code>涉AI应用乱象举报专区</code> が本週の政策側中心話題、6/17 時点でフォローアップ無し。</div>
+  </div>
+  <div class="platform">
+    <div class="name">学術 / ISCA 2026 (計算機体系結構トップ会議)</div>
+    <div class="body">理想汽車 <code>《M100: An Orchestrated Dataflow Architecture Powering General AI Computing》</code> が <strong>ISCA 2026 Industry Track</strong> に採録 (3/30 発表、6/15-16 続報)。<strong>ISCA Industry Track 設立以来「全球初の自動車企業」</strong>選出。MICRO / HPCA と並ぶ計算機体系结构トップ 3 会議への企業論文登場は、中国 OEM の AI チップ設計が学術的にも到達点に達した証左。</div>
+  </div>
+  <div class="platform">
+    <div class="name">RSS/海外集計 (QMReader / Edge AI Daily / StableLearn)</div>
+    <div class="body"><code>Edge AI Daily 早报 (6/17)</code> が本ラウンドの最も包括的な日次ダイジェスト: 「96時間封杀 Fable 5 / GLM-5.2 MIT / Anthropic + AWS / DeepSeek 500 億」 を 12 項目で整理。<code>StableLearn</code> (英文): 「Z.ai officially open-sources GLM-5.2 today: 753B parameters, 1M-token context, MIT license. Beats GPT-5.5 on FrontierSWE at 1/6th the cost. <strong>After MiniMax M3, another Chinese AI bombshell.</strong>」と海外評価も急上昇中。</div>
+  </div>
+</div>
+
+<h2>Follow-up watchlist <span class="sub" style="font-weight:400; color: var(--muted);">— 明日以降追跡</span></h2>
+<ul>
+  <li><strong>智谱 GLM-5.2 公開後 72 時間</strong>: Hugging Face / ModelScope での スター数、Issues/PR 流入、海外開発者の初期評価。次は <strong>Z.ai (旧 智谱国際) の 7B/32B 系小型モデルの OSS 計画</strong> を確認 (StableLearn 753B 報道は要再検証)</li>
+  <li><strong>DeepSeek V4.1 公式発表</strong>: 6 月中の MCP/多模态/企業ツールチェーン追加予定 (5/9 aitalo / 5/29 iaipie 報道)。<strong>500 億調達落定後の「初陣」</strong>で 株価・採用数へのインパクト大</li>
+  <li><strong>字节 Seedance 2.0 Pro / 企业向正式披露</strong>: 6/15 に Seedance 2.0 Mini が先行。 <strong>ARR 20 億 USD</strong> を率いた製品ラインの次バージョンは <strong>「中国版 Runway / Sora」</strong> 競争の主戦場に</li>
+  <li><strong>阶跃星辰 港股递表 (6/30 期限)</strong>: HKIC 背書 + 紅籌架构拆除済。6/24 までに <code>港交所</code> 公式確認できるか</li>
+  <li><strong>理想 馬赫M100 vs 蔚来/小鹏/华为 自研チップ</strong>: ISCA 2026 で論文公開した今、他社の <strong>類似設計論文</strong> が 6-9 月に続くか (特に <code>地平线</code> / <code>黑芝麻</code> / <code>蔚来神玑</code>)</li>
+  <li><strong>摩尔线程 MTT S5000 の GLM-5.2 以外対応</strong>: <code>DeepSeek V4.1</code>、<code>Qwen3.7-Max</code> への Day-0 适配拡大が見えるか。「<strong>国产生态の即応性レース</strong>」が今後 1-2 か月の主要 KPI</li>
+  <li><strong>Anthropic Fable 5 代替需要の「企業採用」具体例</strong>: 6/16-17 は「株価」+「OSS」レベル。次に <strong>「中国企業 X が Claude → 智谱 / DeepSeek に移行」公式声明</strong> が出るか</li>
+  <li><strong>阿里 Qwen3.7-Max 系</strong>: 6/15 Qwen-Robot で「具身」に動いた Qwen が、<strong>テキスト/コード軸の次バージョン</strong> (3.8?) を出すか</li>
+  <li><strong>OpenRouter での GLM-5.2 / DeepSeek V4.1 ランキング</strong>: 6/16 公開後、<strong>API 市場シェア 46.4% (豆包) vs DeepSeek V4-Flash 連続首位</strong> の構図がどう動くか</li>
+  <li><strong>小米 MiMo 系の反撃</strong>: 4 月 MiMo-V2.5 公開後、6/13 「技術競争」発言 (IT之家 6/13)。次世代の MiMo-V3 か 専用チップ (玄戒) との統合発表</li>
+  <li><strong>华为云 盘古 次の業界特化モデル</strong>: 5/13 江苏省网信办 3-4 月备案累計 796 / 481 登记。7 月公告で盤古の新しい業界特化が出るか</li>
+  <li><strong>人形ロボット IPO 第 2 波</strong>: 宇树科技 (6/1 科創板过会) に加え、<strong>智元 / 银河通用 / 越疆 / 节卡</strong> の IPO 噂。6 月内に <strong>人形板块</strong> 続報</li>
+</ul>
+
+<h2>背景 (Background only) <span class="sub" style="font-weight:400; color: var(--muted);">— 3日超前、参考用</span></h2>
+<div class="background">
+  <div class="item"><span class="date">2026-06-17</span> — 智谱 (02513.HK) 続伸 +12%、北水流入 23 億 HKD (Tiger Brokers) <a href="https://www.itiger.com/news/2643736974" target="_blank" rel="noopener noreferrer">[Tiger Brokers]</a></div>
+  <div class="item"><span class="date">2026-06-17</span> — StableLearn「After MiniMax M3, another Chinese AI bombshell: GLM-5.2 753B / 1/6 cost of GPT-5.5」<a href="https://stable-learn.com/en/glm-5-2-open-source-release/" target="_blank" rel="noopener noreferrer">[StableLearn]</a></div>
+  <div class="item"><span class="date">2026-06-17</span> — Edge AI Daily 早报 6/17 (12項目ダイジェスト) <a href="https://www.link-nemo.com/u/1510283/post/1798049" target="_blank" rel="noopener noreferrer">[Edge AI Daily]</a></div>
+  <div class="item"><span class="date">2026-06-16</span> — 阿里 <code>Qwen-Robot</code> 3 モデル同時公開 (VLA / VLN / 世界模型) <a href="https://www.qbitai.com/2026/06/435873.html" target="_blank" rel="noopener noreferrer">[量子位]</a></div>
+  <div class="item"><span class="date">2026-06-16</span> — 21経済網「具身智能の五重資本困局」<a href="https://www.21jingji.com/article/20260616/herald/5174f0c484b86c2283f8478a55132aca.html" target="_blank" rel="noopener noreferrer">[21経済網]</a></div>
+  <div class="item"><span class="date">2026-06-16</span> — 澎湃「Anthropic最強モデル被禁後、智譜宣布GLM5.2全量開放」<a href="https://www.thepaper.cn/newsDetail_forward_33374548" target="_blank" rel="noopener noreferrer">[澎湃]</a></div>
+  <div class="item"><span class="date">2026-06-15</span> — 理想 <code>Livis Day</code> / 馬赫 M100 5nm 1280TOPS 発表 <a href="https://www.donews.com/news/detail/8/6596449.html" target="_blank" rel="noopener noreferrer">[DoNews]</a></div>
+  <div class="item"><span class="date">2026-06-15</span> — 字节 Seedance 2.0 Mini 上線 <a href="https://www.donews.com/news/detail/8/6598717.html" target="_blank" rel="noopener noreferrer">[DoNews]</a></div>
+  <div class="item"><span class="date">2026-06-15</span> — 钛媒体「2026 年上半年、460 億元 砸向具身智能」 <a href="https://www.tmtpost.com/8028097.html" target="_blank" rel="noopener noreferrer">[钛媒体]</a></div>
+  <div class="item"><span class="date">2026-06-14</span> — 「96小时封杀 Fable 5：Anthropic 被自己射出的子弹击中」 (Anthropic 停止/制限 3 日後総括) <a href="https://news.qq.com/rain/a/20260614A02HQT00" target="_blank" rel="noopener noreferrer">[騰訊新聞]</a></div>
+  <div class="item"><span class="date">2026-06-13</span> — Anthropic Claude Fable 5 / Mythos 5 全停止 (米政府 輸出管制命令) <a href="https://www.aitoollab.cn/articles/anthropic-export-control-fable5-mythos5-recall-analysis-202606/" target="_blank" rel="noopener noreferrer">[AI 工具宝箱]</a></div>
+  <div class="item"><span class="date">2026-06-13</span> — 智谱 GLM-5.2 + ZCode 3.0 告知 (下週 OSS 約束) <a href="https://www.ithome.com/0/963/855.htm" target="_blank" rel="noopener noreferrer">[IT之家]</a></div>
+  <div class="item"><span class="date">2026-06-12</span> — 智源大会 閉幕 / 悟界 Physis-v0.1 + RoboBrain Orca / 100+ AI 専門家 <a href="https://www.beijing.gov.cn/fuwu/lqfw/gggs/202606/t20260613_4699039.html" target="_blank" rel="noopener noreferrer">[北京市政府]</a></div>
+  <div class="item"><span class="date">2026-06-12</span> — 网信办「涉 AI 应用乱象举报专区」開設 <a href="https://www.cac.gov.cn/" target="_blank" rel="noopener noreferrer">[CAC]</a></div>
+  <div class="item"><span class="date">2026-06-11</span> — Meta × Manus 20 億 USD 買収 北京指示で巻き戻し開始 <a href="https://www.bloomberg.com/news/articles/2026-06-11/meta-severs-manus-data-access-after-china-orders-buyout-unwound" target="_blank" rel="noopener noreferrer">[Bloomberg]</a></div>
+  <div class="item"><span class="date">2026-05-20</span> — 阿里云峰会 / Qwen3.7-Max 発表 (5/20) <a href="https://blog.csdn.net/xyghehehehe/article/details/161263637" target="_blank" rel="noopener noreferrer">[CSDN]</a></div>
+  <div class="item"><span class="date">2026-05-13</span> — 江苏网信办「3-4月大模型备案」公告 (累计 796备案 / 481登记) <a href="https://www.jswx.gov.cn/fwhd/tzgg/202605/t20260513_1329727.shtml" target="_blank" rel="noopener noreferrer">[江苏网信办]</a></div>
+  <div class="item"><span class="date">2026-05-08</span> — 阶跃星辰 25 億 USD 資金調達 / 港股 IPO 計画 (澎湃) <a href="https://m.thepaper.cn/newsDetail_forward_33120328" target="_blank" rel="noopener noreferrer">[澎湃]</a></div>
+  <div class="item"><span class="date">2026-04-24</span> — DeepSeek V4 Pro/Flash 発表・1M 上下文 <a href="https://api-docs.deepseek.com/news/news260424" target="_blank" rel="noopener noreferrer">[DeepSeek API Docs]</a></div>
+  <div class="item"><span class="date">2026-03-30</span> — 理想 馬赫 M100 論文 ISCA 2026 Industry Track 採録 <a href="https://zhuanlan.zhihu.com/p/2021968270031421494" target="_blank" rel="noopener noreferrer">[知乎]</a></div>
+</div>
+
+<div class="caveat">
+  <strong>取得方法メモ:</strong> 本レポートは <code>web_extract</code> バックエンドが search-only のため、<strong>検索結果スニペットと IT之家 IT早報 0617 (信頼できる日次ダイジェスト)</strong> を主要情報源にしています。複数ソースで同一事実・同一数値が一致する項目は信頼度高、単一ソースのみの項目は中〜低と表示しています。<strong>GLM-5.2 の「753B パラメータ」報道は StableLearn (英文) 一次出典未確認</strong>のため、6/17 朝時点で中国側公式発表は「1M 上下文 + Code Arena 世界1位」が中心。具体パラメータ確定は要追跡。フルテキストが必要な場合は <code>web.extract_backend</code> を <code>firecrawl</code>/<code>tavily</code>/<code>exa</code>/<code>parallel</code> に切り替えて再実行してください。
+</div>
+
+<h2>Sources checked <span class="sub" style="font-weight:400; color: var(--muted);">— 全リンクはクリック可</span></h2>
+<ul class="source-list">
+  <li><a href="https://www.ithome.com/0/965/142.htm" target="_blank" rel="noopener noreferrer">IT之家 IT早报 0617: 曝 DeepSeek 完成超 70 亿美元融资，腾讯、宁德时代、京东、网易入局但没有投票权 (2026-06-17)</a></li>
+  <li><a href="https://www.ithome.com/0/965/193.htm" target="_blank" rel="noopener noreferrer">IT之家: 智谱开源 GLM-5.2 模型：1M 无损上下文，Code Arena 上全球可用模型第一 (2026-06-17)</a></li>
+  <li><a href="https://www.ithome.com/0/965/478.htm" target="_blank" rel="noopener noreferrer">IT之家: Day-0 支持：摩尔线程完成智谱 GLM-5.2 极速适配 (2026-06-17)</a></li>
+  <li><a href="https://www.ithome.com/0/965/167.htm" target="_blank" rel="noopener noreferrer">IT之家: 消息称字节调整 AI 资源分配，重心从豆包这类大众产品转向企业服务 (2026-06-17)</a></li>
+  <li><a href="https://www.ithome.com/0/963/855.htm" target="_blank" rel="noopener noreferrer">IT之家: 智谱：GLM-5.2 将面向 GLM Coding Plan 全量用户开放 (2026-06-13)</a></li>
+  <li><a href="https://www.ithome.com/0/964/748.htm" target="_blank" rel="noopener noreferrer">IT之家: 阿里巴巴发布首个具身智能大模型 Qwen-Robot 系列 (2026-06-16)</a></li>
+  <li><a href="https://www.ithome.com/0/961/284.htm" target="_blank" rel="noopener noreferrer">IT之家: Livis Day 理想汽车软件与人工智能发布会定档 (2026-06-08)</a></li>
+  <li><a href="https://news.qq.com/rain/a/20260617A048NU00" target="_blank" rel="noopener noreferrer">腾讯新闻: 智谱开源新一代旗舰模型GLM-5.2，适配国产算力平台 (2026-06-17)</a></li>
+  <li><a href="https://www.163.com/dy/article/KVKEMG6D0519DFFO.html" target="_blank" rel="noopener noreferrer">网易订阅 (北京商报): 智谱上线并开源GLM-5.2模型 | Code Arena全球第一 (2026-06-17)</a></li>
+  <li><a href="https://www.aihub.cn/news/glm-5-2-open-source/" target="_blank" rel="noopener noreferrer">AIHub: 智谱 GLM-5.2 上线并开源 (2026-06-17)</a></li>
+  <li><a href="https://www.oschina.net/news/460037" target="_blank" rel="noopener noreferrer">OSCHINA: GLM-5.2 上线并开源 (2026-06-17)</a></li>
+  <li><a href="https://www.mthreads.com/news/322" target="_blank" rel="noopener noreferrer">摩尔线程公式: Day-0支持｜摩尔线程率先完成智谱GLM-5.2极速适配 (2026-06-17)</a></li>
+  <li><a href="https://www.yicai.com/brief/103234182.html" target="_blank" rel="noopener noreferrer">第一财经: 摩尔线程Day-0完成智谱GLM-5.2极速适配 (2026-06-17)</a></li>
+  <li><a href="https://www.itiger.com/news/2643736974" target="_blank" rel="noopener noreferrer">Tiger Brokers: 恒指受制二万五关北水昨吼智谱建板 (2026-06-17)</a></li>
+  <li><a href="https://wallstreetcn.com/articles/3774780" target="_blank" rel="noopener noreferrer">华尔街见闻: DeepSeek首次融资落地：募集超500亿，估值超3300亿元 (2026-06-16)</a></li>
+  <li><a href="https://36kr.com/p/3855773631976456" target="_blank" rel="noopener noreferrer">36氪: 曝DeepSeek融资细节，梁文锋如何保住控制权 (2026-06-16)</a></li>
+  <li><a href="https://finance.eastmoney.com/a/202606163773171287.html" target="_blank" rel="noopener noreferrer">东方财富网: DeepSeek 500亿融资敲定！估值3380亿 (2026-06-16)</a></li>
+  <li><a href="https://www.cls.cn/detail/2401393" target="_blank" rel="noopener noreferrer">财联社: DeepSeek首轮融资或落地 梁文锋个人出资约200亿元 (2026-06-16)</a></li>
+  <li><a href="https://www.aisort.net/ai_news/20260615/deepseek-50b-financing/" target="_blank" rel="noopener noreferrer">AISort: DeepSeek完成超500亿元首轮融资 (2026-06-15)</a></li>
+  <li><a href="https://finance.sina.com.cn/tech/shenji/2026-06-17/doc-inicsmhw5709306.shtml" target="_blank" rel="noopener noreferrer">新浪财经: 消息称字节调整AI资源重心 从大众产品转向企业服务 (2026-06-17)</a></li>
+  <li><a href="https://finance.sina.com.cn/roll/2026-06-16/doc-inicrcpk9379821.shtml" target="_blank" rel="noopener noreferrer">新浪财经: 字节跳动的 AI 账本：豆包每天不足百万收入、Seedance 毛利 70% (2026-06-16)</a></li>
+  <li><a href="https://www.163.com/dy/article/KVIL6O950531M1CO.html" target="_blank" rel="noopener noreferrer">网易订阅: 字节跳动的 AI 账本 (2026-06-16)</a></li>
+  <li><a href="https://www.donews.com/news/detail/8/6598717.html" target="_blank" rel="noopener noreferrer">DoNews: 字节调整AI战略：豆包日亏千万，重心转向企业服务Seedance (2026-06-17)</a></li>
+  <li><a href="https://xueqiu.com/1786904335/395058903" target="_blank" rel="noopener noreferrer">雪球: 字节跳动的 AI 账本 (2026-06-16)</a></li>
+  <li><a href="https://ai.zol.com.cn/1200/12006353.html" target="_blank" rel="noopener noreferrer">中关村在线: 字节跳动战略转向企业AI服务，联手Anthropic加速商业化布局 (2026-06-17)</a></li>
+  <li><a href="https://readhub.cn/topic/8u0eVPlec3T" target="_blank" rel="noopener noreferrer">Readhub: 字节跳动的 AI 账本 (2026-06-16)</a></li>
+  <li><a href="https://www.qbitai.com/2026/06/435873.html" target="_blank" rel="noopener noreferrer">量子位: 三连发！阿里发布首个具身大模型Qwen-Robot系列 (2026-06-16)</a></li>
+  <li><a href="https://www.pingwest.com/w/314720" target="_blank" rel="noopener noreferrer">品玩: 阿里巴巴发布 Qwen-Robot系列模型 (2026-06-16)</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/2021968270031421494" target="_blank" rel="noopener noreferrer">知乎: 理想汽车马赫100芯片论文入选ISCA 2026工业分区 (2026-03-30)</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/2028043196416959461" target="_blank" rel="noopener noreferrer">知乎: 理想马赫100：如何实现较Thor U三倍有效算力的架构跃迁？</a></li>
+  <li><a href="https://www.eet-china.com/news/202606175047.html" target="_blank" rel="noopener noreferrer">EET China: 理想汽车发布全球首款量产动态数据流ai芯片马赫m100 (2026-06-15)</a></li>
+  <li><a href="https://www.firecat-web.com/daily-news/10393" target="_blank" rel="noopener noreferrer">Firecat 每日AI资讯: 理想发布自研芯片马赫m100 (2026-06-15)</a></li>
+  <li><a href="https://www.sohu.com/a/1036978642_121948416" target="_blank" rel="noopener noreferrer">搜狐: 理想马赫M100发布：5nm制程1280TOPS (2026-06-15)</a></li>
+  <li><a href="https://www.tmtpost.com/8028097.html" target="_blank" rel="noopener noreferrer">钛媒体: 2026年上半年，460亿砸向具身智能 (2026-06-15)</a></li>
+  <li><a href="https://www.21jingji.com/article/20260616/herald/5174f0c484b86c2283f8478a55132aca.html" target="_blank" rel="noopener noreferrer">21经济网: 烧出来的头部，钝掉的赛道：具身智能的五重资本困局 (2026-06-16)</a></li>
+  <li><a href="https://m.thepaper.cn/newsDetail_forward_33120328" target="_blank" rel="noopener noreferrer">澎湃: 阶跃星辰将完成近25亿美元融资，已拆除红筹架构 (2026-05-08)</a></li>
+  <li><a href="https://www.tmtpost.com/7952134.html" target="_blank" rel="noopener noreferrer">钛媒体: 阶跃星辰与月之暗面争相IPO (2026-04-14)</a></li>
+  <li><a href="https://www.thepaper.cn/newsDetail_forward_33374548" target="_blank" rel="noopener noreferrer">澎湃新闻: Anthropic最强模型被禁后，智谱宣布GLM5.2全量开放 (2026-06-16)</a></li>
+  <li><a href="https://news.qq.com/rain/a/20260614A02HQT00" target="_blank" rel="noopener noreferrer">腾讯新闻: Fable 5的72小时 (2026-06-14)</a></li>
+  <li><a href="https://www.aitoollab.cn/articles/anthropic-export-control-fable5-mythos5-recall-analysis-202606/" target="_blank" rel="noopener noreferrer">AI 工具宝箱: Anthropic出口管制事件全景复盘 (2026-06-15)</a></li>
+  <li><a href="https://www.link-nemo.com/u/1510283/post/1798049" target="_blank" rel="noopener noreferrer">Edge AI Daily 早报（6月17日）</a></li>
+  <li><a href="https://stable-learn.com/en/glm-5-2-open-source-release/" target="_blank" rel="noopener noreferrer">StableLearn: GLM-5.2 Goes Fully Open Today: 753B Parameters Beat GPT-5.5 at 1/6 the Cost (2026-06-17)</a></li>
+  <li><a href="https://www.beijing.gov.cn/fuwu/lqfw/gggs/202606/t20260613_4699039.html" target="_blank" rel="noopener noreferrer">北京市政府: 全球首个通用世界基座模型发布 "北京队"推动AI (2026-06-13)</a></li>
+  <li><a href="https://www.bloomberg.com/news/articles/2026-06-11/meta-severs-manus-data-access-after-china-orders-buyout-unwound" target="_blank" rel="noopener noreferrer">Bloomberg: Meta Starts Unwinding Manus Deal (2026-06-11)</a></li>
+  <li><a href="https://api-docs.deepseek.com/news/news260424" target="_blank" rel="noopener noreferrer">DeepSeek API Docs: DeepSeek V4 Preview Release (2026-04-24)</a></li>
+  <li><a href="https://www.jswx.gov.cn/fwhd/tzgg/202605/t20260513_1329727.shtml" target="_blank" rel="noopener noreferrer">江苏网信办: 2026年3-4月 生成式AI备案公告 (2026-05-13)</a></li>
+  <li><a href="https://blog.csdn.net/xyghehehehe/article/details/161263637" target="_blank" rel="noopener noreferrer">CSDN: 阿里云峰会 2026：Qwen3.7 系列 (2026-05-20)</a></li>
+</ul>
+
+<footer>
+  生成: Hermes Agent (china-trend-intelligence + trend-intelligence-reports スキル) / 2026-06-17 v1 / 
+  保存先: <code>/workspace/share/china-news-watch/2026-06-17-china-ai-news.html</code><br>
+  前日 (6/16 v2): <a href="2026-06-16-china-ai-news-v2.html">2026-06-16-china-ai-news-v2.html</a> (Qwen-Robot / GLM-5.2 Coding Plan / 理想 M100 続報 / 具身智能 460 億元)<br>
+  知識ベース: <code>/workspace/share/china-ai-kb/</code> (本日触れたエンティティ: 智谱 / GLM-5.2 / 02513.HK / DeepSeek / 梁文锋 / 字节跳动 / 豆包 / Seedance / 理想汽车 / 馬赫M100 / 摩尔线程 / MTT S5000 / 阿里 Qwen / Qwen-Robot / 阶跃星辰 / IT之家)<br>
+  比較ポジション: 「AIエージェント + 中国トレンドOS」の統合ワークフローとして、Codex/Claude でも類似の巡回スクリプトは書ける。本価値は再現性・統合・カスタマイズ性、そして「検索スニペット → 知識ベース → HTML 日報」の蓄積構造。<br>
+  v1→v2 昇格条件: 本日 17:00 UTC 以降に新規/更新素材が 3 件以上出た場合、または 智谱 / DeepSeek / 字节 のいずれかが「続報で別軸の大型ニュース」を出した場合、v2 として別途保存。
+</footer>
+
+</div>
+</body>
+</html>
+

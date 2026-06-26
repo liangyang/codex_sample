@@ -1,0 +1,171 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中国AI・テックニュースウォッチ 2026-06-14 (v2 午後更新)</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1020; --panel:#111936; --panel2:#172146; --text:#e7ecff; --muted:#98a5c8; --accent:#7dd3fc; --hot:#fb7185; --warm:#fbbf24; --ok:#34d399; --line:#26345f; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans JP","Hiragino Sans",Meiryo,sans-serif; background:linear-gradient(135deg,#070b16,#111936 48%,#0b1020); color:var(--text); }
+    main { max-width:1120px; margin:0 auto; padding:32px 20px 56px; }
+    header { border:1px solid var(--line); background:rgba(17,25,54,.88); border-radius:22px; padding:28px; box-shadow:0 18px 48px rgba(0,0,0,.35); }
+    h1 { margin:0 0 10px; font-size:30px; letter-spacing:.02em; }
+    h2 { margin:30px 0 14px; font-size:21px; }
+    h3 { margin:0 0 8px; font-size:17px; }
+    p, li { line-height:1.72; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .meta { color:var(--muted); font-size:14px; }
+    .thesis { margin-top:18px; padding:16px 18px; border-left:4px solid var(--accent); background:#0c1530; border-radius:12px; font-size:16px; }
+    .update-note { margin-top:14px; padding:14px 16px; border-left:4px solid var(--warm); background:rgba(251,191,36,.06); border-radius:12px; font-size:14.5px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .card { border:1px solid var(--line); background:rgba(17,25,54,.82); border-radius:18px; padding:18px; }
+    .signal { border:1px solid var(--line); background:rgba(17,25,54,.78); border-radius:18px; padding:18px; margin:14px 0; }
+    .signal-new { border-color:rgba(125,211,252,.5); box-shadow:0 0 0 1px rgba(125,211,252,.18) inset; }
+    .badge { display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; font-weight:700; margin-right:7px; }
+    .hot { background:rgba(251,113,133,.16); color:#fecdd3; border:1px solid rgba(251,113,133,.45); }
+    .warm { background:rgba(251,191,36,.15); color:#fde68a; border:1px solid rgba(251,191,36,.45); }
+    .mid { background:rgba(125,211,252,.14); color:#bae6fd; border:1px solid rgba(125,211,252,.42); }
+    .ok { background:rgba(52,211,153,.14); color:#bbf7d0; border:1px solid rgba(52,211,153,.42); }
+    .new { background:rgba(125,211,252,.18); color:#bae6fd; border:1px solid rgba(125,211,252,.5); }
+    .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .small { color:var(--muted); font-size:13px; }
+    table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:14px; }
+    th,td { border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top; }
+    th { color:#c7d2fe; background:#111a3a; }
+    .footer { margin-top:28px; color:var(--muted); font-size:13px; }
+    .bg-note { color:#fde68a; }
+    @media (max-width:850px){ .grid,.cols{ grid-template-columns:1fr; } h1{font-size:25px;} }
+  </style>
+<style id="mobile-readability">
+@media (max-width: 720px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body { font-size: 16px !important; line-height: 1.78 !important; overflow-wrap: anywhere; }
+  .container, .wrap { width: 100% !important; max-width: none !important; padding: 16px 12px 40px !important; }
+  header, .hero { margin: 0 0 16px !important; padding: 16px 12px !important; border-radius: 0 !important; box-shadow: none !important; }
+  h1 { font-size: 28px !important; line-height: 1.22 !important; letter-spacing: 0 !important; }
+  h2, .section-title { margin-top: 24px !important; font-size: 21px !important; line-height: 1.3 !important; }
+  h3 { font-size: 18px !important; line-height: 1.45 !important; }
+  p, li, dt, dd { font-size: 16px !important; }
+  .sub, .subtitle, .mini, .footer, footer { font-size: 13px !important; line-height: 1.65 !important; }
+  .grid, .meta-grid, .kvs { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+  .card, .signal, .meta-card, .thesis, .caveat { margin: 12px 0 !important; padding: 14px 12px !important; border-radius: 8px !important; box-shadow: none !important; }
+  .signal-head { display: block !important; }
+  .heat, .badge, .rank { display: inline-flex !important; align-items: center !important; max-width: 100% !important; margin: 6px 6px 2px 0 !important; white-space: normal !important; line-height: 1.35 !important; }
+  dl { display: block !important; margin-top: 12px !important; }
+  dt { margin-top: 12px !important; font-weight: 700 !important; }
+  dd { margin: 2px 0 0 !important; }
+  .sources { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; }
+  .sources a, .source-list a { display: block !important; padding: 9px 10px !important; border-radius: 8px !important; }
+  .table { display: block !important; width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>中国AI・テックニュースウォッチ <span class="meta">2026-06-14 (日) v2 午後更新</span></h1>
+    <div class="meta">取得時刻: 14日 JST 午後 / 対象: 6/14 当日の追加材料 + 6/12-13 フォローアップ。週末・午後で公式動静は引き続き薄め、HDC 2026 閉幕日関連の続報が中核。</div>
+    <div class="update-note">
+      <strong>v1 → v2 update note:</strong> 朝の v1 (<a href="2026-06-14-china-ai-news.html" target="_blank" rel="noopener noreferrer">2026-06-14-china-ai-news.html</a>) は残置、本 v2 は同日午後の追加スキャン分。<br>
+      <strong>主な差分:</strong>
+      ① HDC 2026 閉幕日の続報 — Huawei 「HarmonyOS 開発者」公式アカウントが 6/13 深夜に HarmonyOS 7.0 (API26) Developer Beta 1 詳細速览を公開、IT之家 6/14 朝に報道。v1 シグナル 5 で「6/14 単体の新規発表は未確認」と書いていた箇所を埋める更新。<br>
+      ② 6/14 午後の新規大型発表は未確認、6/12-13 のフォローアップ + 当日の Beta 1 詳細が中核。<br>
+      ③ 智源大会・Manus・阶跃星辰 IPO 噂・网信办举报专区 — v1 で深掘り済み、本 v2 では状況変化なし。
+    </div>
+    <div class="thesis"><strong>今日の読み（v2）:</strong> 6/14 (日) の中国AIは、HDC 2026 閉幕日 (6/14) と 智源大会 閉幕翌日 (6/13 闭幕) のダブル後夜。<strong>(1) HarmonyOS 7.0 Developer Beta 1</strong> — 6/12 正式発表の 24-48 時間後に Huawei 公式が詳細速览を公開、業界初の「鸿蒙内核应用快启技术」+ 端侧 A2A + 空间音频・3DGS 空間レンダリング・ArkUI 沉浸光感の 5 つの柱。<strong>(2) 研究・ロードマップ</strong> — 智源大会 悟界系列 + FlagOS 2.1 の続報待ち、Physis-v0.1 の OSS 可否とベンチマークが次の焦点。<strong>(3) ガバナンス</strong> — 中央网信办 涉AI应用乱象举报专区、第一弾处置案件と 6 月中の運用詳細公表が焦点。<strong>(4) 国際/M&A</strong> — Meta × Manus 切り離し、創業者側 10億USD 買い戻し資金の組成確認待ち、阶跃星辰の港交所 A1 申請公示待ち。</div>
+  </header>
+
+  <section class="grid">
+    <div class="card"><h3>研究 / ロードマップ</h3><p><span class="badge hot">高</span>智源大会 悟界系列</p><p class="small">Physis-v0.1 / Brainμ1.0 / OpenComplex2.5 / FlagOS 2.1。Physis の OSS 可否・ベンチマークが次の焦点 (v1 から持ち越し)。</p></div>
+    <div class="card"><h3>ガバナンス</h3><p><span class="badge hot">高</span>网信办 涉AI应用乱象举报专区</p><p class="small">6/12 開設、第一弾处置案件の公開待ち。清朗专项行动と連動した一般ユーザー参加型執行フェーズへ。</p></div>
+    <div class="card"><h3>国際 / M&A</h3><p><span class="badge hot">高</span>Meta × Manus + 阶跃 IPO 噂</p><p class="small">Manus 創業者側 10億USD 買い戻し資金調達・Meta の AI Agent 戦略後継。阶跃星辰の 6 月内 A1 申請公示待ち (v1 持ち越し)。</p></div>
+  </section>
+
+  <h2>v2 で追加・更新されたシグナル</h2>
+
+  <article class="signal signal-new">
+    <h3>5. (更新) HDC 2026 閉幕日 6/14 — HarmonyOS 7.0 Developer Beta 1 詳細速览が公開</h3>
+    <p><span class="badge hot">Impact: High (v2 で更新)</span><span class="badge warm">信頼度: 高 (Huawei 公式「HarmonyOS 開発者」アカウント + IT之家 6/14 報道 + C114 通信網 + 同花順)</span><span class="badge new">v2 NEW</span></p>
+    <ul>
+      <li><strong>中国語キーワード:</strong> HarmonyOS 7.0、API 26、Developer Beta 1、鸿蒙内核应用快启、空间音频、3DGS 空间渲染、沉浸光感、ArkUI、Ability kit、端侧 A2A、开发者招募、体验官、6 月 12 日正式発表、6 月 14 日詳細公開</li>
+      <li><strong>何が起きているか (v2 追加分):</strong> HDC 2026 (6/12-14 東莞松山湖) の閉幕日 6/14 に、Huawei 「HarmonyOS 開発者」公式 WeChat サービスアカウントが前夜 (6/13) に HarmonyOS 7.0 (API 26) Developer Beta 1 の詳細速览を公開、IT之家・C114 通信網・同花順など業界メディアが 6/14 朝に一斉報道。5 つの重点アップデート: <em>① 業界初の「鸿蒙内核应用快启技术」</em>（起動性能とメモリ开销の跷跷板問題を解消）、<em>② 空间音频</em>（鸿蒙音频引擎メジャーリフレッシュ）、<em>③ 3DGS 空間レンダリングと空間再建模能力</em>、<em>④ ArkUI 沉浸光感コンポーネント全新アップグレード</em>、<em>⑤ Ability kit 端侧 A2A 実現</em>（App と システムの深度融合、新流量・新機会）。6/12 主题演説の HarmonyOS 7 正式発表 + 盘古 2.0 オープンソース発表 (v1 シグナル 5 で詳述) から 24-48 時間の Developer Beta 1 詳細リリース、という HDC の標準的フォローアップ手順を踏襲。</li>
+      <li><strong>なぜ重要か:</strong> v1 で「6/14 単体の新規発表は未確認、SDK 配布・合作伙伴発表が週末中に追記される見通し」と書いていた箇所に対する v2 での直接回答。HarmonyOS 7 の「企業・産業向け」軸 (星盾安全) だけでなく、消費者 C 端 (空間オーディオ・3DGS 空間レンダリング) と 開発者体験 (A2A・快启) の三層が揃って出揃った点は、v1 で言及した「鴻蒙 + 端侧 AI + 智能体」構図の完成度を一段引き上げる。秋の Mate 90 シリーズ正式搭載 (v1) までの開発者エコシステム拡大フェーズが本格化。</li>
+      <li><strong>根拠リンク:</strong> <a href="https://www.ithome.com/0/964/029.htm" target="_blank" rel="noopener noreferrer">IT之家「华为 HarmonyOS 7.0 Developer Beta 1 更新速览：首创鸿蒙内核应用快启技术、音频引擎大更新」</a> — 6/14 / <a href="https://www.c114.net.cn/industry/90354.html" target="_blank" rel="noopener noreferrer">C114 通信網「华为 HarmonyOS 7.0 Developer Beta 1 更新速览发布」</a> — 6/14 / <a href="https://m.10jqka.com.cn/20260614/c677445357.shtml" target="_blank" rel="noopener noreferrer">同花順「华为 HarmonyOS 7.0 Developer Beta 1 更新速览」</a> — 6/14 / <a href="https://k.sina.com.cn/article_7857201856_1d45362c001906o7qo.html" target="_blank" rel="noopener noreferrer">新浪 (K 站)「HarmonyOS 7.0(API26) Developer Beta1 版本更新速览:系统能力与开发效率全面跃升」</a> — 6/14 / <a href="https://www.ithome.com/0/963/594.htm" target="_blank" rel="noopener noreferrer">IT之家「鸿蒙 HarmonyOS 7 正式发布」 (6/12 主発表)</a> / <a href="https://www.ithome.com/0/963/480.htm" target="_blank" rel="noopener noreferrer">IT之家「华为发布开源盘古 2.0 模型：最高 505B 参数」 (6/12)</a> / <a href="https://developer.huawei.com/consumer/cn/hdc/2026" target="_blank" rel="noopener noreferrer">Huawei HDC 2026 公式</a> / <a href="file:///workspace/share/china-news-watch/2026-06-14-china-ai-news.html" target="_blank" rel="noopener noreferrer">v1 レポート（HDC 6/12-13 主発表の深掘り）</a></li>
+      <li><strong>明日以降の確認:</strong> Developer Beta 1 の一般申込者数、App Gallery 側の「鸿蒙原生应用」採用発表、6/14 閉幕後の公式まとめ、6/16-17 に予定される SDK 配布詳細と新合作伙伴発表、Mate 90 シリーズ正式発表日程の確定。</li>
+    </ul>
+  </article>
+
+  <h2>v1 から持ち越しの主要シグナル（v2 で状況変化なし）</h2>
+  <p class="small">以下は朝の v1 レポートで詳述した内容。v2 時点で新規続報は未確認。深掘りは <a href="2026-06-14-china-ai-news.html" target="_blank" rel="noopener noreferrer">v1 レポート</a> または <a href="2026-06-13-china-ai-news-v2.html" target="_blank" rel="noopener noreferrer">6/13 v2 レポート</a> を参照。</p>
+
+  <ul>
+    <li><strong>1. 智源大会 2026 閉幕 (6/12-13 北京) — 悟界系列 + FlagOS 2.1</strong>: Physis-v0.1 / Brainμ1.0 / OpenComplex2.5 / FlagOS 2.1 公開。王仲远「世界模型は次世代人工智能的基座模型」。OSS 可否とベンチマークが次の焦点。<a href="2026-06-13-china-ai-news-v2.html" target="_blank" rel="noopener noreferrer">6/13 v2 レポート</a> 参照。</li>
+    <li><strong>2. 中央网信办 涉AI应用乱象举报专区 6/12 開設</strong>: 生成合成内容标识落实、算法推薦乱用、大模型训练语料安全、AI データ投毒を受付。第一弾处置案件待ち。</li>
+    <li><strong>3. Meta × Manus 切り離し</strong>: Meta 内部データ隔壁構築・Manus 停用、創業者側は 10億USD 買い戻しを準備中。買い戻し資金の出所確認待ち。</li>
+    <li><strong>4. 阶跃星辰 港交所 IPO 噂</strong>: 6/10-11 報道、A1 申請公示待ち。</li>
+    <li><strong>6. 面壁智能 端侧 AI 全栈 展示 (6/12-13 智源大会)</strong>: v1 で詳述、追加続報なし。</li>
+    <li><strong>7. 背景: DeepSeek 450億USD・月之暗面 200億USD</strong>: 5 月-6 月初ソース、3 日以内新規なし、背景扱い継続。</li>
+  </ul>
+
+  <h2>Platform read (v2)</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>業界メディア</h3>
+      <p>6/14 朝は IT之家・C114 通信網・同花順が HarmonyOS 7.0 Beta 1 詳細を一斉報道。新浪 K 站が詳細仕様を系統立てて転載。智源大会・Manus・网信办 の 6/12-13 関連報道は週末で出尽くし感、6/16-17 に二次解釈記事増加見込み。</p>
+    </div>
+    <div class="card">
+      <h3>公式 / イベント</h3>
+      <p>HDC 2026 閉幕日 6/14 は公式まとめ待ち。Huawei「HarmonyOS 開発者」公式 WeChat が Beta 1 詳細を 6/13 深夜に先行公開、業界標準的フォローアップ手順。智源大会は 6/13 闭幕后、来週は各社の post-Conference 発表と Physis ベンチマーク公開が焦点。</p>
+    </div>
+    <div class="card">
+      <h3>WeChat / 知乎 / 小紅書</h3>
+      <p>今回は公開検索で 6/14 固有の一次投稿は限定的。HarmonyOS 7.0 Beta 1 関連の二次解説は WeChat 公衆号 (华为「HarmonyOS 開発者」含む) と CSDN 技術ブログに分散。プラットフォーム全体のトレンドとは断定していない。</p>
+    </div>
+    <div class="card">
+      <h3>海外英語圏</h3>
+      <p>6/14 午前の新規中国 AI 報道は英語圏で限定的。週末のトピック蓄積フェーズで、6/16-17 に FT・Bloomberg・Reuters の解説記事が出る見通し。HarmonyOS 7 関連は Huawei Mate 90 発表 (秋) まで海外関心が低い可能性。</p>
+    </div>
+  </div>
+
+  <h2>Watchlist for next week (v2 更新)</h2>
+  <table>
+    <thead><tr><th>対象</th><th>見るべき問い</th><th>検索語</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge new">v2 NEW</span> HarmonyOS 7.0 Developer Beta 1</td><td>一般申込者数、App Gallery 「鸿蒙原生应用」採用発表、SDK 配布詳細、新合作伙伴リスト、6/16-17 公式まとめ。</td><td>HarmonyOS 7.0 Beta1 体验官 / 鸿蒙原生应用 6月 / 鸿蒙 A2A</td></tr>
+      <tr><td>悟界 系列 (v1 持ち越し)</td><td>悟界·Physis-v0.1 / Brainμ1.0 / OpenComplex2.5 のオープン可否・ベンチマーク・合作伙伴一覧。FlagOS 2.1 がサポートするチップ (昇腾 910C / 寒武纪 / 摩尔线程 / 沐曦) の正式対応表。</td><td>悟界 Physis 开源 / 悟界 Brainμ / FlagOS 2.1 昇腾 寒武纪</td></tr>
+      <tr><td>中央网信办 (v1 持ち越し)</td><td>「涉AI应用乱象举报专区」第一弾处置案件の公開タイミング。主要プラットフォーム側の対応変更。</td><td>涉AI应用乱象举报 处置 / 清朗 AI 标识 / 大模型训练语料 举报</td></tr>
+      <tr><td>Manus (v1 持ち越し)</td><td>創業者側の 10億USD 買い戻し資金調達の組成、Meta 内部の AI Agent 戦略後継、Manus 製品の独立継続可否。</td><td>Manus 创始人 10亿 回购 / Meta Manus 数据防火墙</td></tr>
+      <tr><td>阶跃星辰 (v1 持ち越し)</td><td>港交所 A1 申請の正式公示、招股書の内容 (売上高・主要顧客・研究開発費)。</td><td>阶跃星辰 港交所 A1 / StepFun 招股书 / Step 3.7 Flash 端侧</td></tr>
+      <tr><td>HarmonyOS 7 一般発売 (v1 持ち越し)</td><td>Mate 90 シリーズ発表日程 (秋の正式版)、鸿蒙 PC 一般発売日と価格、鸿蒙 PC 開発者数の伸び (HDC 発表では 1,100万)。</td><td>华为 Mate 90 发布会 / 鸿蒙电脑 上市 / 鸿蒙 1100万 开发者</td></tr>
+      <tr><td>OpenRouter 週次 (v1 持ち越し)</td><td>6/9-15 週次の中国大模型周调用量 (米国超え 7 週目になるか)、DeepSeek-V4-Flash / Step 3.7 Flash / Qwen3.7-Max の順位変動。</td><td>OpenRouter 周调用量 6月15日 / DeepSeek-V4-Flash / Qwen3.7-Max</td></tr>
+      <tr><td>面壁智能 (v1 持ち越し)</td><td>端侧 AI 製品の IoT / 車載 / 教育向け提携発表、Intel / 紫光展锐 / 瑞芯微との具体的な型号対応。</td><td>面壁智能 端侧 合作伙伴 / ModelBeIoT 紫光展锐</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Sources checked (v2)</h2>
+  <ul>
+    <li><strong>v2 新規 — HarmonyOS 7.0 Developer Beta 1 (6/14 報道)</strong>:
+      <ul>
+        <li><a href="https://www.ithome.com/0/964/029.htm" target="_blank" rel="noopener noreferrer">IT之家「华为 HarmonyOS 7.0 Developer Beta 1 更新速览：首创鸿蒙内核应用快启技术、音频引擎大更新」</a> — 6/14</li>
+        <li><a href="https://www.c114.net.cn/industry/90354.html" target="_blank" rel="noopener noreferrer">C114 通信網「华为 HarmonyOS 7.0 Developer Beta 1 更新速览发布」</a> — 6/14</li>
+        <li><a href="https://m.10jqka.com.cn/20260614/c677445357.shtml" target="_blank" rel="noopener noreferrer">同花順「华为 HarmonyOS 7.0 Developer Beta 1 更新速览」</a> — 6/14</li>
+        <li><a href="https://k.sina.com.cn/article_7857201856_1d45362c001906o7qo.html" target="_blank" rel="noopener noreferrer">新浪 (K 站)「HarmonyOS 7.0(API26) Developer Beta1 版本更新速览:系统能力与开发效率全面跃升」</a> — 6/14</li>
+        <li><a href="https://www.ithome.com/0/963/594.htm" target="_blank" rel="noopener noreferrer">IT之家「鸿蒙 HarmonyOS 7 正式发布：从『万物互联』正式迈进『Agent 时代』」</a> — 6/12 (主発表、参照用)</li>
+        <li><a href="https://www.ithome.com/0/963/480.htm" target="_blank" rel="noopener noreferrer">IT之家「华为发布开源盘古 2.0 模型：最高 505B 参数」</a> — 6/12 (主発表、参照用)</li>
+        <li><a href="https://developer.huawei.com/consumer/cn/hdc/2026" target="_blank" rel="noopener noreferrer">Huawei HDC 2026 公式</a></li>
+      </ul>
+    </li>
+    <li><strong>v1 から持ち越し (状況変化なし)</strong>: <a href="file:///workspace/share/china-news-watch/2026-06-14-china-ai-news.html" target="_blank" rel="noopener noreferrer">2026-06-14 v1 レポート (智源大会・网信办・Manus・阶跃・面壁 の詳細)</a> / <a href="file:///workspace/share/china-news-watch/2026-06-13-china-ai-news-v2.html" target="_blank" rel="noopener noreferrer">2026-06-13 v2 レポート (智源大会詳細)</a> / <a href="file:///workspace/share/china-news-watch/2026-06-13-china-ai-news.html" target="_blank" rel="noopener noreferrer">2026-06-13 v1 レポート</a> / <a href="file:///workspace/share/china-news-watch/2026-06-12-china-ai-news.html" target="_blank" rel="noopener noreferrer">2026-06-12 レポート</a></li>
+  </ul>
+
+  <div class="footer">
+    Method note: <code>web_extract</code> が検索専用バックエンド設定のため、全文抽出ではなく公開検索結果・スニペット中心に作成。<strong>v1 レポート (2026-06-14 朝版) は保持、本 v2 は同日午後の追加スキャン分。</strong>v1 で詳述した 6/12-13 シグナル (智源大会・网信办・Manus・阶跃・面壁) は状況変化なしのため v1 を参照。WeChat / 知乎 / 小紅書 は今回もプラットフォーム全体の流行とは断定していない。日曜午後取得で新規大型発表は HarmonyOS 7.0 Beta 1 詳細 1 件のみ。<br>
+    Folder: <code>/workspace/share/china-news-watch/</code> — 日次レポートは <code>YYYY-MM-DD-china-ai-news.html</code> で統一蓄積、同一日内更新は <code>-v2.html</code> サフィックス。<br>
+    最新: <code><a href="latest.html">latest.html</a></code> → 本ファイル (v2)。<br>
+    言語ポリシー: 日本語解説 + 中国語キーワード保持。Hermes 固有能力を主張せず、Codex/Claude でも再現可能な「ソース巡回 + 短期抽出手順」を継続。
+  </div>
+</main>
+</body>
+</html>
+

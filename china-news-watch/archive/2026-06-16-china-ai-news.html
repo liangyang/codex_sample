@@ -1,0 +1,401 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中国AIトレンドウォッチ 2026-06-16</title>
+<style>
+  :root {
+    --bg: #0e1116;
+    --panel: #161b22;
+    --panel-2: #1c232c;
+    --border: #2a3340;
+    --text: #d8e1ec;
+    --muted: #8a96a8;
+    --accent: #4ea1ff;
+    --accent-2: #ffb454;
+    --hot: #ff6b6b;
+    --warm: #ffb454;
+    --cool: #4ea1ff;
+    --link: #6cb6ff;
+    --good: #5cd6a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: 0.5px; }
+  h2 {
+    font-size: 18px;
+    margin: 32px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    color: var(--accent);
+  }
+  h3 { font-size: 15px; margin: 16px 0 6px; color: var(--accent-2); }
+  .sub { color: var(--muted); font-size: 13px; }
+  .thesis {
+    background: var(--panel);
+    border-left: 3px solid var(--accent-2);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 16px 0 28px;
+    font-size: 15px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 18px 0 0;
+  }
+  .meta-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .meta-card .k { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .meta-card .v { color: var(--text); font-size: 14px; margin-top: 3px; }
+  .signal {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 12px 0;
+  }
+  .signal-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .signal-title { font-size: 16px; font-weight: 600; margin: 0; }
+  .heat {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+  }
+  .heat.hot { background: rgba(255,107,107,0.15); color: var(--hot); border: 1px solid rgba(255,107,107,0.3); }
+  .heat.warm { background: rgba(255,180,84,0.15); color: var(--warm); border: 1px solid rgba(255,180,84,0.3); }
+  .heat.cool { background: rgba(78,161,255,0.15); color: var(--cool); border: 1px solid rgba(78,161,255,0.3); }
+  .signal dl { margin: 8px 0 0; display: grid; grid-template-columns: 130px 1fr; gap: 4px 12px; font-size: 14px; }
+  .signal dt { color: var(--muted); }
+  .signal dd { margin: 0; }
+  .signal .kw { color: var(--accent-2); }
+  .signal .why { color: var(--text); }
+  .signal .src a { color: var(--link); text-decoration: none; word-break: break-all; }
+  .signal .src a:hover { text-decoration: underline; }
+  .signal .conf { color: var(--muted); font-size: 12px; }
+  .platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .platform {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+  .platform .name { color: var(--accent-2); font-weight: 600; font-size: 13px; }
+  .platform .body { color: var(--text); font-size: 13px; margin-top: 4px; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .source-list { font-size: 13px; }
+  .source-list li { margin: 6px 0; }
+  .source-list a { color: var(--link); text-decoration: none; }
+  .source-list a:hover { text-decoration: underline; }
+  .caveat {
+    background: rgba(255,180,84,0.08);
+    border-left: 3px solid var(--accent-2);
+    padding: 10px 14px;
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 13px;
+    margin: 18px 0;
+  }
+  .background {
+    background: var(--panel-2);
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-top: 8px;
+  }
+  .background .item { margin: 4px 0; font-size: 13px; }
+  .background .item .date { color: var(--muted); font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--panel-2);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+  code { background: var(--panel-2); padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+</style>
+<style id="mobile-readability">
+@media (max-width: 720px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body { font-size: 16px !important; line-height: 1.78 !important; overflow-wrap: anywhere; }
+  .container, .wrap { width: 100% !important; max-width: none !important; padding: 16px 12px 40px !important; }
+  header, .hero { margin: 0 0 16px !important; padding: 16px 12px !important; border-radius: 0 !important; box-shadow: none !important; }
+  h1 { font-size: 28px !important; line-height: 1.22 !important; letter-spacing: 0 !important; }
+  h2, .section-title { margin-top: 24px !important; font-size: 21px !important; line-height: 1.3 !important; }
+  h3 { font-size: 18px !important; line-height: 1.45 !important; }
+  p, li, dt, dd { font-size: 16px !important; }
+  .sub, .subtitle, .mini, .footer, footer { font-size: 13px !important; line-height: 1.65 !important; }
+  .grid, .meta-grid, .kvs { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+  .card, .signal, .meta-card, .thesis, .caveat { margin: 12px 0 !important; padding: 14px 12px !important; border-radius: 8px !important; box-shadow: none !important; }
+  .signal-head { display: block !important; }
+  .heat, .badge, .rank { display: inline-flex !important; align-items: center !important; max-width: 100% !important; margin: 6px 6px 2px 0 !important; white-space: normal !important; line-height: 1.35 !important; }
+  dl { display: block !important; margin-top: 12px !important; }
+  dt { margin-top: 12px !important; font-weight: 700 !important; }
+  dd { margin: 2px 0 0 !important; }
+  .sources { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; }
+  .sources a, .source-list a { display: block !important; padding: 9px 10px !important; border-radius: 8px !important; }
+  .table { display: block !important; width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>中国AIトレンドウォッチ — 2026-06-16 <span class="tag">3日以内優先</span></h1>
+  <div class="sub">対象日: 2026-06-14 〜 2026-06-16 / 生成: 2026-06-16 (火) / 言語: 日本語、キーワードは中国語保持</div>
+  <div class="thesis">
+    <strong>今日の一文:</strong> 具身智能 (Embodied AI) が今週の主軸。阿里巴巴が <code>Qwen-Robot</code> 三部作 (VLA/VLN/世界模型) を発表、理想汽車は <code>Livis Day</code> で「具身智能汽車」定義を提示。智谱 <code>GLM-5.2</code> が1Mコンテキスト・MIT公開・昇腾学習で「不跑分・先提供」戦術を取り、智源大会 (<code>悟界</code>モデル) と並んでオープン路線が加速。VC側では <code>具身智能460億元</code> 投資バブルの持続と「頭部だけ肥る」懸念が明確に。
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-card"><div class="k">巡回ソース</div><div class="v">14メディア</div></div>
+    <div class="meta-card"><div class="k">Top signals</div><div class="v">5本 (Hot 3 / Warm 2)</div></div>
+    <div class="meta-card"><div class="k">取得方式</div><div class="v">検索スニペット中心 (web_extract 不可)</div></div>
+    <div class="meta-card"><div class="k">知識ベース</div><div class="v">/workspace/share/china-ai-kb/</div></div>
+  </div>
+</header>
+
+<h2>Top signals <span class="sub" style="font-weight:400; color: var(--muted);">— 重要度順</span></h2>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">1. 阿里 <code>Qwen-Robot</code> シリーズ発表 — 具身智能「手・足・脳」三本柱</h3>
+    <span class="heat hot">HOT</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">Qwen-Robot、VLA、VLN、世界模型、具身智能、Qwen-RobotManip、Qwen-RobotNav、Qwen-RobotWorld</dd>
+    <dt>何が起きているか</dt><dd class="why">6/16、阿里巴巴が <code>Qwen-Robot</code> シリーズ3モデル同時公開。<code>VLA</code> 操作モデル <code>Qwen-RobotManip</code>、<code>VLN</code> 移動モデル <code>Qwen-RobotNav</code>、世界モデル <code>Qwen-RobotWorld</code> の構成で、Qwenファミリ初の「完全な具身智能モデル系列」。3つは独立デプロイ可能かつ協調動作。</dd>
+    <dt>なぜ重要か</dt><dd class="why">中国大手のLLM系 (Qwen) が「言語→行動」の橋を公式提供した初のケース。ロボット基盤モデルの戦線が DeepSeek 推論 / Kimi Agent / GLM Coding とは別軸で立ち上がる。VLA+VLN+世界モデルのセット提供は <code>π₀</code> 系 (米スタートアップ) への対抗軸。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">阿里巴巴 / 通义千问 / Qwen / Qwen3.7-Max / Qwen3.7-Plus / 智能体</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.qbitai.com/2026/06/435873.html" target="_blank" rel="noopener noreferrer">量子位: 三连发！阿里发布首个具身大模型Qwen-Robot系列</a><br>
+      • <a href="https://www.ithome.com/0/964/748.htm" target="_blank" rel="noopener noreferrer">IT之家: 阿里巴巴发布首个具身智能大模型 Qwen-Robot 系列</a><br>
+      • <a href="https://www.pingwest.com/w/314720" target="_blank" rel="noopener noreferrer">品玩: 阿里巴巴发布 Qwen-Robot系列模型</a><br>
+      • <a href="https://www.163.com/dy/article/KVI5QDDC05198UNI.html" target="_blank" rel="noopener noreferrer">网易订阅 (智通财经): 通义千问具身智能大模型Qwen-Robot系列</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">高 (4ソース以上で同一内容、企業公式発信)</dd>
+  </dl>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">2. 智谱 <code>GLM-5.2</code> 全量開放 + 下週 MIT 公開 — 「跑分より先に使わせる」戦術</h3>
+    <span class="heat hot">HOT</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">GLM-5.2、智谱、1M上下文、华为昇腾、MIT协议、GLM Coding Plan、Agentic Coding</dd>
+    <dt>何が起きているか</dt><dd class="why">6/13 (土) 17:21、智谱が事前告知なく <code>GLM-5.2</code> を <code>GLM Coding Plan</code> 全ユーザー (Lite/Pro/Max/チーム版) に全量開放。公式発表当日に <strong>benchmark なし</strong>、API と <code>MIT协议</code> での重み公開は「下週」予定。1M コンテキスト、High/Max 2段階思考、华为昇腾 + MindSpore で訓練。</dd>
+    <dt>なぜ重要か</dt><dd class="why">中国LLMの「<strong>発表日=即使用可</strong>」競争が定着。MIT公開で「国産最友好开源」を打ち出し、DeepSeek V4・Qwen3.7 に続く「<strong>開源最前線</strong>」ポジションを固める。昇腾訓練は米規制下の自主可控ライン強化。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">智谱AI / GLM-5 系 / 华为昇腾 / 港股上市済み / MiniMax / DeepSeek V4</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.ithome.com/0/963/855.htm" target="_blank" rel="noopener noreferrer">IT之家: 智谱GLM-5.2 将面向 GLM Coding Plan 全量用户开放</a><br>
+      • <a href="https://www.weste.net/2026/06-13/GLM-5.2.html" target="_blank" rel="noopener noreferrer">威易网: 智谱三个月发布三个版本！GLM-5.2 今晚全量开放</a><br>
+      • <a href="https://notes.kamacoder.com/llm/news/glm-5-2.html" target="_blank" rel="noopener noreferrer">Kamacoder Notes: GLM-5.2 发布拆解 (不放跑分表)</a><br>
+      • <a href="https://www.aihub.cn/news/zhipu-glm-5-2/" target="_blank" rel="noopener noreferrer">AIHub: 智谱GLM-5.2 开放</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">高 (IT之家公式 + 智谱公式告知が一致)</dd>
+  </dl>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">3. 理想汽車 <code>Livis Day</code> (6/15) — 具身智能汽車の定義 + <code>马赫 Mind-Pro</code> 発表</h3>
+    <span class="heat hot">HOT</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">理想汽车、Livis Day、具身智能汽车、马赫 Mind-Pro、L9 Livis、电动车 + 职业司机 + AI计算机</dd>
+    <dt>何が起きているか</dt><dd class="why">6/15 16:30、北京で理想汽車が <code>Livis Day</code> 開催。「<strong>具身智能汽車</strong> = 电动车 + 职业司机 + AI计算机 + (具身智能の定義) 」を公式提示。L9 Livis 搭載の独自モデル <code>马赫 Mind-Pro</code> を発表。6/16 にも継続記事あり。</dd>
+    <dt>なぜ重要か</dt><dd class="why">自動車OEMが「具身智能」を<strong>製品カテゴリの核</strong>に据えた初の公式発表。蔚来/小鹏/华为系/特斯拉 FSD中国上陸 を控えて、智能驾驶の差別化軸が「走る AI」から「身体化する AI」へ明確に移行した瞬間。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">理想汽车 / 马赫 Mind-Pro / L9 Livis / 小鹏 / 华为 / Tesla FSD</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.donews.com/news/detail/8/6596449.html" target="_blank" rel="noopener noreferrer">DoNews: 理想发布马赫Mind-Pro模型，全面赋能L9 Livis车载智能</a><br>
+      • <a href="https://www.ithome.com/0/961/284.htm" target="_blank" rel="noopener noreferrer">IT之家: Livis Day 理想汽车软件与人工智能发布会定档 6月15日</a><br>
+      • <a href="https://www.pingwest.com/w/314721" target="_blank" rel="noopener noreferrer">品玩: 理想汽车举办Livis Day软件与具身智能发布会</a><br>
+      • <a href="https://www.autohome.com.cn/article?id=HfDC9-UH9tk=" target="_blank" rel="noopener noreferrer">汽车之家: 理想汽车Livis Day收官 "具身智能"成技术新方向</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">高 (理想公式 + IT之家 + DoNews + 自動車之家で一致)</dd>
+  </dl>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">4. 具身智能 上半期 <code>460億元</code> 投資バブル分析 — 「20社だけ肥る」</h3>
+    <span class="heat warm">WARM</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">具身智能、融资、IT桔子、288起、226家企业、274家投资机构、460亿、千寻智能</dd>
+    <dt>何が起きているか</dt><dd class="why">6/15、<code>钛媒体创投家</code> が <code>IT桔子</code> データ基に分析記事「<strong>2026年上半年，460亿砸向具身智能，只「养肥」20家企业？</strong>」公開。2026年上半期、国内具身智能+ロボット領域で <strong>288起融资 / 226企業 / 274機構 / 460億元超</strong>。6/16 <code>21经济网</code> が続報で「五重资本困局」枠組みを提供。</dd>
+    <dt>なぜ重要か</dt><dd class="why">投資側データの<strong>2次的整理</strong>が見える化。Q1「200億元」 (3月) → Q2末「460億元超」 (6月) で <strong>2四半期で倍増</strong>。头部集中 (上位20社への偏在) と产业资本・国家隊の主導が明確に。「<strong>玩不起</strong>」 (某美元基金合伙人) という現場感の引用あり。</dd>
+    <dt>関連企業/モデル</dt>
+    <dd class="why">千寻智能 (A+ 15亿) / 银河通用 / 智元机器人 / 宇树 / 小雨智造 / 滴滴 (具身智能投資) / 美的 (3200亿现金)</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://www.tmtpost.com/8028097.html" target="_blank" rel="noopener noreferrer">钛媒体: 2026年上半年，460亿砸向具身智能，只"养肥"20家企业？</a><br>
+      • <a href="https://www.21jingji.com/article/20260616/herald/5174f0c484b86c2283f8478a55132aca.html" target="_blank" rel="noopener noreferrer">21经济网: 烧出来的头部，钝掉的赛道：具身智能的五重资本困局</a><br>
+      • <a href="https://xueqiu.com/5849193654/394822878" target="_blank" rel="noopener noreferrer">雪球: 2026上半年，具身智能赛道吸金超460亿</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">中 (3ソースで数値一致、ただし1次DB=IT桔子は有償)</dd>
+  </dl>
+</div>
+
+<div class="signal">
+  <div class="signal-head">
+    <h3 class="signal-title">5. 智源大会 閉幕 + <code>悟界</code> モデル群 — 世界モデル路線</h3>
+    <span class="heat warm">WARM</span>
+  </div>
+  <dl>
+    <dt>中国語KW</dt><dd class="kw">智源大会、悟界、世界模型、AGI、BAAI、6月12日〜13日</dd>
+    <dt>何が起きているか</dt><dd class="why">6/12〜13 (週末) 北京で開催された <code>智源大会</code> が閉幕。智源研究院 (BAAI) 関連で <code>悟界</code> モデル群の話題が継続。6/11 <code>大河财立方</code> による智谱・黄铁军系のインタビューでは「大模型 自己学習 42%」段階論も提示。</dd>
+    <dt>なぜ重要か</dt><dd class="why">週末大会のため公式報道は薄め。3日以内枠では「フォローアップ」扱い。月曜以降、閉幕総括・公式リプレイ公開が想定されるため、要追跡。</dd>
+    <dt>関連企業/モデル</dt><dd class="why">智源研究院 / BAAI / 黄铁军 / 悟界 / 智谱</dd>
+    <dt>根拠リンク</dt>
+    <dd class="src">
+      • <a href="https://m.10jqka.com.cn/20260612/c677413535.shtml" target="_blank" rel="noopener noreferrer">同花顺: 大模型"自我学习"进度42%，智谱专注"大脑"、开源赋能</a><br>
+      • <a href="https://hub.baai.ac.cn/view/51757" target="_blank" rel="noopener noreferrer">BAAI Hub: 智源发布2026十大AI技术趋势 (1月、年次報告)</a>
+    </dd>
+    <dt>信頼度</dt><dd class="conf">中 (週末のため公式総括は明日以降に出る可能性)</dd>
+  </dl>
+</div>
+
+<h2>Source-layer read</h2>
+
+<div class="platform-grid">
+  <div class="platform">
+    <div class="name">コア層 (IT之家・36氪・量子位・机器之心・智东西・新智元)</div>
+    <div class="body">IT之家: <code>Qwen-Robot</code>・<code>GLM-5.2</code>・<code>Livis Day</code> の3本記事でフル稼働。量子位: <code>Qwen-Robot</code> 詳報が本日の目玉。36氪・智东西・机器之心・新智元は週末〜月曜の話題 (智源大会・具身智能) が中心。</div>
+  </div>
+  <div class="platform">
+    <div class="name">総合層 (虎嗅・钛媒体・APPSO・少数派)</div>
+    <div class="body">钛媒体: <code>460億元</code> 具身智能分析が核心記事。APPSO・少数派・虎嗅は本日強いAI一次記事を確認できず。虎嗅は FSD中国上陸の長尺記事 (5月) のみ。明日以降を要追跡。</div>
+  </div>
+  <div class="platform">
+    <div class="name">公式発信 (DeepSeek・Kimi・Qwen・智谱)</div>
+    <div class="body">Qwen: <code>Qwen-Robot</code> 三部作 (今日公式) / Kimi: 直近3日では目立った発表なし (K2.6 は 4月) / 智谱: <code>GLM-5.2</code> (6/13 公式) / DeepSeek: 直近3日での公式発信は確認できず (V4 は 4月、融資話は6月初の周辺報道)。</div>
+  </div>
+  <div class="platform">
+    <div class="name">VC/融資 (IT桔子)</div>
+    <div class="body">IT桔子の1次DBデータは<strong>直接取得不可</strong> (有償)。今回は <code>钛媒体</code>・<code>21经济网</code>・<code>雪球</code> のIT桔子引用経由。SNS・業界紙で IT桔子の <code>460億元</code> 数値が広く二次引用されているのが本日確認できる範囲での最大シグナル。</div>
+  </div>
+  <div class="platform">
+    <div class="name">政策 (网信办)</div>
+    <div class="body">3〜4月分の大模型备案公告 (江蘇省网信办・5/13発出) が本日の検索上位にヒット。本日 (6/16) 直近の新規公告は本巡回では確認できず。月次ペースのため次回 (7月) 更新を待つ。</div>
+  </div>
+</div>
+
+<h2>Follow-up watchlist <span class="sub" style="font-weight:400; color: var(--muted);">— 明日以降追跡</span></h2>
+<ul>
+  <li><strong>智源大会 閉幕総括</strong>: 公式リプレイ・悟界モデル仕様公開。6/17 朝の智源公式・量子位・新智元を要監視</li>
+  <li><strong>GLM-5.2 API + 開源重み</strong>: 「下週」 = 6/16-22。智谱・HuggingFace・ModelScope への MIT アップロードを初動チェック</li>
+  <li><strong>Qwen-Robot 評価</strong>: 3モデルの実機テスト・ベンチマーク。RosHub / GitHub・arXiv への技術レポート投稿を要監視</li>
+  <li><strong>具身智能下半期</strong>: 21经济網の「下半期5つの猜想」を月曜以降の実例で検証</li>
+  <li><strong>DeepSeek 公式発信</strong>: 3日間沈黙。融資クローズ報道 (5月) とV4の次バージョン (V4.1?) の噂を注視</li>
+  <li><strong>Kimi</strong>: K2.6 後の Work デスクトップ・K3 噂。直近3日は発信なし</li>
+  <li><strong>网信办 5月分备案</strong>: 6月中旬〜末に公告想定。1次ソース (cac.gov.cn) を定期巡回</li>
+</ul>
+
+<h2>背景 (Background only) <span class="sub" style="font-weight:400; color: var(--muted);">— 3日超前、参考用</span></h2>
+<div class="background">
+  <div class="item"><span class="date">2026-06-13</span> — 智源大会 閉幕・悟界モデル言及 <a href="https://hub.baai.ac.cn/view/51757" target="_blank" rel="noopener noreferrer">[BAAI Hub]</a></div>
+  <div class="item"><span class="date">2026-06-13</span> — 智谱 <code>GLM-5.2</code> 全量開放 + 下週 MIT 公開告知 <a href="https://www.ithome.com/0/963/855.htm" target="_blank" rel="noopener noreferrer">[IT之家]</a></div>
+  <div class="item"><span class="date">2026-06-12</span> — 大模型「自己学習」42%、智谱の「大脑」専注路線 <a href="https://m.10jqka.com.cn/20260612/c677413535.shtml" target="_blank" rel="noopener noreferrer">[同花順]</a></div>
+  <div class="item"><span class="date">2026-06-11</span> — 智源研究院「2026十大AI技术趋势」関連の続報</div>
+  <div class="item"><span class="date">2026-06-05</span> — DeepSeek 500億元超 融資・估值600億USD報道 <a href="https://hub.baai.ac.cn/view/55235" target="_blank" rel="noopener noreferrer">[BAAI Hub]</a></div>
+  <div class="item"><span class="date">2026-06-03</span> — DeepSeek Series A 報道 ($7.4B / 估值 $59B) <a href="https://af.net/realtime/deepseek-secures-7-4-billion-in-landmark-series-a-to-lead-chinas-ai-revolution/" target="_blank" rel="noopener noreferrer">[af.net]</a></div>
+  <div class="item"><span class="date">2026-06-02</span> — Qwen3.7-Plus 多モーダルAgent <a href="https://www.weste.net/2026/06-02/Qwen3.7-Plus.html" target="_blank" rel="noopener noreferrer">[威易網]</a></div>
+  <div class="item"><span class="date">2026-05-20</span> — 阿里云峰会 / Qwen3.7-Max (5/20) <a href="https://blog.csdn.net/xyghehehehe/article/details/161263637" target="_blank" rel="noopener noreferrer">[CSDN]</a></div>
+  <div class="item"><span class="date">2026-05-13</span> — 江苏网信办「3-4月大模型备案」公告 (累计 796备案 / 481登记) <a href="https://www.jswx.gov.cn/fwhd/tzgg/202605/t20260513_1329727.shtml" target="_blank" rel="noopener noreferrer">[江苏网信办]</a></div>
+  <div class="item"><span class="date">2026-05-08</span> — DeepSeek 500億元調達交渉報道 (The Information) <a href="https://www.meltoday.com/content-1026590874105002" target="_blank" rel="noopener noreferrer">[Meltoday]</a></div>
+  <div class="item"><span class="date">2026-04-24</span> — DeepSeek V4 Pro/Flash 発表・1M上下文 <a href="https://api-docs.deepseek.com/news/news260424" target="_blank" rel="noopener noreferrer">[DeepSeek API Docs]</a></div>
+  <div class="item"><span class="date">2026-04-21</span> — Kimi K2.6 発表・開源 <a href="https://www.sohu.com/a/1012261482_121956424" target="_blank" rel="noopener noreferrer">[Sohu]</a></div>
+</div>
+
+<div class="caveat">
+  <strong>取得方法メモ:</strong> 本レポートは <code>web_extract</code> バックエンドが search-only のため、<strong>検索結果スニペット</strong> を主要情報源にしています。複数ソースで同一事実が一致する項目は信頼度高、単一ソースのみの項目は中〜低と表示しています。フルテキストが必要な場合は <code>web.extract_backend</code> を <code>firecrawl</code>/<code>tavily</code>/<code>exa</code>/<code>parallel</code> に切り替えて再実行してください。
+</div>
+
+<h2>Sources checked <span class="sub" style="font-weight:400; color: var(--muted);">— 全リンクはクリック可</span></h2>
+<ul class="source-list">
+  <li><a href="https://www.ithome.com/0/964/748.htm" target="_blank" rel="noopener noreferrer">IT之家: 阿里巴巴发布首个具身智能大模型 Qwen-Robot 系列 (2026-06-16)</a></li>
+  <li><a href="https://www.ithome.com/0/963/855.htm" target="_blank" rel="noopener noreferrer">IT之家: 智谱GLM-5.2 将面向 GLM Coding Plan 全量用户开放 (2026-06-13)</a></li>
+  <li><a href="https://www.ithome.com/0/961/284.htm" target="_blank" rel="noopener noreferrer">IT之家: Livis Day 理想汽车软件与人工智能发布会定档 (2026-06-08)</a></li>
+  <li><a href="https://www.ithome.com/tags/大模型/" target="_blank" rel="noopener noreferrer">IT之家: 大模型タグページ</a></li>
+  <li><a href="https://www.qbitai.com/2026/06/435873.html" target="_blank" rel="noopener noreferrer">量子位: 三连发！阿里发布首个具身大模型Qwen-Robot系列 (2026-06-16)</a></li>
+  <li><a href="https://www.qbitai.com/date/2026/06" target="_blank" rel="noopener noreferrer">量子位: 2026年6月 アーカイブ</a></li>
+  <li><a href="https://36kr.com/newsflashes/3831203586745984" target="_blank" rel="noopener noreferrer">36氪: 40余款AI大模型集中亮相2026世界智能产业博览会</a></li>
+  <li><a href="https://36kr.com/p/3834354708031111" target="_blank" rel="noopener noreferrer">36氪: 每日AI创业快讯 (2026-06-03 まとめ)</a></li>
+  <li><a href="https://www.tmtpost.com/8028097.html" target="_blank" rel="noopener noreferrer">钛媒体: 2026年上半年，460亿砸向具身智能，只"养肥"20家企业？ (2026-06-15)</a></li>
+  <li><a href="https://www.tmtpost.com/8025087.html" target="_blank" rel="noopener noreferrer">钛媒体: Edge AI Daily 早报 (2026-06-12)</a></li>
+  <li><a href="https://www.21jingji.com/article/20260616/herald/5174f0c484b86c2283f8478a55132aca.html" target="_blank" rel="noopener noreferrer">21经济网: 烧出来的头部，钝掉的赛道：具身智能的五重资本困局 (2026-06-16)</a></li>
+  <li><a href="https://www.21jingji.com/article/20260603/herald/879f4a6166ce5ca389e197372135d37c.html" target="_blank" rel="noopener noreferrer">21经济网: 消息称DeepSeek首轮融资约70亿美元 (2026-06-03)</a></li>
+  <li><a href="https://www.pingwest.com/w/314720" target="_blank" rel="noopener noreferrer">品玩: 阿里巴巴发布 Qwen-Robot系列模型 (2026-06-16)</a></li>
+  <li><a href="https://www.pingwest.com/w/314721" target="_blank" rel="noopener noreferrer">品玩: 理想汽车举办Livis Day软件与具身智能发布会 (2026-06-15)</a></li>
+  <li><a href="https://www.donews.com/news/detail/8/6596449.html" target="_blank" rel="noopener noreferrer">DoNews: 理想发布马赫Mind-Pro模型，全面赋能L9 Livis车载智能 (2026-06-15)</a></li>
+  <li><a href="https://news.qq.com/rain/a/20260609A045OP00" target="_blank" rel="noopener noreferrer">腾讯新闻 (量子位転載): 仅4B大小可端侧部署！卡帕西预言的「认知模型」被国产做出来了 (2026-06-09)</a></li>
+  <li><a href="https://aiera.com.cn/" target="_blank" rel="noopener noreferrer">新智元 (aiera.com.cn): 理想汽车Livis Day 等 (2026-06-16 15時間前)</a></li>
+  <li><a href="https://www.zgeo.com.cn/news/zhipu-glm-5-2-open-source" target="_blank" rel="noopener noreferrer">智脑时代: 智谱GLM-5.2全量开放并开源，MIT协议助力AI落地 (2026-06-13)</a></li>
+  <li><a href="https://www.zgeo.com.cn/news/ai-commercial-landscape-trends-tencent-deepseek-microsoft-kimi" target="_blank" rel="noopener noreferrer">智脑时代: 微信AI智能体延迟，DeepSeek融资70亿美元 (2026-06-04)</a></li>
+  <li><a href="https://hub.baai.ac.cn/view/55235" target="_blank" rel="noopener noreferrer">BAAI Hub: 融资超500亿！DeepSeek刷新国产大模型估值纪录 (2026-06-05)</a></li>
+  <li><a href="https://www.weste.net/2026/06-13/GLM-5.2.html" target="_blank" rel="noopener noreferrer">威易网: 智谱三个月发布三个版本！GLM-5.2 今晚全量开放 (2026-06-13)</a></li>
+  <li><a href="https://notes.kamacoder.com/llm/news/glm-5-2.html" target="_blank" rel="noopener noreferrer">Kamacoder Notes: GLM-5.2发布 (2026-06-13)</a></li>
+  <li><a href="https://www.aihub.cn/news/zhipu-glm-5-2/" target="_blank" rel="noopener noreferrer">AIHub: 智谱GLM-5.2 开放 (2026-06-13)</a></li>
+  <li><a href="https://api-docs.deepseek.com/news/news260424" target="_blank" rel="noopener noreferrer">DeepSeek API Docs: DeepSeek V4 Preview Release (2026-04-24)</a></li>
+  <li><a href="https://www.jswx.gov.cn/fwhd/tzgg/202605/t20260513_1329727.shtml" target="_blank" rel="noopener noreferrer">江苏网信办: 2026年3-4月 生成式AI备案公告 (2026-05-13)</a></li>
+  <li><a href="https://cagd.gov.cn/v/2026/05/9077.html" target="_blank" rel="noopener noreferrer">中央网信办関連: 2026年3-4月备案公告</a></li>
+  <li><a href="https://xueqiu.com/5849193654/394822878" target="_blank" rel="noopener noreferrer">雪球: 2026上半年，具身智能赛道吸金超460亿 (2026-06-15)</a></li>
+  <li><a href="https://sspai.com/post/111080" target="_blank" rel="noopener noreferrer">少数派: 派早报：大疆发布 Osmo Pocket 4P 等 (本日)</a></li>
+  <li><a href="https://m.10jqka.com.cn/20260612/c677413535.shtml" target="_blank" rel="noopener noreferrer">同花顺: 大模型"自我学习"进度42% (2026-06-12)</a></li>
+  <li><a href="https://af.net/realtime/deepseek-secures-7-4-billion-in-landmark-series-a-to-lead-chinas-ai-revolution/" target="_blank" rel="noopener noreferrer">af.net: DeepSeek Secures $7.4 Billion in Landmark Series A (2026-06-03)</a></li>
+</ul>
+
+<footer>
+  生成: Hermes Agent (china-trend-intelligence + trend-intelligence-reports スキル) / 2026-06-16 / 
+  保存先: <code>/workspace/share/china-news-watch/2026-06-16-china-ai-news.html</code><br>
+  知識ベース: <code>/workspace/share/china-ai-kb/</code> (本日触れたエンティティ: Qwen / 阿里巴巴 / 智谱 / GLM-5.2 / 理想汽车 / 具身智能 / IT桔子 / DeepSeek)<br>
+  比較ポジション: 「AIエージェント + 中国トレンドOS」の統合ワークフローとして、Codex/Claude でも類似の巡回スクリプトは書ける。本価値は再現性・統合・カスタマイズ性。
+</footer>
+
+</div>
+</body>
+</html>
+

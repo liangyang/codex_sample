@@ -1,0 +1,207 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中国AI・テックニュースウォッチ 2026-06-13 (v2)</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1020; --panel:#111936; --panel2:#172146; --text:#e7ecff; --muted:#98a5c8; --accent:#7dd3fc; --hot:#fb7185; --warm:#fbbf24; --ok:#34d399; --line:#26345f; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans JP","Hiragino Sans",Meiryo,sans-serif; background:linear-gradient(135deg,#070b16,#111936 48%,#0b1020); color:var(--text); }
+    main { max-width:1120px; margin:0 auto; padding:32px 20px 56px; }
+    header { border:1px solid var(--line); background:rgba(17,25,54,.88); border-radius:22px; padding:28px; box-shadow:0 18px 48px rgba(0,0,0,.35); }
+    h1 { margin:0 0 10px; font-size:30px; letter-spacing:.02em; }
+    h2 { margin:30px 0 14px; font-size:21px; }
+    h3 { margin:0 0 8px; font-size:17px; }
+    p, li { line-height:1.72; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .meta { color:var(--muted); font-size:14px; }
+    .thesis { margin-top:18px; padding:16px 18px; border-left:4px solid var(--accent); background:#0c1530; border-radius:12px; font-size:16px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .card { border:1px solid var(--line); background:rgba(17,25,54,.82); border-radius:18px; padding:18px; }
+    .signal { border:1px solid var(--line); background:rgba(17,25,54,.78); border-radius:18px; padding:18px; margin:14px 0; }
+    .badge { display:inline-block; padding:3px 9px; border-radius:999px; font-size:12px; font-weight:700; margin-right:7px; }
+    .hot { background:rgba(251,113,133,.16); color:#fecdd3; border:1px solid rgba(251,113,133,.45); }
+    .warm { background:rgba(251,191,36,.15); color:#fde68a; border:1px solid rgba(251,191,36,.45); }
+    .mid { background:rgba(125,211,252,.14); color:#bae6fd; border:1px solid rgba(125,211,252,.42); }
+    .ok { background:rgba(52,211,153,.14); color:#bbf7d0; border:1px solid rgba(52,211,153,.42); }
+    .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .small { color:var(--muted); font-size:13px; }
+    table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:14px; }
+    th,td { border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top; }
+    th { color:#c7d2fe; background:#111a3a; }
+    .footer { margin-top:28px; color:var(--muted); font-size:13px; }
+    .update-note { color:#fde68a; }
+    @media (max-width:850px){ .grid,.cols{ grid-template-columns:1fr; } h1{font-size:25px;} }
+  </style>
+<style id="mobile-readability">
+@media (max-width: 720px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body { font-size: 16px !important; line-height: 1.78 !important; overflow-wrap: anywhere; }
+  .container, .wrap { width: 100% !important; max-width: none !important; padding: 16px 12px 40px !important; }
+  header, .hero { margin: 0 0 16px !important; padding: 16px 12px !important; border-radius: 0 !important; box-shadow: none !important; }
+  h1 { font-size: 28px !important; line-height: 1.22 !important; letter-spacing: 0 !important; }
+  h2, .section-title { margin-top: 24px !important; font-size: 21px !important; line-height: 1.3 !important; }
+  h3 { font-size: 18px !important; line-height: 1.45 !important; }
+  p, li, dt, dd { font-size: 16px !important; }
+  .sub, .subtitle, .mini, .footer, footer { font-size: 13px !important; line-height: 1.65 !important; }
+  .grid, .meta-grid, .kvs { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+  .card, .signal, .meta-card, .thesis, .caveat { margin: 12px 0 !important; padding: 14px 12px !important; border-radius: 8px !important; box-shadow: none !important; }
+  .signal-head { display: block !important; }
+  .heat, .badge, .rank { display: inline-flex !important; align-items: center !important; max-width: 100% !important; margin: 6px 6px 2px 0 !important; white-space: normal !important; line-height: 1.35 !important; }
+  dl { display: block !important; margin-top: 12px !important; }
+  dt { margin-top: 12px !important; font-weight: 700 !important; }
+  dd { margin: 2px 0 0 !important; }
+  .sources { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; }
+  .sources a, .source-list a { display: block !important; padding: 9px 10px !important; border-radius: 8px !important; }
+  .table { display: block !important; width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>中国AI・テックニュースウォッチ <span class="meta">2026-06-13 v2</span></h1>
+    <div class="meta">取得時刻: 14:48 UTC / 対象: 中国語圏の公開ニュース・検索スニペット中心 / <span class="update-note">v2: 12:01版を refresh、HDC 2026 / 智源大会 / 融资集中シグナルを追加</span></div>
+    <div class="thesis"><strong>今日の読み（v2）:</strong> 6月13日の中国AIは3レイヤーが同時に動いている。<strong>(1) 資本</strong> — 36氪によれば DeepSeek 450億USD・月之暗面 200億USD が同日に報道され、「国家队进场 + 产业资本加码」の二大モデルが成立。<strong>(2) OS / エージェント基盤</strong> — Huawei HDC 2026 で HarmonyOS 7 が Agent 亲和架构を掲げ、鸿蒙电脑 × JetBrains 系 IDE 適配を発表。<strong>(3) ガバナンス・認知</strong> — 财新は AI 時代の「語料投毒」「PR 黒産業」を警告。モデル性能・資本・OS・信頼性治理が同時にはしる「2026年の中旬」になっている。</div>
+  </header>
+
+  <section class="grid">
+    <div class="card"><h3>资本 / 融资</h3><p><span class="badge hot">高</span>DeepSeek 450亿USD / 月之暗面 200亿USD</p><p class="small">36氪本日（35分前表示）。国家队 + 产业资本の二大巨頭が同日シグナル。</p></div>
+    <div class="card"><h3>OS / 智能体</h3><p><span class="badge hot">高</span>HarmonyOS 7 / 鸿蒙 AI</p><p class="small">HDC 2026（6/12-14 東莞松山湖）。Agent亲和架构・盘古内核・鸿蒙电脑IDE。</p></div>
+    <div class="card"><h3>治理论</h3><p><span class="badge warm">中</span>AI 语料投毒 / 公关黑产</p><p class="small">财新 6/13 「财报AI解读被投毒」。AI時代の新型认知污染。</p></div>
+  </section>
+
+  <h2>Top signals</h2>
+
+  <article class="signal">
+    <h3>1. 36氪: 国产大模型「同日 450億 + 200億」の二大融资</h3>
+    <p><span class="badge hot">Impact: High</span><span class="badge warm">信頼度: 中（36氪検索スニペット、35分前表示）</span></p>
+    <ul>
+      <li><strong>中国語キーワード:</strong> 国产大模型、融资、估值、国家集成电路产业投资基金、大基金、LatePost、月之暗面、DeepSeek</li>
+      <li><strong>何が起きているか:</strong> 36氪は本日「同一天，两个中国大模型巨头，一个450亿，一个200亿」と報道。記事要旨は「国家集成电路产业投资基金（俗称大基金）が DeepSeek と首轮融资交渉中、估值直奔 450億USD」「LatePost 独家で月之暗面が 20億USD 融资をほぼ完了し、投后估值 200億USD 突破」と説明。「国家队进场 + 产业资本加码」の二大パターンが並走。</li>
+      <li><strong>なぜ重要か:</strong> 2025年の「百模大战」から 2026年は「资本集中 + 上場/回A 期待 + 国資・産業資本結合」へフェーズ移行のシグナル。DeepSeek は個人出資（梁文峰）が 200億元規模・本輪40%という報道も別にあり（陀螺科技）、創業者のコミットメントと外部資本の組み合わせ方が新段階に入っている。</li>
+      <li><strong>根拠リンク:</strong> <a href="https://36kr.com/p/3799097625926917" target="_blank" rel="noopener noreferrer">36氪「估值暴涨，国产大模型加速融资」</a> / <a href="https://www.tuoluo.cn/article/detail-10128689.html" target="_blank" rel="noopener noreferrer">陀螺科技「DeepSeek突传重磅：梁文峰出資200亿，V4.1定档6月」</a> / <a href="https://m.mp.oeeee.com/a/BAAFRD0000202605061585477.html" target="_blank" rel="noopener noreferrer">南方都市報「国资被曝领投DeepSeek首轮融资」</a></li>
+      <li><strong>明日以降の確認:</strong> 36氪原文の投資家名簿・上場のスケジュール・梁文峰出資の真正性を確認。月之暗面の引受先（美团龙珠 / 中国移动 / CPE 源峰）の最新構成も追跡。</li>
+    </ul>
+  </article>
+
+  <article class="signal">
+    <h3>2. 36氪: 「大模型清场前夜」— 上位3社に资本が集中</h3>
+    <p><span class="badge hot">Impact: High</span><span class="badge warm">信頼度: 中（36氪、15時間前表示）</span></p>
+    <ul>
+      <li><strong>中国語キーワード:</strong> 大模型清场、AI 模型层、单轮融资、智谱、MiniMax、月之暗面、OpenRouter</li>
+      <li><strong>何が起きているか:</strong> 36氪の別記事は「2025年、AIモデル層公司は全年22笔投资・94億元、前年比 -52.9%。大模型融资比率は2024年の51%から14%へ急落。単轮>20億元は 智谱 / MiniMax / 月之暗面 の3社のみ。2026年5月の三笔70億USD 集中落地は『钱不是在流向行业，是在流向最后几个玩家』の表れ」と整理。</li>
+      <li><strong>なぜ重要か:</strong> シグナル1の DeepSeek 450億/月之暗面 200億報道と地続きのストーリー。「投資は淘汰戦を前提にしている」ことが、報道側にもコンセンサスになりつつある。中国AIは2026年中旬から「勝者3〜4社 + 失败組の整理」が本格化する可能性。</li>
+      <li><strong>根拠リンク:</strong> <a href="https://36kr.com/p/3802258052096004" target="_blank" rel="noopener noreferrer">36氪「大模型清场前夜」</a></li>
+      <li><strong>見方:</strong> 1) 港股上場の MiniMax / 智谱、2) DeepSeek、3) 月之暗面、4) 阶跃星辰 の「Tier 1」と、5) 6小虎の残り（百川・零一万物など）の扱いが今後数か月の焦点。</li>
+    </ul>
+  </article>
+
+  <article class="signal">
+    <h3>3. Huawei HDC 2026: HarmonyOS 7 が「AI 智能体 OS」方向を打ち出し</h3>
+    <p><span class="badge hot">Impact: High</span><span class="badge warm">信頼度: 中高（IT之家公式動静・複数記事）</span></p>
+    <ul>
+      <li><strong>中国語キーワード:</strong> HDC 2026、HarmonyOS 7、鸿蒙 AI、Agent 亲和架构、盘古大模型、小艺智慧大脑、鸿蒙电脑、JetBrains IDE</li>
+      <li><strong>何が起きているか:</strong> HDC 2026（6/12-14 東莞松山湖）の主題演説で HarmonyOS 7 Developer Beta が発表。Agent 亲和架构・星盾安全・星河互联を三本柱に、システム内核に盘古大模型を埋込、性能+15%。生態指標は「设备 6,600万+、应用 40万+、开发者 1,100万+」。鸿蒙电脑向け主流 IDE 上架・JetBrains 系 IDE 适配が開発者側最大の関心事。正式版は今秋、Mate 90 シリーズと同時搭載予定。</li>
+      <li><strong>なぜ重要か:</strong> Apple / Google との OS 競争が「アプリ数」から「エージェントがOS機能・アプリ・端末を横断できるか」へ移行。中国国産 OS が「端侧AI + 智能体生态」を一体で語る流れが、Huawei を頂点として具体化。鸿蒙电脑向け IDE 适配は「鸿蒙 PC を日次開発環境として成立させる」ための布石。</li>
+      <li><strong>根拠リンク:</strong> <a href="https://www.ithome.com/0/963/618.htm" target="_blank" rel="noopener noreferrer">IT之家「HDC 2026 開幕，HarmonyOS 7 全新亮相」</a> / <a href="https://www.ithome.com/0/963/668.htm" target="_blank" rel="noopener noreferrer">IT之家「鸿蒙 HarmonyOS 7 全新登场，主题演讲一文汇总」</a> / <a href="https://www.ithome.com/0/963/802.htm" target="_blank" rel="noopener noreferrer">IT之家「IntelliJ IDEA 確認適配鸿蒙电脑」</a> / <a href="https://www.ithome.com/zt/hdc2026" target="_blank" rel="noopener noreferrer">IT之家 HDC 2026 专题</a> / <a href="https://developer.huawei.com/consumer/cn/hdc/2026" target="_blank" rel="noopener noreferrer">Huawei HDC 2026 公式</a></li>
+      <li><strong>明日以降の確認:</strong> HarmonyOS 7 正式版の SDK / API 一覧、盘古内核と LLM 推論の統合方式、鸿蒙电脑の一般向け発売スケジュール。</li>
+    </ul>
+  </article>
+
+  <article class="signal">
+    <h3>4. 智源大会 2026（北京）: 「AI自進化・世界モデル」が中心テーマ</h3>
+    <p><span class="badge warm">Impact: Medium</span><span class="badge mid">信頼度: 中（複数媒体スニペット、6/12-13開催）</span></p>
+    <ul>
+      <li><strong>中国語キーワード:</strong> 智源大会、北京、中关村国際創新中心、世界模型、自進化、AI春晚、BAAI</li>
+      <li><strong>何が起きているか:</strong> 第八回北京智源大会が 6/12-13 に開催。業界では「AI界春晚」と称される年次イベント。今年の議論キーワードは「AI自进化」「世界模型」「下一物理状態予測」「AI智能体の次のフェーズ」。テーマパーク的に罗福莉（DeepSeek 系 / 現在の業界的論客）らが登壇。</li>
+      <li><strong>なぜ重要か:</strong> HDC（OS 側）と並ぶ「中国 AI の技術ロードマップ発信イベント」。世界モデル / 自進化 系は、米国の Yann LeCun 系路線（JEPA / 物理世界モデル）と相似で、テキスト LLM の次を狙う中国側の動きを映す。</li>
+      <li><strong>根拠リンク:</strong> <a href="https://www.qbitai.com/2026/05/424551.html" target="_blank" rel="noopener noreferrer">量子位「2026智源大会，看懂AI产业晴雨表」</a> / <a href="https://m.163.com/dy/article/KVAHD7ED0512B07B.html" target="_blank" rel="noopener noreferrer">網易科技「从山姆·奥特曼到罗福莉：AI春晚主角更替」</a></li>
+      <li><strong>注意:</strong> 網易科技記事は 6/12 のものを起点にしているため、智源大会本体の「公開 keynote 内容」は量子位・公式側の二次情報を確認する必要あり。</li>
+    </ul>
+  </article>
+
+  <article class="signal">
+    <h3>5. 财新: AI 時代の「語料投毒」「PR 黒産業」が新型認知汚染に</h3>
+    <p><span class="badge warm">Impact: Medium</span><span class="badge warm">信頼度: 中（财新 6/13 タイトル確認、全文未取得）</span></p>
+    <ul>
+      <li><strong>中国語キーワード:</strong> AI 投毒、语料库、广告投放、公关黑产、认知危机、法律规制、财报 AI 解读</li>
+      <li><strong>何が起きているか:</strong> 财新 6/13 付は「财报 AI 解读被投毒 法律规制待补牢」と題し、AI 時代の広告投放が PR 黒産業に操られ、語料庫が重複した虚偽内容で占拠される「新型认知危机」を論点化。RAG / 検索 / レポーティング系 LLM の信頼性に直結する話題。</li>
+      <li><strong>なぜ重要か:</strong> 中国 AI 産業の論点が「モデル性能」から「情報環境の信頼性」「検索汚染対策」「金融/広報コンプラ」へ拡大。企业広報・IR・監査・規制に直結するため、政策側からの介入リスクもある。</li>
+      <li><strong>根拠リンク:</strong> <a href="https://database.caixin.com/2026-06-13/102453820.html" target="_blank" rel="noopener noreferrer">财新「财报AI解读被投毒 法律规制待补牢」</a></li>
+      <li><strong>注意:</strong> 财新は一部有料/制限公開。今回は検索スニペット起点の中信頼シグナルとして扱う。</li>
+    </ul>
+  </article>
+
+  <article class="signal">
+    <h3>6. 背景シグナル: 中国 AI 大模型 周调用量 6 週連続米国超え</h3>
+    <p><span class="badge warm">Impact: Medium</span><span class="badge ok">信頼度: 中（複数媒体、6/8 で 5 日超）</span></p>
+    <ul>
+      <li><strong>中国語キーワード:</strong> OpenRouter、周调用量、Token、DeepSeek、MiniMax、Qwen3.7-Max</li>
+      <li><strong>何が起きているか:</strong> 6/8 報道では、OpenRouter データで 6/1-7 のグローバル大模型総调用量 36.1万亿Token（+13.5%）、中国モデル周调用量 14.19万亿Token（+27.49%）、6 週連続で米国超え。IT之家は「DeepSeek-V4-Flash 1位、MiniMax M3 が新モデルとして初週3位、Qwen3.7-Max の AI 编程能力は Claude Opus 4.6 超え」と伝えた。</li>
+      <li><strong>なぜ重要か:</strong> シグナル1の資金調達ニュースの背景にある「実利用の伸び」を裏付けるデータ。投資家の強気材料になっている可能性が高い。DeepSeek / MiniMax / Qwen の API / ルーティング利用が継続拡大していることは、海外 OpenRouter 経由でも可視化されている。</li>
+      <li><strong>根拠リンク:</strong> <a href="https://www.ithome.com/0/961/274.htm" target="_blank" rel="noopener noreferrer">IT之家「中国 AI 大模型周调用量连续六周超越美国」</a> / <a href="https://stock.jrj.com.cn/2026/06/08104757376002.shtml" target="_blank" rel="noopener noreferrer">金融界「中国AI大模型调用量连续六周领跑」</a></li>
+      <li><strong>日付注記:</strong> 6/8 ソース。3 日以内ではないため背景扱い。</li>
+    </ul>
+  </article>
+
+  <h2>Platform read</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>業界メディア</h3>
+      <p>36氪は「融资 / 清场 / 産業資本」の資本側を、量子位は技術大会（智源）を、IT之家は HDC 2026 を、财新は治理側を分担。AI の論点が「モデル性能」から「資本配分 / OS 基盤 / ガバナンス」へ確実に拡張している。</p>
+    </div>
+    <div class="card">
+      <h3>公式 / イベント</h3>
+      <p>Huawei HDC 2026（6/12-14）、智源大会 2026（6/12-13）が並行開催。両イベントとも「OS × AI」「世界モデル × 自進化」と方向性が違い、中国 AI の二大ナラティブが同時期に発信された構図。</p>
+    </div>
+    <div class="card">
+      <h3>WeChat / 知乎 / 小红書</h3>
+      <p>今回は公開検索で鮮度・関連度の高い一次記事を十分に取れず。スニペット起点の低信頼シグナルとして扱い、プラットフォーム全体の流行とは断定していない。</p>
+    </div>
+    <div class="card">
+      <h3>海外英語圏</h3>
+      <p>SCMP / Techmeme 系は HarmonyOS 7 + 2,000+ AI agents を「Apple 対抗」と読む論調。中国国内報道（HDC）と海外受け止めの差分、DeepSeek 450億USD 報道が米側ファンド見立てにどう効くかを継続追跡。</p>
+    </div>
+  </div>
+
+  <h2>Watchlist for tomorrow</h2>
+  <table>
+    <thead><tr><th>対象</th><th>見るべき問い</th><th>検索語</th></tr></thead>
+    <tbody>
+      <tr><td>大模型 融资</td><td>DeepSeek 450億USD 報道の真偽・投資家・梁文峰 200億出捐のスキーム。月之暗面 200億USD の引受先構成。</td><td>DeepSeek 450亿 / 大基金 DeepSeek / 月之暗面 20亿 美团龙珠 / 月之暗面 投后估值</td></tr>
+      <tr><td>HarmonyOS 7</td><td>2,000+ AI agents は SDK / API としてどう公開されるか、鸿蒙电脑の一般発売と IDE 适配の進捗。</td><td>HarmonyOS 7 SDK / 鸿蒙电脑 JetBrains / HDC 2026 Agent API</td></tr>
+      <tr><td>智源大会 2026</td><td>世界モデル / 自進化の keynote 詳細、BAAI の次期モデル・標準化提案の有無。</td><td>智源大会 2026 世界模型 / BAAI 自进化 / 罗福莉 智源</td></tr>
+      <tr><td>AI 治理</td><td>财新「投毒」記事を受けた、平台 / 监管 / 企業の対応。RAG 信頼性スコアや水印技術の議論。</td><td>AI 语料投毒 / 公关黑产 / RAG 汚染 / 财报 AI 解读</td></tr>
+      <tr><td>调用量シグナル</td><td>6/8 週次 OpenRouter データの最新週更新、DeepSeek-V4-Flash / MiniMax M3 / Qwen3.7-Max の順位変動。</td><td>OpenRouter 周调用量 6月 / DeepSeek-V4-Flash / Qwen3.7-Max</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Sources checked</h2>
+  <ul>
+    <li><a href="https://36kr.com/p/3799097625926917" target="_blank" rel="noopener noreferrer">36氪「估值暴涨，国产大模型加速融资」</a> — 検索スニペット、本日 35 分前表示。</li>
+    <li><a href="https://36kr.com/p/3802258052096004" target="_blank" rel="noopener noreferrer">36氪「大模型清场前夜」</a> — 15 時間前表示。</li>
+    <li><a href="https://www.tuoluo.cn/article/detail-10128689.html" target="_blank" rel="noopener noreferrer">陀螺科技「DeepSeek突传重磅：梁文峰出資200亿，V4.1定档6月」</a></li>
+    <li><a href="https://m.mp.oeeee.com/a/BAAFRD0000202605061585477.html" target="_blank" rel="noopener noreferrer">南方都市報「国资被曝领投DeepSeek首轮融资」</a></li>
+    <li><a href="https://www.ithome.com/0/963/618.htm" target="_blank" rel="noopener noreferrer">IT之家「HDC 2026 開幕，HarmonyOS 7 全新亮相，鸿蒙生态驶入高速增长快车道」</a> — 1 日前。</li>
+    <li><a href="https://www.ithome.com/0/963/668.htm" target="_blank" rel="noopener noreferrer">IT之家「鸿蒙 HarmonyOS 7 全新登场，HDC 2026 主题演讲一文汇总」</a> — 1 日前。</li>
+    <li><a href="https://www.ithome.com/0/963/802.htm" target="_blank" rel="noopener noreferrer">IT之家「IntelliJ IDEA 確認適配华为鸿蒙电脑」</a> — 検索スニペット、7 時間前表示。</li>
+    <li><a href="https://www.ithome.com/0/963/548.htm" target="_blank" rel="noopener noreferrer">IT之家「HDC 2026 重磅发布：HarmonyOS 7 Beta 携三大硬核技术亮相」</a> — 1 日前。</li>
+    <li><a href="https://www.ithome.com/zt/hdc2026" target="_blank" rel="noopener noreferrer">IT之家 HDC 2026 专题</a></li>
+    <li><a href="https://developer.huawei.com/consumer/cn/hdc/2026" target="_blank" rel="noopener noreferrer">Huawei HDC 2026 公式</a></li>
+    <li><a href="https://www.qbitai.com/2026/05/424551.html" target="_blank" rel="noopener noreferrer">量子位「2026智源大会，看懂AI产业晴雨表」</a> — 智源大会プレビュー、5 月。</li>
+    <li><a href="https://m.163.com/dy/article/KVAHD7ED0512B07B.html" target="_blank" rel="noopener noreferrer">網易科技「从山姆·奥特曼到罗福莉：AI春晚主角更替」</a> — 智源大会 6/12-13 起点のまとめ記事。</li>
+    <li><a href="https://database.caixin.com/2026-06-13/102453820.html" target="_blank" rel="noopener noreferrer">财新「财报AI解读被投毒 法律规制待补牢」</a> — 6/13、検索スニペット。</li>
+    <li><a href="https://www.ithome.com/0/961/274.htm" target="_blank" rel="noopener noreferrer">IT之家「中国 AI 大模型周调用量连续六周超越美国」</a> — 6/8、背景扱い。</li>
+    <li><a href="https://stock.jrj.com.cn/2026/06/08104757376002.shtml" target="_blank" rel="noopener noreferrer">金融界「中国AI大模型调用量连续六周领跑」</a> — 6/8、背景扱い。</li>
+  </ul>
+
+  <div class="footer">
+    Method note: この環境では <code>web_extract</code> が検索専用バックエンド設定のため、全文抽出ではなく公開検索結果・スニペットを中心に作成。3 日以内（6/10 以降）の情報を優先し、古いものは背景として明記した。WeChat / 知乎 / 小紅書はログイン・動的表示・検索ノイズがあるため、今回はプラットフォーム全体の傾向とは断定していない。<br>
+    Folder: <code>/workspace/share/china-news-watch/</code> — 日次レポートはこのフォルダに <code>YYYY-MM-DD-china-ai-news.html</code> で統一。最新は <code>latest.html</code> からリンク。
+  </div>
+</main>
+</body>
+</html>
+
