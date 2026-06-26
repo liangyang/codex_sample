@@ -188,8 +188,8 @@
   <div class="meta-grid">
     <div class="meta-card"><div class="k">巡回ソース</div><div class="v">14メディア</div></div>
     <div class="meta-card"><div class="k">Top signals</div><div class="v">5本 (Hot 3 / Warm 2)</div></div>
-    <div class="meta-card"><div class="k">取得方式</div><div class="v">検索スニペット中心 (web_extract 不可)</div></div>
-    <div class="meta-card"><div class="k">知識ベース</div><div class="v">/workspace/share/china-ai-kb/</div></div>
+    <div class="meta-card"><div class="k">取得方式</div><div class="v">検索スニペット中心 (本文抽出 不可)</div></div>
+    <div class="meta-card"><div class="k">知識ベース</div><div class="v">公開アーカイブ</div></div>
   </div>
 </header>
 
@@ -351,7 +351,7 @@
 </div>
 
 <div class="caveat">
-  <strong>取得方法メモ:</strong> 本レポートは <code>web_extract</code> バックエンドが search-only のため、<strong>検索結果スニペット</strong> を主要情報源にしています。複数ソースで同一事実が一致する項目は信頼度高、単一ソースのみの項目は中〜低と表示しています。フルテキストが必要な場合は <code>web.extract_backend</code> を <code>firecrawl</code>/<code>tavily</code>/<code>exa</code>/<code>parallel</code> に切り替えて再実行してください。
+  <strong>取得方法メモ:</strong> 本レポートは <code>本文抽出</code> バックエンドが search-only のため、<strong>検索結果スニペット</strong> を主要情報源にしています。複数ソースで同一事実が一致する項目は信頼度高、単一ソースのみの項目は中〜低と表示しています。フルテキストが必要な場合は <code>web.extract_backend</code> を <code>firecrawl</code>/<code>tavily</code>/<code>exa</code>/<code>parallel</code> に切り替えて再実行してください。
 </div>
 
 <h2>Sources checked <span class="sub" style="font-weight:400; color: var(--muted);">— 全リンクはクリック可</span></h2>
@@ -388,14 +388,10 @@
   <li><a href="https://af.net/realtime/deepseek-secures-7-4-billion-in-landmark-series-a-to-lead-chinas-ai-revolution/" target="_blank" rel="noopener noreferrer">af.net: DeepSeek Secures $7.4 Billion in Landmark Series A (2026-06-03)</a></li>
 </ul>
 
-<footer>
-  生成: Hermes Agent (china-trend-intelligence + trend-intelligence-reports スキル) / 2026-06-16 / 
-  保存先: <code>/workspace/share/china-news-watch/2026-06-16-china-ai-news.html</code><br>
-  知識ベース: <code>/workspace/share/china-ai-kb/</code> (本日触れたエンティティ: Qwen / 阿里巴巴 / 智谱 / GLM-5.2 / 理想汽车 / 具身智能 / IT桔子 / DeepSeek)<br>
-  比較ポジション: 「AIエージェント + 中国トレンドOS」の統合ワークフローとして、Codex/Claude でも類似の巡回スクリプトは書ける。本価値は再現性・統合・カスタマイズ性。
-</footer>
+<footer>AI News Watch / 公開情報ベースの要約。投資・法務・事業判断では一次情報を確認してください。</footer>
 
 </div>
 </body>
 </html>
+
 

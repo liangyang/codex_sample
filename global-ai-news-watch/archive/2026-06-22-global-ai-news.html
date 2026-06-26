@@ -44,7 +44,7 @@
       <div class="meta">
         <span class="pill">日付基準: JST 2026-06-22</span>
         <span class="pill">作成時刻: 07:10 JST以降</span>
-        <span class="pill">抽出なし: web_extract未使用</span>
+        <span class="pill">抽出なし: 本文抽出未使用</span>
         <span class="pill">信頼度表示: 公式検索スニペット / 検索スニペット / 要追跡</span>
       </div>
     </section>
@@ -53,7 +53,7 @@
       <div class="card">
         <h2>今日の読み</h2>
         <p class="read"><strong>「モデル発表」よりも、AIを組織で運用するための課金・監査・政策・人材移動が前面に出た日。</strong> GitHub Copilotはユーザー単位のAI Credits可視化をAPIに追加し、Claude Codeの利用制限バグやAnthropicのモデル輸出規制議論は、agentic AIが“使える”段階から“統制する”段階へ移ったことを示す。DeepMind→Anthropicの大型人材移動は、基盤モデル競争が科学AI・コーディング・安全保障の境界で再編されているサイン。</p>
-        <div class="caveat"><strong>信頼度 caveat:</strong> このcron実行ではweb_extractを使わず、検索結果スニペットとURLのみで照合した。公式ドメインに出ている項目も本文未読のため「公式検索スニペット」として扱う。資金額・評価額・性能順位・チップ数量は、公式または複数信頼ソースで確認できない限り断定していない。</div>
+        <div class="caveat"><strong>信頼度 caveat:</strong> このcron実行では本文抽出を使わず、検索結果スニペットとURLのみで照合した。公式ドメインに出ている項目も本文未読のため「公式検索スニペット」として扱う。資金額・評価額・性能順位・チップ数量は、公式または複数信頼ソースで確認できない限り断定していない。</div>
       </div>
       <aside class="card">
         <h2>Theme heat</h2>
@@ -198,8 +198,9 @@
       </ol>
     </section>
 
-    <p class="foot">Generated for Hermes scheduled global AI news watch. Evidence basis: web_search snippets only; no web_extract, no terminal network fetch, no Python requests.</p>
+    <p class="footer">AI News Watch / 公開情報ベースの要約。投資・法務・事業判断では一次情報を確認してください。</p>
   </main>
 </body>
 </html>
+
 
