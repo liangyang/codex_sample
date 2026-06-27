@@ -286,8 +286,8 @@ footer {
 
 @media (min-width: 720px) {
   .links { grid-template-columns: 1fr 1fr; }
-  .latest-grid { grid-template-columns: repeat(3, 1fr); }
-  .archive-links { grid-template-columns: repeat(3, 1fr); }
+  .latest-grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+  .archive-links { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
   .topnav { grid-template-columns: 1fr 1fr; }
   .list { grid-template-columns: 1fr 1fr; }
 }

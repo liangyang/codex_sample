@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly AI Brief — 2026-06-27</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main>
+<header>
+  <div class="meta">Weekly synthesis / JST 2026-06-27</div>
+  <h1>Weekly AI Brief</h1>
+  <div class="sub">日次ニュースと開発者向け記事を統合し、週末に読む「今週のAI地図」として整理します。</div>
+</header>
+
+<section class="note"><strong>このページについて:</strong> 中国AI、世界AI、Developer Readsを統合し、出来事の網羅ではなく、来週も効く構造変化だけを残します。対象は主に 2026-06-21 から 2026-06-27 午前JSTまでの公開情報です。</section>
+
+<section class="summary">
+  <ol>
+    <li>今週のAIは、モデル性能そのものより、agent運用、開発者ツール、推論・電力インフラへ焦点が移った。</li>
+    <li>中国AIは、DeepSeekの人材・資本、政策による需要創出、モデル蒸留をめぐる緊張が主な読み筋になった。</li>
+    <li>開発者向けには、MCP、worktree、Copilot、CI並列化など、agentを現場で回すための足回りが重要だった。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>今週のTop Themes</h2>
+  <article class="signal high">
+    <h3>1. Agentsは「使えるか」から「運用できるか」へ</h3>
+    <div class="badges"><span class="badge good">根拠: 公式発表 + 開発者記事</span><span class="badge">領域: Agents / Coding Agents</span></div>
+    <p>OpenAI、Anthropic、GitHub周辺の動きは、agentを個人チャットではなく、権限、監査、ワークツリー、レビュー、CIと一体で運用する方向へ寄っている。</p>
+  </article>
+
+  <article class="signal high">
+    <h3>2. AIインフラはGPU単体から、CPU、推論、電力、冷却へ広がった</h3>
+    <div class="badges"><span class="badge warn">根拠: 公式発表 + 主要報道</span><span class="badge">領域: Infrastructure</span></div>
+    <p>QualcommのModular買収、Microsoftの電力・冷却戦略、NVIDIA/AWSの推論・検索基盤は、AI競争の制約がモデルだけではないことを示している。</p>
+  </article>
+
+  <article class="signal mid">
+    <h3>3. 中国AIは資本、政策、セキュリティ需要が前面化</h3>
+    <div class="badges"><span class="badge warn">根拠: 主要報道 + 政府発表</span><span class="badge">領域: China AI</span></div>
+    <p>DeepSeekの採用・資金報道、北京の模型券、360の攻防AIは、中国AIがモデル単体競争から商用化と需要創出へ移っていることを示す。</p>
+  </article>
+
+  <article class="signal mid">
+    <h3>4. モデル利用と蒸留をめぐるガバナンスが強まった</h3>
+    <div class="badges"><span class="badge warn">根拠: 主要報道</span><span class="badge warn">扱い: 主張は継続確認</span><span class="badge">領域: Governance / Model IP</span></div>
+    <p>AnthropicとAlibabaをめぐる報道は、モデル調達やAPI利用で、利用規約、蒸留対策、監査可能性を早めに見る必要があることを示した。</p>
+  </article>
+</section>
+
+<section>
+  <h2>何が変わったか</h2>
+  <div class="read">
+    <ul>
+      <li><strong>新しく浮上:</strong> 開発者ツールの収益化と運用効率が、AI企業の実需を測る指標になった。</li>
+      <li><strong>重要度が上昇:</strong> AIインフラでは、GPU供給だけでなく、CPU、ランタイム、電力、水使用、冷却が論点になった。</li>
+      <li><strong>継続して重要:</strong> 中国AIは政策補助、国産算力、MaaS/API、資本市場を一体で見る必要がある。</li>
+      <li><strong>削ったもの:</strong> 単発の提携、細かい機能追加、数字だけが目立つ資金調達は、週の構造変化に効くものだけ残した。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>地域・用途別メモ</h2>
+  <div class="grid two">
+    <div class="mini-card"><strong>世界AI</strong><br>Qualcomm、Microsoft、GitHubの動きから、AI競争はモデル発表よりも実装・課金・インフラ制約へ移っている。</div>
+    <div class="mini-card"><strong>中国AI</strong><br>DeepSeek、北京模型券、360攻防AI、蒸留疑惑報道を、資本・政策・セキュリティ需要の地図として見る。</div>
+    <div class="mini-card"><strong>Developer Reads</strong><br>MCP、Copilot、worktree、code review、Actions並列化は、agent運用を実務に落とすための部品として重要。</div>
+    <div class="mini-card"><strong>Governance</strong><br>モデル利用、蒸留、データ境界、監査ログは、技術選定だけでなく調達・法務・セキュリティの論点になった。</div>
+  </div>
+</section>
+
+<section>
+  <h2>開発者への示唆</h2>
+  <div class="read">
+    <ul>
+      <li><strong>agent運用:</strong> リポジトリにagent向けREADME、テスト手順、権限、失敗時の人間介入ポイントを明文化する。</li>
+      <li><strong>MCP/API:</strong> 私設MCPは公開可否ではなく、認証、転送、監査ログを分離して設計する。</li>
+      <li><strong>AI coding:</strong> 低遅延モデル、深い推論モデル、レビューagentを用途別に分ける。</li>
+      <li><strong>CI/Infra:</strong> 並列化できるテスト・計測を洗い出し、待ち時間と総実行時間を分けて測る。</li>
+      <li><strong>調達:</strong> モデルの性能だけでなく、利用規約、蒸留対策、データ境界、監査可能性を確認する。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>来週のWatchlist</h2>
+  <ul>
+    <li>GitHub Copilot / Codex / Claude Code / Cursor の使い分けと課金モデル。</li>
+    <li>Qualcomm + Modular の統合、NVIDIA/AWS、Microsoftデータセンターの進捗。</li>
+    <li>DeepSeekの採用・資金・商用API、中国の模型券やMaaS需要創出。</li>
+    <li>AnthropicとAlibabaをめぐる報道の裏取り、各社の蒸留・モデル抽出対策。</li>
+    <li>OpenAI Developers、GitHub Changelog、Anthropic News、Microsoft/AWS/NVIDIA公式ブログ。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>確認方針</h2>
+  <div class="note">週刊では、日次レポートの7日分を主入力にし、土曜午前時点の公式発表・一次情報・主要報道を補助確認します。新規収集は週の構造理解を補強するものに限定し、単発ニュースの追加で網羅性を上げることはしません。</div>
+</section>
+
+<footer>公開情報ベースの整理です。重要な事業・投資・法務・実装判断では一次情報を確認してください。</footer>
+</main>
+</body>
+</html>
