@@ -119,6 +119,8 @@ code { overflow-wrap: anywhere; }
 }
 
 .links,
+.latest-grid,
+.archive-links,
 .list,
 .grid,
 .sources,
@@ -128,9 +130,12 @@ code { overflow-wrap: anywhere; }
 }
 
 .links { margin-top: 18px; }
+.latest-grid { margin-top: 10px; }
+.archive-links { margin-top: 10px; }
 .topnav { grid-template-columns: 1fr; margin: 16px 0 18px; }
 
 .card,
+.archive-link,
 .item,
 .topnav a {
   color: inherit;
@@ -144,7 +149,36 @@ code { overflow-wrap: anywhere; }
   background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
 }
 
+.primary-card {
+  min-height: 154px;
+  border-color: rgba(131, 199, 255, .38);
+}
+
+.archive-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 54px;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(19, 26, 35, .72);
+}
+
+.archive-link span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.archive-link strong {
+  color: var(--link);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
 .card:hover,
+.archive-link:hover,
 .item:hover,
 .topnav a:hover {
   border-color: var(--accent);
@@ -252,6 +286,8 @@ footer {
 
 @media (min-width: 720px) {
   .links { grid-template-columns: 1fr 1fr; }
+  .latest-grid { grid-template-columns: repeat(3, 1fr); }
+  .archive-links { grid-template-columns: repeat(3, 1fr); }
   .topnav { grid-template-columns: 1fr 1fr; }
   .list { grid-template-columns: 1fr 1fr; }
 }
