@@ -177,6 +177,19 @@ code { overflow-wrap: anywhere; }
   overflow-wrap: anywhere;
 }
 
+.cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin-top: 14px;
+  padding: 4px 10px;
+  border: 1px solid rgba(145, 208, 255, .36);
+  border-radius: 8px;
+  color: var(--link);
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .label,
 .date,
 .badge {
@@ -193,6 +206,7 @@ code { overflow-wrap: anywhere; }
 
 .label,
 .date,
+.badge.hot,
 .badge.good {
   color: #c7f7d9;
   background: rgba(120, 224, 170, .12);
