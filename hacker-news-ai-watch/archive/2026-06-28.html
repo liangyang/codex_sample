@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HN AI Watch — 2026-06-28</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main>
+<header>
+  <div class="meta">Last updated: 2026-06-28 15:45 JST</div>
+  <h1>HN AI Watch</h1>
+  <div class="sub">Hacker Newsで反応が強いAI/LLM/agent関連の投稿を、世界AIニュースと開発者視点の補助線として整理します。</div>
+</header>
+<nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
+  <a href="../../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
+  <a href="../latest.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">最新版を読む</a>
+</nav>
+
+<section class="note"><strong>このページについて:</strong> Hacker News公式APIとAlgolia APIで確認できる公開投稿をもとに、AIニュース本体ではなく「開発者が何に反応しているか」を読むためのメモです。コメント全文は保存せず、投稿タイトル、リンク、スコア、コメント数、読み筋だけを残します。</section>
+
+<section class="summary">
+  <ol>
+    <li>今日のHNでは、LLM推論高速化とローカル/ホスト型LLMのルーティングが最も実装寄りの強いシグナルです。</li>
+    <li>Anthropic関連の政府審査・アクセス制限・競合モデル報道はコメント数が多く、世界AIニュース側の補助材料になります。</li>
+    <li>agent周辺では、作業中Macの維持、tool callのローカルファイアウォール、scratchpadなど、運用の細部を埋める小物が目立ちます。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Top Signals</h2>
+
+  <article class="item high">
+    <h3>1. DSpark: speculative decoding accelerates LLM inference</h3>
+    <div class="badges"><span class="badge hot">751 pts</span><span class="badge">313 comments</span><span class="badge">カテゴリ: Inference / LLM Infra</span></div>
+    <p><strong>読み筋:</strong> DeepSeek系のspeculative decoding論文が大きく伸びています。HNでは、単なる新モデルよりも推論コストとレイテンシを下げる技術への反応が強い状態です。</p>
+    <p><strong>見るべき点:</strong> ベンチマーク条件、既存vLLM/TensorRT-LLM系との関係、実運用でのメモリ・スループットのトレードオフ。</p>
+    <div class="sources"><a href="https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf">DSpark paper</a><a href="https://news.ycombinator.com/item?id=48696585">HN discussion</a></div>
+  </article>
+
+  <article class="item high">
+    <h3>2. Asian AI startups launch Mythos-like models as Anthropic export ban drags on</h3>
+    <div class="badges"><span class="badge hot">209 pts</span><span class="badge">159 comments</span><span class="badge">カテゴリ: Frontier Models / Governance</span></div>
+    <p><strong>読み筋:</strong> Anthropicのモデルアクセス制限をめぐる話題に、アジア圏スタートアップの代替モデル報道が重なっています。HNでは政策・アクセス制限が開発者のモデル選択に直結する論点として扱われています。</p>
+    <p><strong>見るべき点:</strong> 報道ベースのため、モデル名、提供範囲、政府審査、実性能は一次情報で追跡が必要です。</p>
+    <div class="sources"><a href="https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/">TechCrunch</a><a href="https://news.ycombinator.com/item?id=48697958">HN discussion</a></div>
+  </article>
+
+  <article class="item high">
+    <h3>3. AMD Strix Halo RDMA Cluster Setup Guide</h3>
+    <div class="badges"><span class="badge hot">100 pts</span><span class="badge">18 comments</span><span class="badge">カテゴリ: Local LLM / GPU Infra</span></div>
+    <p><strong>読み筋:</strong> ローカルLLMや小規模クラスタ構築の実装メモとして注目されています。クラウドGPUだけでなく、手元/小規模環境で推論基盤を組む流れが続いています。</p>
+    <p><strong>見るべき点:</strong> RDMA構成の再現性、vLLM利用時の効果、個人/小規模チームで運用できる範囲。</p>
+    <div class="sources"><a href="https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes/blob/main/rdma_cluster/setup_guide.md">Setup guide</a><a href="https://news.ycombinator.com/item?id=48703258">HN discussion</a></div>
+  </article>
+
+  <article class="item mid">
+    <h3>4. Show HN: Adrafinil keeps a lid-closed Mac awake only while agents work</h3>
+    <div class="badges"><span class="badge warn">107 pts</span><span class="badge">71 comments</span><span class="badge">カテゴリ: Coding Agents / Workflow</span></div>
+    <p><strong>読み筋:</strong> AI agentが長時間ローカル作業する前提で、端末のスリープ制御まで実務課題になっています。小さいツールですが、agent運用が日常化しているサインです。</p>
+    <p><strong>見るべき点:</strong> ローカルagent実行時の電源、ロック、セキュリティ、失敗時の後片付け。</p>
+    <div class="sources"><a href="https://github.com/kageroumado/adrafinil">Adrafinil</a><a href="https://news.ycombinator.com/item?id=48701512">HN discussion</a></div>
+  </article>
+
+  <article class="item mid">
+    <h3>5. Wayfinder Router: deterministic routing between local and hosted LLMs</h3>
+    <div class="badges"><span class="badge warn">32 pts</span><span class="badge">1 comment</span><span class="badge">カテゴリ: Local LLM / Routing</span></div>
+    <p><strong>読み筋:</strong> すべてを高性能クラウドモデルに投げるのではなく、ローカルLLMとホスト型LLMを明示的に振り分ける設計が出ています。</p>
+    <p><strong>見るべき点:</strong> ルーティング条件の透明性、プライバシー境界、コスト制御、品質劣化時のフォールバック。</p>
+    <div class="sources"><a href="https://github.com/itsthelore/wayfinder-router">Wayfinder Router</a><a href="https://news.ycombinator.com/item?id=48704373">HN discussion</a></div>
+  </article>
+</section>
+
+<section>
+  <h2>Developer Signals</h2>
+  <div class="grid two">
+    <div class="mini-card"><h3>Cerberus</h3><p>AI agentのtool callをローカルで制御するファイアウォール。権限境界の小型実装として追跡。</p><div class="sources"><a href="https://github.com/Adirdabush1/cerberus">Project</a><a href="https://news.ycombinator.com/item?id=48704458">HN</a></div></div>
+    <div class="mini-card"><h3>Git-temp</h3><p>agent向けscratchpadをGit statusから分離する発想。作業ディレクトリ汚染の対策として実務的。</p><div class="sources"><a href="https://github.com/sebmellen/git-temp">Project</a><a href="https://news.ycombinator.com/item?id=48703875">HN</a></div></div>
+    <div class="mini-card"><h3>llama.cpp patch</h3><p>prompt processing TPSを上げるパッチ相談。小さな最適化が現場の待ち時間に直結する例。</p><div class="sources"><a href="https://news.ycombinator.com/item?id=48700782">HN discussion</a></div></div>
+    <div class="mini-card"><h3>Improved LLM-as-a-Judge</h3><p>評価手法の研究投稿。AI導入が進むほど、judge設計とバイアス管理が重要になる。</p><div class="sources"><a href="https://arxiv.org/abs/2606.27226">arXiv</a><a href="https://news.ycombinator.com/item?id=48704006">HN</a></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>世界AIニュースへの接続</h2>
+  <div class="read">
+    <ul>
+      <li>Anthropic / Mythos / Fable周辺は、モデル性能よりアクセス制限、政府審査、地域差が中心論点になっています。</li>
+      <li>Inference系の反応は、モデル発表後の次のボトルネックがコスト、レイテンシ、ローカル実行に移っていることを示します。</li>
+      <li>agent系のShow HNは、権限、ファイル管理、端末状態、tool call制御のような地味な運用課題を拾うのに向いています。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Caveat</h2>
+  <div class="note">HNのスコアやコメント数は取得時点の値です。HNは一次情報ではなく、開発者コミュニティの反応を見る補助ソースとして扱います。記事本文や論文の主張は、必ず元リンクで確認してください。</div>
+</section>
+
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main>
+</body>
+</html>
