@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Developer Reads - 2026-07-11</title>
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 <main>
@@ -14,8 +14,8 @@
   <div class="sub">AI開発者向けの公式・一次情報記事を、実装に役立つ形で整理する日次キュレーションです。</div>
 </header>
 <nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
-  <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
-  <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
+  <a href="../../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
+  <a href="../latest.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">最新版を読む</a>
 </nav>
 
 <section class="note"><strong>このページについて:</strong> AI企業・開発者プラットフォームの公式記事と一次情報だけを確認し、実装・設計・運用に直結するものだけを残します。今日は直近24〜48時間で高品質な新規発表が十分あったため、5本に絞って読む価値の高いものだけをまとめています。</section>
@@ -59,7 +59,7 @@
 
   <article class="signal high">
     <div class="badges">
-      <span class="badge good">Agents</span>
+      <span class="badge good">Infra</span>
       <span class="badge">2026-07-08</span>
     </div>
     <h3>Enterprise-managed OpenTelemetry export for VS Code and CLI</h3>
@@ -72,7 +72,20 @@
 
   <article class="signal high">
     <div class="badges">
-      <span class="badge good">Infra</span>
+      <span class="badge good">API</span>
+      <span class="badge">2026-07-10</span>
+    </div>
+    <h3>Add review cycles and time to adoption phases in the usage API</h3>
+    <p class="meta">出典: GitHub Changelog</p>
+    <p><strong>読む価値:</strong> Copilot usage metrics API に、レビュー初回までの時間と review cycle 数が増えました。AI adoption phase ごとにレビュー速度を追えるのがポイントです。</p>
+    <p><strong>開発者への示唆:</strong> AI 導入の効果を merge 数だけで見ると雑です。レビュー待ちが減ったか、反復回数が減ったかまで見ると、組織のボトルネックが見えます。</p>
+    <p><strong>試すなら:</strong> enterprise / org レポートを 1 回引き、各 phase の `avg_pull_requests_minutes_to_review` と `avg_pull_requests_review_cycles` を比較する。採用が進んだチームほどレビューが軽くなっているかを確認する。</p>
+    <p><a href="https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api/">原文を読む</a></p>
+  </article>
+
+  <article class="signal high">
+    <div class="badges">
+      <span class="badge good">Safety</span>
       <span class="badge">2026-07-10</span>
     </div>
     <h3>CodeQL 2.26.0 adds Kotlin 2.4.0 support and AI prompt injection detection</h3>
@@ -81,19 +94,6 @@
     <p><strong>開発者への示唆:</strong> AI 機能をプロダクトに入れるほど、プロンプト注入や SDK 経由の入力流入を静的解析で拾う価値が上がります。安全性はモデル側だけでなくコード側でも守る必要があります。</p>
     <p><strong>試すなら:</strong> まず `js/system-prompt-injection` の検出結果を確認し、OpenAI / Anthropic / Google GenAI SDK の入力経路を見直す。CodeQL の更新を CI に織り込む。</p>
     <p><a href="https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection/">原文を読む</a></p>
-  </article>
-
-  <article class="signal high">
-    <div class="badges">
-      <span class="badge good">API</span>
-      <span class="badge">2026-07-10</span>
-    </div>
-    <h3>Per-user states for multi-user budgets in the REST API</h3>
-    <p class="meta">出典: GitHub Changelog</p>
-    <p><strong>読む価値:</strong> 複数ユーザーの budget 消費を 1 つの REST API で一覧できるようになり、限界に近い人を素早く見つけられます。</p>
-    <p><strong>開発者への示唆:</strong> AI 利用の制御は、機能の導入だけでなく予算の可視化と介入が必要です。大きな組織ほど、個別 API 呼び出しの自前スクリプトから脱した方がよくなります。</p>
-    <p><strong>試すなら:</strong> multi-user budget の一覧を 1 回引き、使用率でフィルタして上位利用者を洗う。個人 override がある場合の表示も確認する。</p>
-    <p><a href="https://github.blog/changelog/2026-07-10-per-user-states-for-multi-user-budgets-in-the-rest-api/">原文を読む</a></p>
   </article>
 </section>
 
