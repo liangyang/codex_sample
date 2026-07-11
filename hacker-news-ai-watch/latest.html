@@ -1,100 +1,29 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HN AI Watch - 2026-07-10</title>
-<link rel="stylesheet" href="../assets/site.css">
-</head>
-<body>
-<main>
-<header>
-  <div class="meta">Last updated: 2026-07-10 16:33 JST</div>
-  <h1>HN AI Watch</h1>
-  <div class="sub">A daily developer-focused scan of AI, LLM, and agent threads on Hacker News.</div>
-</header>
-<nav class="topnav page-actions">
-  <a href="../index.html">Back to home</a>
-  <a href="index.html">HN AI Watch archive</a>
-</nav>
-
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HN AI Watch - 2026-07-11</title><link rel="stylesheet" href="../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-07-11 16:32 JST</div><h1>HN AI Watch</h1><div class="sub">A daily developer-focused scan of AI, LLM, and agent threads on Hacker News.</div></header>
+<nav class="topnav page-actions"><a href="../index.html">Back to home</a><a href="index.html">HN AI Watch archive</a></nav>
 <section class="note"><strong>About this page:</strong> Candidates were collected from the Hacker News official Firebase API and HN Algolia API across the last 48 hours, then filtered for HN reaction, implementation value, and connection to broader AI news. Treat HN as community signal; verify source claims at the original links.</section>
-
-<section class="summary">
-  <ol>
-    <li>GPT-5.6 dominated today's HN discussion, making model quality, token efficiency, pricing, migration risk, and production evals the primary developer questions.</li>
-    <li>Local and applied inference also drew substantial interest: GLM 5.2 on slow hardware, a bookkeeping benchmark, and a sub-second child-facing tutor all turn model claims into operational tests.</li>
-    <li>Agent infrastructure is moving closer to normal software engineering through repository-scale benchmarks, version-control semantics, filesystem interfaces, GPU checkpointing, and sandbox isolation.</li>
-  </ol>
+<section class="summary"><ol>
+<li>Apple's trade-secret lawsuit against OpenAI dominated new HN activity, raising practical questions about provenance, employee transitions, and evidence retention in fast-moving AI hardware teams.</li>
+<li>GPT-5.6 discussion shifted from launch reaction to testable claims: a mathematical proof and a multi-model app build-off both need independent, reproducible evaluation.</li>
+<li>Developers also focused on model lifecycle risk, local inference hardware, agent safety, and migration discipline rather than treating model access as permanent.</li>
+</ol></section>
+<section><h2>Top Signals</h2>
+<article class="item high"><h3>1. Apple sues OpenAI, accuses ex-employees of stealing trade secrets</h3><div class="badges"><span class="badge hot">947 pts</span><span class="badge">469 comments</span><span class="badge">Area: AI Hardware / Governance</span></div><p><strong>Signal:</strong> The strongest new thread concerns allegations that former Apple employees took confidential information to OpenAI. Multiple HN submissions covered the same event; this edition consolidates them around the highest-reaction discussion.</p><p><strong>Why read:</strong> Treat every allegation as unproven and verify against court filings or authoritative reporting. Engineering leaders should revisit source-code access, design-document provenance, offboarding, hiring attestations, and litigation holds without assuming ordinary repository controls cover hardware and research knowledge.</p><div class="sources"><a href="https://9to5mac.com/2026/07/10/apple-sues-openai-trade-secret-theft/">Original</a><a href="https://news.ycombinator.com/item?id=48865019">HN discussion</a></div></article>
+<article class="item high"><h3>2. GPT-5.6 Sol Ultra produces proof of the Cycle Double Cover Conjecture</h3><div class="badges"><span class="badge hot">433 pts</span><span class="badge">341 comments</span><span class="badge">Area: Frontier Models / Evals</span></div><p><strong>Signal:</strong> A claimed proof of a longstanding graph-theory conjecture generated intense discussion about what counts as model-generated discovery and how expert review should be documented.</p><p><strong>Why read:</strong> The proof is a source claim, not an established result from the HN title. Check the PDF, expert verification, dependencies, prompt and tool trace, and whether reviewers can reproduce each step before citing it as evidence of autonomous mathematical capability.</p><div class="sources"><a href="https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf">Original PDF</a><a href="https://news.ycombinator.com/item?id=48863490">HN discussion</a></div></article>
+<article class="item high"><h3>3. GPT-5.6, Grok 4.5, Claude, and Muse Spark build the same four apps</h3><div class="badges"><span class="badge hot">141 pts</span><span class="badge">81 comments</span><span class="badge">Area: Coding Models / Comparative Evals</span></div><p><strong>Signal:</strong> A same-task model comparison attracted attention because it exposes visible product differences rather than relying only on benchmark scores.</p><p><strong>Why read:</strong> Inspect prompts, tool permissions, retries, model versions, judging criteria, and cherry-picking risk in the original post. Reuse the methodology, not the ranking: run representative internal tasks and score correctness, maintainability, latency, token cost, and human repair time.</p><div class="sources"><a href="https://www.tryai.dev/blog/gpt-5.6-build-off-12-models">Original</a><a href="https://news.ycombinator.com/item?id=48865093">HN discussion</a></div></article>
+<article class="item high"><h3>4. Please don't discontinue Gemini 2.5 Flash</h3><div class="badges"><span class="badge hot">121 pts</span><span class="badge">80 comments</span><span class="badge">Area: Google / Model Lifecycle</span></div><p><strong>Signal:</strong> Developer pushback against a model retirement shows that stable behavior, cost, and latency can matter more than headline quality. The discussion is a reminder that hosted model identifiers are operational dependencies.</p><p><strong>Why read:</strong> Confirm Google's actual schedule and replacement guidance rather than inferring policy from the forum title. Pin model versions where possible, maintain regression suites and fallbacks, and budget time for behavior—not just API—migration.</p><div class="sources"><a href="https://discuss.ai.google.dev/t/please-dont-discontinue-gemini-2-5-flash/174246">Original</a><a href="https://news.ycombinator.com/item?id=48864507">HN discussion</a></div></article>
+<article class="item high"><h3>5. Building a real-time AI tutor for 5-year-olds</h3><div class="badges"><span class="badge hot">140 pts</span><span class="badge">393 comments</span><span class="badge">Area: Voice AI / Safety</span></div><p><strong>Signal:</strong> The discussion continued to grow sharply, showing how a claimed one-second interaction loop combines inference engineering with unusually high safety and evaluation stakes.</p><p><strong>Why read:</strong> Verify latency measurement and system design at the source. Child-facing systems need age-appropriate evaluation, content controls, privacy review, failure escalation, guardian visibility, and evidence that low latency does not suppress safety checks.</p><div class="sources"><a href="https://www.ello.com/blog/teaching-a-child-in-1000-ms">Original</a><a href="https://news.ycombinator.com/item?id=48852199">HN discussion</a></div></article>
 </section>
-
-<section>
-  <h2>Top Signals</h2>
-
-  <article class="item high">
-    <h3>1. GPT-5.6</h3>
-    <div class="badges"><span class="badge hot">1,213 pts</span><span class="badge">858 comments</span><span class="badge">Area: OpenAI / Frontier Models</span></div>
-    <p><strong>Signal:</strong> OpenAI's GPT-5.6 launch generated by far the strongest HN reaction in this scan. The thread is a high-volume view of developer expectations around capability gains, token efficiency, reliability, API availability, pricing, and whether the release justifies changing production defaults.</p>
-    <p><strong>Why read:</strong> Confirm model details in OpenAI's announcement rather than relying on the HN title or comments. Teams should run their own regression set, measure end-to-end cost and latency, and preserve rollback paths before migrating agent or coding workloads.</p>
-    <div class="sources"><a href="https://openai.com/index/gpt-5-6/">Original</a><a href="https://news.ycombinator.com/item?id=48849066">HN discussion</a></div>
-  </article>
-
-  <article class="item high">
-    <h3>2. Show HN: Getting GLM 5.2 running on my slow computer</h3>
-    <div class="badges"><span class="badge hot">579 pts</span><span class="badge">139 comments</span><span class="badge">Area: Local Inference / Open Models</span></div>
-    <p><strong>Signal:</strong> This implementation-focused Show HN attracted strong attention by making a current model usable on constrained hardware. The community reaction reflects persistent demand for local inference that trades peak throughput for privacy, control, and accessible deployment.</p>
-    <p><strong>Why read:</strong> Inspect the repository for quantization, memory, hardware, and performance assumptions before generalizing the result. The useful production exercise is to benchmark representative prompts on the weakest supported machine and document the quality/latency boundary.</p>
-    <div class="sources"><a href="https://github.com/JustVugg/colibri">Original</a><a href="https://news.ycombinator.com/item?id=48842459">HN discussion</a></div>
-  </article>
-
-  <article class="item high">
-    <h3>3. ChatGPT Work</h3>
-    <div class="badges"><span class="badge hot">335 pts</span><span class="badge">172 comments</span><span class="badge">Area: OpenAI / Knowledge Work</span></div>
-    <p><strong>Signal:</strong> OpenAI's product announcement drew substantial discussion about moving ChatGPT from isolated answers toward longer, higher-stakes work. The HN response is useful for spotting concerns around context, tool access, auditability, privacy, and how much operator control ambitious workflows require.</p>
-    <p><strong>Why read:</strong> Verify the exact features, access conditions, and data handling in the source. For teams evaluating it, define a bounded workflow and compare completion quality, traceability, and human review time against the current process.</p>
-    <div class="sources"><a href="https://openai.com/index/chatgpt-for-your-most-ambitious-work/">Original</a><a href="https://news.ycombinator.com/item?id=48849059">HN discussion</a></div>
-  </article>
-
-  <article class="item high">
-    <h3>4. Benchmarking coding agents on Databricks' multi-million line codebase</h3>
-    <div class="badges"><span class="badge hot">145 pts</span><span class="badge">66 comments</span><span class="badge">Area: Coding Agents / Evals</span></div>
-    <p><strong>Signal:</strong> A repository-scale coding-agent evaluation is more operationally relevant than small synthetic tasks. HN interest centers on how agents navigate large codebases, handle dependencies and tests, and whether benchmark methodology matches real engineering work.</p>
-    <p><strong>Why read:</strong> Review the task set, scoring, model settings, and human intervention rules in the original post. The transferable lesson is to build internal evals from actual repository changes and measure correctness, review burden, and regression risk together.</p>
-    <div class="sources"><a href="https://www.databricks.com/blog/benchmarking-coding-agents-databricks-multi-million-line-codebase">Original</a><a href="https://news.ycombinator.com/item?id=48837696">HN discussion</a></div>
-  </article>
-
-  <article class="item high">
-    <h3>5. GLM 5.2 is nearly as accurate as a human bookkeeper</h3>
-    <div class="badges"><span class="badge hot">199 pts</span><span class="badge">115 comments</span><span class="badge">Area: Applied Evals / Accounting</span></div>
-    <p><strong>Signal:</strong> This domain benchmark drew attention because it claims near-human performance on a concrete professional workflow. The discussion highlights the gap between attractive aggregate accuracy and the distribution of costly errors in regulated or financially sensitive work.</p>
-    <p><strong>Why read:</strong> Treat the headline as an unverified source claim until the dataset, rubric, baselines, and failure cases are inspected. Any deployment should retain deterministic checks, exception routing, audit logs, and qualified human approval.</p>
-    <div class="sources"><a href="https://toot-books.pages.dev/blog/glm-5-2-vat-benchmark">Original</a><a href="https://news.ycombinator.com/item?id=48850414">HN discussion</a></div>
-  </article>
-</section>
-
-<section>
-  <h2>Developer Signals</h2>
-  <div class="grid two">
-    <div class="mini-card"><h3>Show HN: FableCut, a browser video editor agents can drive</h3><p>90 pts / 58 comments. A concrete agent-facing UI signal: editable state, deterministic operations, and zero-dependency delivery may matter more than another conversational wrapper.</p><div class="sources"><a href="https://github.com/ronak-create/FableCut">Original</a><a href="https://news.ycombinator.com/item?id=48845422">HN</a></div></div>
-    <div class="mini-card"><h3>Building a real-time AI tutor for 5-year-olds</h3><p>81 pts / 115 comments. The claimed 1,000 ms interaction loop makes latency, safety, age-appropriate evals, and human oversight central product requirements.</p><div class="sources"><a href="https://www.ello.com/blog/teaching-a-child-in-1000-ms">Original</a><a href="https://news.ycombinator.com/item?id=48852199">HN</a></div></div>
-    <div class="mini-card"><h3>How version control will evolve for the agent boom</h3><p>47 pts / 61 comments. Moderate score but strong discussion: agent-generated work needs attribution, intent, review boundaries, and recovery semantics beyond a stream of commits.</p><div class="sources"><a href="https://entire.io/blog/how-version-control-will-evolve-for-the-agent-boom">Original</a><a href="https://news.ycombinator.com/item?id=48844709">HN</a></div></div>
-    <div class="mini-card"><h3>Files over tools: an agent with a virtual filesystem and bash</h3><p>31 pts / 7 comments. A low-reaction but practical architecture: stable file and shell primitives can simplify tool surfaces, though permissions and observability remain essential.</p><div class="sources"><a href="https://knock.app/blog/how-we-built-the-knock-agent-virtual-filesystem-and-bash">Original</a><a href="https://news.ycombinator.com/item?id=48845364">HN</a></div></div>
-    <div class="mini-card"><h3>Reverse-engineering Nvidia CUDA checkpointing</h3><p>18 pts / 3 comments. Small HN signal, high infrastructure relevance: GPU process restore could reduce cold-start penalties for elastic inference if compatibility and state integrity hold.</p><div class="sources"><a href="https://blog.doubleword.ai/what-happens-when-you-checkpoint-a-cuda-process">Original</a><a href="https://news.ycombinator.com/item?id=48845518">HN</a></div></div>
-    <div class="mini-card"><h3>How microVMs work, by building one in the browser</h3><p>15 pts / 0 comments. Early signal, but directly useful for understanding the isolation boundary behind agent sandboxes and the tradeoffs among startup time, compatibility, and containment.</p><div class="sources"><a href="https://builders.cortex.io/blog/sandboxing-agents-part-1/">Original</a><a href="https://news.ycombinator.com/item?id=48848783">HN</a></div></div>
-  </div>
-</section>
-
-<section>
-  <h2>World AI News Connection</h2>
-  <p>Today's HN scan connects a major frontier-model release with the engineering needed to make AI systems dependable. GPT-5.6 and ChatGPT Work are the platform events; local GLM deployment, bookkeeping and tutor benchmarks, and Databricks' repository-scale evaluation are the tests of whether headline capability survives real constraints.</p>
-  <p>The infrastructure threads point in the same direction: production agents need inspectable state, durable change history, simple interfaces, fast compute startup, and strong isolation. Model upgrades should therefore be evaluated as system changes, not leaderboard substitutions.</p>
-</section>
-
-<section class="note">
-  <h2>Caveat</h2>
-  <p>HN scores and comments can change after publication. Some source links are secondary reports, opinion posts, benchmarks from interested parties, or early-stage Show HN projects; verify original claims before citing them. This page intentionally summarizes the HN reaction and does not preserve comment text.</p>
-</section>
-
-</main>
-</body>
-</html>
+<section><h2>Developer Signals</h2><div class="grid two">
+<div class="mini-card"><h3>Unified memory and 70B local models</h3><p>71 pts / 55 comments. A practical hardware explainer highlights the difference between fitting a model and serving it quickly; validate memory bandwidth, quantization, context length, and sustained tokens per second.</p><div class="sources"><a href="https://vettedconsumer.com/unified-memory-explained-why-mini-pcs-can-run-70b-models-a-big-gpu-cant-and-where-they-slow-down/">Original</a><a href="https://news.ycombinator.com/item?id=48858171">HN</a></div></div>
+<div class="mini-card"><h3>Ask HN: Vim in the era of AI</h3><p>38 pts / 77 comments. Strong discussion relative to score suggests developers are still working out where agent assistance belongs in keyboard-centric workflows and which review boundaries preserve understanding.</p><div class="sources"><a href="https://news.ycombinator.com/item?id=48859439">HN discussion</a></div></div>
+<div class="mini-card"><h3>Prismata: confining prompt injection in web agents</h3><p>13 pts / 0 comments. Early HN reaction, but direct implementation value: web agents need explicit isolation boundaries for untrusted page content. Review the paper's threat model and compatibility costs.</p><div class="sources"><a href="https://arxiv.org/abs/2607.08147">Original</a><a href="https://news.ycombinator.com/item?id=48865238">HN</a></div></div>
+<div class="mini-card"><h3>Migrating a production agent to GPT-5.6</h3><p>7 pts / 0 comments. Low reaction but useful operational framing: model changes should be canaried against saved traces, latency and cost budgets, and rollback criteria.</p><div class="sources"><a href="https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6">Original</a><a href="https://news.ycombinator.com/item?id=48864950">HN</a></div></div>
+<div class="mini-card"><h3>Open-weight embedding model claim</h3><p>7 pts / 0 comments. A Show HN claims competitive embedding quality after training only 16M parameters. Validate datasets, leakage controls, retrieval tasks, dimensions, licenses, and serving cost.</p><div class="sources"><a href="https://huggingface.co/EximiusLabs/fusion-embedding-1-2b-preview">Original</a><a href="https://news.ycombinator.com/item?id=48854893">HN</a></div></div>
+<div class="mini-card"><h3>Agent memory strategy decision tree</h3><p>13 pts / 0 comments. A small early signal connecting memory design to workload shape. Test retention, retrieval quality, tenant isolation, deletion, and token cost before adopting a generic pattern.</p><div class="sources"><a href="https://machinelearningmastery.com/choosing-the-right-ai-agent-memory-strategy-a-decision-tree-approach/">Original</a><a href="https://news.ycombinator.com/item?id=48867261">HN</a></div></div>
+</div></section>
+<section><h2>World AI News Connection</h2><p>Today's HN reaction links frontier-model progress to the institutions around it. The proof and app-comparison threads ask how capability claims should be reproduced; the Apple lawsuit asks whether the people, artifacts, and evidence behind rapid AI development can be governed under competitive pressure.</p><p>The developer signals converge on lifecycle engineering. Hosted models disappear, local models hit bandwidth limits, agents ingest hostile web content, and upgrades alter cost and behavior. Production AI therefore needs provenance, versioning, evals, isolation, and rollback as first-class controls.</p></section>
+<section class="note"><h2>Caveat</h2><p>HN scores and comments can change after publication. Source links include allegations, company material, vendor benchmarks, preprints, forum posts, and early projects; verify original claims before citing them. This page summarizes community reaction and does not preserve comment text.</p></section>
+</main></body></html>
