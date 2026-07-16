@@ -9,7 +9,7 @@
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-07-16 07:07 JST</div>
+  <div class="meta">Last updated: 2026-07-16 07:09 JST</div>
   <h1>Developer Reads</h1>
   <div class="sub">Archived edition for JST 2026-07-16.</div>
 </header>
@@ -23,9 +23,9 @@
 
 <section class="summary">
   <ol>
-    <li>GitHub は PR と Copilot 内に安全性を寄せ、レビューの入口を前倒ししました。</li>
-    <li>OpenAI は GPT-Red で、自動レッドチーミングを安全性向上の反復に変えました。</li>
-    <li>NVIDIA は reasoning の改善を、trace と評価設計の問題として整理しました。</li>
+    <li>Google は grounding と prompt transpilation を前に出し、agent を運用しやすい部品へ分解しています。</li>
+    <li>Microsoft は Python の Agent Skills を安定化し、再利用できる能力パックを production API にしました。</li>
+    <li>GitHub は secret scanning と public monitoring を広げ、漏えい対策をより早い段階に寄せています。</li>
   </ol>
 </section>
 
@@ -34,54 +34,67 @@
 
   <article class="item high">
     <div class="badges">
-      <span class="badge good">Safety</span>
-      <span class="badge">Coding Agents</span>
+      <span class="badge good">Agents</span>
+      <span class="badge">Infra</span>
     </div>
-    <h3>Code scanning shows AI security detections on pull requests</h3>
-    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-14 JST</div>
-    <p><strong>読む価値:</strong> CodeQL ではまだ届かない言語やフレームワークまで、AI-powered security detections を PR 上で直接見られるようになりました。マージ前に見つける設計が明確です。</p>
-    <p><strong>開発者への示唆:</strong> これは代替ではなく補完です。既存の CodeQL、Dependabot、secret scanning の隙間を埋める軽量レイヤーとして使うのが筋です。</p>
-    <p><strong>試すなら:</strong> 1 つのアクティブ PR で有効化し、CodeQL の結果と並べて差分と取りこぼしを確認してください。</p>
-    <p><a href="https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests/">元記事</a></p>
+    <h3>Expanding Choice in Gemini Enterprise Agent Platform: Introducing Grounding with Parallel Web Search</h3>
+    <div class="meta">出典: Google Developers Blog / 公開日: 2026-07-16 JST</div>
+    <p><strong>読む価値:</strong> Gemini Enterprise Agent Platform に Parallel Web Systems の grounding provider が入り、リアルタイム検索結果に citations を付けて参照できるようになりました。事実確認が必要な agent に直結します。</p>
+    <p><strong>開発者への示唆:</strong> web grounding は「検索するかどうか」ではなく「どの provider を信頼し、どう証跡を残すか」の設計問題になっています。</p>
+    <p><strong>試すなら:</strong> KYC、情報収集、社内調査のような事例で、grounded result の citation を downstream の監査ログに残す流れを作ってみてください。</p>
+    <p><a href="https://developers.googleblog.com/en/expanding-choice-in-gemini-enterprise-agent-platform-introducing-grounding-with-parallel-web-search/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Agents</span>
+      <span class="badge">Workflow</span>
+    </div>
+    <h3>Building scalable AI agents with modular prompt transpilation</h3>
+    <div class="meta">出典: Google Developers Blog / 公開日: 2026-07-16 JST</div>
+    <p><strong>読む価値:</strong> 単一の巨大 prompt を分割し、skill files を transpile して build 時に検証する考え方です。agent の失敗を runtime ではなく build pipeline で潰す発想が実務向きです。</p>
+    <p><strong>開発者への示唆:</strong> agent の信頼性は prompt の美しさではなく、依存関係の明示、静的検証、CI 統合で決まります。</p>
+    <p><strong>試すなら:</strong> 既存の system prompt を instructions、policy、tooling、format などに分割し、欠落検出を CI に入れる最小構成を作ってみてください。</p>
+    <p><a href="https://developers.googleblog.com/building-scalable-ai-agents-with-modular-prompt-transpilation/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Agents</span>
+      <span class="badge">Tooling</span>
+    </div>
+    <h3>Evolving Spec-Driven Development: Conductor Now Supports Antigravity</h3>
+    <div class="meta">出典: Google Developers Blog / 公開日: 2026-07-16 JST</div>
+    <p><strong>読む価値:</strong> spec-driven development を Gemini CLI extension から plugin に進化させ、skills、rules、MCP servers、hooks をまとめて扱える形にしています。開発フローを会話に寄せつつ、成果物は version-controlled に保てます。</p>
+    <p><strong>開発者への示唆:</strong> agent まわりの運用は、会話ログよりも持続する markdown 資産をどう管理するかに移っています。</p>
+    <p><strong>試すなら:</strong> 仕様、計画、実装ルールを `spec.md` と `plan.md` に分け、AI ツールをまたいでも同じ source of truth で動くか確認してください。</p>
+    <p><a href="https://developers.googleblog.com/evolving-spec-driven-development-conductor-now-supports-antigravity/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Agents</span>
+      <span class="badge">SDK</span>
+    </div>
+    <h3>Agent Skills for Python Is Now Released</h3>
+    <div class="meta">出典: Microsoft Agent Framework / 公開日: 2026-07-15 JST</div>
+    <p><strong>読む価値:</strong> instructions、reference material、scripts をまとめた reusable skill を、stable な production API で扱えるようになりました。必要な時だけ load するので context を圧迫しません。</p>
+    <p><strong>開発者への示唆:</strong> agent の能力は巨大 prompt に閉じ込めず、チーム単位で再利用できる skill として配るのが自然です。</p>
+    <p><strong>試すなら:</strong> よく使う domain knowledge を 1 つ skill 化して、Python agent が必要時だけ読み込む構成に置き換えてみてください。</p>
+    <p><a href="https://devblogs.microsoft.com/agent-framework/agent-skills-for-python-is-now-released/">元記事</a></p>
   </article>
 
   <article class="item high">
     <div class="badges">
       <span class="badge good">Safety</span>
-      <span class="badge">Coding Agents</span>
+      <span class="badge">Infra</span>
     </div>
-    <h3>Security reviews now available in the GitHub Copilot app</h3>
-    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-14 JST</div>
-    <p><strong>読む価値:</strong> `/security-review` で、作業中の変更に対する脆弱性レビューを Copilot app 内から即時に回せます。重要なのは「後でスキャン」ではなく「作業中に直す」ことです。</p>
-    <p><strong>開発者への示唆:</strong> 安全性チェックが専用ツールから日常の編集フローへ入ってきています。コードレビューの前提が少し変わります。</p>
-    <p><strong>試すなら:</strong> ブランチ上の変更を開いて `/security-review` を実行し、レビュー観点の抜けを洗ってください。</p>
-    <p><a href="https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app/">元記事</a></p>
-  </article>
-
-  <article class="item high">
-    <div class="badges">
-      <span class="badge good">Safety</span>
-      <span class="badge">Evals</span>
-    </div>
-    <h3>GPT-Red: Unlocking Self-Improvement for Robustness</h3>
-    <div class="meta">出典: OpenAI / 公開日: 2026-07-15 JST</div>
-    <p><strong>読む価値:</strong> 自動レッドチームを使って脆弱性を見つけ、その攻撃データで GPT-5.6 を adversarial に鍛える話です。安全性改善を手作業から反復ループへ持ち込んでいます。</p>
-    <p><strong>開発者への示唆:</strong> prompt injection への対策は、ルール追加よりも「攻撃生成」「検証」「再学習」の回路を作れるかで差が出ます。</p>
-    <p><strong>試すなら:</strong> 自分の agent に対して、メール・Web・tool output を使う prompt injection の再現セットを作り、同じ traces を継続的に回してください。</p>
-    <p><a href="https://openai.com/index/unlocking-self-improvement-gpt-red/">元記事</a></p>
-  </article>
-
-  <article class="item high">
-    <div class="badges">
-      <span class="badge good">Evals</span>
-      <span class="badge">Inference</span>
-    </div>
-    <h3>Lessons From the Leaderboard: What 5,000+ Kagglers Taught Us About Improving AI Reasoning</h3>
-    <div class="meta">出典: NVIDIA Technical Blog / 公開日: 2026-07-14 JST</div>
-    <p><strong>読む価値:</strong> reasoning 改善の要点を、verifiable な trace、token budget、再利用できる memory、tool で作る training data、task-type ごとの評価に分解しています。</p>
-    <p><strong>開発者への示唆:</strong> 単一スコアの平均値より、失敗型ごとの分解と再現性のほうが実装に効きます。agent や coding workflow にそのまま当てはまります。</p>
-    <p><strong>試すなら:</strong> eval を task type で分割し、trace の中間ステップを検証してから、圧縮後の入力でも同じ精度が出るか比べてください。</p>
-    <p><a href="https://developer.nvidia.com/blog/lessons-from-the-leaderboard-what-5000-kagglers-taught-us-about-improving-ai-reasoning/">元記事</a></p>
+    <h3>Improvements to secret scanning and public monitoring</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-15 JST</div>
+    <p><strong>読む価値:</strong> secret scanning の対象が増え、webhook には `secret_category` が入り、public monitoring には要約カードが追加されました。漏えい検知を運用しやすい形に寄せています。</p>
+    <p><strong>開発者への示唆:</strong> security signal を UI だけで終わらせず、分類された webhook と監査フローに流せるかが実装差になります。</p>
+    <p><strong>試すなら:</strong> 既存の secret scanning webhook handler で `secret_category` を分岐し、generic と provider-specific の triage を分けてください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-15-improvements-to-secret-scanning-and-public-monitoring/">元記事</a></p>
   </article>
 </section>
 
@@ -89,9 +102,9 @@
   <h2>テーマ別メモ</h2>
   <div class="read">
     <ul>
-      <li><strong>security in the loop:</strong> GitHub は PR と Copilot の両方に安全性を入れ、レビュー前に直す流れを強めています。</li>
-      <li><strong>automated red-teaming:</strong> OpenAI は自動攻撃生成と再学習をつなぎ、安全性改善を回せる形にしています。</li>
-      <li><strong>trace discipline:</strong> NVIDIA の整理は、reasoning 改善が prompt ではなく評価と証跡の設計問題だと示しています。</li>
+      <li><strong>grounding first:</strong> 信頼できる web grounding と citation が、agent の実運用で重要な差別化点になっています。</li>
+      <li><strong>prompt as build artifact:</strong> prompt を編集対象ではなく、検証可能な build artifact として扱う流れが強まっています。</li>
+      <li><strong>skills over megprompts:</strong> reusable skill と release 管理で、agent の機能をチーム共有しやすくする方向です。</li>
     </ul>
   </div>
 </section>
@@ -100,9 +113,9 @@
   <h2>明日以降のWatchlist</h2>
   <div class="read">
     <ul>
-      <li><strong>GitHub Changelog:</strong> CodeQL、secret scanning、Copilot の続報を確認。<a href="https://github.blog/changelog/">source</a></li>
-      <li><strong>OpenAI News:</strong> GPT-Red 以外の API / developer 向け続報を確認。<a href="https://openai.com/news/">source</a></li>
-      <li><strong>NVIDIA Technical Blog:</strong> inference 最適化と agent/eval の実装例を確認。<a href="https://developer.nvidia.com/blog/">source</a></li>
+      <li><strong>GitHub Changelog:</strong> Xcode 27 runner image と Code Quality の GA 前動向を確認。<a href="https://github.blog/changelog/">source</a></li>
+      <li><strong>Google Developers Blog:</strong> ADK や Conductor の follow-up を確認。<a href="https://developers.googleblog.com/">source</a></li>
+      <li><strong>Microsoft Agent Framework:</strong> Go / .NET 側の skills と orchestration の続報を確認。<a href="https://devblogs.microsoft.com/agent-framework/">source</a></li>
     </ul>
   </div>
 </section>
