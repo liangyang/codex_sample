@@ -1,15 +1,15 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>世界AIニュース日次レポート — 2026-07-23 JST</title>
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css">
 <style id="mobile-readability">
 @media (max-width: 720px) {
   html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body { font-size: 16px !important; line-height: 1.78 !important; overflow-wrap: anywhere; }
-  .container, .wrap { width: 100% !important; max-width: none !important; padding: 16px 12px 40px !important; }
+  .page { width: 100% !important; max-width: none !important; padding: 16px 12px 40px !important; }
   header, .hero { margin: 0 0 16px !important; padding: 16px 12px !important; border-radius: 0 !important; box-shadow: none !important; }
   h1 { font-size: 28px !important; line-height: 1.22 !important; letter-spacing: 0 !important; }
   h2, .section-title { margin-top: 24px !important; font-size: 21px !important; line-height: 1.3 !important; }
@@ -26,11 +26,9 @@
   dt { margin-top: 12px !important; font-weight: 700 !important; }
   dd { margin: 2px 0 0 !important; }
   ul { padding-left: 1.2em !important; }
-  .sources { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; }
+  .sources, .source-list { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; }
   .sources a, .source-list a { display: block !important; padding: 9px 10px !important; border-radius: 8px !important; }
   code { white-space: normal !important; }
-  .table { display: block !important; width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
-  .table th, .table td { min-width: 180px !important; font-size: 14px !important; }
 }
 </style>
 </head>
@@ -39,84 +37,48 @@
 <header>
   <div class="meta">公開情報ベースの日次AIニュース整理 / JST 2026-07-23</div>
   <h1>世界AIニュース日次レポート</h1>
-  <div class="meta">対象: 世界AIニュース日次レポート / 更新: 2026-07-23 07:28 JST / 編集方針: 公式発表と主要報道を分けて整理</div>
+  <div class="meta">対象: 世界AIニュース日次レポート / 更新: 2026-07-23 07:26 JST / 編集方針: 公式発表と主要報道を分けて整理</div>
 </header>
 <nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
   <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
   <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
 </nav>
-<section class="note"><strong>このページについて:</strong> 世界の主要AI企業、開発者向け配布、安全性、管理機能の動きを日次で整理します。未確認の計画や数字は断定せず、根拠と扱いを分けて表示します。</section>
-<section class="summary"><ol>
-  <li>OpenAIは長時間稼働モデルの安全設計を見直し、trajectory-level monitoring と pause / rollback を前面に出しました。</li>
-  <li>AWSの monday.com 事例は、agentic AI が本番SaaSの中で実運用されていることを示しています。</li>
-  <li>Google、Anthropic、GitHub は、agent runtime と利用量管理を細かくし、企業導入の制御面を強化しています。</li>
-</ol></section>
-<section><h2>前日との差分</h2><div class="read">
-<ul>
-  <li><strong>新規:</strong> OpenAIは長時間稼働モデルの内部利用で見つかった失敗から、trajectory-level monitoring と再評価設計を強めました。</li>
-  <li><strong>新規:</strong> AWSは monday.com の production AI agents を Bedrock 上で紹介し、実運用スケールの事例を出しました。</li>
-  <li><strong>新規:</strong> Googleは Gemini API の Managed Agents に background execution と remote MCP を追加しました。</li>
-  <li><strong>新規:</strong> Anthropicは verified K-12 educators 向けの Claude for Teachers を公開しました。</li>
-  <li><strong>新規:</strong> GitHub は Copilot 利用の impact dashboard を出し、利用段階ごとの可視化を進めました。</li>
-</ul>
-</div></section>
-<section><h2>今日の読み</h2><div class="read">世界AIは、モデルの新顔を追うだけでは足りません。いまの主戦場は、長時間実行の安全、agent runtime の作り方、企業利用の可視化、そして誰がどこまで使えるかという管理面です。各社の発表は、モデル性能の競争がそのまま運用設計の競争になっていることを示しています。</div></section>
-<section><h2>実務への示唆</h2><div class="read"><ul>
-      <li>評価では、モデルの単発回答ではなく、長時間の連続実行と介入点を記録する。</li>
-      <li>導入では、agent runtime の sandbox、MCP 接続、credential refresh を最初から比較軸に入れる。</li>
-      <li>運用では、利用量の可視化と budget / quota / cohort をセットで見る。</li>
-</ul></div></section>
-<section><h2>Top Signals</h2>
-  <article class="signal high">
-    <h3>OpenAIが長時間稼働モデルの安全設計を見直した</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Safety / Long-horizon</span></div>
-    <p><strong>要点:</strong> OpenAIは7月20日、長時間にわたって動くモデルの内部利用で新たな失敗を観測し、アクセスを一時停止したうえで、trajectory-level monitoring とより細かい可視化・制御を導入したと説明しました。</p>
-    <p><strong>なぜ重要か:</strong> agentic なモデルは、単発の正しさだけでは十分でなく、連続行動の結果まで監督する必要があることを示しています。</p>
-    <div class="sources"><a href="https://openai.com/index/safety-alignment-long-horizon-models/">OpenAI</a></div>
-  </article>
-
-  <article class="signal high">
-    <h3>monday.comのproduction AI agentsがBedrock上で動いている</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Agents / Enterprise SaaS</span></div>
-    <p><strong>要点:</strong> AWSは7月22日、monday.com が Amazon Bedrock 上で production AI agents を運用している事例を公開しました。記事は、9割の Builders が月次で AI coding tools を使い、1人あたりのPR throughput が半分以上伸びたと伝えています。</p>
-    <p><strong>なぜ重要か:</strong> 実験ではなく本番SaaSでの運用例が出たことで、agent はデモから業務基盤の段階へ進んでいます。</p>
-    <div class="sources"><a href="https://aws.amazon.com/blogs/machine-learning/ai-teammates-how-monday-com-runs-production-ai-agents-on-amazon-bedrock/">AWS</a></div>
-  </article>
-
-  <article class="signal high">
-    <h3>Gemini APIのManaged Agentsがbackground tasksとremote MCPを追加した</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Developer Tools / Agents</span></div>
-    <p><strong>要点:</strong> Googleは7月7日、Gemini API の Managed Agents に background execution、remote MCP server integration、custom functions、credential refresh を加えたと発表しました。単一endpointで、sandbox化された agent 実行を扱えるようにしています。</p>
-    <p><strong>なぜ重要か:</strong> 開発者が欲しいのは単なるモデルではなく、長く動いて失敗時に戻せる実行面です。</p>
-    <div class="sources"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/">Google</a></div>
-  </article>
-
-  <article class="signal high">
-    <h3>Anthropicが米国K-12教員向けのClaude for Teachersを開始した</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Product / Education</span></div>
-    <p><strong>要点:</strong> Anthropicは7月14日、verified な米国K-12教員に対して無料の Claude for Teachers を提供すると発表しました。教材や標準に結びついた connector と teaching skills を用意し、教育現場向けに調整しています。</p>
-    <p><strong>なぜ重要か:</strong> AIの導入先は一般向け一律配布だけでなく、職種や制度に合わせた縦割りの提供へ広がっています。</p>
-    <div class="sources"><a href="https://www.anthropic.com/news/claude-for-teachers">Anthropic</a></div>
-  </article>
-
-  <article class="signal high">
-    <h3>GitHubがCopilot利用のimpact dashboardを公開した</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Governance / Billing</span></div>
-    <p><strong>要点:</strong> GitHubは7月22日、enterprise 管理者向けに Copilot usage metrics の impact dashboard を出しました。単なるアクティブ数ではなく、adoption phase ごとの利用深度、速度、PR 影響を見せる構成です。</p>
-    <p><strong>なぜ重要か:</strong> 企業導入では、AI を使っているかではなく、どの層がどの程度深く使っているかを把握するほうが重要になっています。</p>
-    <div class="sources"><a href="https://github.blog/changelog/2026-07-22-new-copilot-usage-metrics-impact-dashboard/">GitHub Changelog</a></div>
-  </article>
-</section>
-<section><h2>補助シグナル</h2><div class="grid two">
-<div class="mini-card"><strong>OpenAI and Hugging Faceの評価中インシデントは安全運用の補助線</strong><br>先日の評価インシデントは、長時間安全の議論を現実の運用に引き戻しました。<div class="sources"><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">OpenAI</a></div></div>
-<div class="mini-card"><strong>GitHubのAI credits可視化はコスト統制をさらに細かくした</strong><br>billing cycle ごとの可視化と cost center の credit pool は、実装後の運用設計に直結します。<div class="sources"><a href="https://github.blog/changelog/2026-07-20-copilot-users-can-now-see-ai-credits-used-per-billing-cycle/">GitHub</a><a href="https://github.blog/changelog/2026-07-20-ai-credit-pools-for-cost-centers-in-the-billing-ui/">GitHub</a></div></div>
-</div></section>
-<section><h2>明日以降のWatchlist</h2><ul>
-  <li>OpenAIの長時間安全設計が、次の system card や製品設定にどう反映されるか。</li>
-  <li>monday.com 型の production agent 事例が、他のSaaSや開発基盤にどこまで広がるか。</li>
-  <li>GitHub の cohort / dashboard / quota が、組織ポリシーと予算配分の標準になるか。</li>
-</ul></section>
-<section><h2>Caveat</h2><div class="note">このレポートは公式発表と主要報道をもとに整理しています。各社の利用条件、教育向け提供範囲、管理機能は変わりやすいため、重要な導入判断では一次情報を確認してください。</div></section>
+<section class="note"><strong>このページについて:</strong> 世界の主要AI企業、開発者向け配布、安全性、運用制御の動きを日次で整理します。未確認の数字や計画は断定せず、根拠と扱いを分けて表示します。</section><section class="summary"><ol><li>世界AIは、新モデルの発表よりも、既存製品をどう業務に埋め込むかが中心でした。</li><li>OpenAI は健康情報と企業向けエージェント基盤を前進させ、実運用の幅を広げました。</li><li>Google、GitHub、AWS は、測定・制御・評価を強化し、AIの運用面を固めています。</li></ol></section><section><h2>前日との差分</h2><div class="read"><ul><li><strong>新規:</strong> OpenAI が Health in ChatGPT を公開し、U.S.ユーザー向けに医療情報の接続を開始しました。</li><li><strong>新規:</strong> OpenAI Presence が enterprise product として公開され、音声・チャットの現場導入を狙います。</li><li><strong>新規:</strong> Google は AI 利用の実態を測る ATLAS を公表しました。</li><li><strong>新規:</strong> GitHub は Issue 自動化の承認・信頼度・理由表示と、Mobile からの Copilot 修正を公開しました。</li><li><strong>新規:</strong> AWS は Strands と AgentCore を使う AI エージェント評価の実務ブループリントを公開しました。</li><li><strong>前日比較なし:</strong> 2026-07-22 版の公開アーカイブが見つからないため、厳密な前日比較は行っていません。</li></ul></div></section><section><h2>今日の読み</h2><div class="read">今日の世界AIは、性能競争の次の段階に入っています。前面に出ているのは、医療や業務への接続、実運用の評価、どこまで自動化を許すかという統制です。新モデルの名前よりも、既存モデルをどう安全に・測れる形で入れるかが主題でした。</div></section><section><h2>実務への示唆</h2><div class="read"><ul><li>導入判断は、モデル性能だけでなく、評価・監査・ロールバックを含めて見る。</li><li>個人データや業務データを扱う機能は、利用条件と保存・学習ポリシーを必ず確認する。</li><li>agent運用は、失敗時の検知・レビュー・権限制御を先に設計する。</li></ul></div></section><section><h2>Top Signals</h2><article class="signal high">
+  <h3>OpenAIがHealth in ChatGPTを公開し、医療情報を接続した会話をU.S.ユーザーへ展開した</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Product / Health</span></div>
+  <p><strong>要点:</strong> 米国の18歳以上ユーザー向けに、Apple Health や対応する医療記録を接続して、健康情報を文脈付きで扱える機能を開始しました。</p>
+  <p><strong>なぜ重要か:</strong> ChatGPT の用途が一般的なQ&amp;Aから、個人データを安全に扱う高頻度の実務用途へさらに広がります。</p>
+  
+  <div class="sources"><a href="https://openai.com/index/health-in-chatgpt/">OpenAI Health in ChatGPT</a></div>
+</article><article class="signal high">
+  <h3>OpenAI Presenceが企業向けの音声・チャットエージェント基盤として公開された</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Enterprise / Agents</span></div>
+  <p><strong>要点:</strong> OpenAI Presence は、voice と chat のエージェントを高価値業務に入れるための enterprise product として公開されました。</p>
+  <p><strong>なぜ重要か:</strong> モデル単体ではなく、評価・運用・ロールアウトまで含めた『現場導入の製品化』が進んでいます。</p>
+  
+  <div class="sources"><a href="https://openai.com/index/introducing-openai-presence/">OpenAI Presence</a></div>
+</article><article class="signal high">
+  <h3>GoogleがATLASを発表し、AI利用の実態を経済・労働の観点で測り始めた</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Research / Measurement</span></div>
+  <p><strong>要点:</strong> Google は AI の使われ方を仕事と日常の両面から把握する調査 ATLAS を公開し、実利用ベースのデータ収集を始めました。</p>
+  <p><strong>なぜ重要か:</strong> AIの評価軸が『何ができるか』から『どのように使われているか』へ移りつつあることを示します。</p>
+  
+  <div class="sources"><a href="https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/">Google ATLAS</a></div>
+</article><article class="signal high">
+  <h3>GitHubがIssue自動化の承認・信頼度・理由表示を公開し、モバイルからCopilot修正も可能にした</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Developer Tools / Governance</span></div>
+  <p><strong>要点:</strong> GitHub Issues は自動化の理由表示、confidence ベースの適用、レビュー待ちの承認フローを公開し、GitHub Mobile から失敗した Actions チェックを Copilot で修正できるようにしました。</p>
+  <p><strong>なぜ重要か:</strong> 開発者向けAIは、モデルの賢さよりも『どこまで自動化してよいか』を制御する機能が価値になります。</p>
+  
+  <div class="sources"><a href="https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview/">GitHub Issues automation controls</a><a href="https://github.blog/changelog/2026-07-23-github-mobile-fix-failing-actions-checks-with-copilot-cloud-agent/">GitHub Mobile Copilot fix</a></div>
+</article><article class="signal high">
+  <h3>AWSがStrandsとAgentCoreでAIエージェント評価の実務ブループリントを公開した</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Agents / Evaluation</span></div>
+  <p><strong>要点:</strong> AWS は production agent の評価パイプラインを公開し、Motorway の事例で誤判定を 1/8 から 1/50 に下げたと説明しました。</p>
+  <p><strong>なぜ重要か:</strong> agent運用の焦点がデモから評価・監視・失敗検知へ移っていることを示しています。</p>
+  
+  <div class="sources"><a href="https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-a-production-blueprint-with-strands-and-agentcore/">AWS blueprint</a></div>
+</article></section><section><h2>補助シグナル</h2><div class="grid two"><div class="mini-card"><strong>OpenAIはニュース組織向けのAI活用事例も公開した</strong><br>報道機関での検索、検証、配信、収益化の支援が、AIの次の用途として定着しつつあります。<div class="sources"><a href="https://openai.com/index/how-news-organizations-are-using-ai/">OpenAI newsroom post</a></div></div><div class="mini-card"><strong>GoogleのSelfie for sign-inはセキュアな復旧手段を増やした</strong><br>アカウント回復の多様化は、生成AIより目立たないものの、一般ユーザーにとっての体験改善として効いてきます。<div class="sources"><a href="https://blog.google/innovation-and-ai/technology/safety-security/selfie-video-sign-in/">Google selfie sign-in</a></div></div><div class="mini-card"><strong>Alphabet決算ではAI投資とクラウド需要の強さが再確認された</strong><br>AIインフラ需要とクラウドバックログの拡大は、GoogleのAI事業を支える収益土台として引き続き重要です。<div class="sources"><a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/">Alphabet earnings remarks</a></div></div></div></section><section><h2>明日以降のWatchlist</h2><ul><li>OpenAI Presence と Health の利用条件や対象地域がどう広がるか。</li><li>Google ATLAS が公的統計や企業導入の評価指標に接続されるか。</li><li>GitHub の issue automation controls が public preview から標準運用へ進むか。</li><li>AWS の evaluation blueprint が他社の agent governance 設計に波及するか。</li></ul></section><section><h2>Caveat</h2><div class="note">このレポートは公式発表と主要報道をもとに整理しています。Health、Presence、issue automation、agent評価は試験導入や限定提供を含むため、重要な導入判断では一次情報を確認してください。</div></section>
 <footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer>
 </main>
 </body>

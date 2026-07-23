@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
@@ -8,128 +8,28 @@
 <style id="mobile-readability">
 @media (max-width: 720px) {
   html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-  body {
-    font-size: 16px !important;
-    line-height: 1.78 !important;
-    overflow-wrap: anywhere;
-  }
-  .container,
-  .wrap {
-    width: 100% !important;
-    max-width: none !important;
-    padding: 16px 12px 40px !important;
-  }
-  header,
-  .hero {
-    margin: 0 0 16px !important;
-    padding: 16px 12px !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-  h1 {
-    font-size: 28px !important;
-    line-height: 1.22 !important;
-    letter-spacing: 0 !important;
-  }
-  h2,
-  .section-title {
-    margin-top: 24px !important;
-    font-size: 21px !important;
-    line-height: 1.3 !important;
-  }
-  h3 {
-    font-size: 18px !important;
-    line-height: 1.45 !important;
-  }
-  p,
-  li,
-  dt,
-  dd {
-    font-size: 16px !important;
-  }
-  .sub,
-  .subtitle,
-  .mini,
-  .footer,
-  footer {
-    font-size: 13px !important;
-    line-height: 1.65 !important;
-  }
-  .read {
-    font-size: 17px !important;
-  }
-  .grid,
-  .meta-grid,
-  .kvs {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-  .card,
-  .signal,
-  .meta-card,
-  .thesis,
-  .caveat {
-    margin: 12px 0 !important;
-    padding: 14px 12px !important;
-    border-radius: 8px !important;
-    box-shadow: none !important;
-  }
-  .signal {
-    border-left-width: 4px !important;
-  }
-  .signal-head {
-    display: block !important;
-  }
-  .heat,
-  .badge,
-  .rank {
-    display: inline-flex !important;
-    align-items: center !important;
-    max-width: 100% !important;
-    margin: 6px 6px 2px 0 !important;
-    white-space: normal !important;
-    line-height: 1.35 !important;
-  }
-  dl {
-    display: block !important;
-    margin-top: 12px !important;
-  }
-  dt {
-    margin-top: 12px !important;
-    font-weight: 700 !important;
-  }
-  dd {
-    margin: 2px 0 0 !important;
-  }
-  ul {
-    padding-left: 1.2em !important;
-  }
-  .sources {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
-  }
-  .sources a,
-  .source-list a {
-    display: block !important;
-    padding: 9px 10px !important;
-    border-radius: 8px !important;
-  }
-  code {
-    white-space: normal !important;
-  }
-  .table {
-    display: block !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-  }
-  .table th,
-  .table td {
-    min-width: 180px !important;
-    font-size: 14px !important;
-  }
+  body { font-size: 16px !important; line-height: 1.78 !important; overflow-wrap: anywhere; }
+  .page { width: 100% !important; max-width: none !important; padding: 16px 12px 40px !important; }
+  header, .hero { margin: 0 0 16px !important; padding: 16px 12px !important; border-radius: 0 !important; box-shadow: none !important; }
+  h1 { font-size: 28px !important; line-height: 1.22 !important; letter-spacing: 0 !important; }
+  h2, .section-title { margin-top: 24px !important; font-size: 21px !important; line-height: 1.3 !important; }
+  h3 { font-size: 18px !important; line-height: 1.45 !important; }
+  p, li, dt, dd { font-size: 16px !important; }
+  .sub, .subtitle, .mini, .footer, footer { font-size: 13px !important; line-height: 1.65 !important; }
+  .read { font-size: 17px !important; }
+  .grid, .meta-grid, .kvs { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+  .card, .signal, .meta-card, .thesis, .caveat { margin: 12px 0 !important; padding: 14px 12px !important; border-radius: 8px !important; box-shadow: none !important; }
+  .signal { border-left-width: 4px !important; }
+  .signal-head { display: block !important; }
+  .heat, .badge, .rank { display: inline-flex !important; align-items: center !important; max-width: 100% !important; margin: 6px 6px 2px 0 !important; white-space: normal !important; line-height: 1.35 !important; }
+  dl { display: block !important; margin-top: 12px !important; }
+  dt { margin-top: 12px !important; font-weight: 700 !important; }
+  dd { margin: 2px 0 0 !important; }
+  ul { padding-left: 1.2em !important; }
+  .sources, .source-list { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; }
+  .sources a, .source-list a { display: block !important; padding: 9px 10px !important; border-radius: 8px !important; }
+  code { white-space: normal !important; }
+}
 </style>
 </head>
 <body>
@@ -137,85 +37,42 @@
 <header>
   <div class="meta">公開情報ベースの日次AIニュース整理 / JST 2026-07-23</div>
   <h1>中国AIニュース日次レポート</h1>
-  <div class="meta">対象: 中国AIニュース日次レポート / 更新: 2026-07-23 07:28 JST / 編集方針: 公式発表と主要報道を分けて整理</div>
+  <div class="meta">対象: 中国AIニュース日次レポート / 更新: 2026-07-23 07:26 JST / 編集方針: 公式発表と主要報道を分けて整理</div>
 </header>
 <nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
   <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
   <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
 </nav>
-<section class="note"><strong>このページについて:</strong> 中国AI市場の政策、資本、企業導入、モデル競争を日次で整理します。未確認の金額や主張は断定せず、根拠と扱いを分けて表示します。</section>
-<section class="summary"><ol>
-  <li>BaiduのHKデュアルプライマリー化が前進し、中国AIの資本市場アクセスが今日の主題になりました。</li>
-  <li>MoonshotのKimi K3は公式サイトの能力訴求に加え、AP報道で需要逼迫が確認され、供給制約が新しい論点になっています。</li>
-  <li>CAC、Huawei、Tencentはそれぞれ备案、算力、業務組み込みを進め、中国AIの競争軸を広げています。</li>
-</ol></section>
-<section><h2>前日との差分</h2><div class="read">
-<ul>
-  <li><strong>新規:</strong> Baiduが香港取引所からデュアルプライマリー化の申請受領を確認し、今年中の有効化を見込むと発表しました。</li>
-  <li><strong>新規:</strong> MoonshotのKimi K3は、公式サイトで2.8Tパラメータと1M token contextを訴求し、APは新規登録停止を伝えました。</li>
-  <li><strong>新規:</strong> CACの端末側生成式AIサービス备案は、Apple智能を含む7件の追加で、配布入口の整理が進んでいます。</li>
-  <li><strong>継続:</strong> HuaweiのWAIC超节点公開とTencent Hy3の正式提供は、算力と業務導線の強化として引き続き重要です。</li>
-</ul>
-</div></section>
-<section><h2>今日の読み</h2><div class="read">中国AIは、モデル発表そのものより、配布できるか、回せるか、資本をどう入れるかの比重がさらに増しています。Kimi K3の需要逼迫は、性能競争がそのまま供給制約競争に移ったことを示し、Baiduの資本市場の動きは、AI事業を上場・資金調達の設計まで含む競争に押し広げます。</div></section>
-<section><h2>実務への示唆</h2><div class="read"><ul>
-      <li>中国向けのAI案件は、性能比較の前に备案、表示義務、配布地域、提携形態を確認する。</li>
-      <li>モデル採用は、クローズド性能だけでなく、需要急増時の供給能力と課金余地をセットで見る。</li>
-      <li>資本市場のニュースは、単なるIRではなく、計算資源調達と製品展開の速度にも直結する前提で読む。</li>
-</ul></div></section>
-<section><h2>Top Signals</h2>
-  <article class="signal high">
-    <h3>Baiduが香港のデュアルプライマリー化を前進させ、資本市場の選択肢を広げた</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Capital / Market Structure</span></div>
-    <p><strong>要点:</strong> Baiduは7月22日、香港メインボードでのデュアルプライマリー化について、香港取引所から申請受領の確認を得たと公表しました。効力発生日は今年中を見込むとしており、AI企業としての資本市場の足場をNASDAQと香港の両方に広げます。</p>
-    <p><strong>なぜ重要か:</strong> 中国AIの競争はモデル性能だけではなく、どこで資金を集め、どの市場に説明責任を負うかまで含む構造戦です。</p>
-    <div class="sources"><a href="https://ir.baidu.com/news-releases/news-release-details/baidu-provides-update-voluntary-conversion-dual-primary-listing">Baidu IR</a></div>
-  </article>
-
-  <article class="signal high">
-    <h3>MoonshotのKimi K3が需要急増で新規登録を一時停止した</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表 / 主要報道</span><span class="badge warn">扱い: 要追跡</span><span class="badge">領域: Models / Capacity</span></div>
-    <p><strong>要点:</strong> Moonshotの公式サイトはKimi K3を2.8Tパラメータ、原生マルチモーダル、100万トークン文脈のモデルとして示しています。APは、公開直後の需要が供給能力を上回り、新規登録を一時停止したと報じました。</p>
-    <p><strong>なぜ重要か:</strong> 中国のopen-weight競争は、性能の見せ場から、実際に受け止める計算余力と配布体制の勝負へ移っています。</p>
-    <div class="sources"><a href="https://www.moonshot.cn/?from=aihome.run">Moonshot AI</a><a href="https://apnews.com/article/4c66a2e0f557ce79d3cc2d769c9a6226">AP</a></div>
-  </article>
-
-  <article class="signal high">
-    <h3>CACが7件の端末側生成式AIサービス备案情報を追加した</h3>
-    <div class="badges"><span class="badge good">根拠: 政府発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Regulation / Device Distribution</span></div>
-    <p><strong>要点:</strong> 中央網信办は7月15日、スマホ端末側で提供される生成式AIサービスの备案情報を7件追加し、その中にApple智能を含めました。端末内AIの配布が、審査と备案を通る正式ルートにさらに寄ってきています。</p>
-    <p><strong>なぜ重要か:</strong> 端末メーカーとモデル提供側にとって、どの機能をどの段階で出せるかが、単なる技術選択ではなく制度設計になっています。</p>
-    <div class="sources"><a href="https://www.cac.gov.cn/2026-07/15/c_1785861480767004.htm">CAC</a></div>
-  </article>
-
-  <article class="signal high">
-    <h3>HuaweiがWAICでAtlas 950 SuperPoDを公開し、国内算力の見せ場を作った</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Compute / Infrastructure</span></div>
-    <p><strong>要点:</strong> HuaweiはWAIC 2026でAtlas 950 SuperPoDを初公開し、1024カード級の集群、広帯域・低遅延・統一メモリアドレスを前面に出しました。大規模学習と高並列推論を支える国内算力基盤として訴求しています。</p>
-    <p><strong>なぜ重要か:</strong> 中国AIの焦点はモデル名の更新だけでなく、どの計算基盤で回すかに移っています。</p>
-    <div class="sources"><a href="https://www.huawei.com/cn/news/2026/7/atlas-950-superpod">Huawei</a></div>
-  </article>
-
-  <article class="signal high">
-    <h3>Tencent HunyuanがHy3を正式公開し、企業導線とAPI提供を広げた</h3>
-    <div class="badges"><span class="badge good">根拠: 公式発表</span><span class="badge warn">扱い: 公式確認</span><span class="badge">領域: Platform / Agents</span></div>
-    <p><strong>要点:</strong> TencentはHy3を正式公開し、WorkBuddy、CodeBuddy、Yuanbao、Marvis、imaへの組み込みと、Tencent Cloud TokenHub経由のAPI提供を案内しました。MoE構成で295B total parameters、21B active parameters、最大256K contextを持ちます。</p>
-    <p><strong>なぜ重要か:</strong> 中国の主要プラットフォームは、モデル発表と同時に業務導線まで束ねて提供する方向を強めています。</p>
-    <div class="sources"><a href="https://www.tencent.com/tencent-hunyuan-officially-releases-hy3-advancing-agent-capabilities-and-deeper-product-integration/">Tencent</a></div>
-  </article>
-</section>
-<section><h2>補助シグナル</h2><div class="grid two">
-<div class="mini-card"><strong>CACの修訂草案は表示義務と技術説明を明文化</strong><br>AI生成物の標識、訓練データ来源、技術原理の公開が制度側の焦点として残っています。<div class="sources"><a href="https://www.cac.gov.cn/2026-07/03/c_1784822399677167.htm">CAC草案</a></div></div>
-<div class="mini-card"><strong>US-China AI talks in September are a policy backdrop</strong><br>米中のAI対話が進むなら、輸出規制や frontier model の安全性が中国側の実装設計にも影響します。<div class="sources"><a href="https://www.internazionale.it/ultime-notizie-reuters/2026/07/22/exclusive-us-china-to-hold-ai-talks-in-september-sources-say">Reuters via Internazionale</a></div></div>
-</div></section>
-<section><h2>明日以降のWatchlist</h2><ul>
-  <li>BaiduのHKEX承認が正式化した後、資金調達やAI投資の説明がどう変わるか。</li>
-  <li>Kimi K3の新規登録停止が、API供給や商用契約の拡張にいつ波及するか。</li>
-  <li>CACの备案・標識・公開義務の議論が、他の端末側AIや海外端末に広がるか。</li>
-</ul></section>
-<section><h2>Caveat</h2><div class="note">このレポートは公開URL、企業公式情報、政府発表、主要報道をもとに整理しています。Kimi K3の需要逼迫やBaiduの手続き進捗は更新されやすいため、重要な判断では一次情報を確認してください。</div></section>
+<section class="note"><strong>このページについて:</strong> 中国AI市場の政策、配布条件、価格改定、モデル移行を日次で整理します。未確認の金額や推測は断定せず、根拠と扱いを分けて表示します。</section><section class="summary"><ol><li>中国AIは、モデル発表よりも配布条件と価格設定の調整が前面に出ました。</li><li>APEC関連の政策発信が重なり、ガバナンスと産業普及が同じ週の主題になっています。</li><li>Tencent、Alibaba、Baidu は、それぞれ移行・値下げ・機能拡張で実装側の競争を進めました。</li></ol></section><section><h2>前日との差分</h2><div class="read"><ul><li><strong>新規:</strong> APEC Digital and AI Ministerial Statement が成都で公表され、中国は地域AIガバナンスの議題設定役を明示しました。</li><li><strong>新規:</strong> Tencent Cloud が混元マルチモーダル旧版の停止と HY Vision 2.0 Instruct への移行を案内しました。</li><li><strong>新規:</strong> Alibaba Cloud Model Studio が GLM-5.2 Fast mode の値下げと旧モデルの退役を進めました。</li><li><strong>新規:</strong> Baidu AI 开放平台が音声復刻に方言と情感制御を追加しました。</li><li><strong>前日比較なし:</strong> 2026-07-22 版の公開アーカイブが見つからないため、厳密な前日比較は行っていません。</li></ul></div></section><section><h2>今日の読み</h2><div class="read">中国AIの中心は、いまや新しい巨大モデルの見せ場だけではありません。今週は政策イベント、モデル移行、価格改定、音声機能の細かな実装が同時に動いており、実務上は『何が出たか』より『どの入口で、どの条件で、どこまで出せるか』が重要です。</div></section><section><h2>実務への示唆</h2><div class="read"><ul><li>中国向け案件は、备案や移行期限、配布入口、価格表をまとめて確認する。</li><li>既存モデルの sunset は、単なる告知ではなく本番移行の締切として扱う。</li><li>消費者向けAIは、性能だけでなく方言・感情・地域配布の設計を要件に入れる。</li></ul></div></section><section><h2>Top Signals</h2><article class="signal high">
+  <h3>APEC数字周のAI閣僚声明が成都で公表され、中国が地域ガバナンスの議題設定役を前面に出した</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Policy / Regional AI</span></div>
+  <p><strong>要点:</strong> 2026年APEC Digital and AI Ministerial Statement が23日に成都で公表され、AIとデジタル政策をアジア太平洋の包摂的成長と結び付ける枠組みが示されました。</p>
+  <p><strong>なぜ重要か:</strong> 中国AIの話題が個別企業のモデル競争だけでなく、国際会議での標準化・ガバナンス設計へ広がっています。</p>
+  
+  <div class="sources"><a href="https://www.apec.org/meeting-papers/sectoral-ministerial-meetings/telecommunicationsandinformation/2026-apec-digital-and-ai-ministerial-statement">APEC statement</a></div>
+</article><article class="signal high">
+  <h3>Tencent Cloudが混元マルチモーダルの旧版停止とHY Vision 2.0 Instructへの移行を告知した</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Distribution / Migration</span></div>
+  <p><strong>要点:</strong> 腾讯云智能体开发平台の混元マルチモーダル旧版が順次終了し、HY Vision 2.0 Instruct への切り替えが案内されました。</p>
+  <p><strong>なぜ重要か:</strong> 中国のAI配布は、新モデルの発表より先に、既存機能をどの入口へ寄せるかが勝負になっています。</p>
+  
+  <div class="sources"><a href="https://cloud.tencent.com/announce/detail/2328">Tencent Cloud announcement</a></div>
+</article><article class="signal high">
+  <h3>Alibaba Cloud Model StudioがGLM-5.2 Fast modeの値下げと旧モデル退役を進めた</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Pricing / Lifecycle</span></div>
+  <p><strong>要点:</strong> Model Studio は GLM-5.2 Fast mode の単価引き下げを告知し、同時にレガシーモデルの sunset を進めています。</p>
+  <p><strong>なぜ重要か:</strong> 価格とモデル寿命の管理が、開発者の採用判断と本番コストに直結します。</p>
+  
+  <div class="sources"><a href="https://www.alibabacloud.com/en/notice/model_studioglm52_fast_mode_price_reduction_notice_7e1?_p_lc=1">GLM-5.2 Fast mode price reduction</a><a href="https://www.alibabacloud.com/help/en/model-studio/model-release-notes">Model Studio release notes</a></div>
+</article><article class="signal high">
+  <h3>Baidu AI開放平台の音声復刻が方言と情感制御を追加した</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 公式確認</span><span class="badge">領域: Speech / Consumer AI</span></div>
+  <p><strong>要点:</strong> 百度AI开放平台の大模型声音复刻が、方言切替と感情制御を追加し、個別化音声の商用利用を広げました。</p>
+  <p><strong>なぜ重要か:</strong> 中国の消費者向けAIは、単なる生成精度よりも、地域性と表現の細かい制御が差別化要因になっています。</p>
+  
+  <div class="sources"><a href="https://ai.baidu.com/support/news?action=detail&amp;id=3275">Baidu AI open platform news</a><a href="https://ai.baidu.com/tech/speech/voicecloning">Baidu voice cloning docs</a></div>
+</article></section><section><h2>補助シグナル</h2><div class="grid two"><div class="mini-card"><strong>国家网信办がAPEC数字周でAI関連イベントを連続開催</strong><br>政策対話の場がそのまま今週の実務カレンダーになっており、規制と普及の両方を同時に進める姿勢が見えます。<div class="sources"><a href="https://www.cac.gov.cn/2026-07/11/c_1785427830619328.htm">CAC announcement</a></div></div><div class="mini-card"><strong>36KrはTencent・Alibaba・ByteDanceのAI办公再編を報じた</strong><br>主要プラットフォームがAIオフィス機能を統合する流れは、国内の業務導線が製品単位からスイート単位へ移る兆候です。<div class="sources"><a href="https://36kr.com/p/3906087269373058">36Kr report</a></div></div></div></section><section><h2>明日以降のWatchlist</h2><ul><li>APEC関連の政策文書が、AI標準化や相互運用の具体ルールに落ちるか。</li><li>Tencent Cloud の移行通知が、TokenHub 以外の主要入口にも広がるか。</li><li>Alibaba Cloud の Fast mode 値下げが、推論系 API 価格競争に波及するか。</li><li>Baidu の音声機能強化が、他社の中国向け音声プロダクトを刺激するか。</li></ul></section><section><h2>Caveat</h2><div class="note">このレポートは公開URL、企業公式情報、政府/国際機関発表、主要報道をもとに整理しています。APEC関連の声明や価格改定は更新されやすいため、重要な判断では一次情報を確認してください。</div></section>
 <footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer>
 </main>
 </body>
 </html>
-
