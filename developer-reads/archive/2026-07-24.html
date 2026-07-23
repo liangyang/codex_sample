@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developer Reads - 2026-07-24 Archive</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main>
+<header>
+  <div class="meta">Last updated: 2026-07-24 07:09 JST</div>
+  <h1>Developer Reads</h1>
+  <div class="sub">Archived daily developer scan for JST 2026-07-24.</div>
+</header>
+<nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
+  <a href="../../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
+  <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
+  <a href="../latest.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">最新版を読む</a>
+</nav>
+
+<section class="note"><strong>アーカイブ版:</strong> これは 2026-07-24 JST のスナップショットです。公開後に元記事が更新されている可能性があります。</section>
+
+<section class="summary">
+  <ol>
+    <li>agent 制御は、confidence と rationale を見せるレビュー型へ寄っています。</li>
+    <li>production agent は、評価と failure detection を同じ運用面で回す必要があります。</li>
+    <li>高機能モデルの評価は、隔離と監査を削るとそのままリスクになります。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>今日読むべきもの</h2>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Agents</span>
+      <span class="badge">API</span>
+    </div>
+    <h3>Agent automation controls in GitHub Issues in public preview</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> GitHub Issues の agent automation に、approval と confidence と rationale が入ります。自動化の可否を二択で決めるのではなく、変更の出し方を設計できるのが重要です。</p>
+    <p><strong>開発者への示唆:</strong> issue triage やメタデータ更新は、低 confidence の変更を review に残せると一気に運用しやすくなります。監査ログも自然に残せます。</p>
+    <p><strong>試すなら:</strong> 1 つの repo で suggestion モードを試し、レビュー待ちの件数と誤適用率を比べてください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Coding Agents</span>
+      <span class="badge">Infra</span>
+    </div>
+    <h3>GitHub Mobile: Fix failing Actions checks with Copilot cloud agent</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> mobile から CI 失敗を起点に agent が修正 PR を作る導線が追加されました。PR ベースで返ってくるので、レビューとマージの流れを崩しません。</p>
+    <p><strong>開発者への示唆:</strong> coding agent は、コード生成よりも「失敗した CI から修正案を素早く返す」場面で効きます。失敗条件の再現性と最小差分が運用品質を左右します。</p>
+    <p><strong>試すなら:</strong> 既知の failing PR で試し、原因切り分け、修正粒度、再実行のしやすさを確認してください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-23-github-mobile-fix-failing-actions-checks-with-copilot-cloud-agent/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Evals</span>
+      <span class="badge">Infra</span>
+    </div>
+    <h3>Evaluating AI Agents: A production blueprint with Strands and AgentCore</h3>
+    <div class="meta">出典: AWS Machine Learning Blog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> 1 in 8 の誤結果を 1 in 50 に下げ、検出時間を数時間から数分に短縮した本番評価パイプラインが具体的です。Strands と AgentCore の役割分担もそのまま参考になります。</p>
+    <p><strong>開発者への示唆:</strong> agent の評価は、モデル性能より先にパイプライン設計で詰まります。trace を保存し、評価とデプロイを分離しないと改善ループが回りません。</p>
+    <p><strong>試すなら:</strong> 1 つの workflow を replayable trace と評価ジョブに分け、検出遅延と再現率を測ってください。</p>
+    <p><a href="https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-a-production-blueprint-with-strands-and-agentcore/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Safety</span>
+      <span class="badge">Infra</span>
+    </div>
+    <h3>Detecting silent agent failures with Amazon Bedrock AgentCore optimization</h3>
+    <div class="meta">出典: AWS Machine Learning Blog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> 健康チェックをすり抜ける silent failure を session から見つけ、原因をランキングできます。単なる監視ではなく、改善対象の優先順位付けまで含むのが実務的です。</p>
+    <p><strong>開発者への示唆:</strong> 監視は可用性だけでは足りず、tool 連鎖の崩れや誤分岐を後から分類できる必要があります。失敗を説明できないと、agent 運用は改善しにくいです。</p>
+    <p><strong>試すなら:</strong> tool trace を残した agent に session ID を付け、失敗をタイプ別にまとめてください。</p>
+    <p><a href="https://aws.amazon.com/blogs/machine-learning/detecting-silent-agent-failures-with-amazon-bedrock-agentcore-optimization/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Safety</span>
+      <span class="badge">Evals</span>
+    </div>
+    <h3>OpenAI and Hugging Face partner to address security incident during model evaluation</h3>
+    <div class="meta">出典: OpenAI / 公開日: 2026-07-21 JST</div>
+    <p><strong>読む価値:</strong> 高い cyber capability の評価中に、隔離の甘い環境が実インフラへ波及した事例です。評価の安全境界が、そのまま設計論点であることを示しています。</p>
+    <p><strong>開発者への示唆:</strong> 検証用 sandbox と production-like 環境は分けるべきです。network、credentials、proxy、監査ログの境界を一度でも曖昧にすると、評価の意味が変わります。</p>
+    <p><strong>試すなら:</strong> 既存の eval 環境から、ネット接続ありの検証と完全隔離の能力評価を切り出してください。</p>
+    <p><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">元記事</a></p>
+  </article>
+</section>
+
+<section>
+  <h2>テーマ別メモ</h2>
+  <div class="read">
+    <ul>
+      <li><strong>control plane:</strong> 変更を自動適用する前に、レビューと理由の可視化が標準になりつつあります。</li>
+      <li><strong>eval as infra:</strong> 本番 agent は、評価ジョブと failure detection がなければ改善速度が落ちます。</li>
+      <li><strong>sandbox discipline:</strong> 高機能モデルの評価は、隔離を崩すとそのままセキュリティ事故になります。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>明日以降のWatchlist</h2>
+  <div class="read">
+    <ul>
+      <li><strong>Google Cloud:</strong> Agentic data cloud の記事は、agent のボトルネックが context access にあることを再確認させます。<a href="https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-and-the-agentic-data-cloud">source</a></li>
+      <li><strong>AWS:</strong> Bedrock Managed Knowledge Base の agentic retrieval は、標準 Retrieve との比較がしやすい実装候補です。<a href="https://aws.amazon.com/blogs/machine-learning/agentic-retrieval-for-amazon-bedrock-managed-knowledge-base/">source</a></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Caveat</h2>
+  <div class="note">公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</div>
+</section>
+
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main>
+</body>
+</html>

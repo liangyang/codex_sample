@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-07-22</title>
+<title>Developer Reads - 2026-07-24</title>
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-07-22 07:09 JST</div>
+  <div class="meta">Last updated: 2026-07-24 07:09 JST</div>
   <h1>Developer Reads</h1>
   <div class="sub">AI開発者向けの公式・一次情報記事を、実装に役立つ形で整理する日次キュレーションです。</div>
 </header>
@@ -18,13 +18,13 @@
   <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
 </nav>
 
-<section class="note"><strong>このページについて:</strong> AI企業・開発者プラットフォームの公式記事と一次情報だけを確認し、実装・設計・運用に直結するものだけを残します。今日は Copilot の利用可視化、agentic RL の実行効率、production agent の運用設計、eval 環境の安全境界が中心でした。</section>
+<section class="note"><strong>このページについて:</strong> AI企業・開発者プラットフォームの公式記事と一次情報だけを確認し、実装・設計・運用に直結するものだけを残します。今日は GitHub の agent 制御、AWS の agent eval と failure detection、OpenAI の評価環境の安全境界が中心でした。</section>
 
 <section class="summary">
   <ol>
-    <li>Copilot は「誰が使っているか」から「どの段階まで定着したか」を測るフェーズ指標へ進みました。</li>
-    <li>Agentic RL は、学習より前に rollout と環境待ちをどう隠すかというインフラ問題になっています。</li>
-    <li>実運用の agent は、信頼度に応じた段階的な自動化と、評価環境の厳密な分離が前提です。</li>
+    <li>agent の出力は、提示された変更を人間が段階的に承認する前提へ寄ってきました。</li>
+    <li>production agent は、評価パイプラインと failure detection をセットで持たないと運用できません。</li>
+    <li>高機能モデルの評価は、能力測定だけでなく隔離と監査が設計の中心になります。</li>
   </ol>
 </section>
 
@@ -33,41 +33,41 @@
 
   <article class="item high">
     <div class="badges">
-      <span class="badge good">Infra</span>
+      <span class="badge good">Agents</span>
       <span class="badge">API</span>
     </div>
-    <h3>New Copilot usage metrics impact dashboard</h3>
-    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-22 JST</div>
-    <p><strong>読む価値:</strong> Enterprise 管理者と org owner 向けに、Copilot の利用を Phase 1/2/3 と Passive に分けて見せるダッシュボードが追加されました。単なる席数ではなく、PR 速度やコード量まで含めて定着度を追えます。</p>
-    <p><strong>開発者への示唆:</strong> Copilot の導入は「有効化したか」ではなく、「どの作業フェーズまで移行したか」で見るべき段階に入りました。enablement と運用改善を同じ指標面で回せます。</p>
-    <p><strong>試すなら:</strong> 1 つの org で usage metrics API とダッシュボードを突き合わせ、Passive から深いフェーズへ移すための施策を 1 つ決めてください。</p>
-    <p><a href="https://github.blog/changelog/2026-07-22-new-copilot-usage-metrics-impact-dashboard/">元記事</a></p>
+    <h3>Agent automation controls in GitHub Issues in public preview</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> GitHub Issues に、automation の変更をそのまま適用するか、suggestion としてレビューに回すかを選べる制御が入ります。confidence と rationale まで見えるので、issue triage を agent に任せる前提が現実的になりました。</p>
+    <p><strong>開発者への示唆:</strong> issue automation は「自動化するかしないか」ではなく、「どの confidence で自動適用するか」を決める運用問題です。レビュー可能な変更だけを流す設計にすると、速度と監査性を両立しやすくなります。</p>
+    <p><strong>試すなら:</strong> 1 つの repo で medium / low confidence の action を suggestion に寄せ、ラベル付けや担当割り当ての誤作動率を 1 週間観測してください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview/">元記事</a></p>
   </article>
 
   <article class="item high">
     <div class="badges">
-      <span class="badge good">Agents</span>
+      <span class="badge good">Coding Agents</span>
       <span class="badge">Infra</span>
     </div>
-    <h3>Scaling Agentic RL: High-Throughput Agentic Training with Tunix</h3>
-    <div class="meta">出典: Google Developers Blog / 公開日: 2026-07-21 JST</div>
-    <p><strong>読む価値:</strong> Google の Tunix は、tool-use を含む多段エージェント学習で TPU が待ち時間に沈む問題へ、非同期 rollout と producer-consumer 型の分離で答えています。軽量な継続プロファイリングも入っています。</p>
-    <p><strong>開発者への示唆:</strong> agentic RL のボトルネックはモデルそのものより、環境呼び出しやネット I/O による idle time です。学習基盤側の設計が性能を決めます。</p>
-    <p><strong>試すなら:</strong> 1 つの multi-turn workflow で rollout 待ちと trainer idle time を計測し、同期実行と非同期実行で差を見てください。</p>
-    <p><a href="https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix/">元記事</a></p>
+    <h3>GitHub Mobile: Fix failing Actions checks with Copilot cloud agent</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> GitHub Mobile から失敗した Actions check を起点に、Copilot coding agent が原因を調べて新しい pull request まで作る流れが追加されました。移動中でも CI 修復を継続しやすくなります。</p>
+    <p><strong>開発者への示唆:</strong> coding agent の価値は「コードを書く」より、「失敗した CI を素早く再現し、差分を PR として返す」ループにあります。修正の自動生成より、レビュー可能な戻し先をどう作るかが重要です。</p>
+    <p><strong>試すなら:</strong> 失敗し続ける小さな PR でこの導線を試し、最終 diff が最小か、失敗原因の切り分けが妥当かを人間側で確認してください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-23-github-mobile-fix-failing-actions-checks-with-copilot-cloud-agent/">元記事</a></p>
   </article>
 
   <article class="item high">
     <div class="badges">
-      <span class="badge good">Agents</span>
+      <span class="badge good">Evals</span>
       <span class="badge">Infra</span>
     </div>
-    <h3>AI Teammates: how monday.com runs production AI agents on Amazon Bedrock</h3>
-    <div class="meta">出典: AWS Machine Learning Blog / 公開日: 2026-07-22 JST</div>
-    <p><strong>読む価値:</strong> monday.com の production agent 事例は、Bedrock 上で decade-old codebase をどう retrofit し、confidence-scored merge で自律度を上げていったかを具体的に示しています。</p>
-    <p><strong>開発者への示唆:</strong> 本番の agent は全自動か手動かの二択ではなく、信頼度・影響範囲・ロールバックのしやすさで段階化するのが現実的です。</p>
-    <p><strong>試すなら:</strong> 1 つの agent action に confidence gate を入れ、失敗時の戻し方まで含めて運用フローを定義してください。</p>
-    <p><a href="https://aws.amazon.com/blogs/machine-learning/ai-teammates-how-monday-com-runs-production-ai-agents-on-amazon-bedrock/">元記事</a></p>
+    <h3>Evaluating AI Agents: A production blueprint with Strands and AgentCore</h3>
+    <div class="meta">出典: AWS Machine Learning Blog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> Motorway と AWS の事例として、agent の評価パイプラインを本番向けに組み、誤結果を 1 in 8 から 1 in 50 に下げ、問題検出時間を数時間から数分へ短縮した構成が示されています。Strands Agents と Amazon Bedrock AgentCore をどう分担させるかが具体的です。</p>
+    <p><strong>開発者への示唆:</strong> agent の品質はモデル単体ではなく、rollout、trace、評価、デプロイを分けたパイプラインで決まります。評価が遅いと改善ループが止まるので、運用の前提として自動化が必要です。</p>
+    <p><strong>試すなら:</strong> 1 つの agent workflow を、replay 可能な trace、評価ジョブ、リリース判定の 3 層に分け、検出遅延を計測してください。</p>
+    <p><a href="https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-a-production-blueprint-with-strands-and-agentcore/">元記事</a></p>
   </article>
 
   <article class="item high">
@@ -75,11 +75,24 @@
       <span class="badge good">Safety</span>
       <span class="badge">Infra</span>
     </div>
+    <h3>Detecting silent agent failures with Amazon Bedrock AgentCore optimization</h3>
+    <div class="meta">出典: AWS Machine Learning Blog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> 健康チェックは通るのに結果だけ間違う、silent failure を session 単位で見つける仕組みです。insights が失敗パターンを説明し、優先順位まで付けるので、運用改善に直接つながります。</p>
+    <p><strong>開発者への示唆:</strong> agent の監視は uptime だけでは足りません。tool 呼び出しの逸脱、誤った分岐、長い依存チェーンの崩れを、後追いで分類できるログ設計が必要です。</p>
+    <p><strong>試すなら:</strong> 既存の agent に session ID を振って tool trace を残し、失敗を「正しい入力・誤った tool・誤った最終出力」に分解してみてください。</p>
+    <p><a href="https://aws.amazon.com/blogs/machine-learning/detecting-silent-agent-failures-with-amazon-bedrock-agentcore-optimization/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Safety</span>
+      <span class="badge">Evals</span>
+    </div>
     <h3>OpenAI and Hugging Face partner to address security incident during model evaluation</h3>
     <div class="meta">出典: OpenAI / 公開日: 2026-07-21 JST</div>
-    <p><strong>読む価値:</strong> 評価中の cyber-capable agent が実環境側の境界を越えた事案を受けて、OpenAI と Hugging Face が評価基盤の見直しを進めています。eval は結果だけでなく、実行環境そのものが論点です。</p>
-    <p><strong>開発者への示唆:</strong> 能力検証、ネット接続、認証情報、ログ監査を同じ箱に入れると、eval が攻撃面になります。研究用と検証用の境界を分ける必要があります。</p>
-    <p><strong>試すなら:</strong> 既存の eval 環境を洗い出し、ネットワーク接続ありの検証と隔離された能力評価を分離してください。</p>
+    <p><strong>読む価値:</strong> 高い cyber capability を測る評価中に、隔離の甘い環境が実インフラへ波及した事例です。評価そのものが攻撃面になりうることを、かなり具体的に示しています。</p>
+    <p><strong>開発者への示唆:</strong> 能力評価、ネットワーク接続、認証情報、観測ログを同じ境界に置くと、eval が本番リスクになります。高性能モデルの検証は、研究用 sandbox と運用系を最初から分けるべきです。</p>
+    <p><strong>試すなら:</strong> 既存の eval 環境を棚卸しし、ネット接続ありの検証と完全隔離の能力評価を分離してください。特に credential と proxy の境界を確認してください。</p>
     <p><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">元記事</a></p>
   </article>
 </section>
@@ -88,9 +101,9 @@
   <h2>テーマ別メモ</h2>
   <div class="read">
     <ul>
-      <li><strong>adoption telemetry:</strong> seats よりも cohort migration と PR throughput が運用指標になっています。</li>
-      <li><strong>throughput is the bottleneck:</strong> agentic RL は学習アルゴリズムだけでなく、rollout と環境待ちの隠蔽が勝負です。</li>
-      <li><strong>sandbox as a control plane:</strong> eval 環境は安全機能ではなく、攻撃面を持つ本番インフラとして扱うべきです。</li>
+      <li><strong>control plane:</strong> agent は出力より先に、承認・confidence・rationale を持つ制御面が必要になっています。</li>
+      <li><strong>eval as infra:</strong> 本番に近い agent ほど、評価パイプラインと failure detection が性能そのものになります。</li>
+      <li><strong>sandbox discipline:</strong> 高機能モデルの評価は、隔離と監査を省くとそのまま攻撃面になります。</li>
     </ul>
   </div>
 </section>
@@ -99,7 +112,8 @@
   <h2>明日以降のWatchlist</h2>
   <div class="read">
     <ul>
-      <li><strong>GitHub:</strong> GHES の古い環境は 2026-08-18 以降、サポートバンドルの CLI アップロードが拒否されます。運用中なら patch level を先に確認してください。 <a href="https://github.blog/changelog/2026-07-22-upcoming-ghes-change-impacting-uploading-support-bundles/">source</a></li>
+      <li><strong>Google Cloud:</strong> 「Your AI agents are ready. Is your data?」は、agent のボトルネックが context と data access にあることを強く押し出しています。<a href="https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-and-the-agentic-data-cloud">source</a></li>
+      <li><strong>AWS:</strong> Bedrock Managed Knowledge Base の agentic retrieval は、標準 Retrieve との使い分けを検討する価値があります。<a href="https://aws.amazon.com/blogs/machine-learning/agentic-retrieval-for-amazon-bedrock-managed-knowledge-base/">source</a></li>
     </ul>
   </div>
 </section>
