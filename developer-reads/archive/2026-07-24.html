@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Developer Reads - 2026-07-24 Archive</title>
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-07-24 07:09 JST</div>
+  <div class="meta">Last updated: 2026-07-24 07:25 JST</div>
   <h1>Developer Reads</h1>
   <div class="sub">Archived daily developer scan for JST 2026-07-24.</div>
 </header>
@@ -23,9 +23,9 @@
 
 <section class="summary">
   <ol>
-    <li>agent 制御は、confidence と rationale を見せるレビュー型へ寄っています。</li>
-    <li>production agent は、評価と failure detection を同じ運用面で回す必要があります。</li>
-    <li>高機能モデルの評価は、隔離と監査を削るとそのままリスクになります。</li>
+    <li>agent の出力より先に、承認・confidence・rationale を持つ制御面が前提になっています。</li>
+    <li>モデル選択と作業環境の指定が、coding agent の実運用で重要な policy になっています。</li>
+    <li>評価は試行錯誤ではなく、再現可能な benchmark と task-state ベースの検証へ寄っています。</li>
   </ol>
 </section>
 
@@ -35,27 +35,53 @@
   <article class="item high">
     <div class="badges">
       <span class="badge good">Agents</span>
-      <span class="badge">API</span>
+      <span class="badge">Coding Agents</span>
     </div>
     <h3>Agent automation controls in GitHub Issues in public preview</h3>
     <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-23 JST</div>
-    <p><strong>読む価値:</strong> GitHub Issues の agent automation に、approval と confidence と rationale が入ります。自動化の可否を二択で決めるのではなく、変更の出し方を設計できるのが重要です。</p>
-    <p><strong>開発者への示唆:</strong> issue triage やメタデータ更新は、低 confidence の変更を review に残せると一気に運用しやすくなります。監査ログも自然に残せます。</p>
-    <p><strong>試すなら:</strong> 1 つの repo で suggestion モードを試し、レビュー待ちの件数と誤適用率を比べてください。</p>
+    <p><strong>読む価値:</strong> GitHub Issues に approvals, confidence, rationale が入り、ラベル付けや担当割り当てを review 前提で流せるようになりました。REST と GraphQL でも扱えるので、issue automation を実運用の制御面として設計できます。</p>
+    <p><strong>開発者への示唆:</strong> issue automation は「自動化するかどうか」ではなく、「どの confidence なら自動適用するか」の設計問題です。高リスク変更だけを review に寄せると、速度と監査性の両立がしやすくなります。</p>
+    <p><strong>試すなら:</strong> 低リスクの repo で suggestion mode を有効にして、どの action が review に残るか、rationale が triage で本当に役立つかを観測してください。</p>
     <p><a href="https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview/">元記事</a></p>
   </article>
 
   <article class="item high">
     <div class="badges">
       <span class="badge good">Coding Agents</span>
-      <span class="badge">Infra</span>
+      <span class="badge">API</span>
     </div>
-    <h3>GitHub Mobile: Fix failing Actions checks with Copilot cloud agent</h3>
+    <h3>Claude Opus 5 is now available in GitHub Copilot</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-24 JST</div>
+    <p><strong>読む価値:</strong> Claude Opus 5 が Copilot に入り、長時間の coding task、複数ツールの協調、regression verification を狙うモデル選択肢が増えました。Copilot のモデル選択が、単なる好みではなくワークフロー設計になります。</p>
+    <p><strong>開発者への示唆:</strong> 複雑な refactor や自動修正の成否は、モデル単体より「どの作業を任せるか」「どこで止めるか」で決まります。高性能モデルほど、policy と評価セットを先に決めた方が安全です。</p>
+    <p><strong>試すなら:</strong> いまの既定モデルと Opus 5 を、同じ failing test と multi-file refactor で比べ、diff の大きさ・再試行回数・人間の修正量を見てください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Agents</span>
+      <span class="badge">Coding Agents</span>
+    </div>
+    <h3>Copilot cloud agent for Linear is now generally available</h3>
     <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-23 JST</div>
-    <p><strong>読む価値:</strong> mobile から CI 失敗を起点に agent が修正 PR を作る導線が追加されました。PR ベースで返ってくるので、レビューとマージの流れを崩しません。</p>
-    <p><strong>開発者への示唆:</strong> coding agent は、コード生成よりも「失敗した CI から修正案を素早く返す」場面で効きます。失敗条件の再現性と最小差分が運用品質を左右します。</p>
-    <p><strong>試すなら:</strong> 既知の failing PR で試し、原因切り分け、修正粒度、再実行のしやすさを確認してください。</p>
-    <p><a href="https://github.blog/changelog/2026-07-23-github-mobile-fix-failing-actions-checks-with-copilot-cloud-agent/">元記事</a></p>
+    <p><strong>読む価値:</strong> Linear の issue を Copilot cloud agent に割り当てると、draft pull request を作成し、GitHub Actions ベースの一時環境で進め、完了時に review を求めます。issue tracker が async work の起点になりました。</p>
+    <p><strong>開発者への示唆:</strong> agent の制御点は、issue 本文だけでなく、モデル・branch・カスタム agent まで含むようになっています。作業の入口を Linear に寄せるなら、ブランチ規約とコース修正のルールを先に決めるべきです。</p>
+    <p><strong>試すなら:</strong> 1 つの Linear キューで pilot を走らせ、time-to-PR と review 往復回数を測りつつ、コメントでの指示変更がどこまで効くか確認してください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-23-copilot-cloud-agent-for-linear-is-now-generally-available/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Infra</span>
+      <span class="badge">API</span>
+    </div>
+    <h3>GitHub MCP Server supports the next MCP specification</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-23 JST</div>
+    <p><strong>読む価値:</strong> MCP が 2026-07-28 から stateless になるのに合わせ、GitHub MCP Server が新 spec に先行対応しました。sessions と <code>initialize</code> が外れ、並列 handshake しやすくなるのが大きいです。</p>
+    <p><strong>開発者への示唆:</strong> remote tool server の設計は、stateful session を前提にしたままだと移行で詰まります。MCP 接続の resume や tool 選択が状態に依存していないか、今のうちに点検した方がいいです。</p>
+    <p><strong>試すなら:</strong> 既存の MCP client/server を next spec 相当で一度つなぎ、session 管理や認証まわりの暗黙前提がどこにあるか洗い出してください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/">元記事</a></p>
   </article>
 
   <article class="item high">
@@ -63,38 +89,12 @@
       <span class="badge good">Evals</span>
       <span class="badge">Infra</span>
     </div>
-    <h3>Evaluating AI Agents: A production blueprint with Strands and AgentCore</h3>
-    <div class="meta">出典: AWS Machine Learning Blog / 公開日: 2026-07-23 JST</div>
-    <p><strong>読む価値:</strong> 1 in 8 の誤結果を 1 in 50 に下げ、検出時間を数時間から数分に短縮した本番評価パイプラインが具体的です。Strands と AgentCore の役割分担もそのまま参考になります。</p>
-    <p><strong>開発者への示唆:</strong> agent の評価は、モデル性能より先にパイプライン設計で詰まります。trace を保存し、評価とデプロイを分離しないと改善ループが回りません。</p>
-    <p><strong>試すなら:</strong> 1 つの workflow を replayable trace と評価ジョブに分け、検出遅延と再現率を測ってください。</p>
-    <p><a href="https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-a-production-blueprint-with-strands-and-agentcore/">元記事</a></p>
-  </article>
-
-  <article class="item high">
-    <div class="badges">
-      <span class="badge good">Safety</span>
-      <span class="badge">Infra</span>
-    </div>
-    <h3>Detecting silent agent failures with Amazon Bedrock AgentCore optimization</h3>
-    <div class="meta">出典: AWS Machine Learning Blog / 公開日: 2026-07-23 JST</div>
-    <p><strong>読む価値:</strong> 健康チェックをすり抜ける silent failure を session から見つけ、原因をランキングできます。単なる監視ではなく、改善対象の優先順位付けまで含むのが実務的です。</p>
-    <p><strong>開発者への示唆:</strong> 監視は可用性だけでは足りず、tool 連鎖の崩れや誤分岐を後から分類できる必要があります。失敗を説明できないと、agent 運用は改善しにくいです。</p>
-    <p><strong>試すなら:</strong> tool trace を残した agent に session ID を付け、失敗をタイプ別にまとめてください。</p>
-    <p><a href="https://aws.amazon.com/blogs/machine-learning/detecting-silent-agent-failures-with-amazon-bedrock-agentcore-optimization/">元記事</a></p>
-  </article>
-
-  <article class="item high">
-    <div class="badges">
-      <span class="badge good">Safety</span>
-      <span class="badge">Evals</span>
-    </div>
-    <h3>OpenAI and Hugging Face partner to address security incident during model evaluation</h3>
-    <div class="meta">出典: OpenAI / 公開日: 2026-07-21 JST</div>
-    <p><strong>読む価値:</strong> 高い cyber capability の評価中に、隔離の甘い環境が実インフラへ波及した事例です。評価の安全境界が、そのまま設計論点であることを示しています。</p>
-    <p><strong>開発者への示唆:</strong> 検証用 sandbox と production-like 環境は分けるべきです。network、credentials、proxy、監査ログの境界を一度でも曖昧にすると、評価の意味が変わります。</p>
-    <p><strong>試すなら:</strong> 既存の eval 環境から、ネット接続ありの検証と完全隔離の能力評価を切り出してください。</p>
-    <p><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">元記事</a></p>
+    <h3>AWS announces aws-bench, an open-source benchmark for AI agents on AWS</h3>
+    <div class="meta">出典: AWS What's New / 公開日: 2026-07-24 JST</div>
+    <p><strong>読む価値:</strong> AWS 上の real-world tasks を再現する research preview の benchmark で、ground-truth と CLI を使って agent を採点できます。評価対象が cloud task state まで落ちているのが実務向きです。</p>
+    <p><strong>開発者への示唆:</strong> agent の良し悪しは、プロンプトの感触より task-state ベースの再現性で見る方が強くなっています。infra 系の agent ほど、benchmark と harness の整備が成果を左右します。</p>
+    <p><strong>試すなら:</strong> ひとつの内部 agent か harness を aws-bench に通し、自前の cloud-task eval と照らして failure mode の差を確認してください。</p>
+    <p><a href="https://aws.amazon.com/about-aws/whats-new/2026/07/aws-bench/">元記事</a></p>
   </article>
 </section>
 
@@ -102,9 +102,9 @@
   <h2>テーマ別メモ</h2>
   <div class="read">
     <ul>
-      <li><strong>control plane:</strong> 変更を自動適用する前に、レビューと理由の可視化が標準になりつつあります。</li>
-      <li><strong>eval as infra:</strong> 本番 agent は、評価ジョブと failure detection がなければ改善速度が落ちます。</li>
-      <li><strong>sandbox discipline:</strong> 高機能モデルの評価は、隔離を崩すとそのままセキュリティ事故になります。</li>
+      <li><strong>control plane:</strong> agent は「何を出したか」より「どの confidence で出すか」を制御する時代に入っています。</li>
+      <li><strong>workflow steering:</strong> issue tracker と model 選択が結びつき、async work の入口自体が変わっています。</li>
+      <li><strong>eval discipline:</strong> task-state ベースの benchmark を持たない agent は、運用改善の速度で負けやすくなります。</li>
     </ul>
   </div>
 </section>
@@ -113,8 +113,8 @@
   <h2>明日以降のWatchlist</h2>
   <div class="read">
     <ul>
-      <li><strong>Google Cloud:</strong> Agentic data cloud の記事は、agent のボトルネックが context access にあることを再確認させます。<a href="https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-and-the-agentic-data-cloud">source</a></li>
-      <li><strong>AWS:</strong> Bedrock Managed Knowledge Base の agentic retrieval は、標準 Retrieve との比較がしやすい実装候補です。<a href="https://aws.amazon.com/blogs/machine-learning/agentic-retrieval-for-amazon-bedrock-managed-knowledge-base/">source</a></li>
+      <li><strong>GitHub Mobile:</strong> Failed Actions checks を Copilot cloud agent で直す導線は、移動中の CI 修復ワークフローとして使い道があります。<a href="https://github.blog/changelog/2026-07-23-github-mobile-fix-failing-actions-checks-with-copilot-cloud-agent/">source</a></li>
+      <li><strong>GitHub metrics:</strong> New Copilot usage metrics impact dashboard は、導入効果の可視化を急ぐ組織なら要確認です。<a href="https://github.blog/changelog/2026-07-22-new-copilot-usage-metrics-impact-dashboard/">source</a></li>
     </ul>
   </div>
 </section>
