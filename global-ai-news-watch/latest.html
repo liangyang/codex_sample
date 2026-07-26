@@ -1,193 +1,88 @@
-﻿<!doctype html>
-    <html lang="ja">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>??AI???? ? 2026-07-25 JST</title>
-    <link rel="stylesheet" href="../assets/site.css">
-    <style id="mobile-readability">
+<!doctype html>
+        <html lang="ja">
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>世界AIニュース — 2026-07-25 JST</title>
+        <link rel="stylesheet" href="../assets/site.css">
+        <style id="mobile-readability">
 @media (max-width: 720px) {
   html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-  body {
-    font-size: 16px !important;
-    line-height: 1.78 !important;
-    overflow-wrap: anywhere;
-  }
-  .container,
-  .wrap {
-    width: 100% !important;
-    max-width: none !important;
-    padding: 16px 12px 40px !important;
-  }
-  header,
-  .hero {
-    margin: 0 0 16px !important;
-    padding: 16px 12px !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-  h1 {
-    font-size: 28px !important;
-    line-height: 1.22 !important;
-    letter-spacing: 0 !important;
-  }
-  h2,
-  .section-title {
-    margin-top: 24px !important;
-    font-size: 21px !important;
-    line-height: 1.3 !important;
-  }
-  h3 {
-    font-size: 18px !important;
-    line-height: 1.45 !important;
-  }
-  p,
-  li,
-  dt,
-  dd {
-    font-size: 16px !important;
-  }
-  .sub,
-  .subtitle,
-  .mini,
-  .footer,
-  footer {
-    font-size: 13px !important;
-    line-height: 1.65 !important;
-  }
-  .read {
-    font-size: 17px !important;
-  }
-  .grid,
-  .meta-grid,
-  .kvs {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-  .card,
-  .signal,
-  .meta-card,
-  .thesis,
-  .caveat {
-    margin: 12px 0 !important;
-    padding: 14px 12px !important;
-    border-radius: 8px !important;
-    box-shadow: none !important;
-  }
-  .signal {
-    border-left-width: 4px !important;
-  }
-  .signal-head {
-    display: block !important;
-  }
-  .heat,
-  .badge,
-  .rank {
-    display: inline-flex !important;
-    align-items: center !important;
-    max-width: 100% !important;
-    margin: 6px 6px 2px 0 !important;
-    white-space: normal !important;
-    line-height: 1.35 !important;
-  }
-  dl {
-    display: block !important;
-    margin-top: 12px !important;
-  }
-  dt {
-    margin-top: 12px !important;
-    font-weight: 700 !important;
-  }
-  dd {
-    margin: 2px 0 0 !important;
-  }
-  ul {
-    padding-left: 1.2em !important;
-  }
-  .sources {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
-  }
-  .sources a,
-  .source-list a {
-    display: block !important;
-    padding: 9px 10px !important;
-    border-radius: 8px !important;
-  }
-  code {
-    white-space: normal !important;
-  }
-  .table {
-    display: block !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-  }
-  .table th,
-  .table td {
-    min-width: 180px !important;
-    font-size: 14px !important;
-  }
+  body { font-size: 16px !important; line-height: 1.78 !important; overflow-wrap: anywhere; }
+  .page { width: 100% !important; max-width: none !important; padding: 16px 12px 40px !important; }
+  header, .hero { margin: 0 0 16px !important; padding: 16px 12px !important; border-radius: 0 !important; box-shadow: none !important; }
+  h1 { font-size: 28px !important; line-height: 1.22 !important; letter-spacing: 0 !important; }
+  h2, .section-title { margin-top: 24px !important; font-size: 21px !important; line-height: 1.3 !important; }
+  h3 { font-size: 18px !important; line-height: 1.45 !important; }
+  p, li, dt, dd { font-size: 16px !important; }
+  .sub, .subtitle, .mini, .footer, footer { font-size: 13px !important; line-height: 1.65 !important; }
+  .read { font-size: 17px !important; }
+  .grid, .meta-grid, .kvs { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+  .card, .signal, .meta-card, .thesis, .caveat { margin: 12px 0 !important; padding: 14px 12px !important; border-radius: 8px !important; box-shadow: none !important; }
+  .signal { border-left-width: 4px !important; }
+  .signal-head { display: block !important; }
+  .heat, .badge, .rank { display: inline-flex !important; align-items: center !important; max-width: 100% !important; margin: 6px 6px 2px 0 !important; white-space: normal !important; line-height: 1.35 !important; }
+  dl { display: block !important; margin-top: 12px !important; }
+  dt { margin-top: 12px !important; font-weight: 700 !important; }
+  dd { margin: 2px 0 0 !important; }
+  ul { padding-left: 1.2em !important; }
+  .sources, .source-list { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; }
+  .sources a, .source-list a { display: block !important; padding: 9px 10px !important; border-radius: 8px !important; }
+  code { white-space: normal !important; }
+}
 </style>
-</head>
-    <body>
-    <main class="page">
-    <header>
-      <div class="meta">??????????AI?????? / JST 2026-07-25</div>
-      <h1>??AI???? 2026-07-25</h1>
-      <div class="meta">??: ??AI???? / ??: 2026-07-25 07:23 JST / ????: ???????????????</div>
-    </header>
-    <nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
-      <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">??????</a>
-      <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">?????</a>
-    </nav>
-    <section class="note"><strong>?????????:</strong> ?????????: ?????AI?????????????????????????????????????????????????????????????????</section>
-    <section class="summary"><ol><li>??AI?????????????????????????????????</li><li>Google?GitHub?OpenAI ??agent ??????????????????????</li><li>?????????????????????AI??????????????????????</li></ol></section>
-    <section><h2>??????</h2><div class="read"><ul><li>??: Google DeepMind ? Gemini 3.5 Flash Cyber ????????????????????????????</li><li>??: GitHub ? Linear ?? Copilot cloud agent ?????????? agent ??????????</li><li>??: GitHub MCP Server ??? MCP ???????stateless ??????????</li><li>??: OpenAI ? Hugging Face ?????????????????????????????????</li><li>??: OpenAI ??????AI??????????????????????????</li></ul></div></section>
-    <section><h2>?????</h2><div class="read">?????AI??????????????????????????????????????????????????agent ??????MCP ??????????????????????????????</div></section>
-    <section><h2>??????</h2><div class="read"><ul><li>agent ??????????????????????????</li><li>????????????????????????????????</li><li>MCP ???? agent ?????????????????????????</li></ul></div></section>
-    <section><h2>Top Signals</h2><article class="signal high">
-  <h3>Gemini 3.5 Flash Cyber ???</h3>
-  <div class="badges"><span class="badge">??: ????</span><span class="badge">??: ????</span><span class="badge">?: Security / Models</span></div>
-  <p><strong>??:</strong> Google DeepMind ??????????????????? Gemini 3.5 Flash Cyber ???????????????????????????????????????????????????????</p>
-  <p><strong>??:</strong> ????</p>
+        </head>
+        <body>
+        <main class="page">
+        <header>
+          <div class="meta">公開情報ベースの日次AIニュース整理 / JST 2026-07-25</div>
+          <h1>世界AIニュース 2026-07-25</h1>
+          <div class="meta">対象: 世界AIニュース / 更新: 2026-07-25 07:30 JST / 編集方針: 公式発表と主要報道を分けて整理</div>
+        </header>
+        <nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
+          <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
+          <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
+        </nav>
+        <section class="note"><strong>このページについて:</strong> 世界の主要AI企業、開発者向け配布、安全性、運用制御の動きを公開情報だけで整理します。未確認の数字や計画は断定せず、根拠と扱いを分けて示します。</section>
+        <section class="summary"><ol><li>世界AIは、モデルの更新よりも、運用権限と接続先を増やす方向が中心でした。</li><li>Google、GitHub、OpenAI は、agent の実行環境と安全評価を同時に強化しています。</li><li>ニュース配信や評価インシデントの更新から、AIが実務に入る前提条件が明確になってきました。</li></ol></section>
+        <section><h2>前日との差分</h2><div class="read"><ul><li>新規: Google DeepMind が Gemini 3.5 Flash Cyber を発表し、限られたパートナー向けの防御用途を示しました。</li><li>新規: GitHub は Linear 向け Copilot cloud agent を一般提供し、非同期 agent の入口を広げました。</li><li>新規: GitHub MCP Server が次期 MCP 仕様に対応し、stateless 化に先回りしました。</li><li>新規: OpenAI と Hugging Face の評価中インシデント対応が、強力なモデル評価のリスクを示しました。</li><li>新規: OpenAI は報道機関のAI活用事例を公開し、配信と編集の実務接続を強めました。</li></ul></div></section>
+        <section><h2>今日の読み</h2><div class="read">今日の世界AIは、単なる性能競争ではなく、どの権限をどこまで持たせるかという設計の話になっています。防御用モデル、agent の実行経路、MCP などの接続規格、安全評価のやり方が同じ土俵で動き始めました。</div></section>
+        <section><h2>実務への示唆</h2><div class="read"><ul><li>agent 導入は、権限・レビュー・ロールバックを最初に決める。</li><li>評価やベンチマークの話は、アクセス範囲と安全条件を必ず確認する。</li><li>MCP や非同期 agent の変更は、ツール接続の再設計コストとして見積もる。</li></ul></div></section>
+        <section><h2>Top Signals</h2><article class="signal high">
+  <h3>Gemini 3.5 Flash Cyber を公開</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 限定提供</span><span class="badge">軸: Security / Models</span></div>
+  <p><strong>要点:</strong> Google DeepMind は、脆弱性の検出・検証・修正に特化した Gemini 3.5 Flash Cyber を公開しました。公開範囲は政府・信頼済みパートナーに絞られており、防御用途と抑制的な展開を同時に進めています。</p>
+  <p><strong>扱い:</strong> 限定提供</p>
   <div class="sources"><a href="https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/">Google DeepMind blog</a><a href="https://deepmind.google/blog/">Google DeepMind news page</a></div>
-</article>
-<article class="signal high">
-  <h3>Copilot cloud agent for Linear ? GA</h3>
-  <div class="badges"><span class="badge">??: ????</span><span class="badge">??: ????</span><span class="badge">?: Agent / Workflow</span></div>
-  <p><strong>??:</strong> GitHub ? Linear ? Copilot cloud agent ???????issue ?? draft PR ????????????????????????????????????????????????????????</p>
-  <p><strong>??:</strong> ????</p>
+</article><article class="signal high">
+  <h3>Copilot cloud agent for Linear が GA</h3>
+  <div class="badges"><span class="badge">根拠: 企業公式</span><span class="badge">扱い: 公式発表</span><span class="badge">軸: Agent / Workflow</span></div>
+  <p><strong>要点:</strong> GitHub は Linear で Copilot cloud agent を一般提供し、issue から draft PR までを非同期で進める流れを広げました。モデルだけでなく、作業の入口とレビューの導線が製品側に組み込まれています。</p>
+  <p><strong>扱い:</strong> 公式発表</p>
   <div class="sources"><a href="https://github.blog/changelog/2026-07-23-copilot-cloud-agent-for-linear-is-now-generally-available/">GitHub Changelog</a></div>
-</article>
-<article class="signal high">
-  <h3>GitHub MCP Server ????????</h3>
-  <div class="badges"><span class="badge">??: ????</span><span class="badge">??: ????</span><span class="badge">?: Infra / Protocol</span></div>
-  <p><strong>??:</strong> MCP ? stateless core ??????GitHub MCP Server ??????????????agent ???????????????????????????????????</p>
-  <p><strong>??:</strong> ????</p>
+</article><article class="signal high">
+  <h3>GitHub MCP Server が次期仕様に対応</h3>
+  <div class="badges"><span class="badge">根拠: 企業公式</span><span class="badge">扱い: 公式発表</span><span class="badge">軸: Infra / Protocol</span></div>
+  <p><strong>要点:</strong> MCP が stateless core に移る前に、GitHub MCP Server が新仕様対応を済ませました。agent が使う接続規格の変化は、ツール連携の安定性と再実装コストに直結します。</p>
+  <p><strong>扱い:</strong> 公式発表</p>
   <div class="sources"><a href="https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/">GitHub Changelog</a></div>
-</article>
-<article class="signal high">
-  <h3>OpenAI ? Hugging Face ?????????????</h3>
-  <div class="badges"><span class="badge">??: ????</span><span class="badge">??: ???</span><span class="badge">?: Safety / Evaluation</span></div>
-  <p><strong>??:</strong> Hugging Face ???????????????OpenAI ????????? cyber ????????????????????????????????????????????????????</p>
-  <p><strong>??:</strong> ???</p>
+</article><article class="signal high">
+  <h3>OpenAI と Hugging Face が評価中インシデントを整理</h3>
+  <div class="badges"><span class="badge">根拠: 公式発表</span><span class="badge">扱い: 要追跡</span><span class="badge">軸: Safety / Evaluation</span></div>
+  <p><strong>要点:</strong> Hugging Face のインフラ侵入事案に関連して、OpenAI は評価用に緩和した cyber 設定のモデルが関与したと説明しました。能力評価の強化と、安全な取り扱いの両立が改めて課題になっています。</p>
+  <p><strong>扱い:</strong> 要追跡</p>
   <div class="sources"><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">OpenAI post</a></div>
-</article>
-<article class="signal high">
-  <h3>OpenAI ??????AI???????</h3>
-  <div class="badges"><span class="badge">??: ????</span><span class="badge">??: ????</span><span class="badge">?: Adoption / Media</span></div>
-  <p><strong>??:</strong> OpenAI ???????????????????????? AI ???????????????AI???????????????????????????????</p>
-  <p><strong>??:</strong> ????</p>
+</article><article class="signal high">
+  <h3>OpenAI が報道機関のAI活用事例を公開</h3>
+  <div class="badges"><span class="badge">根拠: 企業公式</span><span class="badge">扱い: 公式発表</span><span class="badge">軸: Adoption / Media</span></div>
+  <p><strong>要点:</strong> OpenAI は、報道機関が検索、要約、配信、読者接点の改善に AI を使う事例をまとめました。生成AIの活用は、個別機能から編集・配信のワークフローへ移っています。</p>
+  <p><strong>扱い:</strong> 公式発表</p>
   <div class="sources"><a href="https://openai.com/index/how-news-organizations-are-using-ai/">OpenAI news organizations post</a></div>
 </article></section>
-    <section><h2>??????</h2><div class="grid two"><div class="mini-card"><strong>GitHub ? Copilot ????</strong><br>Copilot ???????? API ?????????????????????????????????????????????<div class="sources"><a href="https://github.blog/ai-and-ml/github-copilot/copilot-vs-raw-api-access-what-are-you-actually-paying-for/">GitHub blog</a></div></div><div class="mini-card"><strong>Copilot impact dashboard</strong><br>??????????????????????????????????????????<div class="sources"><a href="https://github.blog/changelog/2026-07-22-new-copilot-usage-metrics-impact-dashboard/">GitHub Changelog</a></div></div><div class="mini-card"><strong>Google ? 3.6 Flash / 3.5 Flash-Lite</strong><br>????????????????????????????????????????<div class="sources"><a href="https://deepmind.google/models/model-cards/">Google DeepMind model cards</a><a href="https://deepmind.google/models/gemini/flash-lite/">Gemini 3.5 Flash-Lite</a></div></div></div></section>
-    <section><h2>Watchlist</h2><ul><li>Gemini 3.5 Flash Cyber ?????????????</li><li>Copilot cloud agent ? MCP ?????????????????????</li><li>OpenAI ???????????????????????????????</li></ul></section>
-    <section><h2>Caveat</h2><div class="note">?????????????????????????????????????????????????????????????????????????????</div></section>
-    <footer>??????????????????????????????????????????</footer>
-    </main>
-    </body>
-    </html>
-
+        <section><h2>補助シグナル</h2><div class="grid two"><div class="mini-card"><strong>GitHub の Copilot 料金説明</strong><br>Copilot の対価を、モデル API だけでなくワークフロー込みで説明する整理が出ており、導入判断の比較軸が明確になっています。<div class="sources"><a href="https://github.blog/ai-and-ml/github-copilot/copilot-vs-raw-api-access-what-are-you-actually-paying-for/">GitHub blog</a></div></div><div class="mini-card"><strong>Copilot impact dashboard</strong><br>管理者向けの採用深度ダッシュボードが追加され、活用状況を定量的に見やすくなりました。<div class="sources"><a href="https://github.blog/changelog/2026-07-22-new-copilot-usage-metrics-impact-dashboard/">GitHub Changelog</a></div></div><div class="mini-card"><strong>Google の 3.6 Flash / 3.5 Flash-Lite</strong><br>軽量モデルの選択肢が増え、速度・コスト・推論のバランスを取りやすくなっています。<div class="sources"><a href="https://deepmind.google/models/model-cards/">Google DeepMind model cards</a><a href="https://deepmind.google/models/gemini/flash-lite/">Gemini 3.5 Flash-Lite</a></div></div></div></section>
+        <section><h2>Watchlist</h2><ul><li>Gemini 3.5 Flash Cyber の提供範囲がどう広がるか。</li><li>Copilot cloud agent と MCP 仕様の変化が、他社ツールにどう波及するか。</li><li>OpenAI の安全評価や業界事例が、利用条件や監査要件にどう反映されるか。</li></ul></section>
+        <section><h2>Caveat</h2><div class="note">このレポートは公式発表と主要報道をもとに整理しています。限定提供、評価設定、モデル接続は更新されやすいため、重要な導入判断では一次情報を確認してください。</div></section>
+        <footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer>
+        </main>
+        </body>
+        </html>
