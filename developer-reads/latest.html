@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-07-27</title>
+<title>Developer Reads - 2026-07-28</title>
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-07-27 07:13 JST</div>
+  <div class="meta">Last updated: 2026-07-28 07:13 JST</div>
   <h1>Developer Reads</h1>
   <div class="sub">AI開発者向けの公式・一次情報記事を、実装に役立つ形で整理する日次キュレーションです。</div>
 </header>
@@ -18,27 +18,92 @@
   <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
 </nav>
 
-<section class="note"><strong>このページについて:</strong> AI企業・開発者プラットフォームの公式記事と一次情報だけを確認し、実装・設計・運用に直結するものだけを残します。今日は直近24〜48時間を見ましたが、強く推せる新規の開発者向け発表は少なかったため、無理に埋めず watchlist を中心にしています。</section>
+<section class="note"><strong>このページについて:</strong> AI企業・開発者プラットフォームの公式記事と一次情報だけを確認し、実装・設計・運用に直結するものだけを残します。今日は直近24〜48時間を見て、Copilot の統制、観測、供給網防御に効く更新を中心にまとめました。</section>
 
 <section class="summary">
   <ol>
-    <li>今日は新規の大きな開発者向け発表はありません。</li>
-    <li>GitHub の 2 件の 7/27 更新は、機能追加というより Copilot の管理面を整える内容です。</li>
-    <li>明日は GitHub / OpenAI / Anthropic / AWS の公式更新を再確認します。</li>
+    <li>GitHub は Copilot の管理面を、アプリ・クラウド agent・IDE までそろえてきました。</li>
+    <li>Actions と Dependabot の防御が強化され、public repo の supply chain 対策が一段上がりました。</li>
+    <li>JetBrains 側でも telemetry と model management が入り、ローカル開発の観測性が上がっています。</li>
   </ol>
 </section>
 
 <section>
   <h2>今日読むべきもの</h2>
-  <div class="note">該当なし。高品質な新規記事が少ないため、今日は watchlist に絞ります。</div>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Safety</span>
+      <span class="badge">Infra</span>
+    </div>
+    <h3>GitHub Actions holds potentially malicious workflows for approval</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-28 JST</div>
+    <p><strong>読む価値:</strong> public repository の workflow に対して、疑わしい run を自動で止めて write 権限のある collaborator の承認を要求する仕組みが入りました。CI/CD の既定信頼モデルが一段厳しくなります。</p>
+    <p><strong>開発者への示唆:</strong> もはや「workflow があるから動く」前提ではなく、実行前に止まるケースを設計に織り込む必要があります。供給網攻撃の入口が GitHub 側で狭まる一方、運用側では承認フローと通知設計が重要になります。</p>
+    <p><strong>試すなら:</strong> public repo の workflow を棚卸しして、承認待ちになった時の担当者・通知先・復旧手順を確認してください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-28-github-actions-holds-unproven-workflows-for-approval/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Safety</span>
+      <span class="badge">Infra</span>
+    </div>
+    <h3>Dependabot alerts on malicious packages across more ecosystems</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-28 JST</div>
+    <p><strong>読む価値:</strong> OpenSSF の malicious-packages データが GitHub Advisory Database に取り込まれ、npm や PyPI などで malware advisory の検出範囲が広がりました。依存関係の監視が一段実戦的になります。</p>
+    <p><strong>開発者への示唆:</strong> パッケージ名の typo-squat や悪性公開への対策は、スキャン対象の広さで差が出ます。Dependabot の alert を「バージョン更新通知」ではなく、supply chain の監視レイヤーとして扱うべきです。</p>
+    <p><strong>試すなら:</strong> `type:malware` フィルタで今の repo 群を見直し、重要な dependency set がどの ecosystem までカバーされているか確認してください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-28-dependabot-alerts-on-malicious-packages-across-more-ecosystems/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Agents</span>
+      <span class="badge">Coding Agents</span>
+    </div>
+    <h3>Enterprise managed settings in the GitHub Copilot app and Copilot cloud agent</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-27 JST</div>
+    <p><strong>読む価値:</strong> Copilot app と cloud agent が、CLI や VS Code と同じ managed settings を読むようになりました。plugin、marketplace、approval prompt、auto model selection を横断して統制できます。</p>
+    <p><strong>開発者への示唆:</strong> Copilot の運用は、機能選定より policy の一貫性が効きます。クライアントごとに設定がズレると、同じ開発者でも安全性と再現性が落ちます。</p>
+    <p><strong>試すなら:</strong> 既存の `managed-settings.json` を見て、Copilot app と cloud agent にも同じ guardrails が効くかを実際に確認してください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-27-enterprise-managed-settings-now-apply-to-the-github-copilot-app/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Agents</span>
+      <span class="badge">Governance</span>
+    </div>
+    <h3>Manage GitHub Copilot app access with a dedicated policy</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-27 JST</div>
+    <p><strong>読む価値:</strong> Copilot app の access policy が CLI から独立し、enterprise と organization で個別に有効化できるようになりました。クライアント単位の rollout 制御がしやすくなります。</p>
+    <p><strong>開発者への示唆:</strong> どの agent surface を許可するかは、チーム単位で違って当然です。app を入れるなら、pull request ベースの review と監査の流れまで一緒に決める必要があります。</p>
+    <p><strong>試すなら:</strong> AI Controls で app policy を確認し、どの org に先行展開するかと、無効化時の代替導線を決めてください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy/">元記事</a></p>
+  </article>
+
+  <article class="item high">
+    <div class="badges">
+      <span class="badge good">Coding Agents</span>
+      <span class="badge">Infra</span>
+    </div>
+    <h3>GitHub Copilot for JetBrains adds improved OpenTelemetry configuration and model management</h3>
+    <div class="meta">出典: GitHub Changelog / 公開日: 2026-07-27 JST</div>
+    <p><strong>読む価値:</strong> JetBrains 側で OpenTelemetry export、token 上限、model management、MCP server 接続が強化されました。IDE 内の agent work を観測しやすく、コスト制御もしやすくなります。</p>
+    <p><strong>開発者への示唆:</strong> ローカル agent の価値は、速度だけでなく「何をどれだけ使ったか」が見えることにあります。観測と model policy があると、custom endpoint や BYOK の比較もしやすくなります。</p>
+    <p><strong>試すなら:</strong> OTel export を有効にして、同じ task で token 消費と失敗箇所を比較し、`maxInputToken` と `maxOutputToken` の調整効果を見てください。</p>
+    <p><a href="https://github.blog/changelog/2026-07-27-github-copilot-for-jetbrains-adds-improvved-opentelemetry-configuration-and-model-management/">元記事</a></p>
+  </article>
 </section>
 
 <section>
   <h2>テーマ別メモ</h2>
   <div class="read">
     <ul>
-      <li><strong>governance first:</strong> Copilot app の権限分離と managed settings の適用範囲拡大は、機能追加よりも運用統制の話です。</li>
-      <li><strong>quality bar:</strong> 新着が少ない日は、弱い記事を足すより「今日は空振り」と明言した方が実務的です。</li>
+      <li><strong>governance:</strong> Copilot は client ごとの設定差を減らす方向に進んでいます。</li>
+      <li><strong>supply chain:</strong> Actions と Dependabot の既定防御が強くなり、public repo の安全設計が変わります。</li>
+      <li><strong>observability:</strong> agent と IDE の telemetry は、評価とコスト管理の前提になりつつあります。</li>
     </ul>
   </div>
 </section>
@@ -47,8 +112,8 @@
   <h2>明日以降のWatchlist</h2>
   <div class="read">
     <ul>
-      <li><strong>GitHub Copilot app access policy:</strong> Copilot app の独立したアクセス制御は、Enterprise/Organization 管理者の設定見直しポイントです。<a href="https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy/">source</a></li>
-      <li><strong>GitHub Copilot managed settings:</strong> Copilot app と cloud agent への managed settings 適用は、既存の guardrails を広げる更新です。<a href="https://github.blog/changelog/2026-07-27-enterprise-managed-settings-now-apply-to-the-github-copilot-app/">source</a></li>
+      <li><strong>GitHub Models retirement:</strong> 2026-07-30 に GitHub Models が完全終了するので、まだ使っているなら移行確認が必要です。<a href="https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/">source</a></li>
+      <li><strong>Copilot app rollout:</strong> Copilot app のアクセス policy と managed settings を、組織ごとの rollout でどう揃えるかが次の論点です。<a href="https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy/">source</a></li>
     </ul>
   </div>
 </section>
