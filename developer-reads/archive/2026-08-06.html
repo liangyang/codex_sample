@@ -3,27 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-08-06</title>
-<link rel="stylesheet" href="../assets/site.css">
+<title>Developer Reads - 2026-08-06 Archive</title>
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 <main>
 <header>
   <div class="meta">Last updated: 2026-08-06 07:08 JST</div>
   <h1>Developer Reads</h1>
-  <div class="sub">AI開発者向けの公式・一次情報記事を、実装に役立つ形で整理する日次キュレーションです。</div>
+  <div class="sub">Archived daily developer scan for JST 2026-08-06.</div>
 </header>
 <nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
-  <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
-  <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
+  <a href="../../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
+  <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
+  <a href="../latest.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">最新版を読む</a>
 </nav>
 
-<section class="note"><strong>このページについて:</strong> AI企業・開発者プラットフォームの公式記事や一次情報から、実装・設計・運用に使えるものだけを選びます。今日は直近24〜48時間で、GitHub の Copilot と安全性・統制まわりに実装価値の高い更新がまとまって出ました。</section>
+<section class="note"><strong>アーカイブ版:</strong> これは 2026-08-06 JST のスナップショットです。公開後に元記事が更新されている可能性があります。</section>
 
 <section class="summary">
   <ol>
-    <li>GitHub の Copilot モデル追加と管理系更新が、今日の主な読みどころです。</li>
-    <li>CodeQL、Dependabot、Spark、請求設定の変更は、運用と移行の手当てに直結します。</li>
+    <li>GitHub の Copilot / CodeQL / Spark / Dependabot 更新が、今日の中心でした。</li>
+    <li>モデル追加と統制更新が同時に来ているので、試す順番と運用ルールを分けて考えるのが安全です。</li>
   </ol>
 </section>
 
@@ -33,9 +34,9 @@
     <h3>Kimi K3 is now available in GitHub Copilot</h3>
     <p><strong>出典:</strong> GitHub Changelog / <strong>公開日:</strong> 2026-08-06 / <strong>カテゴリ:</strong> Coding Agents</p>
     <ul>
-      <li><strong>読む価値:</strong> Copilot に新しい open-weight モデルが加わり、エージェント系のコーディング用途で選択肢が増えます。あわせて、ロールアウト一時停止と料金案内の注記も重要です。</li>
-      <li><strong>開発者への示唆:</strong> モデル性能だけでなく、組織ポリシー、課金、ロールアウト制御まで含めて運用設計を考える必要があります。</li>
-      <li><strong>試すなら:</strong> 管理者ポリシーを確認し、非本番の Copilot ワークフローで候補モデルとして評価してください。復旧後はエージェント系タスクで他モデルと比較すると差が見えます。</li>
+      <li><strong>読む価値:</strong> Copilot のモデル選択肢が増え、agentic coding の比較対象が更新されました。</li>
+      <li><strong>開発者への示唆:</strong> 性能評価だけでなく、組織ポリシーと課金の挙動を一緒に見る必要があります。</li>
+      <li><strong>試すなら:</strong> ロールアウト再開後に、既存モデルとのタスク別比較を取り直してください。</li>
       <li><strong>リンク:</strong> <a href="https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot/">source</a></li>
     </ul>
   </div>
@@ -43,9 +44,9 @@
     <h3>Customize code scanning default setup at scale</h3>
     <p><strong>出典:</strong> GitHub Changelog / <strong>公開日:</strong> 2026-08-04 / <strong>カテゴリ:</strong> Safety</p>
     <ul>
-      <li><strong>読む価値:</strong> <code>github-codeql-config-file</code> で、デフォルトセットアップに自前の CodeQL 設定を重ねられるようになりました。</li>
-      <li><strong>開発者への示唆:</strong> 個別リポジトリの workflow 管理を減らしつつ、組織全体でスキャン方針を揃えやすくなります。</li>
-      <li><strong>試すなら:</strong> まず 1 リポジトリで中央管理の CodeQL 設定を指し、除外パスと threat model が意図どおり反映されるか確認してください。</li>
+      <li><strong>読む価値:</strong> デフォルトセットアップのまま、中央の CodeQL 設定を足せるようになりました。</li>
+      <li><strong>開発者への示唆:</strong> セキュリティ設定の横展開を workflow ファイルの複製から外せます。</li>
+      <li><strong>試すなら:</strong> まず 1 リポジトリに中央設定を当て、除外や threat model の反映を検証してください。</li>
       <li><strong>リンク:</strong> <a href="https://github.blog/changelog/2026-08-04-customize-code-scanning-default-setup-at-scale/">source</a></li>
     </ul>
   </div>
@@ -55,7 +56,7 @@
     <ul>
       <li><strong>読む価値:</strong> Copilot の請求確認は billing settings に一本化されました。</li>
       <li><strong>開発者への示唆:</strong> 予算・コストセンター・usage report・billing API を使う運用へ移行する必要があります。</li>
-      <li><strong>試すなら:</strong> 既存の費用確認フローを billing settings ベースに差し替え、AI 予算の見え方を再確認してください。</li>
+      <li><strong>試すなら:</strong> 社内の費用確認フローを billing settings ベースに差し替えてください。</li>
       <li><strong>リンク:</strong> <a href="https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app/">source</a></li>
     </ul>
   </div>
