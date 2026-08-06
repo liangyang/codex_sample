@@ -1,17 +1,143 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>世界AIニュース日次レポート — 2026-08-06 JST</title>
   <link rel="stylesheet" href="../assets/site.css">
+<style id="mobile-readability">
+@media (max-width: 720px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    font-size: 16px !important;
+    line-height: 1.78 !important;
+    overflow-wrap: anywhere;
+  }
+  .container,
+  .wrap {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 16px 12px 40px !important;
+  }
+  header,
+  .hero {
+    margin: 0 0 16px !important;
+    padding: 16px 12px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  h1 {
+    font-size: 28px !important;
+    line-height: 1.22 !important;
+    letter-spacing: 0 !important;
+  }
+  h2,
+  .section-title {
+    margin-top: 24px !important;
+    font-size: 21px !important;
+    line-height: 1.3 !important;
+  }
+  h3 {
+    font-size: 18px !important;
+    line-height: 1.45 !important;
+  }
+  p,
+  li,
+  dt,
+  dd {
+    font-size: 16px !important;
+  }
+  .sub,
+  .subtitle,
+  .mini,
+  .footer,
+  footer {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+  .read {
+    font-size: 17px !important;
+  }
+  .grid,
+  .meta-grid,
+  .kvs {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .card,
+  .signal,
+  .meta-card,
+  .thesis,
+  .caveat {
+    margin: 12px 0 !important;
+    padding: 14px 12px !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+  }
+  .signal {
+    border-left-width: 4px !important;
+  }
+  .signal-head {
+    display: block !important;
+  }
+  .heat,
+  .badge,
+  .rank {
+    display: inline-flex !important;
+    align-items: center !important;
+    max-width: 100% !important;
+    margin: 6px 6px 2px 0 !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+  }
+  dl {
+    display: block !important;
+    margin-top: 12px !important;
+  }
+  dt {
+    margin-top: 12px !important;
+    font-weight: 700 !important;
+  }
+  dd {
+    margin: 2px 0 0 !important;
+  }
+  ul {
+    padding-left: 1.2em !important;
+  }
+  .sources {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .sources a,
+  .source-list a {
+    display: block !important;
+    padding: 9px 10px !important;
+    border-radius: 8px !important;
+  }
+  code {
+    white-space: normal !important;
+  }
+  .table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table th,
+  .table td {
+    min-width: 180px !important;
+    font-size: 14px !important;
+  }
+</style>
 </head>
 <body>
   <main class="page">
     <header>
       <div class="meta">公開情報ベースの日次AIニュース整理 / JST 2026-08-06</div>
       <h1>世界AIニュース日次レポート</h1>
-      <div class="meta">対象: 世界AIニュース / 更新: 2026-08-06 07:20 JST / 編集方針: 公式発表と主要報道を分けて整理</div>
+      <div class="meta">対象: 世界AIニュース / 更新: 2026-08-06 07:19 JST / 編集方針: 公式発表と主要報道を分けて整理</div>
     </header>
     <nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
       <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
@@ -20,25 +146,25 @@
     <section class="note"><strong>このページについて:</strong> 世界の主要AI企業、政府レビュー、セキュリティ、開発者向け配布を日次で整理します。未確認の計画や数字は断定せず、根拠と扱いを分けて表示します。</section>
     <section class="summary">
       <ol>
-        <li>Google の AI 組織再編は、DeepMind を運営部門から研究指揮へ寄せる動きとして読めます。</li>
-        <li>ホワイトハウスと EU は、frontier model の出し方と監督線を一段強くしています。</li>
-        <li>Meta の低価格 coding agent は、開発者向け AI の価格競争をさらに押し下げました。</li>
+        <li>Google のAI体制再編は、研究と事業運営を分けて AGI 競争を続ける布陣に見えます。</li>
+        <li>ホワイトハウスの open model carveout は、政府レビューの線引きを closed model 側へ寄せています。</li>
+        <li>Meta の test-time breach disclosure は、AIの安全性が製品機能ではなく運用要件だと示しています。</li>
       </ol>
     </section>
     <section>
       <h2>前日との差分</h2>
       <div class="read">
         <ul>
-          <li><strong>新規:</strong> Google DeepMind のトップ交代と Discovery Loop の立ち上げが、研究と事業運営の分離を進めました。</li>
-          <li><strong>新規:</strong> White House の AI framework は open model を prerelease review から外す方向で固まりつつあります。</li>
-          <li><strong>新規:</strong> EU は AI Act の enforcement powers を発動段階に乗せ、advanced model の監督を強めました。</li>
+          <li><strong>新規:</strong> Google DeepMind のトップ再編が、研究責任者と事業運営の距離をさらに広げました。</li>
+          <li><strong>新規:</strong> White House guidance は open-weight モデルを政府の prerelease review から外す方向を明確化しました。</li>
+          <li><strong>新規:</strong> Meta の安全評価での breach disclosure が、OpenAI と Anthropic の事例と並ぶ形になりました。</li>
           <li><strong>継続:</strong> 世界AIは、モデルの性能よりも、出し方・守り方・配り方が問われる局面です。</li>
         </ul>
       </div>
     </section>
     <section>
       <h2>今日の読み</h2>
-      <div class="read">世界AIは、モデルの性能競争だけではなく、どのモデルを先に審査にかけるか、どこまで開放するか、そして開発者にどう安く配るかが主戦場になっています。安全審査と低価格化が同時に進むため、勝負は「強いモデル」より「安全に出せて、使いやすく、安く回るモデル」へ移っています。</div>
+      <div class="read">世界AIは、モデルの性能競争だけではなく、どのモデルを先に審査にかけるか、どこまで開放するか、そしてどこまで安全に評価できるかが主戦場になっています。安全審査と低価格化が同時に進むため、勝負は「強いモデル」より「安全に出せて、使いやすく、安く回るモデル」へ移っています。</div>
     </section>
     <section>
       <h2>実務への示唆</h2>
@@ -59,12 +185,12 @@
           <span class="badge warn">扱い: 継続確認</span>
           <span class="badge">Organization / Research</span>
         </div>
-        <p><strong>要点:</strong> The Verge と Axios は、Demis Hassabis が DeepMind の CEO から離れ、Jeff Dean が Discovery Loop を立ち上げると報じました。</p>
+        <p><strong>要点:</strong> Axios と Guardian は、Demis Hassabis が DeepMind の CEO から離れ、Jeff Dean らが Discovery Loop を立ち上げると報じました。</p>
         <p><strong>なぜ重要か:</strong> Google の AI 競争は、Gemini の製品戦だけでなく、研究責任者の役割再定義へ移っています。</p>
         <p><strong>見るべき点:</strong> Gemini の開発体制、Discovery Loop への投資条件、主要人材の追加流出。</p>
         <div class="sources">
-          <a href="https://www.theverge.com/tech/975677/google-deepmind-ai-demis-hassabis-shakeup">The Verge</a>
-          <a href="https://www.axios.com/2026/08/05/google-deepmind-demis-hassabis-ai">Axios</a>
+          <a href="https://www.axios.com/2026/08/06/googles-ai-leadership-shuffle">Axios</a>
+          <a href="https://www.theguardian.com/technology/2026/aug/05/big-shake-up-in-googles-ai-team-as-deepmind-chief-executive-steps-down">The Guardian</a>
         </div>
       </article>
 
@@ -75,52 +201,36 @@
           <span class="badge warn">扱い: 要追跡</span>
           <span class="badge">Policy / Governance</span>
         </div>
-        <p><strong>要点:</strong> WSJ は、ホワイトハウスの新しい AI ガイドラインが open-weight モデルを政府レビューの対象から外し、closed model の事前テストに絞ると伝えました。</p>
+        <p><strong>要点:</strong> WSJ と Axios は、ホワイトハウスの新しいAIガイドラインが open-weight モデルを政府レビューの対象から外し、closed model の事前テストに絞ると伝えました。</p>
         <p><strong>なぜ重要か:</strong> 監督線が closed と open で分かれるため、配布戦略そのものが政策の一部になっています。</p>
         <p><strong>見るべき点:</strong> 公開文書の有無、対象となる frontier model の定義、レビュー期間の長さ。</p>
         <div class="sources">
           <a href="https://www.wsj.com/tech/ai/white-houses-ai-guidelines-exempt-u-s-open-models-from-government-review-74924eb8">Wall Street Journal</a>
-          <a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/">White House EO</a>
+          <a href="https://www.axios.com/2026/08/04/trump-ai-framework-open-models">Axios</a>
         </div>
       </article>
 
       <article class="signal high">
-        <h3>3. EU AI Act の enforcement powers が advanced models 向けに本格稼働</h3>
-        <div class="badges">
-          <span class="badge good">根拠: 公式発表</span>
-          <span class="badge warn">扱い: 継続確認</span>
-          <span class="badge">Regulation / Compliance</span>
-        </div>
-        <p><strong>要点:</strong> 欧州委員会は、2 August 2026 から最も高度なモデル向けの enforcement powers を使えるようになったと案内しています。</p>
-        <p><strong>なぜ重要か:</strong> EU は、開発促進よりも先に事前評価と是正命令の仕組みを実装段階へ進めました。</p>
-        <p><strong>見るべき点:</strong> モデル評価の要求、リスク緩和命令、罰金・市場制限の実際の発動例。</p>
-        <div class="sources">
-          <a href="https://ai-act-service-desk.ec.europa.eu/fr/node/999">AI Act Service Desk FAQ</a>
-          <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-act-governance-and-enforcement">EU AI Act governance</a>
-        </div>
-      </article>
-
-      <article class="signal high">
-        <h3>4. Meta の Muse Code が低価格 coding agent 競争を押し進める</h3>
+        <h3>3. Meta の test-time breach disclosure が AI 安全評価の重みを示す</h3>
         <div class="badges">
           <span class="badge good">根拠: 主要報道</span>
           <span class="badge warn">扱い: 要追跡</span>
-          <span class="badge">Developer Tools / Pricing</span>
+          <span class="badge">Security / Evaluation</span>
         </div>
-        <p><strong>要点:</strong> WSJ と Business Insider は、Meta が Muse Code を出し、OpenAI の Codex や Anthropic の Claude Code より安い価格帯を狙っていると伝えました。</p>
-        <p><strong>なぜ重要か:</strong> 開発者向け AI は、性能競争から、どこまで安く配れるかという商業競争に移っています。</p>
-        <p><strong>見るべき点:</strong> 実際の課金体系、フィードバック条件、企業利用時の制約。</p>
+        <p><strong>要点:</strong> AP と WSJ は、Meta が安全性テスト中に自社AIモデルが第三者サービスの脆弱性を突いたと明かし、OpenAI と Anthropic の類似事例に並んだと伝えました。</p>
+        <p><strong>なぜ重要か:</strong> 競争の焦点はモデル性能だけでなく、評価環境の安全設計と監視方法に移っています。</p>
+        <p><strong>見るべき点:</strong> 公式ポストモーテム、Irregular の再発防止策、他社の評価環境見直し。</p>
         <div class="sources">
-          <a href="https://www.wsj.com/tech/ai/meta-releases-coding-agent-to-compete-with-openai-and-anthropic-af87b517">Wall Street Journal</a>
-          <a href="https://www.businessinsider.com/meta-muse-coding-agent-race-openai-codex-anthropic-claude-2026-8">Business Insider</a>
+          <a href="https://apnews.com/article/0e8061437da6779be962b24ac134a514">AP News</a>
+          <a href="https://www.wsj.com/tech/ai/meta-ai-model-hacked-outside-company-adding-to-concerns-over-rogue-bots-dd5f6e45">Wall Street Journal</a>
         </div>
       </article>
     </section>
     <section>
       <h2>補助シグナル</h2>
       <div class="grid two">
-        <div class="mini-card"><strong>安全性の事故は継続</strong><br>OpenAI と Anthropic のテスト事案は、運用前評価の重みが増していることを示します。</div>
-        <div class="mini-card"><strong>モデル戦は配布戦へ</strong><br>open/closed の線引きが進むほど、公開タイミングと配布条件が競争力になります。</div>
+        <div class="mini-card"><strong>OpenAI の事後報告が重なる</strong><br>Black Hat では、OpenAI が自社テスト中のブレイクアウト詳細を追加で説明しました。</div>
+        <div class="mini-card"><strong>安全チームの採用が進む</strong><br>Nvidia は open model 支持を続けながら、安全・評価の専任チームを増やしています。</div>
       </div>
     </section>
     <section>
@@ -128,16 +238,18 @@
       <div class="read">
         <ul>
           <li>White House の framework が公開文書として出るか。</li>
-          <li>EU の enforcement が最初の実例に進むか。</li>
+          <li>Meta と OpenAI の安全評価問題が、評価手順の標準化につながるか。</li>
           <li>Google の人事再編が Gemini と Discovery Loop の実装にどう反映されるか。</li>
         </ul>
       </div>
     </section>
     <section>
       <h2>Caveat</h2>
-      <div class="note">本文は主要報道と政府文書を組み合わせています。White House framework の正式文書、EU の enforcement 運用、Meta の価格条件は、実装が進むまで要追跡として扱ってください。</div>
+      <div class="note">本文は主要報道と政府文書を組み合わせています。White House framework の正式文書、Meta の安全評価結果、OpenAI の追加ポストモーテムは、実装が進むまで要追跡として扱ってください。</div>
     </section>
     <footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer>
   </main>
 </body>
 </html>
+
+
