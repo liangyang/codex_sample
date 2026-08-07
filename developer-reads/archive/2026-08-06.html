@@ -23,72 +23,23 @@
 
 <section class="summary">
   <ol>
-    <li>GitHub の Copilot / CodeQL / Spark / Dependabot 更新が、今日の中心でした。</li>
-    <li>モデル追加と統制更新が同時に来ているので、試す順番と運用ルールを分けて考えるのが安全です。</li>
+    <li>直近24〜48時間の公式・一次情報では、今日の定番読みとして押し出す新規記事はありませんでした。</li>
+    <li>重要な移行・統制テーマだけを残し、弱いソースで埋めない方針にしています。</li>
   </ol>
 </section>
 
 <section>
   <h2>今日読むべきもの</h2>
-  <div class="read">
-    <h3>Kimi K3 is now available in GitHub Copilot</h3>
-    <p><strong>出典:</strong> GitHub Changelog / <strong>公開日:</strong> 2026-08-06 / <strong>カテゴリ:</strong> Coding Agents</p>
-    <ul>
-      <li><strong>読む価値:</strong> Copilot のモデル選択肢が増え、agentic coding の比較対象が更新されました。</li>
-      <li><strong>開発者への示唆:</strong> 性能評価だけでなく、組織ポリシーと課金の挙動を一緒に見る必要があります。</li>
-      <li><strong>試すなら:</strong> ロールアウト再開後に、既存モデルとのタスク別比較を取り直してください。</li>
-      <li><strong>リンク:</strong> <a href="https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot/">source</a></li>
-    </ul>
-  </div>
-  <div class="read">
-    <h3>Customize code scanning default setup at scale</h3>
-    <p><strong>出典:</strong> GitHub Changelog / <strong>公開日:</strong> 2026-08-04 / <strong>カテゴリ:</strong> Safety</p>
-    <ul>
-      <li><strong>読む価値:</strong> デフォルトセットアップのまま、中央の CodeQL 設定を足せるようになりました。</li>
-      <li><strong>開発者への示唆:</strong> セキュリティ設定の横展開を workflow ファイルの複製から外せます。</li>
-      <li><strong>試すなら:</strong> まず 1 リポジトリに中央設定を当て、除外や threat model の反映を検証してください。</li>
-      <li><strong>リンク:</strong> <a href="https://github.blog/changelog/2026-08-04-customize-code-scanning-default-setup-at-scale/">source</a></li>
-    </ul>
-  </div>
-  <div class="read">
-    <h3>Retiring the Copilot Billing Preview app</h3>
-    <p><strong>出典:</strong> GitHub Changelog / <strong>公開日:</strong> 2026-08-04 / <strong>カテゴリ:</strong> Infra</p>
-    <ul>
-      <li><strong>読む価値:</strong> Copilot の請求確認は billing settings に一本化されました。</li>
-      <li><strong>開発者への示唆:</strong> 予算・コストセンター・usage report・billing API を使う運用へ移行する必要があります。</li>
-      <li><strong>試すなら:</strong> 社内の費用確認フローを billing settings ベースに差し替えてください。</li>
-      <li><strong>リンク:</strong> <a href="https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app/">source</a></li>
-    </ul>
-  </div>
-  <div class="read">
-    <h3>Upcoming deprecation of GitHub Spark on github.com</h3>
-    <p><strong>出典:</strong> GitHub Changelog / <strong>公開日:</strong> 2026-08-04 / <strong>カテゴリ:</strong> Infra</p>
-    <ul>
-      <li><strong>読む価値:</strong> Spark の新規作成が止まり、既存アプリの export と inference 移行が必要になります。</li>
-      <li><strong>開発者への示唆:</strong> 生成 UI と推論基盤を分けて管理しないと、退役時の移行コストが大きくなります。</li>
-      <li><strong>試すなら:</strong> Spark アプリの <code>llm()</code> 利用箇所を洗い出し、代替 provider を決めてください。</li>
-      <li><strong>リンク:</strong> <a href="https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/">source</a></li>
-    </ul>
-  </div>
-  <div class="read">
-    <h3>Customize Dependabot pull request branch names</h3>
-    <p><strong>出典:</strong> GitHub Changelog / <strong>公開日:</strong> 2026-08-04 / <strong>カテゴリ:</strong> Infra</p>
-    <ul>
-      <li><strong>読む価値:</strong> Dependabot の PR ブランチ名を、CI/CD に合わせて細かく調整できます。</li>
-      <li><strong>開発者への示唆:</strong> 命名規約が厳しいレポジトリや monorepo で、機械生成ブランチの扱いが楽になります。</li>
-      <li><strong>試すなら:</strong> <code>.github/dependabot.yml</code> で prefix と最大長を設定し、既存ルールとの衝突を確認してください。</li>
-      <li><strong>リンク:</strong> <a href="https://github.blog/changelog/2026-08-04-customize-dependabot-pull-request-branch-names/">source</a></li>
-    </ul>
-  </div>
+  <div class="note">新規の強い記事はありません。弱いソースで埋めず、重要な移行・統制テーマだけを watchlist に残します。</div>
 </section>
 
 <section>
   <h2>テーマ別メモ</h2>
   <div class="read">
     <ul>
-      <li><strong>agents:</strong> Copilot のモデル選択は、単なる機能追加ではなく agent 実行の運用設計の一部です。</li>
-      <li><strong>governance:</strong> 請求、ポリシー、セキュリティ設定の統合が進み、組織運用の土台が整ってきました。</li>
-      <li><strong>safety:</strong> CodeQL と Dependabot を組み合わせると、セキュリティ標準化の入口を揃えやすくなります。</li>
+      <li><strong>agents:</strong> 新機能の追加より、既存の agent ワークフローをどう統制するかが焦点です。</li>
+      <li><strong>governance:</strong> Copilot の app / cloud agent / IDE をまたぐ managed settings が、標準運用の前提になりつつあります。</li>
+      <li><strong>interop:</strong> MCP の実装差を吸収できるかが、agent ツール連携の安定性を左右します。</li>
     </ul>
   </div>
 </section>
@@ -97,8 +48,9 @@
   <h2>明日以降のWatchlist</h2>
   <div class="read">
     <ul>
-      <li><strong>Kimi K3 rollout:</strong> ロールアウト再開と料金情報の更新が来たら、評価と採用判断を見直します。</li>
-      <li><strong>Spark migration:</strong> <code>llm()</code> 利用アプリの棚卸しは、古いプロトタイピング資産の整理に直結します。</li>
+      <li><strong>Actions workflow approval:</strong> public repo の suspicious workflow を自動で保留する流れは、CI/CD の承認設計を見直す合図です。<a href="https://github.blog/changelog/2026-07-28-github-actions-holds-potentially-malicious-workflows-for-approval/">source</a></li>
+      <li><strong>Copilot policy controls:</strong> app access と enterprise managed settings を揃えると、surface ごとの許可範囲を整理しやすくなります。<a href="https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy/">source</a></li>
+      <li><strong>MCP skills discovery:</strong> Microsoft Agent Framework の skills discovery は、skills 配布の運用設計に使えます。<a href="https://devblogs.microsoft.com/agent-framework/discover-agent-skills-from-mcp-servers-in-net/">source</a></li>
     </ul>
   </div>
 </section>
