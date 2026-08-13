@@ -5,13 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI News Watch</title>
   <link rel="stylesheet" href="assets/site.css">
+<style id="mobile-readability">
+@media (max-width: 720px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    font-size: 16px !important;
+    line-height: 1.78 !important;
+    overflow-wrap: anywhere;
+  }
+  .container,
+  .wrap {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 16px 12px 40px !important;
+  }
+  header,
+  .hero {
+    margin: 0 0 16px !important;
+    padding: 16px 12px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  h1 {
+    font-size: 28px !important;
+    line-height: 1.22 !important;
+    letter-spacing: 0 !important;
+  }
+  h2,
+  .section-title {
+    margin-top: 24px !important;
+    font-size: 21px !important;
+    line-height: 1.3 !important;
+  }
+  h3 {
+    font-size: 18px !important;
+    line-height: 1.45 !important;
+  }
+  p,
+  li,
+  dt,
+  dd {
+    font-size: 16px !important;
+  }
+  .sub,
+  .subtitle,
+  .mini,
+  .footer,
+  footer {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+  .read {
+    font-size: 17px !important;
+  }
+  .grid,
+  .meta-grid,
+  .kvs {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .card,
+  .signal,
+  .meta-card,
+  .thesis,
+  .caveat {
+    margin: 12px 0 !important;
+    padding: 14px 12px !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+  }
+  .signal {
+    border-left-width: 4px !important;
+  }
+  .signal-head {
+    display: block !important;
+  }
+  .heat,
+  .badge,
+  .rank {
+    display: inline-flex !important;
+    align-items: center !important;
+    max-width: 100% !important;
+    margin: 6px 6px 2px 0 !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+  }
+  dl {
+    display: block !important;
+    margin-top: 12px !important;
+  }
+  dt {
+    margin-top: 12px !important;
+    font-weight: 700 !important;
+  }
+  dd {
+    margin: 2px 0 0 !important;
+  }
+  ul {
+    padding-left: 1.2em !important;
+  }
+  .sources {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .sources a,
+  .source-list a {
+    display: block !important;
+    padding: 9px 10px !important;
+    border-radius: 8px !important;
+  }
+  code {
+    white-space: normal !important;
+  }
+  .table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table th,
+  .table td {
+    min-width: 180px !important;
+    font-size: 14px !important;
+  }
+}
+</style>
 </head>
 <body>
   <main>
     <header>
       <h1>AI News Watch</h1>
       <div class="sub">日次AIニュースと週刊AIブリーフを、短く読める形で整理しています。</div>
-      <div class="meta">Last updated: 2026-08-13 16:30 JST</div>
+      <div class="meta">Last updated: 2026-08-13 07:25 JST</div>
     </header>
     <section class="note">
       公式発表と主要報道を分けて整理し、未確認の数字や主張は要追跡として扱います。投資・法務判断ではなく、毎朝の状況把握と読むべき一次情報を拾うための公開メモです。
@@ -22,13 +149,13 @@
         <a class="card primary-card" href="china-news-watch/latest.html">
           <span class="label">China</span>
           <div class="title">中国AIニュース</div>
-          <p class="desc">AI companion 規制、Qwen3.8-Max-Preview の商用導線、ByteDance の巨大モデルを整理した最新版。</p>
+          <p class="desc">中国クラウドのモデル整理、QwenCloud の更新サイクル、Tencent CNB の課金転換を整理した最新版。</p>
           <span class="cta">最新版を読む</span>
         </a>
         <a class="card primary-card" href="global-ai-news-watch/latest.html">
           <span class="label">Global</span>
           <div class="title">世界AIニュース</div>
-          <p class="desc">White House の open-model 監督、Nvidia の資金調達、Meta の open-source 路線を整理した最新版。</p>
+          <p class="desc">Gemini の1Bユーザー到達、Managed Agents の強化、OpenAI の業務エージェント展開を整理した最新版。</p>
           <span class="cta">最新版を読む</span>
         </a>
         <a class="card primary-card" href="developer-reads/latest.html">
@@ -40,7 +167,7 @@
         <a class="card primary-card" href="hacker-news-ai-watch/latest.html">
           <span class="label">Hacker News</span>
           <div class="title">HN AI Watch</div>
-          <p class="desc">ローカルAIの製品化、AIボットの主体認証、用途別評価を整理。</p>
+          <p class="desc">推論トレース保護、監査可能なAIガバナンス、仮想化推論基盤を整理。</p>
           <span class="cta">最新版を読む</span>
         </a>
         <a class="card primary-card" href="weekly-ai-brief/latest.html">
@@ -65,4 +192,3 @@
   </main>
 </body>
 </html>
-
