@@ -3,108 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-08-15</title>
+<title>Developer Reads - 2026-08-17</title>
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-08-15 07:07 JST</div>
+  <div class="meta">Last updated: 2026-08-17 07:06 JST</div>
   <h1>Developer Reads</h1>
-  <div class="sub">AI開発者向けの公式・一次情報記事を、実装に役立つ形で整理する日次キュレーションです。</div>
+  <div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div>
 </header>
 <nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
-  <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
+  <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">トップページへ</a>
   <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
 </nav>
-
-<section class="note"><strong>このページについて:</strong> AI企業・開発者プラットフォームの公式記事や一次情報から、実装・設計・運用に使えるものだけを選びます。今日は直近24〜48時間で、定番読みとして押し出せる新規記事を5本選びました。</section>
-
-<section class="summary">
-  <ol>
-    <li>GitHub Copilot と OpenAI API の更新が中心で、モデル選択とサービス速度の判断材料が増えました。</li>
-    <li>Anthropic の watermarking と AWS AgentCore Observability は、運用・統制・監査の実装に直結します。</li>
-    <li>弱い速報は外し、実際に試せるものだけを残しています。</li>
-  </ol>
-</section>
-
-<section>
-  <h2>今日読むべきもの</h2>
-
-  <div class="read">
-    <h3>OpenAI API adds Ultrafast mode for GPT-5.6 Sol</h3>
-    <p><strong>出典:</strong> OpenAI API Changelog</p>
-    <p><strong>公開日:</strong> 2026-08-13</p>
-    <p><strong>カテゴリ:</strong> API / Inference</p>
-    <p><strong>読む価値:</strong> GPT-5.6 Sol 向けに、標準処理より最大14倍速い新しいサービス層が出ました。待ち時間が支配的なワークロードでは、体感差がそのまま使い勝手に効きます。</p>
-    <p><strong>開発者への示唆:</strong> 速度、コスト、品質を同じ経路で扱う前提が崩れつつあります。対話系や高頻度タスクでは、通常経路と高速経路を分けて設計する余地があります。</p>
-    <p><strong>試すなら:</strong> 現行の Responses / Chat Completions 呼び出しを1本だけ高速経路に差し替え、p50/p95 と再試行率を測って比較します。</p>
-    <p><a href="https://developers.openai.com/api/docs/changelog">リンク</a></p>
-  </div>
-
-  <div class="read">
-    <h3>GitHub Copilot weekly releases - August 10</h3>
-    <p><strong>出典:</strong> GitHub Changelog</p>
-    <p><strong>公開日:</strong> 2026-08-13</p>
-    <p><strong>カテゴリ:</strong> Agents / Coding Agents / IDE</p>
-    <p><strong>読む価値:</strong> Kimi K3、MAI-Code-1.1-Flash、Agent Plugins 1.0 の3本柱がまとまっており、Copilot の使い方が「モデル選択」から「ツール再利用」へ広がっています。</p>
-    <p><strong>開発者への示唆:</strong> エディタ、CLI、Copilot app の横断で同じプラグインや手順を回す前提が強くなりました。チーム標準の作り方を見直す価値があります。</p>
-    <p><strong>試すなら:</strong> 1つのプラグインを VS Code と CLI で動かし、/tasks や side chat を含む運用に耐えるか確認します。</p>
-    <p><a href="https://github.blog/changelog/2026-08-13-github-copilot-weekly-releases-august-10/">リンク</a></p>
-  </div>
-
-  <div class="read">
-    <h3>Grok 4.6 is now available in GitHub Copilot</h3>
-    <p><strong>出典:</strong> GitHub Changelog</p>
-    <p><strong>公開日:</strong> 2026-08-14</p>
-    <p><strong>カテゴリ:</strong> Models / Coding Agents</p>
-    <p><strong>読む価値:</strong> Grok 4.6 は agentic coding と長いマルチステップ作業を狙ったモデルとして Copilot に入ってきました。terminal ベースの実務タスクとの相性を強く押しています。</p>
-    <p><strong>開発者への示唆:</strong> 長い修正や探索を伴う作業で、モデルの選択肢がさらに増えました。Business / Enterprise では policy が初期 off なので、管理側の設定確認が必要です。</p>
-    <p><strong>試すなら:</strong> 既存の難しめの修正タスクを1つ選び、Grok 4.6 と既存の標準モデルで差分を比べます。</p>
-    <p><a href="https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot">リンク</a></p>
-  </div>
-
-  <div class="read">
-    <h3>How Claude’s text watermark works</h3>
-    <p><strong>出典:</strong> Anthropic Newsroom</p>
-    <p><strong>公開日:</strong> 2026-08-14</p>
-    <p><strong>カテゴリ:</strong> Safety / Governance</p>
-    <p><strong>読む価値:</strong> Claude の今後のモデルで、本文に見えない形の watermark を入れる方針が説明されています。EU AI Act 対応として、出力の由来を扱う実装が前提になります。</p>
-    <p><strong>開発者への示唆:</strong> 出力品質を落とさずに provenance を組み込む設計が必要になります。ログ、開示、検出の扱いを後から足すより、生成フローの段階で考えたほうが安全です。</p>
-    <p><strong>試すなら:</strong> EU 向け出力を持つプロダクトなら、表示文言・監査ログ・下流システムの保存方針を先に点検します。</p>
-    <p><a href="https://www.anthropic.com/news/claude-text-watermark">リンク</a></p>
-  </div>
-
-  <div class="read">
-    <h3>Monitor on-premises and multi-cloud AI agents with AgentCore Observability</h3>
-    <p><strong>出典:</strong> AWS Machine Learning Blog</p>
-    <p><strong>公開日:</strong> 2026-08-13</p>
-    <p><strong>カテゴリ:</strong> Infra / Observability</p>
-    <p><strong>読む価値:</strong> AWS 外で動く agent でも、ADOT 経由で AgentCore Observability に telemetry を流せる手順が示されています。分散した agent 実行を一枚の見取り図に寄せやすくなります。</p>
-    <p><strong>開発者への示唆:</strong> reasoning chain、tool 呼び出し、token 使用量を追えると、コスト管理と安全性の両方がやりやすくなります。マルチクラウド運用ほど効きます。</p>
-    <p><strong>試すなら:</strong> 1つの非AWS agent に ADOT を入れて、CloudWatch OTLP までの経路とダッシュボード表示を先に通します。</p>
-    <p><a href="https://aws.amazon.com/blogs/machine-learning/monitor-on-premises-and-multi-cloud-ai-agents-with-agentcore-observability/">リンク</a></p>
-  </div>
-</section>
-
-<section>
-  <h2>明日以降のWatchlist</h2>
-  <div class="read">
-    <ul>
-      <li><strong>GitHub Changelog / Copilot:</strong> モデル、usage report、MCP、IDE 更新の本丸です。<a href="https://github.blog/changelog/label/copilot/">source</a></li>
-      <li><strong>OpenAI Developers:</strong> API、Responses、SDK、deprecations の一次情報を拾います。<a href="https://developers.openai.com/">source</a></li>
-      <li><strong>Anthropic Newsroom:</strong> model release と safety / compliance の変化を追います。<a href="https://www.anthropic.com/news">source</a></li>
-      <li><strong>AWS AI blog:</strong> Bedrock、AgentCore、guardrails、RAG の実装差分を見ます。<a href="https://aws.amazon.com/blogs/machine-learning/">source</a></li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Caveat</h2>
-  <div class="note">公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</div>
-</section>
-
-<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+<section class="note"><strong>今日の判断:</strong> 2026-08-15 07:06 JST以降の公式・一次情報を確認しましたが、今日読むべき新規の開発者向け記事は十分な数がありませんでした。弱い記事で埋めず、次回確認する情報源を残します。</section>
+<section class="summary"><ol>
+  <li>新規の高シグナル記事は、今回は掲載しません。</li>
+  <li>API、SDK、コーディングエージェント、評価、RAG、推論基盤の更新を継続監視します。</li>
+  <li>急ぎの実装判断がある場合は、下記の公式更新ページを直接確認してください。</li>
+</ol></section>
+<section><h2>今日読むべきもの</h2><div class="note">大きな新規開発者向け記事はありません。過去記事の再掲やニュース性だけの情報は、今回の issue には含めていません。</div></section>
+<section><h2>継続ウォッチ</h2><div class="read"><ul>
+  <li><strong>OpenAI Developers:</strong> API、SDK、Responses、エージェント関連の更新を確認。 <a href="https://developers.openai.com/">公式ページ</a></li>
+  <li><strong>GitHub Changelog / Copilot:</strong> コーディングエージェント、モデル、利用量 API の更新を確認。 <a href="https://github.blog/changelog/label/copilot/">公式ページ</a></li>
+  <li><strong>Anthropic Platform:</strong> API、SDK、リリースノート、提供終了予定を確認。 <a href="https://platform.claude.com/docs/en/release-notes/overview">リリースノート</a></li>
+  <li><strong>Google Developers:</strong> Gemini API、ADK、評価、エージェント基盤の更新を確認。 <a href="https://developers.googleblog.com/">公式ブログ</a></li>
+  <li><strong>AWS Machine Learning Blog:</strong> Bedrock、AgentCore、RAG、推論・監視の実装記事を確認。 <a href="https://aws.amazon.com/blogs/machine-learning/">公式ブログ</a></li>
+</ul></div></section>
+<section><h2>次回の見どころ</h2><div class="read"><ul>
+  <li><strong>試すなら:</strong> 新しいモデルや SDK の告知が出たら、まず公式サンプルを最小構成で動かし、既存実装とのレイテンシー・コスト・失敗率を比較します。</li>
+  <li><strong>読むなら:</strong> 単なる機能追加より、移行手順、評価方法、権限・監視の具体例がある記事を優先します。</li>
+</ul></div></section>
+<section><h2>Caveat</h2><div class="note">公開された公式情報を対象にした短い整理です。仕様変更、提供条件、料金、提供終了日は必ずリンク先の最新ドキュメントで確認してください。</div></section>
+<footer>公開された公式情報を、開発者向けの実装判断に使いやすい形で整理しています。</footer>
 </main>
 </body>
 </html>
