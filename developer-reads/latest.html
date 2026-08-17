@@ -3,40 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-08-17</title>
+<title>Developer Reads - 2026-08-18</title>
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-08-17 07:06 JST</div>
+  <div class="meta">Last updated: 2026-08-18 07:06 JST</div>
   <h1>Developer Reads</h1>
   <div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div>
 </header>
-<nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
-  <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">トップページへ</a>
-  <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
+<nav class="topnav page-actions">
+  <a href="../index.html">トップページへ</a>
+  <a href="index.html">履歴を見る</a>
 </nav>
-<section class="note"><strong>今日の判断:</strong> 2026-08-15 07:06 JST以降の公式・一次情報を確認しましたが、今日読むべき新規の開発者向け記事は十分な数がありませんでした。弱い記事で埋めず、次回確認する情報源を残します。</section>
+<section class="note"><strong>今日の判断:</strong> 2026-08-16〜18 JSTの公式・一次情報を確認しましたが、実装に直結する高品質な新規記事は十分な本数を確認できませんでした。弱い記事で埋めず、次回確認する開発者向け情報源をウォッチリストとして残します。</section>
 <section class="summary"><ol>
-  <li>新規の高シグナル記事は、今回は掲載しません。</li>
-  <li>API、SDK、コーディングエージェント、評価、RAG、推論基盤の更新を継続監視します。</li>
-  <li>急ぎの実装判断がある場合は、下記の公式更新ページを直接確認してください。</li>
+  <li>今日は主要な新規Developer Readsを無理に選定していません。</li>
+  <li>API、SDK、コーディングエージェント、評価、RAG、推論、安全性、インフラの一次情報を継続確認します。</li>
+  <li>新しい実装資料がまとまって出た時点で、3〜5本の通常号に戻します。</li>
 </ol></section>
-<section><h2>今日読むべきもの</h2><div class="note">大きな新規開発者向け記事はありません。過去記事の再掲やニュース性だけの情報は、今回の issue には含めていません。</div></section>
-<section><h2>継続ウォッチ</h2><div class="read"><ul>
-  <li><strong>OpenAI Developers:</strong> API、SDK、Responses、エージェント関連の更新を確認。 <a href="https://developers.openai.com/">公式ページ</a></li>
-  <li><strong>GitHub Changelog / Copilot:</strong> コーディングエージェント、モデル、利用量 API の更新を確認。 <a href="https://github.blog/changelog/label/copilot/">公式ページ</a></li>
-  <li><strong>Anthropic Platform:</strong> API、SDK、リリースノート、提供終了予定を確認。 <a href="https://platform.claude.com/docs/en/release-notes/overview">リリースノート</a></li>
-  <li><strong>Google Developers:</strong> Gemini API、ADK、評価、エージェント基盤の更新を確認。 <a href="https://developers.googleblog.com/">公式ブログ</a></li>
-  <li><strong>AWS Machine Learning Blog:</strong> Bedrock、AgentCore、RAG、推論・監視の実装記事を確認。 <a href="https://aws.amazon.com/blogs/machine-learning/">公式ブログ</a></li>
+<section><h2>ウォッチリスト</h2><div class="read"><ul>
+  <li><strong>OpenAI Developers:</strong> API、Responses、SDK、エージェント実行基盤の変更を確認。<br><a href="https://developers.openai.com/">公式開発者サイト</a> / <a href="https://developers.openai.com/api/docs/changelog">API Changelog</a></li>
+  <li><strong>GitHub Changelog:</strong> Copilotのモデル、コーディングエージェント、MCP、レビュー機能の更新を確認。<br><a href="https://github.blog/changelog/label/copilot/">Copilot Changelog</a></li>
+  <li><strong>Anthropic Platform:</strong> API、SDK、モデル更新、安全性・運用上の変更を確認。<br><a href="https://platform.claude.com/docs/en/release-notes/overview">APIリリースノート</a> / <a href="https://www.anthropic.com/news">Newsroom</a></li>
+  <li><strong>Google Developers:</strong> Gemini API、ツール呼び出し、エージェント、評価の更新を確認。<br><a href="https://developers.googleblog.com/">Google Developers Blog</a></li>
+  <li><strong>AWS Machine Learning Blog:</strong> Bedrock、AgentCore、RAG、観測性、推論基盤の実装記事を確認。<br><a href="https://aws.amazon.com/blogs/machine-learning/">Machine Learning Blog</a></li>
 </ul></div></section>
-<section><h2>次回の見どころ</h2><div class="read"><ul>
-  <li><strong>試すなら:</strong> 新しいモデルや SDK の告知が出たら、まず公式サンプルを最小構成で動かし、既存実装とのレイテンシー・コスト・失敗率を比較します。</li>
-  <li><strong>読むなら:</strong> 単なる機能追加より、移行手順、評価方法、権限・監視の具体例がある記事を優先します。</li>
-</ul></div></section>
-<section><h2>Caveat</h2><div class="note">公開された公式情報を対象にした短い整理です。仕様変更、提供条件、料金、提供終了日は必ずリンク先の最新ドキュメントで確認してください。</div></section>
-<footer>公開された公式情報を、開発者向けの実装判断に使いやすい形で整理しています。</footer>
+<section><h2>読むときの基準</h2><div class="read"><p>公式ドキュメントや一次発表で、APIの変更、サンプルコード、移行手順、評価方法、運用上の注意点のいずれかが確認できるものを優先します。ニュース性だけの発表や、実装に戻せない紹介記事は通常号に含めません。</p></div></section>
+<section><h2>Caveat</h2><div class="note">公開直後の情報は、後から本文や提供範囲が更新されることがあります。導入や移行の判断では、必ずリンク先の最新ドキュメントと提供条件を確認してください。</div></section>
+<footer>公開された公式情報を、開発者が通勤中でも読める分量に整理しています。</footer>
 </main>
 </body>
 </html>
