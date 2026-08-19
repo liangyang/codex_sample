@@ -3,32 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-08-20</title>
-<link rel="stylesheet" href="../assets/site.css">
+<title>Developer Reads - 2026-08-20 Archive</title>
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 <main>
 <header>
   <div class="meta">Last updated: 2026-08-20 07:06 JST</div>
   <h1>Developer Reads</h1>
-  <div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div>
+  <div class="sub">Archived daily developer scan for JST 2026-08-20.</div>
 </header>
 <nav class="topnav page-actions">
-  <a href="../index.html">トップページへ</a>
-  <a href="index.html">履歴を見る</a>
+  <a href="../../index.html">先頭ページへ</a>
+  <a href="../index.html">履歴を見る</a>
+  <a href="../latest.html">最新版を読む</a>
 </nav>
-<section class="note"><strong>今日の判断:</strong> 2026-08-18〜20 JSTの公式・一次情報を確認し、実装価値の高い4本を選びました。APIのデータ保護と、コーディングエージェントの権限・品質・資格情報管理が中心です。</section>
+
+<section class="note"><strong>このページについて:</strong> 公式・一次情報から、直近24〜48時間で実装判断に使えるものだけを選んでいます。今日はAPIのデータ保護と、コーディングエージェントを安全に運用するための更新が中心です。</section>
 <section class="summary"><ol>
   <li>APIのデータ保持と複数ターンの安全処理を確認できます。</li>
   <li>権限管理、静的解析、品質トレンド、資格情報失効をまとめました。</li>
-  <li>導入時は便利さより先に、許可・監査・復旧の境界を固定するのが要点です。</li>
+  <li>便利さを増やす前に、許可・監査・復旧の境界を固定するのが要点です。</li>
 </ol></section>
+
 <section><h2>今日読むべき4本</h2>
   <article class="read">
     <h3>フロンティアモデル向けのZero Data Retentionを提供</h3>
     <div class="meta">OpenAI / 2026-08-19 / API・Safety</div>
     <p><strong>読む価値:</strong> APIリクエストを処理後に保持しない契約と、複数インタラクションをまたぐ自動安全処理の方向性が説明されています。</p>
-    <p><strong>開発者への示唆:</strong> 機微情報を扱うアプリでは、保持ポリシーだけでなく、アプリ側の監査ログ・アラート・証跡まで設計対象になります。</p>
+    <p><strong>開発者への示唆:</strong> 機微情報を扱うアプリでは、保持ポリシーだけでなく、アプリ側の監査ログ・アラート・証跡まで設計対象になります。詳細条件は今後の技術文書で確認が必要です。</p>
     <p><strong>試すなら:</strong> データを「保存する／保存しない／安全シグナルだけ残す」に分類し、API設定とアプリログの対応表を作る。</p>
     <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models/">公式記事を読む</a>
   </article>
@@ -36,7 +39,7 @@
     <h3>CodeQL 2.26.3でActionsクエリとJavaScriptモデリングを改善</h3>
     <div class="meta">GitHub Changelog / 2026-08-19 / Safety・Coding Agents</div>
     <p><strong>読む価値:</strong> GitHub Actionsの未信頼入力、キャッシュ汚染、未信頼チェックアウトなどの検出精度が上がっています。</p>
-    <p><strong>開発者への示唆:</strong> AIが変更するCI設定やWebコードをレビューする際、静的解析を品質ゲートとして組み込みやすくなります。</p>
+    <p><strong>開発者への示唆:</strong> AIが変更するCI設定やWebコードをレビューする際、静的解析を品質ゲートとして組み込みやすくなります。独自クエリで削除されたモジュールを使っている場合は更新が必要です。</p>
     <p><strong>試すなら:</strong> 生成コードを含むリポジトリでActionsスキャンを有効化し、警告を自動修正可・人手確認・例外申請に分類する。</p>
     <a href="https://github.blog/changelog/2026-08-19-codeql-2-26-3-improves-github-actions-queries-and-javascript-modeling/">公式記事を読む</a>
   </article>
@@ -52,11 +55,12 @@
     <h3>資格情報をトークン種別ごとに失効・無効化</h3>
     <div class="meta">GitHub Changelog / 2026-08-18 / Safety・Infra</div>
     <p><strong>読む価値:</strong> 個人アクセストークン、SSHキー、OAuthアプリトークンなどを、利用者単位・種類単位で失効できます。</p>
-    <p><strong>開発者への示唆:</strong> エージェントやCIの資格情報が漏れたとき、信頼できる経路まで一斉停止せず影響範囲を絞れます。</p>
+    <p><strong>開発者への示唆:</strong> エージェントやCIの資格情報が漏れたとき、信頼できる経路まで一斉停止せず影響範囲を絞れます。監査ログと利用者通知も復旧手順に含まれます。</p>
     <p><strong>試すなら:</strong> インシデント対応手順に種類別失効、監査ログ確認、通知、短期資格情報での復旧を追加して模擬訓練する。</p>
     <a href="https://github.blog/changelog/2026-08-18-credential-revocation-and-deauthorization-by-token-type/">公式記事を読む</a>
   </article>
 </section>
+
 <section><h2>テーマ別メモ</h2><div class="read"><ul>
   <li><strong>API / Safety:</strong> データ保持ゼロと複数ターンの安全性を、アプリ側の証跡設計まで含めて評価する。</li>
   <li><strong>Coding Agents:</strong> 権限、接続先、監視、静的解析をリポジトリ単位のガードレールとしてまとめる。</li>
