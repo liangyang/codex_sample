@@ -3,81 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-08-22</title>
+<title>Developer Reads - 2026-08-23</title>
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-08-22 07:07 JST</div>
+  <div class="meta">Last updated: 2026-08-23 07:07 JST</div>
   <h1>Developer Reads</h1>
   <div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div>
 </header>
-<nav class="topnav page-actions">
-  <a href="../index.html">トップページへ</a>
-  <a href="index.html">履歴を見る</a>
-</nav>
+<nav class="topnav page-actions"><a href="../index.html">トップページへ</a><a href="index.html">履歴を見る</a></nav>
 <section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式情報から、今日試せるものだけを選んでいます。</section>
-<section class="note"><strong>今日の判断:</strong> 2026-08-20〜22 JSTの一次情報から、実行環境の設計、開発プロセス、RAG、権限境界に直結する5本を選びました。</section>
-<section class="summary"><ol>
-  <li>エージェントの機能拡張は、操作・ファイル・専門知識をAPIで分離すると試しやすい。</li>
-  <li>AIがコードを書く速度に合わせ、計画、テスト、デプロイ、監査も成果物とゲートで再設計する。</li>
-  <li>RAGとセキュリティは、モデルへの指示だけでなく、データの所在と実行環境の境界で決める。</li>
-</ol></section>
-<section><h2>今日読むべき5本</h2>
-  <article class="read">
-    <h3>操作・スキル・ファイルを組み合わせた実運用エージェント</h3>
-    <div class="meta">Anthropic / 2026-08-20 / Agents・API</div>
-    <p><strong>読む価値:</strong> 画面操作、ブラウザ操作、再利用可能なスキル、入出力ファイルを一つの実装ループに組み込む方法を、一般提供の機能と移行先まで整理しています。</p>
-    <p><strong>開発者への示唆:</strong> APIのない業務画面を扱う場合でも、操作部分と業務知識・文書保管を分離できます。複数アクションをまとめて実行できるため、呼び出し回数、監査、失敗時の再実行設計が重要になります。</p>
-    <p><strong>試すなら:</strong> 検証用サイトと1種類の帳票で、ファイルIDの再利用、スキルのバージョン固定、操作ログ、承認前後のスクリーンショットを含む小さな往復を作る。</p>
-    <a href="https://claude.com/blog/computer-use-skills-api-files-api">公式記事を読む</a>
-  </article>
-  <article class="read">
-    <h3>AI-nativeな開発ライフサイクルを成果物とゲートで回す</h3>
-    <div class="meta">Anthropic / 2026-08-21 / Coding Agents・Evals・Safety</div>
-    <p><strong>読む価値:</strong> 計画、設計、実装、テスト、デプロイ、保守を、意図書・仕様・計画・評価・CIの連鎖として組み直す具体例がまとまっています。</p>
-    <p><strong>開発者への示唆:</strong> コード生成が速くなるほど、ボトルネックはレビュー、テスト、承認、ロールバックに移ります。指示ファイルやスキルの変更もコードと同じく評価対象にすると、速度と品質を同時に追えます。</p>
-    <p><strong>試すなら:</strong> まず1リポジトリで「意図→計画→PR→テスト」の4成果物を固定し、CIで読み取り専用の診断から始め、成功率とレビュー時間を記録する。</p>
-    <a href="https://claude.com/blog/the-ai-native-sdlc-playbook">公式記事を読む</a>
-  </article>
-  <article class="read">
-    <h3>複数モデル・フレームワークを前提にしたエージェント基盤</h3>
-    <div class="meta">AWS / 2026-08-20 / Agents・Infra・API</div>
-    <p><strong>読む価値:</strong> フレームワーク、モデル、プロバイダー、チームが混在する状態を前提に、共通のライフサイクル、推論運用、監視、移行境界を考える設計原則を示しています。</p>
-    <p><strong>開発者への示唆:</strong> ベンダー非依存を目指すなら、エージェントの業務契約、モデル選択、推論・監視の実装を分離する必要があります。単一の抽象化で全差分を隠すより、交換可能な境界と測定可能な比較軸を先に決める方が現実的です。</p>
-    <p><strong>試すなら:</strong> 1つのワークフローを2モデルで実行し、入力契約、ツール呼び出し、品質、レイテンシ、コスト、失敗時の切り替えを同じ表で比較する。</p>
-    <a href="https://aws.amazon.com/blogs/machine-learning/scaling-agentic-ai-enterprise-patterns-without-vendor-lock-in/">公式記事を読む</a>
-  </article>
-  <article class="read">
-    <h3>データを移さずに選ぶエージェント向けベクトル基盤</h3>
-    <div class="meta">AWS / 2026-08-20 / RAG・Infra</div>
-    <p><strong>読む価値:</strong> 既存のデータベース、オブジェクトストレージ、検索基盤にあるベクトル機能を比較し、RAG、ハイブリッド検索、GraphRAG、マルチモーダル検索の選び方を整理しています。</p>
-    <p><strong>開発者への示唆:</strong> RAGの品質は埋め込みモデルだけでなく、データの所在、更新頻度、フィルター、権限継承、検索レイテンシで決まります。最初から別のベクトルDBへ移す前に、原データの近くで測る余地があります。</p>
-    <p><strong>試すなら:</strong> 代表クエリ20件を用意し、既存ストアのベクトル検索とハイブリッド検索を比較する。再現率、根拠の正しさ、更新反映時間、権限漏れを記録する。</p>
-    <a href="https://aws.amazon.com/blogs/machine-learning/aws-vector-solutions-build-agentic-ai-where-your-data-lives/">公式記事を読む</a>
-  </article>
-  <article class="read">
-    <h3>エージェントの安全境界を実行環境とインフラに置く</h3>
-    <div class="meta">NVIDIA Technical Blog / 2026-08-21 / Safety・Agents・Infra</div>
-    <p><strong>読む価値:</strong> モデル、ハーネス、オーケストレーション、ランタイム、推論基盤の役割を分け、どこで権限・隔離・監査を強制すべきかを設計ルールとしてまとめています。</p>
-    <p><strong>開発者への示唆:</strong> プロンプトやエージェントのロジックは行動を誘導できますが、変更可能な層だけでは強制境界になりません。短命で狭い権限、全副作用の検査、失敗時の隔離・復旧を、実際に作用する環境側へ寄せるべきです。</p>
-    <p><strong>試すなら:</strong> 開発用エージェントを「隔離」「接続済み検証」「本番変更」の3段階に分け、各段階でネットワーク、資格情報、承認、監査、取り消しをチェックリスト化する。</p>
-    <a href="https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/">公式記事を読む</a>
-  </article>
+<section class="note"><strong>今日の判断:</strong> 2026-08-21 JSTの一次情報から、長時間タスクの評価、推論の振り分け、実行環境の安全境界、会話から開発作業へつなぐ流れの4本を選びました。</section>
+<section class="summary"><ol><li>長時間タスクでは、モデル単体より状態、フィードバック、回復、監督を含むシステムを評価する。</li><li>推論のモデル選択を固定せず、品質・レイテンシ・コストの実測ループに組み込む。</li><li>安全性と開発者体験は、指示だけでなく環境側の権限、隔離、監査で支える。</li></ol></section>
+<section><h2>今日読むべき4本</h2>
+  <article class="read"><h3>長時間タスクの成否を、状態・評価・回復のループで測る</h3><div class="meta">NVIDIA Technical Blog / 2026-08-21 / Agents・Evals</div><p><strong>読む価値:</strong> コード変更と実行結果を何度も往復する自律システムを、永続状態、ツール、評価、監督の組み合わせとして説明しています。モデルの一発回答では見えない設計論を、最適化と対話型ベンチマークの両方から読めます。</p><p><strong>開発者への示唆:</strong> 長いタスクでは、何を保存し、どの評価結果を次の試行へ渡し、停滞時にどう方針を変えるかを決める必要があります。評価も最終回答だけでなく、行動数、再実行率、回復時間を含めます。</p><p><strong>試すなら:</strong> 小さな最適化タスクを20回まで反復できる実験にし、変更履歴、テスト結果、失敗理由、次の仮説を保存する。成功率と無駄な試行数を記録する。</p><a href="https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/">公式記事を読む</a></article>
+  <article class="read"><h3>モデル選択を、更新可能なルーティング層として運用する</h3><div class="meta">Microsoft Foundry Blog / 2026-08-21 / Inference・API</div><p><strong>読む価値:</strong> 推論先の候補、提供地域、更新、品質・コスト・レイテンシの調整を、アプリ本体から分離する考え方を整理しています。モデルの入れ替えでアプリの接続先を毎回書き換えないための視点があります。</p><p><strong>開発者への示唆:</strong> ルーティングを導入するなら、実際にどの推論先へ送られたか、候補の入れ替えで品質がどう変わったかを追えるようにします。固定の総合スコアではなく、タスク別の受入基準を持ちます。</p><p><strong>試すなら:</strong> 分類、要約、コード修正の代表ケースを各20件用意し、品質、レイテンシ、費用、失敗率を比較する。候補変更時の回帰評価を必須にする。</p><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/model-router-updates-new-regions-a-refreshed-model-pool-and-understanding-the-hi/4521310">公式記事を読む</a></article>
+  <article class="read"><h3>エージェントの権限を、指示ではなく実行環境で制限する</h3><div class="meta">Microsoft Apps on Azure Blog / 2026-08-21 / Safety・Infra</div><p><strong>読む価値:</strong> 自律運用の安全性を、マイクロVM隔離、秘密情報を直接渡さない認証、出力の除去、リスクに応じた承認として実装する例を示しています。プロンプトだけに安全保証を置かない設計を具体化できます。</p><p><strong>開発者への示唆:</strong> 誤動作や指示の迂回があっても、環境が変更可能範囲を越えさせないことが重要です。副作用の前に、短命の権限、ネットワーク境界、承認、監査、取り消しを通します。</p><p><strong>試すなら:</strong> 読み取り、検証、変更の3段階に実行環境を分け、各段階の資格情報、ネットワーク、ファイル、外部APIの許可を列挙する。失敗時の隔離と復旧を試す。</p><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/stop-restricting-the-agent-start-restricting-its-environment-/4548726">公式記事を読む</a></article>
+  <article class="read"><h3>会話の文脈を、そのまま開発タスクへ渡す</h3><div class="meta">Microsoft Teams Blog / 2026-08-21 / Coding Agents・Workflow</div><p><strong>読む価値:</strong> チームの会話にある要件、決定、制約を、開発作業の依頼へつなぐ流れを紹介しています。機能そのものより、文脈を失わずに作業へ渡す設計が参考になります。</p><p><strong>開発者への示唆:</strong> 会話を入力にする場合は、根拠、未確定の要望、変更範囲、承認者を確定する必要があります。会話履歴をそのまま実行権限に変えず、計画・差分・テスト結果を確認可能な成果物にします。</p><p><strong>試すなら:</strong> 小さなバグ修正で、会話から抽出した要件、変更計画、差分、テスト結果、承認を1枚の記録にまとめ、抜けた前提を振り返る。</p><a href="https://techcommunity.microsoft.com/blog/microsoftteamsblog/turn-conversations-into-code-with-github-copilot-in-microsoft-teams/4548305">公式記事を読む</a></article>
 </section>
-<section><h2>テーマ別メモ</h2><div class="read"><ul>
-  <li><strong>Agents / API:</strong> 操作、専門知識、ファイルを別の能力として組み合わせ、監査と再実行を設計する。</li>
-  <li><strong>Coding Agents / Evals:</strong> 指示・計画・スキル・CIを変更管理し、代表タスクの回帰評価を回す。</li>
-  <li><strong>RAG / Infra:</strong> データの所在を保ったまま検索方式を比較し、品質・権限・更新性を同時に測る。</li>
-  <li><strong>Safety:</strong> エージェントが自分で権限を広げられないよう、実行環境の下位層で拒否・隔離・監査する。</li>
-</ul></div></section>
-<section><h2>明日以降のWatchlist</h2><div class="read"><ul>
-  <li><strong>OpenAI / GitHub / Google:</strong> API、SDK、コーディング支援、エージェント実行、評価の一次情報を継続確認する。</li>
-  <li><strong>Anthropic:</strong> 操作・スキル・ファイル機能のドキュメント、制限、既存ベータからの移行条件を確認する。</li>
-  <li><strong>AWS / NVIDIA:</strong> マルチ環境推論、ランタイム隔離、ベクトル検索の実装例と提供地域を追う。</li>
-</ul></div></section>
-<section><h2>Caveat</h2><div class="note">提供地域、価格、レート制限、ベータ範囲、対応ランタイムは更新されることがあります。導入判断では、必ずリンク先の最新ドキュメントと利用条件を確認してください。</div></section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Agents / Evals:</strong> 長時間タスクは、状態・ツール・評価・監督・回復を一つのシステムとして測る。</li><li><strong>Inference / API:</strong> ルーティングを導入するなら、推論先の記録とタスク別の回帰評価を残す。</li><li><strong>Safety / Infra:</strong> 指示は行動を誘導し、環境が権限と副作用を強制する。</li><li><strong>Coding Agents:</strong> 会話を実行に直結させず、要件・計画・差分・テスト・承認を成果物にする。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li><strong>OpenAI / Anthropic / GitHub:</strong> API、SDK、コーディング支援、エージェント実行、評価の新着を確認する。</li><li><strong>AWS / Google / Microsoft:</strong> 実行環境、ルーティング、MCP連携、提供地域、移行条件を追う。</li><li><strong>NVIDIA:</strong> 長時間エージェントの評価結果が、再現可能な実装・データ・ベンチマークとして公開されるかを確認する。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">掲載した記事は設計の参考資料であり、各製品の一般提供範囲や性能保証ではありません。提供地域、価格、対応機能、ベンチマーク条件は変わるため、導入前に元記事と公式ドキュメントを確認してください。</div></section>
 <footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
 </main>
 </body>

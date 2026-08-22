@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-08-23</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-08-23 07:07 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">トップページへ</a><a href="../latest.html">最新号を読む</a><a href="../index.html">履歴を見る</a></nav>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式情報から、今日試せるものだけを選んでいます。</section>
+<section class="note"><strong>今日の判断:</strong> 2026-08-21 JSTの一次情報から、長時間タスクの評価、推論の振り分け、実行環境の安全境界、会話から開発作業へつなぐ流れの4本を選びました。</section>
+<section class="summary"><ol><li>長時間タスクでは、モデル単体より状態、フィードバック、回復、監督を含むシステムを評価する。</li><li>推論のモデル選択を固定せず、品質・レイテンシ・コストの実測ループに組み込む。</li><li>安全性と開発者体験は、指示だけでなく環境側の権限、隔離、監査で支える。</li></ol></section>
+<section><h2>今日読むべき4本</h2>
+<article class="read"><h3>長時間タスクの成否を、状態・評価・回復のループで測る</h3><div class="meta">NVIDIA Technical Blog / 2026-08-21 / Agents・Evals</div><p><strong>読む価値:</strong> 永続状態、ツール、評価、監督を組み合わせた長時間タスクの設計を説明します。</p><p><strong>開発者への示唆:</strong> 最終回答だけでなく、行動数、再実行率、回復時間を評価に入れます。</p><p><strong>試すなら:</strong> 反復実験の変更履歴、テスト結果、失敗理由、次の仮説を保存します。</p><a href="https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/">公式記事を読む</a></article>
+<article class="read"><h3>モデル選択を、更新可能なルーティング層として運用する</h3><div class="meta">Microsoft Foundry Blog / 2026-08-21 / Inference・API</div><p><strong>読む価値:</strong> 推論先、提供地域、更新、品質・コスト・レイテンシの調整を分離する考え方を整理しています。</p><p><strong>開発者への示唆:</strong> 推論先の記録とタスク別の受入基準が、ルーティングの前提になります。</p><p><strong>試すなら:</strong> 分類、要約、コード修正の代表ケースで、品質、レイテンシ、費用、失敗率を比較します。</p><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/model-router-updates-new-regions-a-refreshed-model-pool-and-understanding-the-hi/4521310">公式記事を読む</a></article>
+<article class="read"><h3>エージェントの権限を、指示ではなく実行環境で制限する</h3><div class="meta">Microsoft Apps on Azure Blog / 2026-08-21 / Safety・Infra</div><p><strong>読む価値:</strong> 隔離、秘密情報を直接渡さない認証、出力の除去、リスクに応じた承認を実装例から学べます。</p><p><strong>開発者への示唆:</strong> 短命の権限、ネットワーク境界、承認、監査、取り消しを副作用の前に通します。</p><p><strong>試すなら:</strong> 読み取り、検証、変更の環境を分け、失敗時の隔離と復旧を意図的に試します。</p><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/stop-restricting-the-agent-start-restricting-its-environment-/4548726">公式記事を読む</a></article>
+<article class="read"><h3>会話の文脈を、そのまま開発タスクへ渡す</h3><div class="meta">Microsoft Teams Blog / 2026-08-21 / Coding Agents・Workflow</div><p><strong>読む価値:</strong> 会話の要件、決定、制約を、文脈を失わず開発作業へつなぐ流れを紹介します。</p><p><strong>開発者への示唆:</strong> 根拠、未確定の要望、変更範囲、承認者を成果物として確定します。</p><p><strong>試すなら:</strong> 要件、変更計画、差分、テスト結果、承認を1枚の記録にまとめます。</p><a href="https://techcommunity.microsoft.com/blog/microsoftteamsblog/turn-conversations-into-code-with-github-copilot-in-microsoft-teams/4548305">公式記事を読む</a></article>
+</section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Agents / Evals:</strong> 状態・ツール・評価・監督・回復を一つのシステムとして測る。</li><li><strong>Inference / API:</strong> 推論先の記録とタスク別の回帰評価を残す。</li><li><strong>Safety / Infra:</strong> 指示は誘導し、環境が権限と副作用を強制する。</li><li><strong>Coding Agents:</strong> 会話を要件・計画・差分・テスト・承認へ変換する。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li><strong>OpenAI / Anthropic / GitHub:</strong> API、SDK、コーディング支援、評価の新着を確認する。</li><li><strong>AWS / Google / Microsoft:</strong> 実行環境、ルーティング、MCP連携、移行条件を追う。</li><li><strong>NVIDIA:</strong> 長時間エージェントの評価が再現可能な形で公開されるかを確認する。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">掲載した記事は設計の参考資料であり、提供地域、価格、対応機能、ベンチマーク条件は変わるため、導入前に元記事と公式ドキュメントを確認してください。</div></section>
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main></body></html>
