@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-08-24</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-08-24 07:06 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">トップページへ</a><a href="../latest.html">最新号を読む</a><a href="../index.html">履歴を見る</a></nav>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式情報から、今日試せるものだけを選んでいます。</section>
+<section class="note"><strong>今日の判断:</strong> 公式・一次情報を15件以上確認しましたが、2026-08-22〜24 JSTに公開された、重複せず実装へ直結する新規記事は十分にありませんでした。今日は無理に本数を増やさず、次に読む候補を更新します。</section>
+<section class="summary"><ol><li>今日は「主要な新規Developer Readsなし」の短い更新です。</li><li>会話から開発作業へつなぐ機能は、要件・差分・テスト・承認を分けて確認する。</li><li>エージェントの安全性は、指示だけでなく権限、隔離、監査を実行環境で担保する。</li></ol></section>
+<section><h2>今日読むべき本数</h2><div class="read"><p><strong>主要な新規記事なし。</strong> 直近24〜48時間の範囲では、開発者が新しく試す価値のある公式記事を3本以上確認できませんでした。既存記事の再掲や、実装手順のないニュースは掲載していません。</p></div></section>
+<section><h2>明日以降のWatchlist</h2>
+<article class="read"><h3>会話から開発作業へ渡すときの確認点</h3><div class="meta">GitHub Changelog / 2026-08-21 / Coding Agents・Workflow</div><p><strong>読む価値:</strong> チームの会話を開発作業へつなぐ流れを、公式の提供範囲とともに確認できます。</p><p><strong>開発者への示唆:</strong> 会話をそのまま実行権限に変えず、根拠、未確定事項、変更範囲、承認者を成果物として残す設計が必要です。</p><p><strong>試すなら:</strong> 小さな修正で、要件、変更計画、差分、テスト結果、承認を1枚にまとめ、文脈の抜けを振り返ります。</p><a href="https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/">公式記事を読む</a></article>
+<article class="read"><h3>エージェントの安全境界を実行環境に置く</h3><div class="meta">NVIDIA Technical Blog / 2026-08-21 / Safety・Infra</div><p><strong>読む価値:</strong> 最小権限、隔離、短命なアクセス、監査を、エージェントの外側で強制する考え方を整理しています。</p><p><strong>開発者への示唆:</strong> プロンプトやハーネスだけに依存せず、資格情報、ネットワーク、ファイル操作、外部APIの境界を先に決めます。</p><p><strong>試すなら:</strong> 読み取り・検証・変更を別環境に分け、失敗時の隔離、取り消し、復旧を意図的にテストします。</p><a href="https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/">公式記事を読む</a></article>
+<article class="read"><h3>スキルと開発者向け指示を、継続評価する</h3><div class="meta">Google Cloud Blog / 2026-08-03 / Coding Agents・Evals</div><p><strong>読む価値:</strong> 開発者向けの指示やスキルを、CI、リンク検査、定期評価で品質管理する実例です。</p><p><strong>開発者への示唆:</strong> APIや実行基盤が変わると指示も壊れるため、正確さだけでなくトークン量や完了時間も回帰評価に入れます。</p><p><strong>試すなら:</strong> 代表タスクを複数用意し、指示あり・なしで成功率、消費量、所要時間を比較してから共有します。</p><a href="https://cloud.google.com/blog/topics/developers-practitioners/behind-the-scenes-how-we-build-test-and-scale-google-agent-skills">公式記事を読む</a></article>
+</section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Coding Agents:</strong> 会話からコードへ渡す前に、要件と承認を明示する。</li><li><strong>Safety / Infra:</strong> 権限、隔離、監査、取り消しを環境側で強制する。</li><li><strong>Evals:</strong> 指示やスキルは、成功率だけでなく効率と回帰を継続測定する。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">今日は新規記事が少ないため、Watchlistには直近の一次情報を残しています。提供地域、価格、対応機能、ベンチマーク条件は変わるため、導入前に元記事と公式ドキュメントを確認してください。</div></section>
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main></body></html>

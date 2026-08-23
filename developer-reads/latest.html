@@ -3,29 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-08-23</title>
+<title>Developer Reads - 2026-08-24</title>
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-08-23 07:07 JST</div>
+  <div class="meta">Last updated: 2026-08-24 07:06 JST</div>
   <h1>Developer Reads</h1>
   <div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div>
 </header>
 <nav class="topnav page-actions"><a href="../index.html">トップページへ</a><a href="index.html">履歴を見る</a></nav>
 <section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式情報から、今日試せるものだけを選んでいます。</section>
-<section class="note"><strong>今日の判断:</strong> 2026-08-21 JSTの一次情報から、長時間タスクの評価、推論の振り分け、実行環境の安全境界、会話から開発作業へつなぐ流れの4本を選びました。</section>
-<section class="summary"><ol><li>長時間タスクでは、モデル単体より状態、フィードバック、回復、監督を含むシステムを評価する。</li><li>推論のモデル選択を固定せず、品質・レイテンシ・コストの実測ループに組み込む。</li><li>安全性と開発者体験は、指示だけでなく環境側の権限、隔離、監査で支える。</li></ol></section>
-<section><h2>今日読むべき4本</h2>
-  <article class="read"><h3>長時間タスクの成否を、状態・評価・回復のループで測る</h3><div class="meta">NVIDIA Technical Blog / 2026-08-21 / Agents・Evals</div><p><strong>読む価値:</strong> コード変更と実行結果を何度も往復する自律システムを、永続状態、ツール、評価、監督の組み合わせとして説明しています。モデルの一発回答では見えない設計論を、最適化と対話型ベンチマークの両方から読めます。</p><p><strong>開発者への示唆:</strong> 長いタスクでは、何を保存し、どの評価結果を次の試行へ渡し、停滞時にどう方針を変えるかを決める必要があります。評価も最終回答だけでなく、行動数、再実行率、回復時間を含めます。</p><p><strong>試すなら:</strong> 小さな最適化タスクを20回まで反復できる実験にし、変更履歴、テスト結果、失敗理由、次の仮説を保存する。成功率と無駄な試行数を記録する。</p><a href="https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/">公式記事を読む</a></article>
-  <article class="read"><h3>モデル選択を、更新可能なルーティング層として運用する</h3><div class="meta">Microsoft Foundry Blog / 2026-08-21 / Inference・API</div><p><strong>読む価値:</strong> 推論先の候補、提供地域、更新、品質・コスト・レイテンシの調整を、アプリ本体から分離する考え方を整理しています。モデルの入れ替えでアプリの接続先を毎回書き換えないための視点があります。</p><p><strong>開発者への示唆:</strong> ルーティングを導入するなら、実際にどの推論先へ送られたか、候補の入れ替えで品質がどう変わったかを追えるようにします。固定の総合スコアではなく、タスク別の受入基準を持ちます。</p><p><strong>試すなら:</strong> 分類、要約、コード修正の代表ケースを各20件用意し、品質、レイテンシ、費用、失敗率を比較する。候補変更時の回帰評価を必須にする。</p><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/model-router-updates-new-regions-a-refreshed-model-pool-and-understanding-the-hi/4521310">公式記事を読む</a></article>
-  <article class="read"><h3>エージェントの権限を、指示ではなく実行環境で制限する</h3><div class="meta">Microsoft Apps on Azure Blog / 2026-08-21 / Safety・Infra</div><p><strong>読む価値:</strong> 自律運用の安全性を、マイクロVM隔離、秘密情報を直接渡さない認証、出力の除去、リスクに応じた承認として実装する例を示しています。プロンプトだけに安全保証を置かない設計を具体化できます。</p><p><strong>開発者への示唆:</strong> 誤動作や指示の迂回があっても、環境が変更可能範囲を越えさせないことが重要です。副作用の前に、短命の権限、ネットワーク境界、承認、監査、取り消しを通します。</p><p><strong>試すなら:</strong> 読み取り、検証、変更の3段階に実行環境を分け、各段階の資格情報、ネットワーク、ファイル、外部APIの許可を列挙する。失敗時の隔離と復旧を試す。</p><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/stop-restricting-the-agent-start-restricting-its-environment-/4548726">公式記事を読む</a></article>
-  <article class="read"><h3>会話の文脈を、そのまま開発タスクへ渡す</h3><div class="meta">Microsoft Teams Blog / 2026-08-21 / Coding Agents・Workflow</div><p><strong>読む価値:</strong> チームの会話にある要件、決定、制約を、開発作業の依頼へつなぐ流れを紹介しています。機能そのものより、文脈を失わずに作業へ渡す設計が参考になります。</p><p><strong>開発者への示唆:</strong> 会話を入力にする場合は、根拠、未確定の要望、変更範囲、承認者を確定する必要があります。会話履歴をそのまま実行権限に変えず、計画・差分・テスト結果を確認可能な成果物にします。</p><p><strong>試すなら:</strong> 小さなバグ修正で、会話から抽出した要件、変更計画、差分、テスト結果、承認を1枚の記録にまとめ、抜けた前提を振り返る。</p><a href="https://techcommunity.microsoft.com/blog/microsoftteamsblog/turn-conversations-into-code-with-github-copilot-in-microsoft-teams/4548305">公式記事を読む</a></article>
+<section class="note"><strong>今日の判断:</strong> 公式・一次情報を15件以上確認しましたが、2026-08-22〜24 JSTに公開された、重複せず実装へ直結する新規記事は十分にありませんでした。今日は無理に本数を増やさず、次に読む候補を更新します。</section>
+<section class="summary"><ol><li>今日は「主要な新規Developer Readsなし」の短い更新です。</li><li>会話から開発作業へつなぐ機能は、要件・差分・テスト・承認を分けて確認する。</li><li>エージェントの安全性は、指示だけでなく権限、隔離、監査を実行環境で担保する。</li></ol></section>
+<section><h2>今日読むべき本数</h2><div class="read"><p><strong>主要な新規記事なし。</strong> 直近24〜48時間の範囲では、開発者が新しく試す価値のある公式記事を3本以上確認できませんでした。既存記事の再掲や、実装手順のないニュースは掲載していません。</p></div></section>
+<section><h2>明日以降のWatchlist</h2>
+  <article class="read"><h3>会話から開発作業へ渡すときの確認点</h3><div class="meta">GitHub Changelog / 2026-08-21 / Coding Agents・Workflow</div><p><strong>読む価値:</strong> チームの会話を開発作業へつなぐ流れを、公式の提供範囲とともに確認できます。</p><p><strong>開発者への示唆:</strong> 会話をそのまま実行権限に変えず、根拠、未確定事項、変更範囲、承認者を成果物として残す設計が必要です。</p><p><strong>試すなら:</strong> 小さな修正で、要件、変更計画、差分、テスト結果、承認を1枚にまとめ、文脈の抜けを振り返ります。</p><a href="https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/">公式記事を読む</a></article>
+  <article class="read"><h3>エージェントの安全境界を実行環境に置く</h3><div class="meta">NVIDIA Technical Blog / 2026-08-21 / Safety・Infra</div><p><strong>読む価値:</strong> 最小権限、隔離、短命なアクセス、監査を、エージェントの外側で強制する考え方を整理しています。</p><p><strong>開発者への示唆:</strong> プロンプトやハーネスだけに依存せず、資格情報、ネットワーク、ファイル操作、外部APIの境界を先に決めます。</p><p><strong>試すなら:</strong> 読み取り・検証・変更を別環境に分け、失敗時の隔離、取り消し、復旧を意図的にテストします。</p><a href="https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/">公式記事を読む</a></article>
+  <article class="read"><h3>スキルと開発者向け指示を、継続評価する</h3><div class="meta">Google Cloud Blog / 2026-08-03 / Coding Agents・Evals</div><p><strong>読む価値:</strong> 開発者向けの指示やスキルを、CI、リンク検査、定期評価で品質管理する実例です。</p><p><strong>開発者への示唆:</strong> APIや実行基盤が変わると指示も壊れるため、正確さだけでなくトークン量や完了時間も回帰評価に入れます。</p><p><strong>試すなら:</strong> 代表タスクを複数用意し、指示あり・なしで成功率、消費量、所要時間を比較してから共有します。</p><a href="https://cloud.google.com/blog/topics/developers-practitioners/behind-the-scenes-how-we-build-test-and-scale-google-agent-skills">公式記事を読む</a></article>
 </section>
-<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Agents / Evals:</strong> 長時間タスクは、状態・ツール・評価・監督・回復を一つのシステムとして測る。</li><li><strong>Inference / API:</strong> ルーティングを導入するなら、推論先の記録とタスク別の回帰評価を残す。</li><li><strong>Safety / Infra:</strong> 指示は行動を誘導し、環境が権限と副作用を強制する。</li><li><strong>Coding Agents:</strong> 会話を実行に直結させず、要件・計画・差分・テスト・承認を成果物にする。</li></ul></div></section>
-<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li><strong>OpenAI / Anthropic / GitHub:</strong> API、SDK、コーディング支援、エージェント実行、評価の新着を確認する。</li><li><strong>AWS / Google / Microsoft:</strong> 実行環境、ルーティング、MCP連携、提供地域、移行条件を追う。</li><li><strong>NVIDIA:</strong> 長時間エージェントの評価結果が、再現可能な実装・データ・ベンチマークとして公開されるかを確認する。</li></ul></div></section>
-<section><h2>Caveat</h2><div class="note">掲載した記事は設計の参考資料であり、各製品の一般提供範囲や性能保証ではありません。提供地域、価格、対応機能、ベンチマーク条件は変わるため、導入前に元記事と公式ドキュメントを確認してください。</div></section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Coding Agents:</strong> 会話からコードへ渡す前に、要件と承認を明示する。</li><li><strong>Safety / Infra:</strong> 権限、隔離、監査、取り消しを環境側で強制する。</li><li><strong>Evals:</strong> 指示やスキルは、成功率だけでなく効率と回帰を継続測定する。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">今日は新規記事が少ないため、Watchlistには直近の一次情報を残しています。提供地域、価格、対応機能、ベンチマーク条件は変わるため、導入前に元記事と公式ドキュメントを確認してください。</div></section>
 <footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
 </main>
 </body>
