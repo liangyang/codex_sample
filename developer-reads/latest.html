@@ -3,28 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer Reads - 2026-08-24</title>
+<title>Developer Reads - 2026-08-25</title>
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <main>
 <header>
-  <div class="meta">Last updated: 2026-08-24 07:06 JST</div>
+  <div class="meta">Last updated: 2026-08-25 07:08 JST</div>
   <h1>Developer Reads</h1>
   <div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div>
 </header>
 <nav class="topnav page-actions"><a href="../index.html">トップページへ</a><a href="index.html">履歴を見る</a></nav>
 <section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式情報から、今日試せるものだけを選んでいます。</section>
-<section class="note"><strong>今日の判断:</strong> 公式・一次情報を15件以上確認しましたが、2026-08-22〜24 JSTに公開された、重複せず実装へ直結する新規記事は十分にありませんでした。今日は無理に本数を増やさず、次に読む候補を更新します。</section>
-<section class="summary"><ol><li>今日は「主要な新規Developer Readsなし」の短い更新です。</li><li>会話から開発作業へつなぐ機能は、要件・差分・テスト・承認を分けて確認する。</li><li>エージェントの安全性は、指示だけでなく権限、隔離、監査を実行環境で担保する。</li></ol></section>
-<section><h2>今日読むべき本数</h2><div class="read"><p><strong>主要な新規記事なし。</strong> 直近24〜48時間の範囲では、開発者が新しく試す価値のある公式記事を3本以上確認できませんでした。既存記事の再掲や、実装手順のないニュースは掲載していません。</p></div></section>
+<section class="note"><strong>今日の判断:</strong> 公式・一次情報を15件以上確認しましたが、2026-08-23〜25 JSTに公開された、広く再利用できる新規記事は十分にありませんでした。今日は本数を増やさず、実装に近い候補をWatchlistへ残します。</section>
+<section class="summary"><ol><li>今日は「主要な新規Developer Readsなし」の短い更新です。</li><li>会話全体を評価対象にすると、ツール呼び出しと最終品質を同じテストで確認できます。</li><li>長いエージェント実行では、速度だけでなくコンテキスト増加と実測条件を記録します。</li></ol></section>
+<section><h2>今日読むべき本数</h2><div class="read"><p><strong>主要な新規記事なし。</strong> 直近24〜48時間の範囲では、通勤中に優先して読むべき公式記事を3本以上確認できませんでした。実装手順の薄い発表や、特定ハードウェアのベンチマークだけの記事は主題から外しています。</p></div></section>
 <section><h2>明日以降のWatchlist</h2>
-  <article class="read"><h3>会話から開発作業へ渡すときの確認点</h3><div class="meta">GitHub Changelog / 2026-08-21 / Coding Agents・Workflow</div><p><strong>読む価値:</strong> チームの会話を開発作業へつなぐ流れを、公式の提供範囲とともに確認できます。</p><p><strong>開発者への示唆:</strong> 会話をそのまま実行権限に変えず、根拠、未確定事項、変更範囲、承認者を成果物として残す設計が必要です。</p><p><strong>試すなら:</strong> 小さな修正で、要件、変更計画、差分、テスト結果、承認を1枚にまとめ、文脈の抜けを振り返ります。</p><a href="https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/">公式記事を読む</a></article>
-  <article class="read"><h3>エージェントの安全境界を実行環境に置く</h3><div class="meta">NVIDIA Technical Blog / 2026-08-21 / Safety・Infra</div><p><strong>読む価値:</strong> 最小権限、隔離、短命なアクセス、監査を、エージェントの外側で強制する考え方を整理しています。</p><p><strong>開発者への示唆:</strong> プロンプトやハーネスだけに依存せず、資格情報、ネットワーク、ファイル操作、外部APIの境界を先に決めます。</p><p><strong>試すなら:</strong> 読み取り・検証・変更を別環境に分け、失敗時の隔離、取り消し、復旧を意図的にテストします。</p><a href="https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/">公式記事を読む</a></article>
-  <article class="read"><h3>スキルと開発者向け指示を、継続評価する</h3><div class="meta">Google Cloud Blog / 2026-08-03 / Coding Agents・Evals</div><p><strong>読む価値:</strong> 開発者向けの指示やスキルを、CI、リンク検査、定期評価で品質管理する実例です。</p><p><strong>開発者への示唆:</strong> APIや実行基盤が変わると指示も壊れるため、正確さだけでなくトークン量や完了時間も回帰評価に入れます。</p><p><strong>試すなら:</strong> 代表タスクを複数用意し、指示あり・なしで成功率、消費量、所要時間を比較してから共有します。</p><a href="https://cloud.google.com/blog/topics/developers-practitioners/behind-the-scenes-how-we-build-test-and-scale-google-agent-skills">公式記事を読む</a></article>
+  <article class="read"><h3>会話全体を対象にしたエージェント評価</h3><div class="meta">Mastra Blog / 2026-08-24 / Evals・Agents</div><p><strong>読む価値:</strong> 1ターンごとの判定をつなぎ合わせるのではなく、会話全体の品質とツール利用を一つの評価にできます。</p><p><strong>開発者への示唆:</strong> 長い会話では、最終回答だけでなく、必要なツールを必要な回数だけ呼んだか、前のターンの情報を維持できたかを分けて測るべきです。</p><p><strong>試すなら:</strong> 代表的な3ターン会話を5本用意し、ツール呼び出し回数、必須情報の含有、会話全体の判定をCIで比較します。</p><a href="https://mastra.ai/blog/introducing-multi-turn-evals">公式記事を読む</a></article>
+  <article class="read"><h3>長いコンテキストを使う推論基盤の見方</h3><div class="meta">NVIDIA Technical Blog / 2026-08-24 / Inference・Infra</div><p><strong>読む価値:</strong> マルチターンの実行でコンテキストが増え続けると、生成速度と待ち時間の設計が変わることを、長文脈ベンチマークで確認できます。</p><p><strong>開発者への示唆:</strong> ベンダーの数字をそのまま採用せず、入力長、出力長、同時実行数、モデル、測定方法をそろえて自分のワークロードを測る必要があります。</p><p><strong>試すなら:</strong> 10K・100K相当の入力長で、初回応答時間、ターンごとの遅延、総トークン数、完了率を同じシナリオで記録します。</p><a href="https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-unlocks-ultrafast-interactivity-at-long-context-on-nvidia-vera-rubin/">公式記事を読む</a></article>
+  <article class="read"><h3>信頼できるデータエージェントの土台</h3><div class="meta">Red Hat Blog / 2026-08-24 / Agents・RAG</div><p><strong>読む価値:</strong> 自然言語でデータを問う仕組みを、データ所有者、出典、監査可能な回答、業務用語の定義から組み立てる実例です。</p><p><strong>開発者への示唆:</strong> RAGの精度改善だけでは足りず、正しいデータ源、ドメイン用語、回答の根拠を運用上の責任範囲と結び付ける必要があります。</p><p><strong>試すなら:</strong> まず一つの業務指標について、正規のデータ源、用語定義、引用必須、回答不能時の振る舞いをテストケースにします。</p><a href="https://www.redhat.com/en/blog/we-built-enterprise-data-agent-and-you-can-too">公式記事を読む</a></article>
 </section>
-<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Coding Agents:</strong> 会話からコードへ渡す前に、要件と承認を明示する。</li><li><strong>Safety / Infra:</strong> 権限、隔離、監査、取り消しを環境側で強制する。</li><li><strong>Evals:</strong> 指示やスキルは、成功率だけでなく効率と回帰を継続測定する。</li></ul></div></section>
-<section><h2>Caveat</h2><div class="note">今日は新規記事が少ないため、Watchlistには直近の一次情報を残しています。提供地域、価格、対応機能、ベンチマーク条件は変わるため、導入前に元記事と公式ドキュメントを確認してください。</div></section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Evals:</strong> 長い会話は、ターン単位の正しさと会話全体の目的達成を分けて評価する。</li><li><strong>Inference:</strong> レイテンシーは入力長、出力長、同時実行数、キャッシュ条件と一緒に測る。</li><li><strong>RAG / Agents:</strong> データの所有者と用語の定義を、検索設定より先に固定する。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">今日は採用本数を絞りました。ベンチマーク値、提供範囲、ライブラリのAPIは更新されるため、導入前に元記事、公式ドキュメント、実環境での測定結果を確認してください。</div></section>
 <footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
 </main>
 </body>
