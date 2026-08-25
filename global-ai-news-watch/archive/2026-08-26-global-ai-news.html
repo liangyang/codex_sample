@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>世界AIニュース日次レポート — 2026-08-26 JST</title>
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main class="page">
+  <header>
+    <div class="meta">公開情報ベースの日次AIニュース / JST 2026-08-26</div>
+    <h1>世界AIニュース日次レポート</h1>
+    <div class="meta">対象: 世界AIニュース / Last updated: 2026-08-26 07:18 JST / 公式発表と主要報道を分けて整理</div>
+  </header>
+  <nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../codex_sample_publish/global-ai-news-watch/index.html">履歴を見る</a></nav>
+  <section class="note"><strong>このページについて:</strong> 主要AI企業、モデル、エージェント、開発者ツール、インフラ、AI安全を対象に、8月25〜26日JSTの新しい公開情報と継続材料を分けて整理しています。</section>
+  <section class="summary"><ol>
+    <li>8月25〜26日JSTは、新モデルの一般提供より、推論チップとラック規模のAI基盤をどう効率・安全に運用するかが中心です。</li>
+    <li>OpenAIは自社推論チップの初期測定結果を公表し、電力当たりの処理量とレイテンシーの両立を示しました。</li>
+    <li>CiscoとNVIDIAはSupermicroを加えたラック規模のSecure AI Factoryを発表。確認できた範囲で新しい主要フロンティアモデルの発表はありません。</li>
+  </ol></section>
+  <section><h2>前日との差分</h2><div class="read"><ul>
+    <li>前日のモデル提供と専門モデルから、今日は推論コスト、電力・冷却、ネットワーク、データ主権を含むフルスタック基盤へ差分を移しました。</li>
+    <li>OpenAIの推論チップ測定とCiscoのラック規模インフラは新しい一次情報です。前日のGPT-5.6 in KiroとThomson ReutersのURLはTopで繰り返していません。</li>
+    <li>主要社の新モデル一般提供・価格改定は確認できず、既存モデルの安全・提供・評価更新はWatchlistへ置きました。</li>
+  </ul></div></section>
+  <section><h2>今日の読み</h2><div class="read"><p>世界AIの今日の読みは、性能競争のボトルネックがモデル単体から、推論を何ワット・何秒・どの権限境界で回すかへ移っていることです。OpenAIはモデル、ソフトウェア、チップ、メモリ、ネットワークを共同設計する方向を示し、Cisco/NVIDIAは冷却・ネットワーク・運用を含む導入単位を示しました。いずれも各社の測定・製品説明であり、実案件の費用や可用性は独立評価が必要です。</p></div></section>
+  <section><h2>実務への示唆</h2><div class="read"><ul>
+    <li>推論基盤はGPU単価だけでなく、電力、冷却、ネットワーク、メモリ、レイテンシー、稼働率、保守を含む総コストで比較する。</li>
+    <li>ラック規模の導入では、リファレンス構成の適合性、納期、データ主権、監査、障害時の責任分界、将来の部品交換を契約前に確認する。</li>
+    <li>ベンチマーク値はモデル・入力長・並列度・電力測定法で変わるため、実ワークロードの成功タスク単価と再現性を別に測る。</li>
+  </ul></div></section>
+  <section><h2>Top Signals</h2>
+    <article class="signal high">
+      <h3>1. OpenAIが自社推論チップの初期結果を公表、電力効率と低遅延を両立</h3>
+      <div class="badges"><span class="badge good">根拠: OpenAI公式発表</span><span class="badge warn">扱い: 確認済み／継続確認</span><span class="badge">領域: Chips / Inference</span></div>
+      <p>OpenAIは8月25日、初の自社推論チップについて、公開ベンチマークInferenceXでの初期測定結果を発表しました。GPT-OSS 120B、DeepSeek R1、Kimi K2.5 1Tを対象に、比較システムより電力当たりのAI処理量が多く、エンドツーエンドの遅延も低かったと説明しています。</p>
+      <p>同社は3モデルでピーク時の電力当たり処理量が1.5〜1.9倍、遅延が1.7〜3.6倍低かったとしています。これはOpenAIによる公開ベンチマーク測定であり、年末予定の自社インフラへの展開、他社ワークロード、実際の料金や供給量は今後の確認事項です。</p>
+      <div class="sources"><strong>ソース</strong><ul><li><a href="https://openai.com/index/jalapeno-first-results/" rel="noopener">OpenAI・推論チップの初期測定結果</a></li><li><a href="https://openai.com/index/the-full-stack-behind-abundant-intelligence/" rel="noopener">OpenAI・フルスタック戦略</a></li></ul></div>
+    </article>
+    <article class="signal high">
+      <h3>2. CiscoとNVIDIAがSupermicroを加え、ラック規模のSecure AI Factoryを拡張</h3>
+      <div class="badges"><span class="badge good">根拠: Cisco公式発表</span><span class="badge warn">扱い: 確認済み／継続確認</span><span class="badge">領域: Infrastructure / Sovereign Cloud</span></div>
+      <p>Ciscoは8月25日、NVIDIAとのSecure AI FactoryをSupermicroとの提携で拡張し、高密度の液冷・空冷サーバーを含むラック規模の構成を提供すると発表しました。企業、ネオクラウド、ソブリンクラウド向けに、ネットワーク、計算、冷却、運用をまとめた構成を掲げています。</p>
+      <p>Supermicroの構成は2026年10月から提供予定で、NVIDIA Cloud Partner準拠や、Vera Rubin NVL72・HGX Rubin NVL8などへの対応が説明されています。発表は導入可能な構成の拡大を示しますが、価格、納期、顧客ごとの電力・冷却条件は未確認です。</p>
+      <div class="sources"><strong>ソース</strong><ul><li><a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m08/cisco-secure-ai-factory-nvidia-rack-scale.html" rel="noopener">Cisco・Secure AI Factoryのラック規模拡張</a></li></ul></div>
+    </article>
+    <article class="signal mid">
+      <h3>3. OpenAIが管理者向けプラグインを発表、利用状況と権限変更を会話に統合</h3>
+      <div class="badges"><span class="badge good">根拠: OpenAI公式発表</span><span class="badge warn">扱い: 確認済み／継続確認</span><span class="badge">領域: Enterprise AI / Governance</span></div>
+      <p>OpenAIは8月25日、ChatGPT Work向けの管理者プラグインを発表しました。管理者がワークスペースの活動・クレジット利用を確認し、メンバー、グループ、権限、利用上限などの対応を一つの会話から実行できると説明しています。</p>
+      <p>既存の役割・権限を越えず、変更内容と結果を確認できる設計を掲げています。企業AIの導入では、モデル性能だけでなく、利用状況の可視化、権限に基づく実行、例外時の承認を運用へ組み込む方向が強まっています。</p>
+      <div class="sources"><strong>ソース</strong><ul><li><a href="https://openai.com/index/introducing-admin-plugin/" rel="noopener">OpenAI・管理者向けプラグイン発表</a></li></ul></div>
+    </article>
+  </section>
+  <section><h2>補助シグナル</h2><div class="grid two">
+    <div class="mini-card"><strong>エージェント開発</strong><br>Google Antigravityは8月21日、複数マシン上の開発セッションをブラウザから遠隔操作し、通知を受け取る機能を発表しました。新着窓より前のため補助扱いですが、長時間タスクの監督設計を示します。</div>
+    <div class="mini-card"><strong>人材移動</strong><br>Axiosは8月24日、研究者Luke MetzのMeta移籍を報じました。一次確認のない人事報道のためTopには置かず、主要研究組織間の採用競争を追います。</div>
+    <div class="mini-card"><strong>モデル発表の確認</strong><br>8月25〜26日JSTの確認範囲では、OpenAI、Anthropic、Google DeepMind、Meta、Microsoft、xAI、Mistralによる新しい主要フロンティアモデル一般提供は確認できませんでした。</div>
+  </div></section>
+  <section><h2>Watchlist</h2><ul>
+    <li>OpenAIの推論チップが年末にどの製品・地域・ワークロードへ展開され、独立測定でどの程度の電力・料金効果を示すか。</li>
+    <li>Cisco/NVIDIA/Supermicro構成の10月提供、実際の価格・納期、電力・冷却条件、ソブリンクラウドの採用状況。</li>
+    <li>管理者向けプラグインの提供地域、監査ログ、承認フロー、データ境界、既存の管理コンソールとの役割分担。</li>
+    <li>NVIDIAの決算・供給、AnthropicとOpenAIのサイバー安全方針、主要社の次のモデル提供・価格・地域制限。</li>
+  </ul></section>
+  <section><h2>Caveat</h2><div class="note">8月25〜26日JSTの世界AIは、公式発表で確認できる推論基盤、企業運用、インフラ提供を中心にしました。OpenAIの性能値は同社の測定、Ciscoの提供時期は同社発表に基づき、一般的な性能・導入効果・供給を保証しません。人事報道は補助扱いです。重要な導入・投資・法務判断では、最新の公式文書、契約、独立評価を確認してください。</div></section>
+  <footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer>
+</main>
+</body>
+</html>
+
