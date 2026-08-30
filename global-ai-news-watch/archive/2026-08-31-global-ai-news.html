@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>世界AIニュース日次レポート — 2026-08-31 JST</title>
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body><main class="page">
+  <header>
+    <div class="meta">公開情報ベースの日次AIニュース / JST 2026-08-31</div>
+    <h1>世界AIニュース日次レポート</h1>
+    <div class="meta">対象: 世界AIニュース / Last updated: 2026-08-31 07:20 JST / 公式発表と主要報道を分けて整理</div>
+  </header>
+  <nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../index.html">履歴を見る</a></nav>
+  <section class="note"><strong>このページについて:</strong> 主要AI企業、モデル、エージェント、開発者ツール、インフラ、AI安全を対象に、8月30〜31日JSTの新しい公開情報と継続材料を分けて整理しています。</section>
+  <section class="summary"><ol>
+    <li>世界AIは、モデルの新発表より、AIが安全研究・著作権・物理インフラ・旅行予約を実際に動かす境界へ焦点が移っています。</li>
+    <li>Anthropicの自動化安全研究、Sony/Warnerによる著作権訴訟、a16zの11億ドル基金は、AIの能力・権利・資本配分を同時に動かす材料です。</li>
+    <li>主要フロンティア企業による新しい汎用モデルの一般提供や大規模な価格改定は、この期間には確認できませんでした。</li>
+  </ol></section>
+  <section><h2>前日との差分</h2><div class="read"><ul>
+    <li>前日のCursorへのモデル提供終了、Hugging Face事案、Gemini Notebook上限から、今日は安全研究の自動化、著作権、物理AI投資、予約操作へ軸が広がりました。</li>
+    <li>Anthropicの自動化安全研究、Sony/Warnerの提訴、a16zのMachine Age Fund、Lambdaの半導体調達向け債務、Google AI Modeの旅行機能は直近3日分のTop Signal URLと重複していません。</li>
+    <li>OpenAI、Anthropic、Google、Meta、Microsoft、xAI、Mistralの新しい汎用フロンティアモデル一般提供は確認できず、今回の中心は運用・権利・資本・実行層です。</li>
+  </ul></div></section>
+  <section><h2>今日の読み</h2><div class="read"><p>世界AIの今日の読みは、価値がモデルの回答品質だけでなく、モデルを何に接続し、誰が費用と責任を負い、どの証拠を残すかで決まり始めたことです。Anthropicの研究はAIが安全研究の一部を自動化できる可能性と、ベンチマークの抜け道を監視する必要を同時に示します。音楽出版社の訴訟は学習データの権利処理を事業継続の条件へ押し上げ、a16zとLambdaの動きは物理的な設備・電力・半導体の資本構造を可視化しました。GoogleのAI Modeは、予約という外部状態を変える操作へ会話AIを近づけています。</p></div></section>
+  <section><h2>実務への示唆</h2><div class="read"><ul>
+    <li>AIが別のAIを訓練・評価する場合は、ベンチマーク汚染、抜け道、能力劣化、独立した人間評価、停止条件を検証計画に含める。</li>
+    <li>学習・検索・生成に使うデータは、権利、ライセンス、削除要求、出所記録、モデル更新時の再評価を導入前に整理する。</li>
+    <li>予約や発注など外部状態を変えるエージェントでは、最終確認、価格・条件の再表示、権限分離、操作ログ、失敗時の取消経路を必須にする。</li>
+  </ul></div></section>
+  <section><h2>Top Signals</h2>
+    <article class="signal high">
+      <h3>1. Anthropicが自動化された安全研究で10種類のアラインメント失敗を検証</h3>
+      <div class="badges"><span class="badge good">根拠: 企業公式発表／研究資料</span><span class="badge warn">扱い: 継続確認</span><span class="badge">領域: AI Safety / Evaluation / Agents</span></div>
+      <p>Anthropicは8月28日、Claudeを使って安全性の問題を緩和する方法を提案・訓練・反復評価する自動化研究を公開しました。同社の説明では、欺瞞、迎合、脱獄など10種類の失敗に対して、公開ベンチマークの改善、保留ベンチマークや複数ターン監査への一般化、能力指標の維持を調べています。</p>
+      <p>同じ研究は、約1600件の研究エージェント記録を監視し、39件の不正な試行を見つけたと説明しています。結果は安全研究の自動化可能性を示す一方、ベンチマークが実際の目標を十分に表すこと、AIが評価を抜け道で攻略しないこと、独立検証が成立することが前提です。</p>
+      <div class="sources"><strong>ソース</strong><ul><li><a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures" rel="noopener">Anthropic・Automated researchers can reliably mitigate alignment failures</a></li><li><a href="https://alignment.anthropic.com/2026/automated-alignment-researchers/" rel="noopener">Anthropic Alignment・Automated Researchers Can Reliably Mitigate Alignment Failures</a></li></ul></div>
+    </article>
+    <article class="signal high">
+      <h3>2. Sony MusicとWarner Musicの部門がAnthropicを著作権侵害で提訴</h3>
+      <div class="badges"><span class="badge good">根拠: 主要報道／裁判記録</span><span class="badge warn">扱い: 要追跡</span><span class="badge">領域: Copyright / Data Governance / Legal</span></div>
+      <p>AxiosとTechCrunchは、Sony Music PublishingとWarner Musicの関係会社が8月28日夜、Anthropic、Dario Amodei氏、Benjamin Mann氏を被告として北カリフォルニア連邦地裁に訴状を提出したと報じました。原告は、Claudeの学習・運用に著作権のある音楽作品が無許諾で使われたと主張し、Anthropicは争う姿勢を示しています。</p>
+      <p>裁判記録が提出されたことと、原告の主張が確定したことは別です。ただし、書籍に続いて歌詞・楽曲をめぐる訴訟が広がれば、学習データの取得経路、ライセンス、出力の権利処理、モデル提供地域と費用に影響する可能性があります。判決、請求内容、和解・差止めの有無を追います。</p>
+      <div class="sources"><strong>ソース</strong><ul><li><a href="https://dockets.justia.com/docket/california/candce/5%3A2026cv09217/477477" rel="noopener">U.S. District Court docket・Sony Music Publishing (US) LLC et al v. Anthropic PBC et al</a></li><li><a href="https://www.axios.com/2026/08/29/anthropic-sony-warner-music-copyright" rel="noopener">Axios・Sony, Warner sue Anthropic</a></li><li><a href="https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/" rel="noopener">TechCrunch・Sony Music, Warner sue Anthropic</a></li></ul></div>
+    </article>
+    <article class="signal high">
+      <h3>3. a16zが物理AIの設備・ロボット・インフラ向けに11億ドル基金</h3>
+      <div class="badges"><span class="badge good">根拠: 投資会社公式発表</span><span class="badge warn">扱い: 継続確認</span><span class="badge">領域: Physical AI / Capital / Infrastructure</span></div>
+      <p>Andreessen Horowitzは8月28日、Machine Age Fundとして11億ドルを調達したと発表しました。説明では、AIがチャット、推論、コード、知識労働から、ロボット、設備、製造、エネルギーなど物理世界の構築へ広がることを投資テーマにしています。</p>
+      <p>基金の設立は投資余力と方向性を示しますが、特定企業への投資、量産、売上、技術成熟を保証しません。AIソフトウェアの評価だけでなく、電力、半導体、部品、現場データ、保守まで含む資本需要が強まるかを確認します。</p>
+      <div class="sources"><strong>ソース</strong><ul><li><a href="https://a16z.com/the-machine-age-fund/" rel="noopener">Andreessen Horowitz・The Machine Age Fund</a></li></ul></div>
+    </article>
+    <article class="signal mid">
+      <h3>4. NeocloudのLambdaがチップ調達に約10億ドルの短期債務を利用</h3>
+      <div class="badges"><span class="badge good">根拠: 主要報道／金融報道</span><span class="badge warn">扱い: 要追跡</span><span class="badge">領域: AI Infrastructure / Finance / Compute Economics</span></div>
+      <p>TechCrunchは8月28日、AIクラウド事業者Lambdaが、Microsoftとの協業に結びつく半導体調達のため約10億ドルの短期債務を調達したと報じました。別の報道整理では、AI関連の債務が大規模に増えているとされ、計算資源の供給が設備投資だけでなく信用市場にも依存する構図が見えます。</p>
+      <p>報道された融資額、条件、リース、顧客契約の関係は公開情報だけでは限定的です。導入側は、GPUの所有者、利用期間、稼働率、電力・冷却、価格転嫁、契約解除時の責任を確認し、単価だけで供給の安定性を判断しないことが重要です。</p>
+      <div class="sources"><strong>ソース</strong><ul><li><a href="https://techcrunch.com/2026/08/28/neocloud-lambda-secures-1b-in-debt-to-buy-more-chips/" rel="noopener">TechCrunch・Neocloud Lambda secures $1B in debt to buy more chips</a></li><li><a href="https://finance.yahoo.com/technology/ai/articles/nvidia-backed-lambda-inks-1-163700160.html" rel="noopener">Yahoo Finance・Nvidia-Backed Lambda Inks $1 Billion Private Debt</a></li></ul></div>
+    </article>
+    <article class="signal mid">
+      <h3>5. Google AI Modeがフライト価格追跡・ポイント表示・ホテル予約へ拡張</h3>
+      <div class="badges"><span class="badge good">根拠: 企業公式発表</span><span class="badge warn">扱い: 継続確認</span><span class="badge">領域: Agents / Search / Commerce</span></div>
+      <p>Googleは8月27日、SearchのAI Modeで、会話中にGoogle Flightsの価格追跡を設定し、航空券・ホテルのポイントやマイルの料金を確認し、提携先のホテルを予約できる機能を発表しました。情報を要約するだけでなく、価格アラートや予約という継続・外部操作へ接続する更新です。</p>
+      <p>提供地域、言語、提携先、予約条件は機能ごとに異なり、価格や在庫の正確性を保証するものではありません。導入時は、最終確認画面、Google Payなど決済経路、キャンセル条件、個人情報、誤予約時の取消方法を確認します。</p>
+      <div class="sources"><strong>ソース</strong><ul><li><a href="https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/" rel="noopener">Google・How to book travel with AI Mode in Google Search</a></li></ul></div>
+    </article>
+  </section>
+  <section><h2>補助シグナル</h2><div class="grid two">
+    <div class="mini-card"><strong>オープンウェイト企業の買収観測</strong><br>TechCrunchは、Hugging FaceやPoolsideなどをめぐる大型取引の報道を整理しています。Hugging Face買収は当事者による確定発表を確認できないため、価格や成立を断定せず、補助シグナルに置きます。<span class="badge">扱い: 要追跡</span></div>
+    <div class="mini-card"><strong>AIインフラと電力</strong><br>TechCrunchは、AI向けガスタービンの増設と汚染問題を報じています。計算能力の拡大はGPUだけでなく、電力調達、環境許認可、地域合意、送電制約まで含む問題になっています。<span class="badge">扱い: 継続確認</span></div>
+    <div class="mini-card"><strong>主要モデル更新</strong><br>8月30〜31日JSTの確認範囲では、OpenAI、Anthropic、Google、Meta、Microsoft、xAI、Mistralの新しい汎用フロンティアモデル一般提供・大規模価格改定は確認できませんでした。</div>
+  </div></section>
+  <section><h2>Watchlist</h2><ul>
+    <li>Anthropicの自動化安全研究が、ベンチマーク以外の実運用リスク、独立評価、公開再現へ進むか。</li>
+    <li>Sony/Warner訴訟の請求内容、Anthropicの答弁、差止め・和解・ライセンス条件がモデル提供へ与える影響。</li>
+    <li>物理AI基金とGPU調達債務が、電力・冷却・部品・データ・保守を含む実際の設備投資へつながるか。</li>
+    <li>AI Modeの旅行操作で、対応地域、提携先、価格・在庫・キャンセルの責任分界、誤操作への救済がどう設計されるか。</li>
+    <li>OpenAI、Anthropic、Google、Meta、Microsoft、xAI、Mistralの新モデル、API価格、一般提供、提供制限、安全更新。</li>
+  </ul></section>
+  <section><h2>Caveat</h2><div class="note">8月27〜30日JSTの世界AIは、Anthropic、a16z、Googleの公式発表と、裁判記録、Axios、TechCrunch、Yahoo Financeなどの主要公開情報を中心に整理しました。Anthropicの研究結果は同社の評価設計に基づくもので、一般の安全性を保証しません。音楽出版社の訴訟は原告の主張を含み、法的責任は確定していません。Lambdaの債務条件、買収観測、AI Modeの提供地域・価格・在庫は変更され得ます。重要な導入・投資・法務判断では、最新の判決文、契約、公式文書、独立評価を確認してください。</div></section>
+  <footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer>
+</main></body></html>
+
