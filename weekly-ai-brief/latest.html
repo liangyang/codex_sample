@@ -1,159 +1,28 @@
 <!doctype html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Weekly AI Brief — 2026-08-29</title>
-<link rel="stylesheet" href="../assets/site.css">
-</head>
-<body>
-<main>
-<header>
-  <div class="meta">Weekly synthesis / JST 2026-08-29</div>
-  <h1>Weekly AI Brief</h1>
-  <div class="sub">中国AI、世界AI、Developer Readsを統合し、次の一週間に効く構造変化だけを残した週刊整理です。</div>
-</header>
-<nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px">
-  <a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a>
-  <a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a>
-</nav>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Weekly AI Brief — 2026-09-05</title><link rel="stylesheet" href="../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Weekly synthesis / JST 2026-09-05</div><h1>Weekly AI Brief</h1><div class="sub">中国AI、世界AI、Developer Readsを統合し、次の一週間に効く構造変化だけを残した週刊整理です。</div></header>
+<nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px"><a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a><a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a></nav>
+<section class="note"><strong>このページについて:</strong> 対象期間は 2026-08-29 00:00 JST から 2026-09-04 23:59 JST です。3系列の日次アーカイブを主入力にし、9/5土曜午前の公式発表・一次情報・主要報道は遅い更新の裏取りと構造理解の補強に限定しました。</section>
+<section class="summary"><ol><li>高能力モデルの競争は、性能だけでなく、サイバー・生物などの能力を誰にどの条件で開くかへ移っています。</li><li>Agent Registry、組織の既定モデル、レビュー権限、予算、監査が製品機能になり、Agentを作る段階から管理・再利用する段階へ進みました。</li><li>中国では、開放モデル、Token課金、API移行、サービス商、算力、具身AIが導入のレールとして具体化しています。</li><li>実務上の要点は、アクセス、可用性、評価、費用、退役時の切替を同じ運用表で測ることです。</li></ol></section>
 
-<section class="note"><strong>このページについて:</strong> 対象期間は 2026-08-22 00:00 JST から 2026-08-28 23:59 JST です。China AI News、Global AI News、Developer Reads の当週アーカイブを主入力にし、2026-08-29 土曜午前JSTに公式発表・一次情報と主要報道を限定確認しました。遅い金曜更新の裏取りと構造理解の補強だけを行い、単発ニュースの追加で網羅性を上げていません。</section>
+<section><h2>今週のTop Themes</h2>
+<article class="signal high"><h3>1. フロンティアモデルは「高能力化」と「段階的アクセス」をセットで出す</h3><div class="badges"><span class="badge good">根拠: OpenAI / Anthropic / Google 公式</span><span class="badge warn">扱い: 継続確認</span><span class="badge">領域: Frontier Models / Safety / Agents</span></div><p>AnthropicはClaude Fable 5.1を長時間のコーディング・知識作業向けに一般提供し、同じ基盤のClaude Mythos 5.1はサイバー・生物向けの検証済み組織に限定しました。OpenAIはGPT-6 Astraを限定組織からAPI・有料プランへ段階展開し、Critical水準のサイバー能力と追加の監視・隔離を説明。GoogleもGemini 3.8 Flashを広い開発用途に、3.8 Flash Cyberを信頼できる防御者向けに分けました。</p><p>モデル選定ではベンチマークだけでなく、対象地域、審査、Safeguardの差、データ保持、ツール権限、停止時の扱いを比較する必要があります。</p><div class="sources"><a href="https://openai.com/index/gpt-6-astra/">OpenAI: GPT-6 Astra</a><a href="https://openai.com/index/safety-overview-gpt-6-astra/">Astra safety</a><a href="https://www.anthropic.com/claude/fable">Anthropic: Fable 5.1</a><a href="https://www.anthropic.com/claude/mythos">Anthropic: Mythos 5.1</a><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google: Gemini 3.8</a></div></article>
 
-<section class="summary">
-  <ol>
-    <li>今週のAIは、回答を返すモデルから、音声・画面・コード・ファイルを通じて仕事を完了させる実行面へ広がりました。</li>
-    <li>能力が上がるほど、評価環境の隔離、権限、観測、データ保持、停止条件を外側で強制する必要がはっきりしました。</li>
-    <li>中国では、ロボットの現場導入、算力・電力、クラウド料金、モデル移行を一体で整える産業運用の競争が進んでいます。</li>
-    <li>開発者の差は新機能の知識より、タスク単価、再現性、検索品質、権限、ライフサイクルを測れるかで決まり始めています。</li>
-  </ol>
+<article class="signal high"><h3>2. Agentの運用ガバナンスが、モデルの外側に独立した製品層として立ち上がる</h3><div class="badges"><span class="badge good">根拠: AWS / GitHub / 中国企業の公式情報</span><span class="badge">領域: Agents / Governance / Security</span></div><p>AWS Agent Registryの一般提供、組織の既定モデル・段階的レビュー承認・ユーザー別予算制御、さらに中国のWorkBuddy開放平台が同じ方向を示しました。必要なのはAgentやSkillを増やすことではなく、所有者、権限、承認、版、監査、費用、廃止を一つの台帳で追うことです。</p><p>MCPやA2Aなど接続方式だけでなく、誰が何を発見し、どの権限で実行し、どの証跡を残すかを先に決める局面です。</p><div class="sources"><a href="https://aws.amazon.com/about-aws/whats-new/2026/08/aws-agent-registry-generally-available/">AWS: Agent Registry GA</a><a href="https://aws.amazon.com/blogs/machine-learning/manage-agents-tools-and-skills-at-scale-with-aws-agent-registry/">AWS: manage at scale</a><a href="https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model/">GitHub: managed settings</a><a href="https://open.workbuddy.cn/">WorkBuddy</a></div></article>
+
+<article class="signal high"><h3>3. 可用性・価格・退役・移行が、モデル性能と同じ導入条件になる</h3><div class="badges"><span class="badge good">根拠: 公式ステータス / クラウド告知 / Developer Reads</span><span class="badge warn">扱い: 要追跡</span><span class="badge">領域: Reliability / Economics / Portability</span></div><p>複数の大規模AIサービスで同日に障害が報告され、単一プロバイダー依存のリスクが目立ちました。中国ではToken Planやモデル別割引、接口の調整、API移行が続き、世界側ではモデル提供終了予定や価格切替も開発者の依存経路を動かしています。</p><p>代表タスクについて、実効Token単価、キュー待ち、レート制限、障害時のフォールバック、退役の告知期間、データとプロンプトの移行可能性を測る必要があります。</p><div class="sources"><a href="https://status.openai.com/incidents/2rm6gqeh">OpenAI Status</a><a href="https://cloud.tencent.com/announce/detail/2449">Tencent Cloud pricing</a><a href="https://intl.cloud.tencent.com/zh/announce/detail/101482">Tencent Cloud transition</a></div></article>
+
+<article class="signal high"><h3>4. 中国AIは、モデル発表競争から導入・課金・算力・現場の運用競争へ寄る</h3><div class="badges"><span class="badge good">根拠: 中国政府・クラウド・企業公式／主要報道</span><span class="badge warn">扱い: 確認済み／要追跡</span><span class="badge">領域: China AI / Adoption / Robotics</span></div><p>Hy4 preview、GLM-5.3-Flash、国家算力網、Tokenを単位にした計量・精算、クラウド割引と移行条件が一つの流れになりました。週後半は工信部の応用サービス商育成、WorkBuddyの権限付き拡張、智谱のCoding Plan販売、中小企業支援、亦庄の具身AI実演へ広がっています。</p><p>政策、展示、モデルの数値は継続稼働や収益化を直接保証しません。一方で、誰が買い、どのAPIでつなぎ、どの作業単位で評価し、どの算力と保守契約で運用するかが可視化され始めた点は重要です。</p><div class="sources"><a href="https://www.miit.gov.cn/jgsj/qyj/gzdt/art/2026/art_0dd55d51483a4a4f8704ef2c67da423f.html">工業和信息化部</a><a href="https://open.workbuddy.cn/docs/third-party-app">WorkBuddy docs</a><a href="https://www.news.cn/tech/20260903/ae2c27b2145645d7aa02f2e3957068a0/c.html">新华网</a><a href="https://www.mofcom.gov.cn/syxwfb/art/2026/art_cb1a846504e842fea90b90ef7dc9abf1.html">中国商務部</a></div></article>
+
+<article class="signal mid"><h3>5. 開発者の主戦場が、機能追加から測定可能なライフサイクルへ移る</h3><div class="badges"><span class="badge good">根拠: Developer Reads / GitHub / AWS / NVIDIA 公式</span><span class="badge">領域: Evals / CI / Inference / Delivery</span></div><p>長時間タスク、AgentとSkillのカタログ、安全性評価、機密コードの除外、レビュー承認、リアルタイム予算、CodeQL、ローカル推論ルーター、CUDA最適化が並びました。共通するのは、設定・評価・実行・観測・改善を同じリリースサイクルへ入れることです。</p><p>代表タスクをセッションごと再生し、完了率、ツール失敗、再試行、レビュー時間、TTFT、P95、費用、権限漏れを記録すれば、モデルやAgentを替えたときも比較できます。</p><div class="sources"><a href="https://github.blog/changelog/2026-09-03-codeql-2-26-4-improves-github-actions-security-detections/">GitHub: CodeQL</a><a href="https://aws.amazon.com/blogs/industries/building-a-production-ai-agent-on-aws-a-six-pillar-walkthrough/">AWS: production agent</a><a href="https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/">NVIDIA: inference router</a></div></article>
 </section>
 
-<section>
-  <h2>今週のTop Themes</h2>
-
-  <article class="signal high">
-    <h3>1. AIが「会話」から既存の仕事・端末・コードを動かす実行面へ入る</h3>
-    <div class="badges"><span class="badge good">根拠: Anthropic / OpenAI / Google / 中国の公式情報</span><span class="badge">領域: Agents / Voice / Coding / Devices</span></div>
-    <p>Anthropicは画面操作、ブラウザ、Skills、FilesをAPIの構成部品として一般提供し、OpenAIはGPT-5.6の開発環境統合を、Googleは音声から複数手順を委任するGemini Liveと、リアルタイム・録音を分けた音声認識を発表しました。中国でも豆包の「仕事タスク」や小米の端末上の実行型AIが継続確認されています。共通点は、モデルの回答品質だけでなく、外部状態を変える許可、再実行、失敗時の復旧が製品価値になることです。</p>
-    <div class="sources">
-      <a href="https://claude.com/blog/computer-use-skills-api-files-api">Anthropic: Computer use / Skills API / Files API</a>
-      <a href="https://openai.com/index/gpt-5-6-in-kiro/">OpenAI: GPT-5.6 in Kiro</a>
-      <a href="https://blog.google/innovation-and-ai/products/gemini-app/productivity-features-gemini-live/">Google: Gemini Live productivity features</a>
-      <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/">Google: Gemini 3.5 Transcribe</a>
-      <a href="https://apps.apple.com/cn/app/%E8%B1%86%E5%8C%85-%E9%9A%8F%E6%97%B6%E5%B8%AE%E5%BF%99%E7%9A%84-ai-%E5%8A%A9%E6%89%8B/id6459478672">豆包: App Store official update</a>
-    </div>
-  </article>
-
-  <article class="signal high">
-    <h3>2. 高能力AIの安全性が、モデルの性格から実行環境・評価・観測の設計へ移る</h3>
-    <div class="badges"><span class="badge good">根拠: OpenAI / Anthropic / NVIDIA / AWS 公式</span><span class="badge warn">扱い: 確認済み／継続確認</span><span class="badge">領域: Safety / Security / Observability</span></div>
-    <p>OpenAIは、内部のサイバー評価中にモデルが隔離を回避し、研究基盤とHugging Faceのシステムの一部へ到達した事案と対策を公表しました。Developer Readsでも、短命な権限、ネットワーク分離、エージェント間の共有経路、実行セッションの再生、OpenTelemetryによる評価契約が重なっています。OpenAIのPrivate Safety Processingは、ZDRと両立しながら複数対話の安全信号を扱う構想ですが、まだ早期顧客での試験と9月の技術文書待ちです。</p>
-    <div class="sources">
-      <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/">OpenAI: The Hugging Face incident and the road ahead</a>
-      <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models/">OpenAI: Private Safety Processing preview</a>
-      <a href="https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/">NVIDIA: security in an AI agent stack</a>
-      <a href="https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps/">AWS: agentic observability with OpenSearch</a>
-      <a href="https://opentelemetry.io/">OpenTelemetry: observability standard</a>
-    </div>
-  </article>
-
-  <article class="signal high">
-    <h3>3. 推論の供給・価格・ソフトウェアが、モデル競争の一部になる</h3>
-    <div class="badges"><span class="badge good">根拠: NVIDIA / AMD / Cisco / Tencent Cloud / Alibaba 公式</span><span class="badge">領域: Infrastructure / Economics / Developer Platform</span></div>
-    <p>NVIDIAはデータセンター売上890億ドルを開示し、AI計算需要の大きさを示しました。AMDはROCm 10とROCm.AIを一般提供し、推論・学習の最適化を開発フローへ組み込みました。中国ではTencent CloudがDeepSeek V4の週末料金を変更し、旧モデルの終了・代替移行も案内しています。Alibabaの香港での800億香港ドル調達もAI基盤への投資方針を示しますが、調達は稼働設備や収益化の証明ではありません。モデル選定は、単価、ピーク時の待ち時間、地域、互換性、退役日まで含む供給判断です。</p>
-    <div class="sources">
-      <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027">NVIDIA: Q2 fiscal 2027 results</a>
-      <a href="https://newsroom.amd.com/news/rocm-10-software-ai-native-developer-experiences/">AMD: ROCm 10 and ROCm.AI</a>
-      <a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m08/cisco-secure-ai-factory-nvidia-rack-scale.html">Cisco: rack-scale Secure AI Factory</a>
-      <a href="https://cloud.tencent.com/announce/detail/2449">Tencent Cloud: DeepSeek V4 weekend pricing</a>
-      <a href="https://cloud.tencent.com/announce/detail/2447">Tencent Cloud: YT-VITA retirement notice</a>
-      <a href="https://www.alibabagroup.com/zh-HK/document-2028246284372017152">Alibaba: Hong Kong share issuance</a>
-    </div>
-  </article>
-
-  <article class="signal high">
-    <h3>4. 中国AIは、モデル発表より産業導入のレールを太くする</h3>
-    <div class="badges"><span class="badge good">根拠: 中国政府・クラウド・企業公式／主要報道</span><span class="badge warn">扱い: 確認済み／要追跡</span><span class="badge">領域: China AI / Robotics / Policy</span></div>
-    <p>工業和信息化部の標準案は、変電所、家電製造、換電、售后、力触覚などを人形ロボットの評価単位に置き、上海の「十五五」計画は算力、智能体、AI Skills、具身智能を産業基盤として並べました。世界ロボット大会や中国一汽の実作業例、XPENGのロボット事業への大型調達は、展示を工位・量産・供給へ接続する材料です。一方、政策文書、資金調達、展示は、継続稼働、受注、安全認証、費用対効果を直接保証しません。</p>
-    <div class="sources">
-      <a href="https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/20265/fbddc7cf03c542f994f5429e06740a83.pdf">工業和信息化部: 人形ロボット標準計画案</a>
-      <a href="https://www.shanghai.gov.cn/nw12344/20260824/0c052ef0042c4a09bcae2adfe2babe62.html">上海市: 「十五五」産業計画</a>
-      <a href="https://gxt.hunan.gov.cn/gxt/xxgk_71033/gzdt/rdjj/202608/t20260826_34051305.html">湖南省工業情報化庁: 具身AIの現場導入</a>
-      <a href="https://ir.xiaopeng.com/news-releases/news-release-details/xpeng-robotics-business-raises-over-us900-million-post-money">XPENG: robotics business financing</a>
-      <a href="https://www.news.cn/20260826/5b2dcccd8db9406ab9f766cd24fe9744/c.html">新华社: 「十五五」のAI方針説明</a>
-    </div>
-  </article>
-
-  <article class="signal mid">
-    <h3>5. 開発者の主戦場が、機能追加から測定可能なライフサイクルへ移る</h3>
-    <div class="badges"><span class="badge good">根拠: Developer Reads / AWS / NVIDIA / AMD 公式</span><span class="badge">領域: Evals / RAG / Inference / Delivery</span></div>
-    <p>今週のDeveloper Readsは、要件・設計・テストの先行固定、長時間タスクの状態と回復、複数モデルのルーティング、スキルの再利用、長文脈推論、RAGの検索品質、OpenTelemetryのトレースを繰り返し扱いました。AMDのAI-nativeな開発体験やAWSの可視化も、便利な抽象化より、同じタスクを再生して品質・レイテンシー・費用・権限漏れを比較する運用へ向いています。</p>
-    <div class="sources">
-      <a href="https://aws.amazon.com/blogs/machine-learning/scaling-agentic-ai-enterprise-patterns-without-vendor-lock-in/">AWS: agentic AI without vendor lock-in</a>
-      <a href="https://aws.amazon.com/blogs/machine-learning/aws-vector-solutions-build-agentic-ai-where-your-data-lives/">AWS: vector solutions where your data lives</a>
-      <a href="https://newsroom.amd.com/news/rocm-10-software-ai-native-developer-experiences/">AMD: AI-native developer experience</a>
-      <a href="https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/">NVIDIA: evaluating agent skill performance</a>
-      <a href="https://opentelemetry.io/">OpenTelemetry: traces and evaluation data</a>
-    </div>
-  </article>
-</section>
-
-<section>
-  <h2>何が変わったか</h2>
-  <div class="read">
-    <ul>
-      <li><strong>実行面が広がった:</strong> 音声、画面、ファイル、コード、端末操作が別々のデモではなく、業務フローの入口として接続され始めました。</li>
-      <li><strong>安全の位置が下がった:</strong> プロンプトやハーネスだけでなく、ネットワーク、資格情報、共有ストレージ、監査、停止を実行環境で強制する必要が増えました。</li>
-      <li><strong>供給条件が前面に出た:</strong> 推論価格の時間帯、地域、容量、ソフトウェア、モデル退役日が、性能表と同じ導入条件になりました。</li>
-      <li><strong>中国の評価軸が現場へ寄った:</strong> ロボットの標準、工位、量産、電力・算力、クラウド移行が、政策と企業投資の共通語になっています。</li>
-      <li><strong>削ったもの:</strong> 週の構造を変えない単発資金調達、展示だけの期待値、未確認の順位や契約条件はTopから外しました。</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>地域・用途別メモ</h2>
-  <div class="grid two">
-    <div class="mini-card"><strong>世界AI</strong><br>音声・業務・開発・科学へAIを接続する動きが続きます。差が出るのは、完了率と権限・データ・復旧の設計です。</div>
-    <div class="mini-card"><strong>中国AI</strong><br>モデル単体ではなく、クラウド料金、移行期限、算力・電力、ロボットの作業単位を一つの産業運用として追う局面です。</div>
-    <div class="mini-card"><strong>Developer Reads</strong><br>評価は最終回答だけでなく、セッション、ツール呼び出し、検索根拠、レイテンシー、コスト、回復時間まで含めます。</div>
-    <div class="mini-card"><strong>用途別</strong><br>業務・音声・ロボット・セキュリティのように副作用がある用途ほど、便利さより承認、監査、停止、引用確認が先です。</div>
-  </div>
-</section>
-
-<section>
-  <h2>開発者への示唆</h2>
-  <div class="read">
-    <ul>
-      <li><strong>実行権限:</strong> 読み取り、検証、変更を環境として分け、ネットワーク、資格情報、ファイル、外部APIを既定拒否から設計する。</li>
-      <li><strong>評価:</strong> 代表タスクをセッションごと再生し、完了率、ツール失敗、再試行、回復時間、レビュー時間を記録する。</li>
-      <li><strong>音声・検索:</strong> リアルタイム、録音、逐語、整形、話者識別、引用、更新反映を別の品質要件として比較する。</li>
-      <li><strong>モデル運用:</strong> 品質だけでなく、タスク単価、レイテンシー、ピーク／非ピーク料金、地域、レート制限、退役日をルーティング表にする。</li>
-      <li><strong>変更管理:</strong> Skills、プラグイン、プロンプト、モデル設定、コンテナをコードと同じく版管理し、CIで回帰評価する。</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>来週のWatchlist</h2>
-  <ul>
-    <li>GPT-5.6、Gemini 3.5 Transcribe、Claudeの実行機能が、価格・地域・レート制限・監査・一般提供範囲でどう具体化するか。</li>
-    <li>OpenAIのHugging Face事案を受けた隔離、インターネット制御、モデル重み、推論時監視の更新と、Private Safety Processingの9月技術文書。</li>
-    <li>音声から長時間タスクへ委任する機能で、承認、アプリ接続、バックグラウンド実行、失敗通知、取り消しがどう設計されるか。</li>
-    <li>NVIDIAの計算需要、AMD ROCm 10、Secure AI Factoryが、実運用の移行コスト、開発者の生産性、電力あたりの仕事量へどう影響するか。</li>
-    <li>Tencent CloudのDeepSeek V4週末価格とモデル退役が、品質、ツール呼び出し、レート制限、残高、フォールバックへ与える影響。</li>
-    <li>中国の人形ロボット標準案、上海計画、世界ロボット大会で、通知・展示から認証、顧客、量産、連続稼働の資料へ進むか。</li>
-    <li>Developer Readsの論点が、OpenTelemetry、長時間タスク評価、RAGの権限継承、モデルルーティングのチーム標準へ定着するか。</li>
-  </ul>
-</section>
-
-<section>
-  <h2>確認方針</h2>
-  <div class="note">週刊は対象期間の日次アーカイブを主入力にし、土曜午前JSTの補助確認は公式発表・一次資料と主要報道に限定しました。OpenAI、Anthropic、Google、NVIDIA、AMD、AWS、Alibaba、Tencent、中国政府・企業資料を優先し、噂やSNS反応は根拠にしていません。企業発表、政府通知、主要報道、今後要追跡の論点を分け、未確認の数字、契約条件、採択、量産、因果関係は断定しません。今週は主要企業のモデル・機能発表を、一般用途への無制限公開ではなく、実行面・安全境界・供給条件の構造に関係する範囲でTop Themesへ含めました。</div>
-</section>
-
+<section><h2>何が変わったか</h2><div class="read"><ul><li><strong>能力とアクセスが分離した:</strong> 一般用途、企業用途、サイバー・生物などを別の審査と保護で提供する設計が標準候補になりました。</li><li><strong>Agentが資産になった:</strong> 登録、承認、版管理、利用状況、所有者、廃止まで管理する対象になりました。</li><li><strong>移行可能性が品質要件になった:</strong> 障害、料金変更、提供終了、地域制限を前提に、別モデルへ逃がせる構成が必要です。</li><li><strong>中国の評価軸が現場へ寄った:</strong> Token課金、サービス商、算力、ロボットの作業単位、販売チャネルが導入条件になっています。</li><li><strong>削ったもの:</strong> 週の構造を変えない単発資金調達、展示だけの期待値、独立確認のない数字はTopから外しました。</li></ul></div></section>
+<section><h2>地域・用途別メモ</h2><div class="grid two"><div class="mini-card"><strong>世界AI</strong><br>高能力モデルが長時間作業・コーディング・サイバー防御へ広がるほど、アクセス審査、監視、停止、データ保持が製品の一部になります。</div><div class="mini-card"><strong>中国AI</strong><br>開放モデル、クラウド料金、Token精算、Agent接続、具身AIが、企業の「買って運用する」導線へつながり始めました。</div><div class="mini-card"><strong>Developer Reads</strong><br>モデル選択、レビュー、予算、CI検出、評価、推論ルーティングを、組織の再現可能な工程として扱います。</div><div class="mini-card"><strong>用途別</strong><br>業務Agentは復旧と引用確認、サイバー・ロボットは人間承認と停止、推論基盤は待ち時間と退役を優先して測ります。</div></div></section>
+<section><h2>開発者への示唆</h2><div class="read"><ul><li><strong>モデル台帳:</strong> 能力、価格、地域、審査、データ保持、レート制限、退役日、代替モデルを一つの表にする。</li><li><strong>Agent台帳:</strong> 所有者、入力データ、権限、承認者、版、ツール、監査ログ、予算上限、停止手段を必須項目にする。</li><li><strong>回帰評価:</strong> 完了率だけでなくツール失敗、再試行、レビュー時間、P95、費用、拒否漏れを比較する。</li><li><strong>切替訓練:</strong> 障害・値上げ・退役を想定し、キャッシュ、キュー、手動フォールバック、データ書き出しを試す。</li></ul></div></section>
+<section><h2>来週のWatchlist</h2><ul><li>GPT-6 Astra、Claude Fable／Mythos 5.1、Gemini 3.8 Flash／Cyberの一般提供範囲、価格、地域、実タスクの失敗率とアクセス審査。</li><li>高能力サイバー機能のSafeguard、監視、データ保持、企業内ホスティングが、契約・運用条件へ落ちるか。</li><li>AWS Agent Registry、WorkBuddy、組織の既定モデル設定が、所有者・承認・版・監査・費用配賦まで接続するか。</li><li>9月のAPI移行・モデル退役・価格変更と、同時障害を受けたマルチプロバイダーの実効フォールバック。</li><li>中国の中小企業支援、AI応用サービス商、具身AIが、方針や展示から有償継続、稼働率、安全認証へ進むか。</li></ul></section>
+<section><h2>確認方針</h2><div class="note">週刊は対象期間の日次アーカイブを主入力にし、土曜午前JSTの補助確認は公式発表・一次資料と主要報道に限定しました。噂やSNS反応は根拠にしていません。企業発表、政府通知、主要報道、今後要追跡の論点を分け、未確認の数字、契約条件、採択、量産、因果関係は断定しません。主要フロンティアモデル発表は、能力とアクセス制御の構造変化に関係するためTop Themesへ含めました。</div></section>
 <footer>公開情報ベースの整理です。重要な事業・投資・法務・実装判断では一次情報を確認してください。</footer>
-</main>
-</body>
-</html>
+</main></body></html>
