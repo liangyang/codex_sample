@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HN AI Watch - 2026-09-10</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main class="page">
+<header><div class="meta">最終更新: 2026-09-10 07:32 JST</div><h1>HN AI Watch</h1><div class="sub">Hacker Newsで話題になったAI・LLM・エージェント関連投稿を、開発者向けに毎日整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">トップへ戻る</a><a href="../index.html">HN AI Watchの履歴</a></nav>
+<section class="note"><strong>このページについて:</strong> Hacker News公式APIとAlgoliaで直近48時間の候補を収集し、HNでの反応、実装価値、世界のAIニュースとの接続を基準に選定しました。HNは一次情報ではなく、開発者コミュニティの反応を知る補助情報です。元記事の主張は必ずリンク先で確認してください。</section>
+<section class="summary"><h2>3行サマリー</h2><ol><li>「ボタンを一つだけ変える」実演と、AI企業の安全をめぐる辞任表明は、能力の大きさより、意図の範囲と組織の説明責任を問います。</li><li>ChatGPT Images 2.5の反応は、生成品質だけでなく速度・編集の細部・評価指標を同時に測る必要を示します。</li><li>モバイルエージェントのVM、Geigerの可視化、手順グラフの研究をつなぐと、実用化の焦点はモデル単体から実行環境・監視・再現可能な状態へ移っています。</li></ol></section>
+<section><h2>注目シグナル</h2>
+<article class="item high"><h3>1. 「Add to Cartを青に」実演は、エージェントの変更範囲を試す</h3><div class="badges"><span class="badge hot">923ポイント</span><span class="badge">120コメント</span><span class="badge">投稿: 2026-09-09 18:39 JST</span><span class="badge">分野: ブラウザエージェント・権限</span></div><p><strong>シグナル:</strong> Opusfivedは、Claudeに一つのボタンだけを青くし、それ以外は変更しないよう指示する実演を公開しました。HNでは、依頼以上に作業を広げる過剰な親切や、別部分まで変更する体験が話題になりました。許可対象、差分、停止条件を承認画面に残す教材です。</p><div class="sources"><a href="https://opusfived.dev/">実演ページ</a><a href="https://news.ycombinator.com/item?id=49623754">HNの議論</a></div></article>
+<article class="item high"><h3>2. ChatGPT Images 2.5は、生成AIを速度と細部の評価へ戻す</h3><div class="badges"><span class="badge hot">371ポイント</span><span class="badge">59コメント</span><span class="badge">投稿: 2026-09-09 03:37 JST</span><span class="badge">分野: 画像生成・評価</span></div><p><strong>シグナル:</strong> OpenAIの発表がHNで反応され、API利用者は処理時間の短縮、他の参加者は合成画像の歯や指、編集の自然さ、評価ランキングの読み方を議論しました。待ち時間、破綻、再編集回数、失敗費用を同じテストセットで測ります。</p><div class="sources"><a href="https://openai.com/index/introducing-chatgpt-images-2-5/">OpenAIの発表</a><a href="https://news.ycombinator.com/item?id=49614720">HNの議論</a></div></article>
+<article class="item high"><h3>3. Anthropic研究者の辞任表明は、安全議論の根拠と温度を分ける</h3><div class="badges"><span class="badge hot">672ポイント</span><span class="badge">129コメント</span><span class="badge">投稿: 2026-09-09 09:40 JST</span><span class="badge">分野: AI安全・組織統治</span></div><p><strong>シグナル:</strong> Anthropicを辞任した旨の研究者がAIの危険を強い表現で警告しました。HNでは、警告を評価する声と、根拠、表現の強さ、他のリスクとの比較への異論が並びました。本人の投稿とHNの反応だけで危険確率や企業の実態は確定できません。</p><div class="sources"><a href="https://twitter.com/hilbertspaess/status/2097476196791709843#m">辞任表明</a><a href="https://news.ycombinator.com/item?id=49619227">HNの議論</a></div></article>
+<article class="item high"><h3>4. モバイルエージェントの差は、モデルよりVMと永続状態に現れる</h3><div class="badges"><span class="badge hot">77ポイント</span><span class="badge">12コメント</span><span class="badge">投稿: 2026-09-08 13:36 JST</span><span class="badge">分野: エージェント基盤・VM</span></div><p><strong>シグナル:</strong> モバイルから使うClaude CodeやInstinctの実行箱を調べた記事で、Claude Code側のFirecracker microVM、ゲスト内制御プロセス、利用者ディスクと読み取り専用ハーネスが紹介されました。HNでは、VM運営者とGitに置く記憶が話題になりました。</p><div class="sources"><a href="https://rohanadwankar.github.io/posts/platforms.html">基盤の調査記事</a><a href="https://news.ycombinator.com/item?id=49605644">HNの議論</a></div></article>
+<article class="item high"><h3>5. Geigerは、ローカルのAIエージェントを「何に触れるか」で棚卸しする</h3><div class="badges"><span class="badge hot">41ポイント</span><span class="badge">10コメント</span><span class="badge">投稿: 2026-09-09 23:54 JST</span><span class="badge">分野: 可視化・ローカル権限</span></div><p><strong>シグナル:</strong> Show HNのGeigerは、エージェント、ハーネス、MCPサーバー、プラグイン、拡張機能の設定とディレクトリを読み取り、接触範囲を説明する読み取り専用CLIです。HNでは企業の棚卸し用途と、棚卸しだけでは隔離にならない点が議論されました。</p><div class="sources"><a href="https://github.com/Atomburstofficial/geiger">リポジトリ</a><a href="https://news.ycombinator.com/item?id=49627646">HNの議論</a></div></article>
+</section>
+<section><h2>開発者向けシグナル</h2><div class="grid two">
+<div class="mini-card"><h3>Procedural Graphsは、長い作業の手順を状態として持つ</h3><p>38ポイント / 4コメント。失敗と成功の軌跡から手順グラフを更新する論文です。自己更新には検証用データと変更履歴が要ります。</p><div class="sources"><a href="https://arxiv.org/abs/2609.09153">論文</a><a href="https://news.ycombinator.com/item?id=49629868">HNの議論</a></div></div>
+<div class="mini-card"><h3>Googleの脅威報告は、プロンプト注入を自律実行の入口として扱う</h3><p>11ポイント / 1コメント。Google Threat Intelligence Groupは、攻撃者がエージェント型の作業へ移り、侵害後に計画・構築・実行を進める例を報告しました。</p><div class="sources"><a href="https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai">Googleの報告</a><a href="https://news.ycombinator.com/item?id=49628034">HNの議論</a></div></div>
+<div class="mini-card"><h3>FrontierHarness Evalは、同じ成功率でもハーネス費用が違うと示す</h3><p>6ポイント / 4コメント。自己報告ベンチマークでは、同じタスク群でClaude CodeとDSH Creatorが63%に達し、合格1件あたり費用は5.6倍とされています。条件固定の再測定が必要です。</p><div class="sources"><a href="https://runta.com/blog/introducing-frontierharness-eval/">評価記事</a><a href="https://news.ycombinator.com/item?id=49628679">HNの議論</a></div></div>
+<div class="mini-card"><h3>Hazzelは、承認を中心に据えた小さなGitネイティブCLIを試す</h3><p>9ポイント / 1コメント。差分表示、コマンド確認、プロジェクトルートのサンドボックス、計画モードを掲げる小型エージェントです。</p><div class="sources"><a href="https://github.com/mukundzha/hazzel">リポジトリ</a><a href="https://news.ycombinator.com/item?id=49625363">HNの議論</a></div></div>
+<div class="mini-card"><h3>CUDA Rustは、GPUカーネルの安全な入口を二つに分ける</h3><p>11ポイント / 1コメント。NVIDIAがcuda-oxideとcutile-rsを紹介しました。ツールチェーン、CUDA版、性能、成熟度を別々に検証する段階です。</p><div class="sources"><a href="https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/">NVIDIAの解説</a><a href="https://news.ycombinator.com/item?id=49618642">HNの議論</a></div></div>
+</div></section>
+<section><h2>世界のAIニュースへの接続</h2><p>今回は、前日の個人エージェントのデータ権限から一歩進んだ「実行の境界」が中心です。一つのボタンだけを変える要求、読み取り専用の棚卸し、FirecrackerのVMは、提案と実行、観測と防御、利用者の領域と提供者のハーネスを分ける必要を示します。</p><p>画像生成の速度競争、モバイルエージェントのVM、CUDA RustのGPU入口は、AIをモデル名だけで説明できないことを示します。待ち時間、資源、権限、失敗時の費用を含むシステム単位で測ります。HNは補助情報であり、元記事、コード、ライセンス、評価条件、運用ログを確認してください。</p></section>
+<section class="note"><h2>注意事項</h2><p>HNのスコアとコメント数は公開後も変動します。各主張、比較値、安全性、性能はすべて元リンクで確認してください。このページはコメント本文を保存せず、論点だけを要約しています。</p></section>
+</main>
+</body>
+</html>
