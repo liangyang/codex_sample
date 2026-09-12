@@ -1,7 +1,5 @@
 <!doctype html>
-<html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>世界AIニュース日次レポート — 2026-09-11 JST</title><link rel="stylesheet" href="../assets/site.css"><style id="mobile-readability">
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>世界AIニュース日次レポート — 2026-09-13 JST</title><link rel="stylesheet" href="../assets/site.css"><style id="mobile-readability">
 @media (max-width: 720px) {
   html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body {
@@ -128,79 +126,14 @@
   }
 </style>
 </head>
-<body><main class="page">
-<header><div class="meta">公開情報ベースの日次AIニュース整理 / JST 2026-09-11</div><h1>世界AIニュース日次レポート</h1><div class="meta">対象: 世界AIニュース / 更新: 2026-09-11 07:18 JST / 公式発表・政府発表・主要報道を分けて整理</div></header>
-<nav class="topnav page-actions" style="display:grid;gap:10px;grid-template-columns:1fr;margin:16px 0 18px"><a href="../index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">先頭ページへ</a><a href="index.html" style="display:block;color:inherit;text-decoration:none;border:1px solid #2c3948;background:rgba(19,26,35,.94);border-radius:8px;padding:12px 13px">履歴を見る</a></nav>
-<section class="note"><strong>このページについて:</strong> 、公式発表と主要報道を優先し、未確認の主張は扱いを分けて整理します。</section>
-<section class="summary"><ol>    <li>世界AIでは、モデルを呼び出すだけでなく、長時間動くAgentの実行基盤をAPIとして買う流れが強まりました。</li>
-    <li>OpenAIは音声、金融、データ分析の業務別製品を同日に拡張し、Anthropicはサイバー・生物・影響工作などの悪用事例を公表しました。</li>
-    <li>きょうの読みは、AIの能力向上と、権限・データ・安全開示を組み込んだ運用設計が同じ製品競争になったことです。</li></ol></section>
-<section><h2>前日との差分</h2><div class="read">      <ul>
-        <li><strong>新規:</strong> OpenAIが、ホスト環境・ツール・長時間セッション・サブエージェントを含むAgent APIのパブリックベータを開始しました。</li>
-        <li><strong>新規:</strong> GPT-Live-1をAPIで提供し、音声の全二重対話、割り込み処理、バックエンドモデルへの推論委譲、電話対応を可能にしました。</li>
-        <li><strong>新規:</strong> ChatGPT for Financial Servicesを発表し、金融データ、引用、テンプレート、権限管理を組み合わせました。</li>
-        <li><strong>新規:</strong> Anthropicが、サイバー攻撃、監視、影響工作、生物研究などに関する脅威インテリジェンス報告を公開しました。</li>
-        <li><strong>継続:</strong> GPT-6 Astraの提供地域・プラン、Agentの実行制御、独立した安全評価は直近版からの継続確認事項です。</li>
-      </ul></div></section>
-<section><h2>今日の読み</h2><div class="read">世界AIの競争単位は、モデルの回答品質から、音声・データ・金融・コードを実際の業務へ運ぶ実行システムへ広がっています。Agent APIが環境と長時間実行を抽象化する一方、Anthropicの脅威報告は、能力を製品に組み込むほど監視、承認、開示の設計が価値になることを示します。</div></section>
-<section><h2>実務への示唆</h2><div class="read">    <ul>
-      <li><strong>設計:</strong> Agentは、モデル、実行環境、秘密情報、外部接続、承認者を分離し、停止と復旧を先に決める。</li>
-      <li><strong>データ:</strong> 業務向けAIは、データ権限、引用、保持期間、テンプレート、監査ログを精度と同じ基準で比較する。</li>
-      <li><strong>安全:</strong> サイバー・生物など高リスク領域は、利用規約だけでなく、検知、通報、第三者レビューの運用を確認する。</li>
-    </ul></div></section>
-<section><h2>Top Signals</h2>  <article class="signal high">
-    <h3>1. OpenAIがAgent APIを公開ベータ、長時間・複数Agentの実行基盤を提供</h3>
-    <div class="badges"><span class="badge good">根拠: 企業公式発表</span><span class="badge">扱い: 継続確認</span><span class="badge">領域: Agents / Developer Platform</span></div>
-    <p><strong>要点:</strong> OpenAIは9月10日、Agent APIのパブリックベータを開始しました。API一つでタスク、モデル、ツール、実行環境を指定でき、ホスト型サンドボックス、長時間のコンテキスト管理、複数Agentの並列化、外部環境プロバイダー連携を提供します。</p>
-    <p><strong>なぜ重要か:</strong> 開発者が個別に作っていたAgentの実行基盤を、モデル会社がマネージドサービスとして取り込みます。差別化はプロンプトより、環境、権限、復旧、費用管理へ移ります。</p>
-    <p><strong>見るべき点:</strong> 実行環境の隔離、データ保持、ツール権限、長時間セッションの費用、ベンダー移行性、失敗時の復旧。</p>
-    <div class="sources"><a href="https://openai.com/index/introducing-the-agents-api/">OpenAI</a></div>
-  </article>
-  <article class="signal high">
-    <h3>2. GPT-Live-1をAPI提供、音声Agentが全二重対話と推論委譲へ</h3>
-    <div class="badges"><span class="badge good">根拠: 企業公式発表</span><span class="badge">扱い: 継続確認</span><span class="badge">領域: Voice / API</span></div>
-    <p><strong>要点:</strong> OpenAIはGPT-Live-1をAPIで提供し、聞く・話すを同時に扱う全二重対話、自然な割り込み、雑音・無音処理、長時間セッション、電話対応を打ち出しました。深い推論やツール呼び出しはバックエンドの別モデルへ委譲でき、音声レイヤーは1分あたり0.05 USDで利用可能としています。</p>
-    <p><strong>なぜ重要か:</strong> 音声サービスの構成が、音声認識・推論・音声合成の個別連結から、対話の自然さと業務実行を分離した構成へ変わります。</p>
-    <p><strong>見るべき点:</strong> 実際の遅延、割り込み失敗率、通話記録、音声データの保持、バックエンドモデルを切り替えた際の品質と費用。</p>
-    <div class="sources"><a href="https://openai.com/index/introducing-gpt-live-1-in-the-api/">OpenAI</a></div>
-  </article>
-  <article class="signal high">
-    <h3>3. ChatGPT for Financial Servicesを発表、金融データと統制を一体化</h3>
-    <div class="badges"><span class="badge good">根拠: 企業公式発表</span><span class="badge">扱い: 継続確認</span><span class="badge">領域: Enterprise / Finance</span></div>
-    <p><strong>要点:</strong> OpenAIは金融機関向けの業務環境を発表し、GPT-6 Astra、Daloopa、PitchBook、LSEG News、Crunchbaseなどのデータ、既存契約との認証連携、引用付き分析、Excel・Word・PowerPointテンプレート、SSO・権限・監査ログを組み合わせました。Morgan StanleyとEvercoreとの設計協力も説明しています。</p>
-    <p><strong>なぜ重要か:</strong> 金融AIの導入条件が、汎用モデルの性能から、データの出所、引用、情報障壁、テンプレート、監査可能性を含む業務製品へ移ります。</p>
-    <p><strong>見るべき点:</strong> データライセンス、引用の再現性、機密情報の分離、モデル更新時の検証、既存ワークフローとの費用対効果。</p>
-    <div class="sources"><a href="https://openai.com/index/introducing-chatgpt-financial-services/">OpenAI</a></div>
-  </article>
-  <article class="signal high">
-    <h3>4. AnthropicがAI悪用の脅威報告、サイバー・生物・影響工作を横断整理</h3>
-    <div class="badges"><span class="badge good">根拠: 企業報告・AP報道</span><span class="badge warn">扱い: 継続確認</span><span class="badge">領域: Safety / Threat Intelligence</span></div>
-    <p><strong>要点:</strong> Anthropicは9月10日、2025年12月から2026年8月までに検知・阻止したClaudeの悪用事例をまとめました。サイバー攻撃、監視、政治的影響工作、生物研究などを扱い、チクングニア熱などの機能獲得研究に関する依頼をブロックした例も説明しています。新しいモデルではデュアルユース生物研究への保護を強化したとしています。</p>
-    <p><strong>なぜ重要か:</strong> 高性能モデルの安全性は、拒否応答だけでなく、実利用の検知、アカウント対応、政府・業界との情報共有、事後開示で評価されます。</p>
-    <p><strong>見るべき点:</strong> 事例の再現可能性、モデル世代ごとの保護、外部レビュー、他社の開示基準、正当な研究との境界。</p>
-    <div class="sources"><a href="https://www.anthropic.com/threat-intelligence-report-september-2026">Anthropic</a><a href="https://apnews.com/article/00266dca90e4f8853f669648998d3bda">AP</a></div>
-  </article>
-  <article class="signal high">
-    <h3>5. Mistralが4万行のFortran移行を公開、完全自律より構造化と人手確認</h3>
-    <div class="badges"><span class="badge good">根拠: 企業公式事例</span><span class="badge">扱い: 継続確認</span><span class="badge">領域: Coding / Enterprise AI</span></div>
-    <p><strong>要点:</strong> Mistralは欧州のエネルギー事業者で、4万行のFortran 77をC++へ移行した事例を公開しました。完全自律の試行では品質が不足したため、計画・実装・テスト・レビューを分け、ドメイン専門家の確認と、人間が詰まりを解消するチェックポイントを残したと説明しています。</p>
-    <p><strong>なぜ重要か:</strong> Agentの企業導入では、自律性を最大化するより、同値性を測るテスト基盤、文書化、レビュー、人間の介入点を設計する方が成果に直結します。</p>
-    <p><strong>見るべき点:</strong> パリティテスト、移行後の障害率、レビュー時間、外部依存の扱い、適用できるコードベースの条件。</p>
-    <div class="sources"><a href="https://mistral.ai/news/legacy-code-modernization/">Mistral</a></div>
-  </article></section>
-<section><h2>補助シグナル</h2>  <div class="grid two">
-    <div class="mini-card"><strong>Data agentで社内データを分析</strong><br>OpenAIは、Redshift、Databricks、Snowflakeなどの承認済みデータソースから、自然言語で分析・ダッシュボード作成・承認済みアクションまで行う製品を発表しました。権限継承とデータ定義の実装を追います。<br><span class="badge warn">扱い: 継続確認</span><br><a href="https://openai.com/index/put-data-to-work/">OpenAI</a></div>
-    <div class="mini-card"><strong>OpenAIが国家AI安全要件を支持</strong><br>9月9日の政策文書で、能力に応じた国家安全規制、独立評価、サイバー保護、重大インシデント報告を支持しました。法案と実装の範囲は要追跡です。<br><span class="badge warn">扱い: 要追跡</span><br><a href="https://openai.com/index/ai-policy-window/">OpenAI</a></div>
-  </div></section>
-<section><h2>明日以降のWatchlist</h2><div class="read">      <ul>
-        <li>Agent APIの価格、ホスト環境、権限・秘密情報管理、他社環境への移行性。</li>
-        <li>GPT-Live-1の実遅延、通話用途、音声データの保持と地域別提供条件。</li>
-        <li>金融・データ分析製品の引用精度、情報障壁、監査ログ、既存データ契約。</li>
-        <li>Anthropicの脅威報告に対する第三者評価と、他社の同水準の開示。</li>
-        <li>Mistral型の構造化Agent移行が、金融・製造・公共のレガシー刷新へ広がるか。</li>
-      </ul></div></section>
-<section><h2>Caveat</h2><div class="note">Agent API、GPT-Live-1、金融サービス製品の性能・価格・提供範囲は各社発表に基づき、長期運用の結果ではありません。Anthropicの事例は同社が検知・阻止したと説明するケースで、全体の悪用件数や第三者による事実認定を意味しません。Mistralの移行は好条件の一事例です。重要な安全・法務・調達判断では正式文書と独立評価を確認してください。</div></section>
-<footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer>
-</main></body></html>
+<body><main class="page"><header><div class="meta">公開情報ベースの日次AIニュース整理 / JST 2026-09-13</div><h1>世界AIニュース日次レポート</h1><div class="meta">更新: 2026-09-13 07:15 JST / 公式発表・主要報道を分けて整理</div></header>
+<nav class="topnav"><a href="../index.html">先頭ページへ</a><a href="index.html">履歴を見る</a></nav><section class="note"><strong>このページについて:</strong> 世界のAI、開発基盤、インフラ、安全・規制を、直近の公開情報から整理しています。</section>
+<section class="summary"><ol><li>AnthropicのCEOが安全策の追いつく時間を求め、OpenAIのCEOも最先端開発のペース調整に同意しました。</li><li>OpenAIは週10億人超が使う製品を支えるストレージ基盤の規模と、PythonからRustへの移行を公開しました。</li><li>Enterpriseでは、Claudeの利用量・費用・摩擦を可視化するSmart reportsが始まり、AI導入の評価軸が利用実態へ広がっています。</li></ol></section>
+<section><h2>前日との差分</h2><div class="read"><ul><li><strong>新規:</strong> 開発ペースの調整を求める経営発言、高リスク能力評価、超大規模ストレージ運用、Enterprise利用分析が公開されました。</li><li><strong>継続:</strong> Agent API、GPT-Live-1、金融業務向けAI、前回の悪用報告は提供条件と安全運用の確認事項へ移しました。</li></ul></div></section>
+<section><h2>今日の読み</h2><div class="read">世界AIの競争は、能力を早く上げる競争から、能力・安全・運用コストを同時に測る競争へ転じています。差別化は「何ができるか」だけでなく、「どの条件で、誰が監督し、どの証拠を残すか」に移ります。</div></section>
+<section><h2>実務への示唆</h2><div class="read"><ul><li><strong>導入:</strong> 速度や精度だけでなく、利用量、費用、失敗、待ち時間、再作業を継続的に測る。</li><li><strong>安全:</strong> 拒否機能、アカウント対応、監視、第三者評価、事故報告を一体で確認する。</li><li><strong>基盤:</strong> データ地域、アクセス制御、予測可能なAPI、段階的な移行計画を先に決める。</li></ul></div></section>
+<section><h2>Top Signals</h2><article class="signal high"><h3>1. AnthropicとOpenAIのCEOがAI開発ペースの調整に同意</h3><div class="badges"><span class="badge good">根拠: AP・Axios主要報道</span><span class="badge warn">扱い: 要追跡</span></div><p>AnthropicのDario Amodeiが安全策の追いつく時間を求め、AxiosはOpenAIのSam Altmanも最先端モデルの進展ペースを落とすべきだと同意したと報じました。実際の出荷計画や共通基準に変わるかが焦点です。</p><div class="sources"><a href="https://apnews.com/article/anthropic-ai-dario-amodei-d59552edcb27892d8ee4d98a48397706">AP</a><a href="https://www.axios.com/2026/09/12/anthropic-ai-amodei-pacing">Axios</a></div></article><article class="signal high"><h3>2. Anthropicが標的識別・通常兵器開発の能力評価を公開</h3><div class="badges"><span class="badge good">根拠: 企業研究・評価資料</span><span class="badge warn">扱い: 継続確認</span></div><p>Frontier Red Teamが標的識別とシミュレーション環境でのドローン誘導ソフトウェア改善を評価しました。シミュレーションの限界を明記しつつ、能力評価と提供時の保護策が必要だと示しています。</p><div class="sources"><a href="https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities">Anthropic</a></div></article><article class="signal high"><h3>3. OpenAIが週10億人超を支えるオンライン基盤の設計を公開</h3><div class="badges"><span class="badge good">根拠: 企業エンジニアリング発表</span><span class="badge">扱い: 継続確認</span></div><p>週10億人超、毎秒7000万件超、500PB超を扱うオンラインストレージ基盤について、アクセス制御、地域配置、監査、レート制限と、PythonサービスのRust移行を説明しました。</p><div class="sources"><a href="https://openai.com/index/scaling-storage-one-billion-users-part-one/">OpenAI Engineering</a></div></article><article class="signal high"><h3>4. AnthropicがEnterprise向けSmart reportsをベータ開始</h3><div class="badges"><span class="badge good">根拠: 公式リリースノート</span><span class="badge">扱い: 継続確認</span></div><p>チームの利用内容、費用、摩擦、共有スキル化候補を分析する機能が始まりました。企業AIの評価が、導入席数から実際の利用行動と費用へ広がります。</p><div class="sources"><a href="https://support.claude.com/en/articles/12138966-release-notes">Claudeリリースノート</a></div></article></section>
+<section><h2>補助シグナル</h2><div class="grid two"><div class="mini-card"><strong>Anthropicの悪用事例評価と独立レビュー</strong><br>METRによる独立調査、監視強化、第三者評価環境の要件化を継続しています。<br><span class="badge warn">扱い: 継続確認</span><br><a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents">Anthropic</a></div><div class="mini-card"><strong>QualcommとAmazonのカスタム推論チップ協業</strong><br>9月8日の発表で対象期間より前のため補助扱いにし、採用規模と実装時期を追います。<br><span class="badge warn">扱い: 要追跡</span><br><a href="https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-Announces-Multi-Generational-Product-Collaboration-with-Amazon-to-Build-Next-Generation-AI-Data-Center-Infrastructure/default.aspx">Qualcomm</a></div></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>ペース調整の発言が製品時期、評価、事故報告へ反映されるか。</li><li>高リスク能力評価に対する独立再現と、他社の同等評価。</li><li>大規模AI基盤の地域障害、データ保持、監査、移行コスト。</li><li>Smart reportsの費用配賦・業務改善と、利用者のプライバシー。</li><li>カスタム推論チップの価格、電力効率、GPUとの使い分け。</li></ul></div></section><section><h2>Caveat</h2><div class="note">ペース調整の発言は、共通の業界合意や正式な出荷停止を意味しません。Anthropicの高リスク評価は同社設計のシミュレーションと自己報告に基づきます。OpenAIの規模値、Smart reportsの効果は各社発表です。重要な安全・法務・調達判断では正式文書と独立評価を確認してください。詳しい本文は<a href="archive/2026-09-13-global-ai-news.html">本日のアーカイブ</a>をご覧ください。</div></section><footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer></main></body></html>
 
 
