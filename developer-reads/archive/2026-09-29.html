@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-09-29</title><link rel="stylesheet" href="../assets/site.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-09-29</title><link rel="stylesheet" href="../../assets/site.css"></head>
 <body><main>
 <header><div class="meta">Last updated: 2026-09-29 07:12 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div></header>
-<nav class="topnav page-actions"><a href="../index.html">先頭ページへ</a><a href="index.html">履歴を見る</a></nav>
+<nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../index.html">履歴を見る</a></nav>
 <section class="note"><strong>このページについて:</strong> API、SDK、エージェント、コーディング支援、評価、RAG、推論、安全性、インフラに関する公式・一次情報から、実装に使える内容を選びます。</section>
 <section class="note"><strong>今日の判断:</strong> 2026-09-27〜09-29 JSTの候補を20件以上確認しました。新着はエージェント安全性とモデル提供面に集中し、通常号に必要な幅がないため短報にしています。</section>
 <section class="summary"><ol><li>今日は、主要な新規Developer Readsはありません。</li><li>弱い記事で本数を増やさず、実装検証に結び付く二つの論点をWatchlistに残しました。</li><li>次回は実行時の権限境界と、新しい提供面ごとの費用・品質を確認します。</li></ol></section>
-<section><h2>今日読むべき新規記事</h2><div class="read"><p><strong>主要な新規記事なし。</strong> 直近48時間には有用な新着がありましたが、独立した話題が二つに偏っていました。前号は<a href="archive/2026-09-28.html">2026-09-28号</a>から読めます。</p></div></section>
+<section><h2>今日読むべき新規記事</h2><div class="read"><p><strong>主要な新規記事なし。</strong> 直近48時間には有用な新着がありましたが、独立した話題が二つに偏っていました。前号は<a href="2026-09-28.html">2026-09-28号</a>から読めます。</p></div></section>
 <section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Safety:</strong> 指示やモデル内のガードだけでなく、実行環境で権限を強制し、アクセス履歴を残す。</li><li><strong>API:</strong> 提供場所が増えても品質・費用・利用条件は同じとは限らない。小さな実タスクで比較する。</li></ul></div></section>
 <section><h2>明日以降のWatchlist</h2>
 <article class="read"><h3>実行時の権限境界をどう作るか</h3><div class="meta">NVIDIA Technical Blog / 2026-09-28 / Safety・Agents</div><p><strong>読む価値:</strong> 長時間動くエージェントのファイル、通信先、認証情報へのアクセスを実行環境で制限し、許可・拒否を監査する設計を解説しています。</p><p><strong>開発者への示唆:</strong> エージェント自身に安全を判断させず、権限の上限と人への確認点を外側に置く必要があります。</p><p><strong>試すなら:</strong> 読み取り専用と更新系のテストAPIを用意し、意図しない書き込み、許可外通信、秘密情報へのアクセスが遮断・記録されるか確かめます。</p><a href="https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/">技術解説を読む</a> · <a href="https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/">全体構成を見る</a></article>
