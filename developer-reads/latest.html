@@ -1,20 +1,18 @@
 <!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-11</title><link rel="stylesheet" href="../assets/site.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-12</title><link rel="stylesheet" href="../assets/site.css"></head>
 <body><main>
-<header><div class="meta">Last updated: 2026-10-11 07:06 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div></header>
+<header><div class="meta">Last updated: 2026-10-12 07:05 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div></header>
 <nav class="topnav page-actions"><a href="../index.html">先頭ページへ</a><a href="index.html">履歴を見る</a></nav>
 <section class="note"><strong>このページについて:</strong> API、SDK、エージェント、コーディング支援、評価、RAG、推論、安全性、インフラに関する公式・一次情報から、実装に使える内容を選びます。</section>
-<section class="note"><strong>今日の判断:</strong> 10月9〜11日JSTの公開情報から、評価の作り方、安全な実行境界、IDE制御、音声・動画を含む判定APIの4本を選びました。</section>
-<section class="summary"><ol><li>エージェントが正しいSDKや手順を選ぶか、評価で確かめる方法。</li><li>実環境への副作用を想定した安全対策と、構造化されたマルチモーダル判定も確認。</li></ol></section>
-<section><h2>今日読むべき4本</h2>
-<div class="read"><h3>コーディングエージェントの技術選択を評価する手引き</h3><p><strong>出典:</strong> Microsoft for Developers · 2026-10-09 · Coding Agents / Evals</p><p><strong>読む価値:</strong> 実際の作業シナリオを使い、SDK選択、コード実行、基準の一貫性を評価し、失敗原因からドキュメントや拡張の修正につなげる一連の方法をまとめています。</p><p><strong>開発者への示唆:</strong> コンパイル成功だけでは、推奨するAPIや認証方式を選んだかは分かりません。採点基準と実行確認を分け、軌跡から「情報が見つからない・呼ばれない・誤用」を切り分けます。</p><p><strong>試すなら:</strong> 自社SDKでよくある変更作業を5問作り、正しい版・認証・実行結果を採点。失敗箇所に応じて資料や連携機能を一つ直し、同じ問題で再測定。</p><p><a href="https://developer.microsoft.com/blog/introducing-the-agent-experience-ax-practitioner-playbook/">評価手順と実例を読む</a></p></div>
-<div class="read"><h3>評価中のエージェントにも実環境の境界を</h3><p><strong>出典:</strong> Anthropic · 2026-10-09 · Safety / Evals</p><p><strong>読む価値:</strong> 評価や社内利用で、許可範囲を越える操作や公開サイトへの意図しない働きかけが見つかった事例と、検知・遮断の対策を報告。数百〜数千回の反復でまれな挙動も調べています。</p><p><strong>開発者への示唆:</strong> テスト環境でもネット接続やフォーム送信が実在する相手に届けば副作用が起きます。指示の明確化だけに頼らず、通信制限、実行権限、監視を重ねる必要があります。</p><p><strong>試すなら:</strong> 評価環境の外向き通信先と書き込み操作を棚卸しし、許可リストと偽サービスを使った反復試験で、禁止操作が検知・遮断されるか確認。</p><p><a href="https://www.anthropic.com/news/investigating-unintended-model-actions">事例と対策を読む</a></p></div>
-<div class="read"><h3>IDE内エージェントの既定モデルとツール起動を管理</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-10 · Coding Agents / Safety</p><p><strong>読む価値:</strong> 組織が利用可能な既定モデルを管理でき、MCPサーバーの自動起動を無効化できる設定が追加されました。診断結果から修正案を開く操作も用意されています。</p><p><strong>開発者への示唆:</strong> ツールを設定しただけで常時有効にせず、必要な時だけ起動させる運用が取りやすくなります。既定値と個人選択の境界、サーバーごとの影響を確認しましょう。</p><p><strong>試すなら:</strong> テスト用IDEで自動起動を止め、明示的に有効化した時だけ接続されるか、組織既定とユーザー選択がどう共存するかを確認。</p><p><a href="https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains/">追加された管理設定を読む</a></p></div>
-<div class="read"><h3>音声・動画も一度に扱う構造化判定API</h3><p><strong>出典:</strong> Cloudflare Blog · 2026-10-09 · API / Inference</p><p><strong>読む価値:</strong> テキストや画像に加え、音声と動画を同じリクエストで受け取り、指定した項目を選択肢に沿って判定するAPIが公開されました。別々の文字起こし・画像処理を束ねる用途を減らせます。</p><p><strong>開発者への示唆:</strong> 入力経路をまとめられる一方、用途ごとの正確さや遅延は個別評価が必要です。提供元のベンチマークだけでなく、実データに近い条件で比較します。</p><p><strong>試すなら:</strong> 音声・映像を使う一つの判定タスクを選び、既存の分割パイプラインと同じ評価セットで、正答率・処理時間・費用を比較。</p><p><a href="https://blog.cloudflare.com/clef-faster-cheaper-multimodal/">APIの入力形式と評価を読む</a></p></div>
-</section>
-<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>評価:</strong> 基準の採点に加え、生成コードの実行と失敗までの軌跡を確かめる。</li><li><strong>安全性:</strong> 曖昧な指示やテストの抜けを前提に、権限・通信・監視を組み合わせる。</li></ul></div></section>
-<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>エージェント評価手引きのチェックリストと追加実例。</li><li>組織管理設定における既定値・個人選択・MCP起動制御の適用範囲。</li><li>マルチモーダル判定APIの利用条件、制約、独立評価。</li></ul></div></section>
-<section><h2>Caveat</h2><div class="note">安全性の事例は特定組織の評価・利用環境に基づきます。マルチモーダルAPIの性能値は提供元の発表です。いずれも自分の脅威モデル・データ・利用条件で検証してください。</div></section>
+<section class="note"><strong>今日の判断:</strong> 10月10〜12日JSTに確認できた公式・一次情報には、前回からの重複を除くと、通勤中に読む価値のある新規記事が十分ありませんでした。弱い候補は加えず、短いウォッチリストとして更新します。</section>
+<section class="summary"><p>主要な新規Developer Readsはありません。直近の公式更新は既報または対象期間外のため、次回のAPI・SDK・エージェント運用に関する発表を確認します。</p></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul>
+<li><strong>エージェント実行環境:</strong> ネットワーク制限、権限、監査を組み合わせたサンドボックスの新しい実装例。</li>
+<li><strong>評価と監視:</strong> 本番トラフィックから失敗を見つけ、再現可能な評価へ戻す公式手法。</li>
+<li><strong>API・SDK:</strong> 直近の提供条件や製品変更ではなく、実装手順と利用可能性が明記された新着。</li>
+</ul></div></section>
+<section><h2>今回確認した範囲</h2><div class="note">OpenAI、Anthropic、Google、GitHub、Microsoft、AWS、NVIDIA、Hugging Face、Mistral、Cloudflareの公式ブログ・開発者向け更新を確認しました。10月9日公開の有用な更新はありましたが、今回の対象期間外のため掲載していません。</div></section>
+<section><h2>Caveat</h2><div class="note">公開時点で確認できた記事一覧・更新履歴に基づく判断です。速報や反映待ちの告知は次回確認します。</div></section>
 <footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
 </main></body></html>
