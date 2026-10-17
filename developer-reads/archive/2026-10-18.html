@@ -1,0 +1,20 @@
+
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-18</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-10-18 07:00 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../index.html">履歴を見る</a></nav>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、コーディング支援、評価、RAG、推論、安全性、インフラに関する公式・一次情報から、実装に使える内容を選びます。</section>
+<section class="note"><strong>今日の判断:</strong> 10月16日公開から、本番エージェント評価、オープンモデルの展開、音声APIの利用範囲を広げる3本を選びました。</section>
+<section class="summary"><ol><li>本番エージェントの品質劣化を、開発から運用まで継続して測る。</li><li>モデルの展開方法と音声機能の費用・遅延を、小さな実験で比較する。</li></ol></section>
+<section><h2>今日読むべき3本</h2>
+<div class="read"><h3>本番運用を見据えたエージェント評価の9段階</h3><p><strong>出典:</strong> AWS Machine Learning Blog · 2026-10-16 · Agents / Evals</p><p><strong>読む価値:</strong> 初回コミットから本番監視まで、エージェントの品質低下を見つける評価の流れをまとめています。遅延が変わらなくても回答品質が落ちる「静かな劣化」を扱います。</p><p><strong>開発者への示唆:</strong> 完了率や応答速度だけでは不十分です。代表タスク、ツール利用、回答品質を同じ基準で測り、変更前後と本番データの両方を追う設計が必要です。</p><p><strong>試すなら:</strong> 重要なタスクを5件選び、期待結果と失敗条件を記録。リリース前後に同じ評価を実行し、品質と遅延の推移を並べる。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/building-trust-in-ai-agents-a-production-ready-evaluation-framework-with-amazon-bedrock-agentcore/">評価段階と運用例を読む</a></p></div>
+<div class="read"><h3>コーディングモデルを自前環境へ展開する方法</h3><p><strong>出典:</strong> AWS Machine Learning Blog · 2026-10-16 · Coding Agents / Inference</p><p><strong>読む価値:</strong> オープンウェイトのコーディングモデルを、マネージドなリアルタイム端点またはKubernetes制御の分散推論で動かす手順を案内します。vLLMやSGLangを使う構成も扱います。</p><p><strong>開発者への示唆:</strong> 長時間のコーディング作業ではモデル品質に加え、GPU構成、スケール、サービング基盤の運用負荷が選定を左右します。掲載手順は特定クラウドとモデルを前提にしています。</p><p><strong>試すなら:</strong> 小さなリポジトリ修正タスクを用意し、既存の推論環境と比較。正しく完了した割合、初回応答、総時間、GPU使用量を記録する。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/introducing-reflection-beam-an-open-weight-model-for-agentic-coding-on-aws/">モデル配備の選択肢を読む</a></p></div>
+<div class="read"><h3>説明文から音声を作るAPIと新しい音声の追加</h3><p><strong>出典:</strong> OpenAI API Changelog · 2026-10-16 · API</p><p><strong>読む価値:</strong> 音声の特徴を文章で指定してカスタム音声を作るAPI提供が全顧客に広がり、リアルタイム音声APIには日本語を含む9種類の音声が追加されました。音声作成自体は無料で、生成利用は通常の音声セッション料金です。</p><p><strong>開発者への示唆:</strong> 音声体験の試作で声素材の選定負荷を下げられます。利用前に対象言語での自然さ、聞き取りやすさ、応答遅延、継続利用時の料金を確認してください。</p><p><strong>試すなら:</strong> 同じ短い台本を数種類の説明文で生成し、聞き取りやすさと好みを比べる。リアルタイム利用では応答時間と分単位費用も測る。</p><p><a href="https://developers.openai.com/api/docs/changelog">API更新と利用条件を確認する</a></p></div>
+</section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Evals:</strong> 開発時の回帰検査と本番品質の監視をつなぐ。</li><li><strong>推論:</strong> オープンモデルは実タスクと運用制約を含めて比較する。</li><li><strong>API:</strong> 音声機能は言語別の品質とセッション費用を確認する。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>エージェントの品質を本番トレースから継続評価する具体例。</li><li>コーディングモデルの実リポジトリ課題での再現可能な性能比較。</li><li>音声APIの利用条件、レイテンシ、アクセシビリティ改善。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">評価や性能は記事の環境・手法に依存します。自分のタスク、データ、ハードウェア、料金条件で再測定してください。</div></section>
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main></body></html>
