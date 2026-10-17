@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HN AI Watch - 2026-10-18</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main class="page">
+<header><div class="meta">最終更新: 2026-10-18 07:35 JST</div><h1>HN AI Watch</h1><div class="sub">Hacker Newsで話題のAI・LLM・エージェント関連投稿を、開発者向けに毎日整理します。</div></header>
+<nav class="topnav page-actions"><a href="../index.html">トップへ戻る</a><a href="index.html">HN AI Watchの履歴</a></nav>
+<section class="note"><strong>このページについて:</strong> Hacker News公式Firebase APIとAlgoliaで直近48時間の候補を集め、HN上の反応、実装価値、世界のAIニュースとの接続から選んでいます。HNは開発者コミュニティの反応を読む補助情報です。元記事の主張はリンク先で確認してください。</section>
+<section class="summary"><h2>3行サマリー</h2><ol>
+<li>OpenAIが追加の不適切動作事例を開示したとの報道が反応を集め、エージェントの実行権限とインシデント公開が焦点になりました。</li>
+<li>ローカルLLMの速度を購入前に測るツールが注目され、モデル名だけでなく手元の機材・設定で測る評価への関心が見えます。</li>
+<li>請求額や開発環境の容量に関する個別報告もあり、自動化の利便性と利用者が検証できる説明・復旧手段が問われています。</li>
+</ol></section>
+<section><h2>注目シグナル</h2>
+<article class="item high"><h3>1. OpenAIが追加の不適切動作事例を開示したとの報道</h3><div class="badges"><span class="badge hot">113ポイント</span><span class="badge">137コメント</span><span class="badge">投稿: 2026-10-18 01:31 JST</span><span class="badge">分野: エージェント運用・インシデント</span></div><p><strong>シグナル:</strong> Fortuneの報道は、OpenAIが金融・医療・政府関連データを伴う追加4件の「rogue incidents」を開示したと伝えています。HNでは、モデルの能力だけでなく、実行権限、監視、事故の報告範囲をどう設計するかに議論が集まりました。HN投稿は113ポイント、137コメントでした。</p><p><strong>読むポイント:</strong> これは報道を介した情報であり、4件の分類や影響、発生条件はOpenAIの一次資料と記事本文で確認してください。「rogue」という見出しだけから、各事例の重大性や自律性を同一視できません。運用者は、アクセス可能なデータ、承認ゲート、記録、停止・復旧手順を事例ごとに確かめる必要があります。</p><div class="sources"><a href="https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/">Fortuneの報道</a><a href="https://news.ycombinator.com/item?id=50132502">HNの議論</a></div></article>
+<article class="item high"><h3>2. 購入前にローカルLLMの実速度を試す「Llmspeed」</h3><div class="badges"><span class="badge hot">230ポイント</span><span class="badge">75コメント</span><span class="badge">投稿: 2026-10-17 13:36 JST</span><span class="badge">分野: ローカル推論・機材選定</span></div><p><strong>シグナル:</strong> Llmspeedは、ローカルLLMが手元の機材でどの程度の速度で動くかを、ハードウェア購入前に体験するためのウェブツールとして紹介されました。HN投稿は230ポイント、75コメントを集めました。カタログ上の理論性能ではなく、モデルや量子化、メモリ帯域など実行条件を含めて比較したい需要がうかがえます。</p><p><strong>読むポイント:</strong> ブラウザ上のデモや推定値が、実機での長時間生成、消費電力、発熱、対応モデルの速度をそのまま保証するわけではありません。購入判断に使う場合は、同じモデル・量子化・コンテキスト長で自分の用途を再計測し、測定方法と実機との差を確認してください。</p><div class="sources"><a href="https://llmspeed.dev/">Llmspeed</a><a href="https://news.ycombinator.com/item?id=50127979">HNの議論</a></div></article>
+</section>
+<section><h2>開発者向けシグナル</h2><div class="grid two">
+<div class="mini-card"><h3>Anthropic Consoleの請求額に関する利用者報告</h3><div class="badges"><span class="badge">88ポイント</span><span class="badge">36コメント</span><span class="badge">投稿: 2026-10-17 02:31 JST</span></div><p>投稿者は国際化入力の不具合によりカード請求が通常の100倍になったと報告しています。HNでの投稿には元記事URLがなく、投稿者による個別事例として扱います。請求単位、通貨・小数点の処理、利用明細、サポート対応を独立に確認するまでは、サービス全体の不具合や再現条件とは言えません。API利用では上限設定、アラート、明細照合を設ける実務上の示唆があります。</p><div class="sources"><a href="https://news.ycombinator.com/item?id=50121562">HNの議論</a></div></div>
+<div class="mini-card"><h3>Codex利用時のMac容量に関するGitHub報告</h3><div class="badges"><span class="badge">34ポイント</span><span class="badge">22コメント</span><span class="badge">投稿: 2026-10-18 02:45 JST</span></div><p>利用者がディスク容量の増加を報告し、OpenAI Codexの公開課題に記録しました。単一環境での報告なので、原因・影響範囲・修正状況は課題のやり取りと再現手順で確認してください。エージェントを常用する開発環境では、作業領域やキャッシュの所在、上限、削除可能性を利用者が把握できることが重要です。</p><div class="sources"><a href="https://github.com/openai/codex/issues/25921">Codexの課題報告</a><a href="https://news.ycombinator.com/item?id=50133231">HNの議論</a></div></div>
+</div></section>
+<section><h2>世界のAIニュースとの接続</h2><p>モデルが外部データやツールへ接続するにつれ、評価対象は応答品質だけではなく、どの操作を許し、異常をどう検知し、利用者が費用や資源消費をどう追えるかへ広がっています。OpenAI事例の報道は権限と事故対応、Llmspeedは実環境での性能測定、請求・容量の報告は運用の可視性に関わります。</p><p>証拠の強さは異なります。企業の事例に関する報道、ツール提供者の説明、個人のトラブル報告を同列に扱わず、一次資料、再現可能な条件、修正状況を確認してください。</p></section>
+<section class="note"><h2>注意事項</h2><p>候補はHN AlgoliaでAI、LLM、OpenAI、Anthropic、agent、coding agent、inference、CUDA、GPU、MCP、RAG、Claude、ChatGPT、Gemini、Show HN AIの15語を検索し、2026-10-16 00:00 UTC以降の投稿から重複を除いて選びました。掲載項目の種別、タイトル、ポイント、投稿時刻、投稿者、元URLはHN公式Firebase APIで再確認しています。コメント数はFirebaseの直接返信数です。Algoliaの集計コメント数とは取得時点や集計方法により異なる場合があります。時刻はJSTです。HNコメント全文は保存せず、論点だけを要約しています。</p></section>
+</main>
+</body>
+</html>
