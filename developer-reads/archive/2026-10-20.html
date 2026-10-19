@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-20</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-10-20 07:09 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../index.html">履歴を見る</a></nav>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、コーディング支援、評価、RAG、推論、安全性、インフラに関する公式・一次情報から、実装に使える内容を選びます。</section>
+<section class="note"><strong>今日の判断:</strong> 10月19日公開の公式記事から、対話UI、評価器の検証、データ処理の観測性、推論キャッシュ再利用に直結する4本を選びました。</section>
+<section class="summary"><ol><li>チャットに操作可能な画面を組み込み、対話ターンを減らす。</li><li>LLM評価器そのものを検査し、ログと推論性能を測り直す。</li></ol></section>
+<section><h2>今日読むべき4本</h2>
+<div class="read"><h3>会話内に操作できるMCPアプリを組み込む</h3><p><strong>出典:</strong> Google Cloud Blog · 2026-10-19 · API / Agents</p><p><strong>読む価値:</strong> ツール応答を文章で返すだけでなく、会話内の小さなUIとして表示する構成を、認証・デプロイ手順まで説明します。</p><p><strong>開発者への示唆:</strong> 表や編集など反復操作のたびにモデルへ往復する設計を減らせます。ユーザー認証とサービス認証を分け、権限と承認点をUI側にも保つ必要があります。</p><p><strong>試すなら:</strong> 読み取り専用の検索結果一覧を小さなパネルで表示し、絞り込み操作をモデル呼び出しなしで行えるか試す。</p><p><a href="https://cloud.google.com/blog/topics/developers-practitioners/devs-guide-to-mcp-apps-in-gemini">実装ガイドを読む</a></p></div>
+<div class="read"><h3>LLM評価器の偏りを監査する3つの方法</h3><p><strong>出典:</strong> Google Cloud Blog · 2026-10-19 · Evals</p><p><strong>読む価値:</strong> 同一入力への採点の安定性、人手との一致、複数評価器の意見差という三つの確認軸を整理しています。</p><p><strong>開発者への示唆:</strong> 文章の長さや提示順に左右される採点器は、回帰を見落としたり誤判定を増やしたりします。単一スコアを品質の真値として扱わない設計が重要です。</p><p><strong>試すなら:</strong> 評価セットの回答順を入れ替え、同じ回答を複数回採点し、人手判定との不一致を項目別に集計する。</p><p><a href="https://cloud.google.com/blog/topics/consulting/three-ways-to-audit-your-llm-evaluators">監査手順を読む</a></p></div>
+<div class="read"><h3>Python UDFのログでデータ処理を観測する</h3><p><strong>出典:</strong> Google Cloud Blog · 2026-10-19 · Infra</p><p><strong>読む価値:</strong> Python UDF内の構造化ログから、不正レコードの検知、通知、SQLでの調査・再処理までつなぐ実例です。</p><p><strong>開発者への示唆:</strong> 一件の不正データでバッチ全体を止めず、失敗を隔離して復旧できます。高頻度ログの費用と、ログへ機微情報を残さない方針は先に決めます。</p><p><strong>試すなら:</strong> テスト用の入力に欠損・形式不正を混ぜ、正常行を処理しつつ失敗理由を記録・集計・再投入できるか確認する。</p><p><a href="https://cloud.google.com/blog/products/data-analytics/python-udf-logging-for-pipeline-observability-in-bigquery">実例とコードを読む</a></p></div>
+<div class="read"><h3>分離型推論でKV転送を先行させる</h3><p><strong>出典:</strong> AWS Machine Learning Blog · 2026-10-19 · Inference / Infra</p><p><strong>読む価値:</strong> KVブロックの転送先を先に登録し、生成側の待ち時間と転送準備を並行化する設計を、構成とベンチマークで解説します。</p><p><strong>開発者への示唆:</strong> PrefillとDecodeを分けた推論では、モデル計算だけでなくキャッシュ移送の同期も初回応答と生成速度を左右します。掲載結果は特定構成での計測値です。</p><p><strong>試すなら:</strong> 自分のモデルとネットワークで転送あり・なしを比較し、初回トークン時間、出力速度、転送時間を同じ負荷条件で測る。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm/">設計と計測方法を読む</a></p></div>
+</section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Agents / API:</strong> 会話と同期するUIは、モデル呼び出しを減らしつつ人の確認を残せる。</li><li><strong>Evals:</strong> 評価器の安定性と人手一致も、継続的に測る対象にする。</li><li><strong>Infra:</strong> データ障害の切り分けと推論キャッシュの転送待ちを可視化する。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>対話UIの標準化と、ホスト間の互換性・権限モデル。</li><li>本番エージェント評価を回帰テストへ戻す具体例。</li><li>長い対話履歴でのキャッシュ再利用と費用・遅延の実測。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">推論性能は記事のハードウェア・ネットワーク・負荷条件に依存します。評価手順やクラウド機能も、採用前に自分の環境と最新ドキュメントで確認してください。</div></section>
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main></body></html>
+
