@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-21</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-10-21 07:02 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ形で短く整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../latest.html">最新版を読む</a><a href="../index.html">履歴を見る</a></nav>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、コーディング支援、評価、RAG、推論、安全性、インフラに関する公式・一次情報から、実装に使える内容を選びます。</section>
+<section class="note"><strong>今日の判断:</strong> 直近の公式更新から、キャッシュ費用、エージェント向け権限管理、依存関係とパッケージ導入時の安全性に役立つ4本を選びました。</section>
+<section class="summary"><ol><li>キャッシュの有効期間と再利用率を合わせて測り、費用を最適化する。</li><li>モデル利用方針や依存関係情報のAPI化で、管理・脆弱性対応を自動化する。</li></ol></section>
+<section><h2>今日読むべき4本</h2>
+<div class="read"><h3>プロンプトキャッシュを12時間保持する</h3><p><strong>出典:</strong> OpenAI API Changelog · 2026-10-20 · API / Inference</p><p><strong>読む価値:</strong> 共有の指示やツール定義を長く再利用でき、数時間空くリクエストにもキャッシュを使えます。書き込み費用は通常入力の2.5倍です。</p><p><strong>開発者への示唆:</strong> 再利用間隔が長い対話やバッチに向きますが、ヒット率が低いと割高になり得ます。12時間と30分のキャッシュ書き込みを分けて使用量と実費を計測できます。</p><p><strong>試すなら:</strong> 固定の指示・ツール定義を先頭に保ち、実トラフィックでキャッシュヒット率、書き込み量、遅延、入力費用を30分と12時間で比較する。</p><p><a href="https://developers.openai.com/api/docs/changelog">変更履歴と仕様を読む</a></p></div>
+<div class="read"><h3>エージェント用モデル方針をREST APIで管理する</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-19 · Agents / API</p><p><strong>読む価値:</strong> 企業、組織、チーム、エージェントアプリ単位のモデル利用方針をGET・PATCHで取得・更新できるようになりました。</p><p><strong>開発者への示唆:</strong> 組織ごとの許可設定を管理画面や構成管理へ組み込み、手作業のずれを抑えられます。上位方針からチームへ管理権限を委譲する運用にも対応します。</p><p><strong>試すなら:</strong> テスト組織で現在の方針を取得し、変更案をレビュー可能な構成ファイルからPATCHして、反映結果と委譲範囲を照合する。</p><p><a href="https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams/">APIと管理方法を読む</a></p></div>
+<div class="read"><h3>脆弱な依存パッケージの実バージョンをAPIで取得する</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-20 · API / Safety</p><p><strong>読む価値:</strong> Dependabotのアラートに、リポジトリ側で検出された依存バージョンを返すフィールドが追加されました。ロックファイル解析や別のGraphQL照会を省けます。</p><p><strong>開発者への示唆:</strong> 脆弱性ダッシュボードやチケット連携で、影響中の実バージョンをそのまま示せます。値がない場合や複数バージョンを包含する場合の扱いは必要です。</p><p><strong>試すなら:</strong> アラートREST APIとWebhookの新フィールドを取り込み、null・長い制約・複数バージョンを含む通知の表示を確認する。</p><p><a href="https://github.blog/changelog/2026-10-20-dependabot-alerts-rest-api-now-includes-dependency-versions/">APIの追加項目を読む</a></p></div>
+<div class="read"><h3>パッケージ導入時に悪性コードを遮断する</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-20 · Safety / Infra</p><p><strong>読む価値:</strong> CI実行環境やコーディング支援ツールからパッケージレジストリへの通信を中継し、メタデータとダウンロードをポリシーに照らして検査します。</p><p><strong>開発者への示唆:</strong> インストール時に認証情報を盗む攻撃への防御を、パッケージ実行後の検出より前に置けます。現在はEnterprise Cloud向けプレビューでnpmのみが対象です。</p><p><strong>試すなら:</strong> 検証用のCI環境でレジストリ経由を切り替え、許可・遮断の挙動、例外申請、ビルド再現性を確認する。</p><p><a href="https://github.blog/changelog/2026-10-20-github-package-firewall-in-public-preview/">仕組みと制限を読む</a></p></div>
+</section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>API / Inference:</strong> 長期キャッシュは再利用パターンと費用を一緒に測って選ぶ。</li><li><strong>Agents / Safety:</strong> モデル利用方針とパッケージ通信の制御を自動化しやすくなった。</li><li><strong>Supply chain:</strong> 脆弱性アラートをバージョン情報まで含めて既存の対応フローにつなげる。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>12時間キャッシュの実トラフィックでの費用・ヒット率。</li><li>パッケージ導入時の保護対象がnpm以外へ広がるか。</li><li>エージェント向け組織ポリシーの適用・監査方法。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">キャッシュ費用は利用パターンとモデルの料金条件で変わります。パッケージ検査機能はプレビュー段階で対象も限定されています。導入前に最新の公式ドキュメントと自分の環境を確認してください。</div></section>
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main></body></html>
