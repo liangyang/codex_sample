@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="2026-10-22 JSTの中国AIニュース日次レポート。公開情報から確認した動きを整理します。">
+<title>中国AIニュース日次レポート — 2026-10-22 JST</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main class="page"><header><div class="meta">公開情報ベースの日次AIニュース整理 / JST 2026-10-22</div><h1>中国AIニュース日次レポート</h1><div class="meta">更新: 2026-10-22 07:15 JST / 根拠の種類を明示して整理</div></header>
+<nav class="topnav"><a href="../../index.html">先頭ページへ</a><a href="../latest.html">最新版を読む</a><a href="index.html">履歴を見る</a></nav>
+<section class="note"><strong>このページについて:</strong> 中国企業・政府のAIモデル、計算基盤、産業導入、政策を対象に、公開情報と公式発表を区別して整理します。</section>
+<section class="summary"><h2>3行サマリー</h2><ol>
+<li>国家データ局と国有資産監督管理委員会の発表で、国家データ集団の設立が確認されました。</li>
+<li>DeepSeekはV4.1-Flash向けの推論基盤DeepInferを公開し、対応アクセラレーターと機能範囲を明示しました。</li>
+<li>焦点は新モデルより、データ資源の運用基盤と推論技術の開放に移っています。</li>
+</ol></section>
+<section><h2>前日との差分</h2><div class="read"><ul>
+<li><strong>新規:</strong> 10月20日、国家データ集団の設立が国務院国資委と国家データ局から発表されました。</li>
+<li><strong>新規:</strong> DeepSeekの公式GitHubに10月21日、DeepInferが公開されました。10月21日の前日版で扱った米中のDeepSeek調達問題に新たな事実は確認できず、今回は繰り返しません。</li>
+</ul></div></section>
+<section><h2>今日の読み</h2><div class="read">中国AIの基盤競争は、計算資源だけでなく、データ資源の組織化とモデルを動かす推論技術にも広がっています。国家データ集団の設立目的は示されましたが、事業計画・提供サービス・運用開始時期はまだ公表資料から判断できません。DeepInferも現時点ではオフライン推論向けで、運用サービス一式ではありません。</div></section>
+<section><h2>実務への示唆</h2><div class="read"><ul>
+<li>DeepInferを検討する場合、対象モデル、NVIDIA SM100またはHuawei Ascend 950との適合性、オンライン提供に必要な周辺機能を確認します。</li>
+<li>国家データ集団との連携を想定する組織は、正式な業務範囲・データ権限・調達条件の公表を待って判断します。</li>
+<li>北京のAIサイバー防御課題募集は10月29日締切です。応募要件と成果物を自治体の正式通知で確認します。</li>
+</ul></div></section>
+<section><h2>Top Signals</h2>
+<article class="signal high"><h3>1. DeepSeekが大規模推論基盤DeepInferを公開</h3><div class="badges"><span class="badge good">根拠: DeepSeek公式GitHub</span><span class="badge warn">扱い: オフライン推論向け。オンライン運用機能の一部は対象外</span><span class="badge">領域: 推論基盤 / オープンソース</span></div>
+<p><strong>要点:</strong> DeepSeekは10月21日、DeepSeek-V4.1-Flashに対応する高性能推論フレームワークを公開しました。NVIDIA SM100 GPUとHuawei Ascend 950 NPUを対象とし、最適化カーネル、並列実行、構造化出力などを含みます。READMEでは、KVキャッシュ、プリフィル・デコード分離、複製間の負荷分散など、完全なオンラインサービスに必要な機能は今回の公開範囲に含まれないと説明しています。</p>
+<p><strong>なぜ重要か:</strong> DeepSeekモデルの利用に加え、実行基盤の一部を公開することで、推論環境の検証やハードウェア適合を進めやすくします。</p><p><strong>見るべき点:</strong> 対応機器の実運用実績、第三者が再現できる性能評価、オンライン提供機能の追加時期。</p>
+<div class="sources"><a href="https://github.com/deepseek-ai/DeepInfer" target="_blank" rel="noopener">DeepSeek公式リポジトリ</a></div></article>
+<article class="signal high"><h3>2. 国家データ集団が設立、AI発展を支えるデータ資源活用を掲げる</h3><div class="badges"><span class="badge good">根拠: 国務院国資委公告・国家データ局掲載の新華社報道</span><span class="badge warn">扱い: 設立目的は公表済み。個別事業・運用計画は未確認</span><span class="badge">領域: データ基盤 / 産業政策</span></div>
+<p><strong>要点:</strong> 国家データ局によると、国家データ集団有限公司は10月20日に河北省雄安新区で設立されました。データ資源の開発・活用を主業務とし、人工知能の発展、データ産業の振興、中央と地方の連携を支えると説明されています。国務院国資委の公告も、同社の設立と監督体制を確認しています。</p>
+<p><strong>なぜ重要か:</strong> データ資源をAIの産業利用につなぐ国有基盤の整備が、全国的な仕組みとして動き始める可能性があります。</p><p><strong>見るべき点:</strong> 事業範囲、データ利用の権限・安全管理、地方機関や民間企業との連携方法、実際のサービス開始。</p>
+<div class="sources"><a href="https://www.nda.gov.cn/sjj/swdt/mtsy/1020/20261020191823470535612_pc.html" target="_blank" rel="noopener">国家データ局掲載・新華社報道</a><a href="https://wap.sasac.gov.cn/n2588035/c36071870/content.html" target="_blank" rel="noopener">国務院国資委公告</a></div></article></section>
+<section><h2>補助シグナル</h2><div class="grid two"><div class="mini-card"><strong>北京がAIを使ったサイバー防御の課題を募集</strong><br>北京市科学技術委員会などは、未知の攻撃やAIエージェントに関する防御技術を対象に、2026年度の研究課題を募集。申請は10月29日18時までです。採択や予算額はこの通知では確定していません。<div class="sources"><a href="https://www.beijing.gov.cn/zhengce/zhengcefagui/202610/t20261021_4912463.html" target="_blank" rel="noopener">北京市政府の募集通知</a></div><span class="badge warn">扱い: 申請受付中 / 採択結果待ち</span></div></div></section>
+<section><h2>明日以降のWatchlist</h2><ul><li>国家データ集団の具体的な事業計画、組織運営、データ利用ルール。</li><li>DeepInferの追加機能、対応モデル・ハードウェア、再現可能な第三者評価。</li><li>北京の課題募集における採択課題、支援内容、実証先。</li><li>10月20日に公表された技術輸出管理案について、前日版以降に新たな一次情報が出るか。</li></ul></section>
+<section><h2>Caveat</h2><div class="note">国家データ集団の設立発表は政策上の目的を示しますが、個別サービスや成果を確約するものではありません。DeepInferの機能・性能は提供元の説明に基づき、利用環境での検証が必要です。北京の通知は課題募集であり、採択・資金提供が決まったことを意味しません。</div></section>
+<footer>公開情報ベースの整理です。重要な事業・投資・法務判断では一次情報を確認してください。</footer></main></body></html>
