@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-22</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-10-22 07:04 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ内容に絞って短く整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../latest.html">最新版を読む</a><a href="../index.html">履歴を見る</a></nav>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式・一次情報から、開発で試せる内容を選びます。</section>
+<section class="note"><strong>今日の判断:</strong> SDKの破壊的変更、複数モデル接続の統合、API利用権限の管理に直結する3件を選びました。</section>
+<section class="summary"><ol><li>SDKのメジャー更新はAPIの変更点と合わせて段階移行する。</li><li>プロバイダーをまたぐ接続とサービス階層の制御が更新された。</li></ol></section>
+<section><h2>今日読むべき3本</h2>
+<div class="read"><h3>APIバージョンとSDKのメジャー更新を安全に移行する</h3><p><strong>出典:</strong> Anthropic Platform Docs · 2026-10-21 · API / SDK</p><p><strong>読む価値:</strong> 新API版への移行手順に加え、文書・引用ブロック、サンプリング設定、管理APIの応答フィールドなど互換性が変わる点を一覧できます。</p><p><strong>開発者への示唆:</strong> 新SDKは既定のAPI版も切り替わります。SDKだけを一括更新せず、利用中のAPIや管理データの読み取り箇所を確認してから移行する必要があります。</p><p><strong>試すなら:</strong> 依存サービスを固定した検証環境で移行ガイドの該当項目を棚卸しし、新旧リクエストの契約テストを実行する。</p><p><a href="https://platform.claude.com/docs/en/api/migration-2026-10-21">移行ガイドを読む</a></p></div>
+<div class="read"><h3>モデル接続を一つのAI SDKプロバイダーへまとめる</h3><p><strong>出典:</strong> Cloudflare Changelog · 2026-10-21 · API / SDK / Inference</p><p><strong>読む価値:</strong> Workers AI、ゲートウェイ内のモデル、動的ルート、各社SDKのモデルを統一関数から呼び出せます。フォールバック、BYOK、再試行、キャッシュ、ストリーム再開にも対応します。</p><p><strong>開発者への示唆:</strong> 従来の2つのプロバイダーは非推奨となり機能追加が止まります。移行時は既存のモデルID、認証情報、ゲートウェイ設定、ストリーム挙動を確認できます。</p><p><strong>試すなら:</strong> 小さなサンプルで現在のプロバイダー呼び出しを置き換え、モデル切替・フォールバック・ストリーム切断後の再開を比べる。</p><p><a href="https://developers.cloudflare.com/changelog/product-group/ai/">変更履歴と移行例を読む</a></p></div>
+<div class="read"><h3>プロジェクトごとに使えるAPIサービス階層を制限する</h3><p><strong>出典:</strong> OpenAI API Changelog · 2026-10-21 · API / Infra</p><p><strong>読む価値:</strong> 組織やプロジェクト単位で利用可能なサービス階層を管理画面から選択でき、組織設定では全プロジェクトに制限を適用できます。</p><p><strong>開発者への示唆:</strong> アプリが要求する階層と組織の許可範囲が異なる場合、APIエラーの扱いが運用上の焦点になります。環境ごとの利用権限を構成管理と合わせて把握できます。</p><p><strong>試すなら:</strong> 開発用プロジェクトで許可階層を絞り、未許可の要求が返すエラーと再試行・標準階層への切り替え方を確認する。</p><p><a href="https://developers.openai.com/api/docs/changelog">変更履歴とエラー案内を読む</a></p></div>
+</section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>API / SDK:</strong> バージョン移行は契約テストで検証し、デフォルト変更を見落とさない。</li><li><strong>Inference / Infra:</strong> モデル接続先と利用可能なサービス階層をアプリ設定から管理する。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>SDKの新API版に伴う言語ごとの移行手順と主要エッジケース。</li><li>統合プロバイダーの既存接続方式からの移行範囲。</li><li>プロジェクトのサービス階層制限に対するAPIエラー設計。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">APIの新バージョンやサービス階層の利用可否は、接続先やアカウント設定で異なる場合があります。実際の更新前に公式ガイドと検証環境で確認してください。</div></section>
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main></body></html>
