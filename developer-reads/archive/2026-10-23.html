@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-23</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-10-23 07:05 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ内容に絞って短く整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../index.html">履歴を見る</a><a href="../latest.html">最新版を読む</a></nav>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式・一次情報から、開発で試せる内容を選びます。</section>
+<section class="note"><strong>今日の判断:</strong> 構成の簡素化、推論基盤の拡張、GPUデータ供給、クラウド運用の4点に実装上の学びがありました。</section>
+<section class="summary"><ol><li>エージェントの分割や推論基盤は、実測で選ぶ。</li><li>GPUデータ経路とクラウド権限も、アプリ設計に含める。</li></ol></section>
+<section><h2>今日読むべき4本</h2>
+<div class="read"><h3>サブエージェントを減らす判断を評価セットで行う</h3><p><strong>出典:</strong> Anthropic · 2026-10-22 · Agents / Evals</p><p><strong>読む価値:</strong> 複数エージェント構成を、スキルとツールを必要時に読み込む単一ループへ移す判断軸と段階移行の手順を示します。</p><p><strong>開発者への示唆:</strong> 分割数を増やす前に、共有コンテキストで品質を上げ、引き継ぎ遅延を減らせるか比較できます。</p><p><strong>試すなら:</strong> 代表タスク10件の評価を作り、1つの専門エージェントをスキルとツールへ置き換えて複数回比較する。</p><p><a href="https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop">構成判断と評価方法を読む</a></p></div>
+<div class="read"><h3>複数GPUノードで推論とモデル振り分けを測る</h3><p><strong>出典:</strong> NVIDIA Technical Blog · 2026-10-22 · Inference / Infra</p><p><strong>読む価値:</strong> 最大8ノードの実測から、モデルの配置、推論の並列化、小型・大型モデル間の振り分けがスループットに与える影響を比較できます。</p><p><strong>開発者への示唆:</strong> 混在リクエストを一律に大規模モデルへ送らず、品質を保ったまま処理能力を増やす設計の参考になります。</p><p><strong>試すなら:</strong> 利用可能な複数GPU環境で、単一モデルと難易度別ルーティングの品質・遅延・同時処理数を比べる。</p><p><a href="https://developer.nvidia.com/blog/running-frontier-class-ai-models-across-8-nvidia-dgx-spark-nodes/">分散推論の構成と測定結果を読む</a></p></div>
+<div class="read"><h3>PythonからGPUメモリーへ直接データを読む</h3><p><strong>出典:</strong> NVIDIA Technical Blog · 2026-10-22 · Infra</p><p><strong>読む価値:</strong> Pythonライブラリーの例で、ストレージからGPUへ読み込む手順と、CPU経由を避けた経路が実際に使われたかを確かめる方法が分かります。</p><p><strong>開発者への示唆:</strong> GPU計算が速くても入力待ちが支配的なら、データ搬送経路の検証が全体性能を左右します。</p><p><strong>試すなら:</strong> 対応環境でサンプルを動かし、転送時間・CPU使用量と診断統計を通常経路と比較する。</p><p><a href="https://developer.nvidia.com/blog/how-to-read-data-into-gpu-memory-in-python-with-nvidia-gpudirect-storage/">Python実装と経路確認を読む</a></p></div>
+<div class="read"><h3>Google CloudのIAMと請求でClaude APIを利用する</h3><p><strong>出典:</strong> Anthropic · 2026-10-22 · API / Infra</p><p><strong>読む価値:</strong> Google Cloud認証・請求で利用する方式と、Googleがデータ処理者となる方式の違いを、利用可能なAPI機能やリージョンと合わせて確認できます。</p><p><strong>開発者への示唆:</strong> 認証・請求の一元化だけでなく、データ処理主体、リージョン、必要機能の条件で接続方式を選ぶ必要があります。</p><p><strong>試すなら:</strong> 開発用プロジェクトでIAM認証と請求経路を確認し、データ処理条件・リージョン要件を構成表に記録する。</p><p><a href="https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed">提供方式と開始手順を読む</a></p></div>
+</section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Agents / Evals:</strong> アーキテクチャを変える前に、エンドツーエンド評価で品質と費用を比べる。</li><li><strong>Inference / Infra:</strong> GPU増設だけでなく、データ搬送とリクエスト振り分けも測る。</li><li><strong>API:</strong> クラウド認証・請求の便利さとデータ処理条件を一緒に確認する。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>単一エージェント化の評価例と移行手順。</li><li>複数GPU推論の再現可能なベンチマークとハードウェア要件。</li><li>クラウド提供形態ごとのAPI機能、データ処理、リージョン条件。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">推論性能はノード構成や負荷で変わります。クラウドの提供機能・データ処理条件も契約やリージョンに依存するため、導入前に公式資料を確認してください。</div></section>
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main></body></html>
