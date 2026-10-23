@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-24</title><link rel="stylesheet" href="../../assets/site.css"></head>
+<body><main>
+<header><div class="meta">Last updated: 2026-10-24 07:03 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ内容に絞って短く整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">先頭ページへ</a><a href="../index.html">履歴を見る</a><a href="../latest.html">最新版を読む</a></nav>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式・一次情報から、開発で試せる内容を選びます。</section>
+<section class="note"><strong>今日の判断:</strong> 構造化判断、マネージド学習、精度を守る推論最適化の3件を選びました。</section><section class="summary"><ol><li>頻出する小さな判断は、専用APIと通常の生成APIを実測で比べる。</li><li>学習基盤と推論コンパイラーは、運用負担と品質制約を含めて評価する。</li></ol></section>
+<section><h2>今日読むべき3本</h2>
+<div class="read"><h3>繰り返す分類・振り分けを低遅延で処理する</h3><p><strong>出典:</strong> OpenAI · 2026-10-22 · API</p><p><strong>読む価値:</strong> 事前定義した選択肢・確率・段階評価を返すAPIが一般提供に。画像やJSON入力、音声会話との連携、入力のみの課金も確認できます。</p><p><strong>開発者への示唆:</strong> 判断結果をそのまま次の処理へ渡せるため、分類やルーティングの遅延・費用を抑えやすくなります。適合する問いを絞り、自由文生成とは使い分けます。</p><p><strong>試すなら:</strong> よくある振り分け1種類を選び、同じ実データで正解率・p95遅延・費用を通常の生成APIと比較する。</p><p><a href="https://openai.com/index/decisions-api/">仕様と評価の始め方を読む</a></p></div>
+<div class="read"><h3>GPU管理を任せて独自のLLM学習ループを動かす</h3><p><strong>出典:</strong> AWS Machine Learning Blog · 2026-10-22 · API / Infra</p><p><strong>読む価値:</strong> Pythonから教師あり学習や強化学習のループを記述し、GPU割り当て、分散実行、障害復旧、チェックポイント保存をサービス側に任せる手順を解説します。</p><p><strong>開発者への示唆:</strong> 学習ロジックを保ちつつ基盤運用を減らせます。対応モデル・リージョン、セッション上限、費用を事前に確認するのが要点です。</p><p><strong>試すなら:</strong> 小さなデータセットと既存ベースラインで短い学習を実行し、再開性・実行時間・総費用を記録する。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/">Python実装と学習例を読む</a></p></div>
+<div class="read"><h3>精度を条件に推論エンジンを自動チューニングする</h3><p><strong>出典:</strong> NVIDIA Technical Blog · 2026-10-23 · Inference / Evals</p><p><strong>読む価値:</strong> 多数のコンパイル設定を探索し、精度基準を満たさない候補を除いてから、実測で最速のエンジンを選ぶ方法を2部構成で説明。10ワークロードの例では1.14〜1.63倍の改善を示します。</p><p><strong>開発者への示唆:</strong> 個別カーネルではなく全体の実行時間を測り、精度と速度を同じ評価ループで扱うことで、モデルごとの最適化を再現しやすくなります。</p><p><strong>試すなら:</strong> 代表入力と業務上の精度閾値を用意し、標準設定と探索後のエンジンで精度・遅延を比較する。</p><p><a href="https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-1/">仕組みの解説（前編）を読む</a> · <a href="https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-2/">実装例と測定結果（後編）</a></p></div>
+</section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>API:</strong> 小さく有限な判断には構造化出力と実測を組み合わせる。</li><li><strong>学習 / 推論:</strong> マネージド運用でも、費用・再現性・精度基準はアプリ側で測る。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>構造化判断APIの本番遅延・精度比較と適用範囲。</li><li>学習セッションの対応リージョン、再開条件、料金。</li><li>精度を保つ推論最適化の再現性とモデル別の効果。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">APIの価格・提供地域や学習機能の対応範囲は更新されます。推論最適化の数値は特定のハードウェア、モデル、入力、ソフトウェア構成での結果であり、導入環境で再測定してください。</div></section>
+<footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
+</main></body></html>
