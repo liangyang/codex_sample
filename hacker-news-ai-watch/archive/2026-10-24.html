@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HN AI Watch - 2026-10-24</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main class="page">
+<header><div class="meta">最終更新: 2026-10-24 07:32 JST</div><h1>HN AI Watch</h1><div class="sub">Hacker Newsで話題のAI・LLM・エージェント関連投稿を、開発者向けに毎日整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">トップへ戻る</a><a href="../index.html">HN AI Watchの履歴</a></nav>
+<section class="note"><strong>このページについて:</strong> Hacker News公式Firebase APIとAlgoliaで直近48時間の候補を集め、HN上の反応、実装価値、世界のAIニュースとの接続から選んでいます。HNは開発者コミュニティの反応を見る補助情報です。元記事や製品元の主張は、リンク先で確認してください。</section>
+<section class="summary"><h2>3行サマリー</h2><ol>
+<li>Moonshot AIがKimi K3.1 Proを発表し、1Mトークン文脈とコーディング性能を掲げました。重みの公開は11月4日予定で、比較値は同社評価が中心です。</li>
+<li>AnthropicはClaudeを使い、123のオープンソースライブラリでRISC-V実行形式の性質を証明したと報告。実用化の手掛かりですが、対象仕様と実行環境は限定されています。</li>
+<li>スウェーデン政府機関では未承認AIサービスの遮断が広がり、契約・情報管理に応じた利用経路の設計が論点に。推論の電力由来排出量を要求単位で測る公開手法も登場しました。</li>
+</ol></section>
+<section><h2>注目シグナル</h2>
+<article class="item high"><h3>1. Kimi K3.1 Pro、長文脈とコーディングを強化</h3><div class="badges"><span class="badge hot">602ポイント</span><span class="badge">364コメント</span><span class="badge">投稿: 2026-10-24 01:59 JST</span><span class="badge">分野: 基盤モデル・コーディング</span></div><p><strong>シグナル:</strong> Moonshot AIはKimi K3.1 Proと高速版を発表し、1Mトークンの文脈長、コーディングやエージェント作業の改善を掲げています。モデルはAPIやKimi製品で提供開始、重みは11月4日までに公開予定とのことです。HNでは大規模モデルの性能、提供形態、評価条件への関心が集まりました。</p><p><strong>読むポイント:</strong> 主要な比較値は提供元のブログに掲載された結果です。Terminal-BenchはClaude Codeのハーネスで評価され、内部ベンチマークも含まれます。第三者の再現評価、実際の推論費用・速度、長文脈時の精度、公開後のライセンスと実行要件を確認してから比較してください。</p><div class="sources"><a href="https://www.kimi.ai/blog/kimi-k3-1-pro">Kimiの技術発表</a><a href="https://platform.kimi.ai/">Kimi API</a><a href="https://news.ycombinator.com/item?id=50212065">HNの議論</a></div></article>
+<article class="item high"><h3>2. Claudeが123ライブラリの形式検証を支援したとAnthropicが報告</h3><div class="badges"><span class="badge hot">437ポイント</span><span class="badge">280コメント</span><span class="badge">投稿: 2026-10-23 07:54 JST</span><span class="badge">分野: ソフトウェア検証・安全</span></div><p><strong>シグナル:</strong> AnthropicとTheoremは、Claudeが123のOSS-Fuzzライブラリの239の入口について、RISC-Vの機械語上でクラッシュしないことなどの証明を作成したと発表しました。Rocqの証明検査器が証明を機械的に確認し、作業中に長く見つからなかった不具合も発見・修正したと説明しています。大量のテストを形式的な保証へつなぐ工程に注目が集まりました。</p><p><strong>読むポイント:</strong> 保証対象は特定のファズテスト、64MB未満の入力、単一スレッドの静的RISC-Vバイナリなどの条件内です。全機能や実運用のx86/ARM環境が無欠陥と証明されたわけではなく、仕様・CPU・OS意味論など信頼する基盤も残ります。公開された証明を再検査し、対象コードとビルド条件を照合してください。</p><div class="sources"><a href="https://www.anthropic.com/research/formal-verification">AnthropicとTheoremの報告</a><a href="https://github.com/anthropics/formal-verification">公開された証明資料</a><a href="https://news.ycombinator.com/item?id=50202217">HNの議論</a></div></article>
+<article class="item high"><h3>3. スウェーデン政府機関、未承認のChatGPT・Claudeを遮断へ</h3><div class="badges"><span class="badge hot">314ポイント</span><span class="badge">114コメント</span><span class="badge">投稿: 2026-10-23 20:39 JST</span><span class="badge">分野: 公共部門・AIガバナンス</span></div><p><strong>シグナル:</strong> Sveriges Radioの報道によると、スウェーデン政府事務局は10月26日から職員端末上のChatGPTとClaudeへの直接アクセスを遮断し、契約・承認済みサービスの利用を促します。職員の一部は、両モデルを提供する独自のAIアシスタント基盤を引き続き利用できるとのことです。他機関にも遮断事例があり、導入可否よりも管理された利用経路が議論になっています。</p><p><strong>読むポイント:</strong> これはスウェーデンの政府事務局などに関する報道で、全国一律の利用禁止ではありません。業務システムでは、入力情報の機密度、契約・保存条件、認証、承認済み環境への接続方法を明示し、単純なドメイン遮断が安全な利用経路を塞がないかも確認してください。</p><div class="sources"><a href="https://www.sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet">Sveriges Radioの報道</a><a href="https://www.svt.se/nyheter/inrikes/ai-tjanster-sparras-pa-regeringskansliet">SVTの続報</a><a href="https://news.ycombinator.com/item?id=50207405">HNの議論</a></div></article>
+</section>
+<section><h2>開発者向けシグナル</h2><div class="grid two">
+<div class="mini-card"><h3>推論ごとのCO₂排出量を計算する公開手法</h3><div class="badges"><span class="badge">140ポイント</span><span class="badge">153コメント</span><span class="badge">投稿: 2026-10-23 15:41 JST</span></div><p>Berget AIと研究・非営利団体は、電力網の地域差や推論時の電力、ハードウェア製造を含め、API要求ごとの排出量を推定する手法とコードを公開しました。同社の試算ではKimi K3の典型的な要求はスウェーデン0.38g、テキサス3.2g CO₂eです。モデル、要求長、キャッシュ、設置地域で値が動くため、API選定や配置を比べる測定例になります。</p><p>数値は提供元のインフラと前提に基づく推定で、学習時の排出や全製造過程は含みません。現在は平均電力網の排出係数を使い、限界排出係数による推定は未実装です。コードと境界条件を確認し、自社ワークロードで再計算してください。</p><div class="sources"><a href="https://berget.ai/en/blog/per-request-co2-press-release">手法と推定値</a><a href="https://github.com/berget-ai/co2-calculator">計算コード</a><a href="https://news.ycombinator.com/item?id=50205229">HNの議論</a></div></div>
+<div class="mini-card"><h3>モデルの「人間への見解」比較、再現条件を読む</h3><div class="badges"><span class="badge">610ポイント</span><span class="badge">591コメント</span><span class="badge">投稿: 2026-10-23 01:08 JST</span></div><p>ModelCompareは12のテキストモデルに「人間について最も議論を呼ぶ見解」を各3回尋ね、35回答中29件が、真実より集団帰属や地位を優先するという近い趣旨になったと報告しました。比較の共有条件はモデル評価に有用ですが、回答の似通いが学習データや質問文、モデル版のどれに由来するかは、この小規模な試行だけでは判別できません。</p><p>運用評価に生かすなら、プロンプト、モデル版、サンプリング設定を固定し、複数回のばらつきと独立した採点を公開するのが要点です。これはモデルの応答比較であり、人間の実際の行動や「人間観」を測った研究ではありません。</p><div class="sources"><a href="https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans">ModelCompareの試行</a><a href="https://news.ycombinator.com/item?id=50197313">HNの議論</a></div></div>
+</div></section>
+<section><h2>世界のAIニュースとの接続</h2><p>今回の流れは、モデルを利用できるかだけでなく、比較可能な評価、証明可能な品質、管理されたデータ経路、実行場所ごとの費用や環境負荷まで、導入判断に必要な証拠をどう揃えるかに及んでいます。Kimiの重み公開予定は実地評価を可能にする一方、形式検証や排出量の試算も前提と適用範囲の確認を欠かせません。公的機関の遮断報道は、承認済みの利用経路を用意する運用面を浮かび上がらせます。</p><p>HNのポイントや返信数はコミュニティの関心を測る目安で、製品性能・安全性や研究の正しさを証明するものではありません。Kimi、Anthropic、Berget AIの性能値・手法・比較は提供元の報告であり、独立した再現評価と一次資料の確認が必要です。</p></section>
+<section class="note"><h2>注意事項</h2><p>候補はHN AlgoliaでAI、LLM、OpenAI、Anthropic、agent、coding agent、inference、CUDA、GPU、MCP、RAG、Claude、ChatGPT、Gemini、Show HN AIの15語を検索し、2026-10-21 22:32 UTC以降の投稿を重複除外して選びました。掲載項目の種別、タイトル、ポイント、返信数、投稿時刻、投稿者、元URLはHN公式Firebase APIで再確認しています。時刻はJSTです。コメント全文は保存せず、論点だけを短く要約しています。</p></section>
+</main>
+</body>
+</html>
