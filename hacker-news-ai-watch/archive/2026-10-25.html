@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HN AI Watch - 2026-10-25</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main class="page">
+<header><div class="meta">最終更新: 2026-10-25 07:30 JST</div><h1>HN AI Watch</h1><div class="sub">Hacker Newsで話題のAI・LLM・エージェント関連投稿を、開発者向けに毎日整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">トップへ戻る</a><a href="../index.html">HN AI Watchの履歴</a></nav>
+<section class="note"><strong>このページについて:</strong> Hacker News公式Firebase APIとAlgoliaで直近48時間の候補を集め、HN上の反応、実装価値、世界のAIニュースとの接続から選んでいます。HNは開発者コミュニティの反応を見る補助情報です。元記事や製品元の主張は、リンク先で確認してください。</section>
+<section class="summary"><h2>3行サマリー</h2><ol>
+<li>Apolloのチーフエコノミストは、テック以外ではAI導入の利益・生産性効果が見えないと論じました。これは集計指標の解釈であり、AIの因果効果を分離した研究ではありません。</li>
+<li>Dream Labsは未知の二腕ロボットにも対応するとするDream-1をAPI提供。推論費用を示す一方、研究ベータで安全重要用途への検証は未完了です。</li>
+<li>OpenAIはモデル学習環境の侵入テストと多層防御を説明し、別のプレプリントはAI文章の処理しづらさを言語特徴で調べています。どちらも公開主体と評価範囲の確認が必要です。</li>
+</ol></section>
+<section><h2>注目シグナル</h2>
+<article class="item high"><h3>1. AI導入の収益効果はテック外でまだ見えない、Apolloの見立て</h3><div class="badges"><span class="badge hot">373ポイント</span><span class="badge">350コメント</span><span class="badge">投稿: 2026-10-25 04:47 JST</span><span class="badge">分野: 導入効果・生産性</span></div><p><strong>シグナル:</strong> ApolloのチーフエコノミストTorsten Slokは、Magnificent Sevenとその他のS&amp;P 500企業の売上高・従業員当たり収益、利益率、生産性指標を対比し、テック以外でAIの財務効果は確認できないと論じました。HNでは、AI投資額と実際の業務改善をどう結びつけるか、測定期間や産業差を含めて議論が集まりました。</p><p><strong>読むポイント:</strong> Apolloの記事は相関する集計系列を示す経済分析者の見解で、AI導入企業と非導入企業を比べた因果推定ではありません。企業の評価では、導入率ではなく、対象業務・比較基準・品質・人員構成・費用を決めた上で、売上や利益への寄与を確認する必要があります。</p><div class="sources"><a href="https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector">Apolloの分析</a><a href="https://news.ycombinator.com/item?id=50224463">HNの議論</a></div></article>
+<article class="item high"><h3>2. 未知のロボットへのゼロショット制御を掲げるDream-1</h3><div class="badges"><span class="badge hot">134ポイント</span><span class="badge">67コメント</span><span class="badge">投稿: 2026-10-25 03:23 JST</span><span class="badge">分野: ロボット基盤モデル</span></div><p><strong>シグナル:</strong> Dream Labsは、見たことのない二腕ロボットや作業への対応を掲げるWorld Action Model「Dream-1」を公開APIで提供し、時間当たり3ドルからの推論価格を示しました。ロボットごとにデータ収集と専用方策を作る負担を下げられるかが、研究から現場導入への焦点です。</p><p><strong>読むポイント:</strong> 性能比較と汎化の主張はDream Labsの発表に加え、同社が独立評価とするRoboCurveの限定ベンチマークを参照しています。現行版は平行グリッパーを持つ二腕操作向けの研究ベータで、安全重要用途では検証されていません。逆運動学や障害物回避などロボット側の条件、実環境での失敗率と安全性を別途確かめてください。</p><div class="sources"><a href="https://dreamlabs.ai/research/dream-1/">Dream Labsの技術説明</a><a href="https://robocurve.org/">RoboCurveの評価情報</a><a href="https://news.ycombinator.com/item?id=50223785">HNの議論</a></div></article>
+<article class="item high"><h3>3. OpenAI、学習環境の封じ込めをモデル群で検証</h3><div class="badges"><span class="badge hot">117ポイント</span><span class="badge">119コメント</span><span class="badge">投稿: 2026-10-24 04:50 JST</span><span class="badge">分野: エージェント安全・インフラ</span></div><p><strong>シグナル:</strong> OpenAIはフロンティアモデルの学習・評価環境を対象に、複数エージェントでサンドボックス脱出、外部ネット接続、隔離境界を越える通信経路を探したと報告しました。仮想マシン、ネットワーク境界、監視などを重ね、発見したOSS脆弱性の修正にも取り組んだとしています。</p><p><strong>読むポイント:</strong> 数千億トークン規模の試験や対策の有効性はOpenAI自身の説明であり、再現可能な全結果が公開されたわけではありません。記事は学習・評価用の社内環境を扱い、顧客向け製品の安全性を直接評価するものでもありません。実装に生かすなら、各層の前提、監視から停止までの手順、外部監査や修正状況を分けて確認してください。</p><div class="sources"><a href="https://openai.com/index/securing-our-frontier-model-training-environment/">OpenAIの報告</a><a href="https://news.ycombinator.com/item?id=50214416">HNの議論</a></div></article>
+<article class="item high"><h3>4. AI文章は人間にとって読み解きにくくなっているか</h3><div class="badges"><span class="badge hot">128ポイント</span><span class="badge">123コメント</span><span class="badge">投稿: 2026-10-25 03:04 JST</span><span class="badge">分野: 言語モデル評価</span></div><p><strong>シグナル:</strong> 3人の研究者によるプレプリントは、複数領域のAI生成文を調べ、長い統語依存、低頻度の語句など、人間の処理負荷と関係する特徴が、翻訳を往復させた文章より多いと報告しました。9つのモデル間にもばらつきがあり、文章の「自然さ」を平均的な人間らしさだけで測れない可能性を示します。</p><p><strong>読むポイント:</strong> これは査読前の研究で、調査対象のコーパスと特徴量に基づく結果です。理解しやすさや読者の成果を直接測った一般法則ではありません。生成文の評価では、文の長さだけでなく、想定読者、意味保持、読み取り時間、課題達成率を測り、用途ごとの改善を検証する余地があります。</p><div class="sources"><a href="https://arxiv.org/abs/2610.29162">arXivのプレプリント</a><a href="https://news.ycombinator.com/item?id=50223647">HNの議論</a></div></article>
+</section>
+<section><h2>開発者向けシグナル</h2><div class="grid two">
+<div class="mini-card"><h3>Corgi、複数のコーディングエージェントを一つの端末で管理</h3><div class="badges"><span class="badge">124ポイント</span><span class="badge">42コメント</span><span class="badge">投稿: 2026-10-24 04:46 JST</span></div><p>Show HNのCorgiはClaude Code、Codex、Pi、OpenCodeなどの状態や通知、トークン利用、作業中のファイル変更を端末内でまとめて見るツールです。通常のシェルや開発サーバーとエージェントを同じワークスペースで扱い、セッションをバックグラウンドで継続できます。並行エージェントの監視やレビューの見落としを減らすUI設計として参考になります。</p><p>プロジェクトの機能紹介であり、監督負荷や障害率が下がることを示す比較評価ではありません。対応OS、依存する端末機能、権限と端末入力の安全性、クラッシュ後の復旧を確認してから試してください。</p><div class="sources"><a href="https://corgi.computer/">Corgi公式サイト</a><a href="https://github.com/tals/corgi">ソースコード</a><a href="https://news.ycombinator.com/item?id=50214373">HNの議論</a></div></div>
+<div class="mini-card"><h3>45,047通のEnronメールから作った、出典付き社内知識ページ</h3><div class="badges"><span class="badge">64ポイント</span><span class="badge">55コメント</span><span class="badge">投稿: 2026-10-23 21:02 JST</span></div><p>this+thatは8つのメールボックスを使い、214ページ・49,401件の事実を各メールの引用と日付付きで生成した試作を公開しました。候補事実62,205件のうち、原文に存在しない引用37件を除外し、さらに別モデルで監査したと手順を開示しています。企業文書RAGや知識グラフでは、回答への引用付けだけでなく、引用が原文に存在し、主張を本当に支えるかを別々に検査する設計が示唆されます。</p><p>ベンダーが構築・評価した一つの歴史的データセットで、現代企業の文書や製品運用に同じ精度が出るとは限りません。監査の一部はモデル判定で、メール自体が事実かどうかも証明しません。データの選定、漏えい防止、誤引用率、人間のレビュー費用を実案件で測る必要があります。</p><div class="sources"><a href="https://www.thisandthat.chat/enron/">Enron知識ページ</a><a href="https://www.thisandthat.chat/enron/methodology.html">生成と監査の方法</a><a href="https://news.ycombinator.com/item?id=50207620">HNの議論</a></div></div>
+</div></section>
+<section><h2>世界のAIニュースとの接続</h2><p>今週の議論は、モデルの能力そのものから、現場で価値や安全をどう示すかへ広がっています。企業導入では財務指標、ロボットでは成功率と物理的な失敗条件、学習基盤では封じ込めの検証証拠、文章生成では読者が処理できるかが問われています。エージェント管理画面や出典付き知識ベースも、利用を増やすだけでなく、作業と根拠を人が確認できる仕組みとして評価すべきです。</p><p>掲載した性能・生産性・安全性の説明は、Apollo、Dream Labs、OpenAI、研究者またはツール作者の報告です。HNのポイントや返信数はコミュニティの関心を表す補助情報であり、各主張の正しさや一般性を証明しません。</p></section>
+<section class="note"><h2>注意事項</h2><p>候補はHN AlgoliaでAI、LLM、OpenAI、Anthropic、agent、coding agent、inference、CUDA、GPU、MCP、RAG、Claude、ChatGPT、Gemini、Show HN AIの15語を検索し、2026-10-22 22:29 UTC以降の投稿を重複除外して選びました。掲載項目の種別、タイトル、ポイント、コメント数、投稿時刻、投稿者、元URLはHN公式Firebase APIで再確認しています。コメント数はAlgoliaの集計、時刻はJSTです。コメント全文は保存せず、論点だけを短く要約しています。</p></section>
+</main>
+</body>
+</html>
