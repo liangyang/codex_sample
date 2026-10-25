@@ -1,20 +1,15 @@
 <!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-25</title><link rel="stylesheet" href="../assets/site.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-26</title><link rel="stylesheet" href="../assets/site.css"></head>
 <body><main>
-<header><div class="meta">Last updated: 2026-10-25 07:10 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ内容に絞って短く整理します。</div></header>
+<header><div class="meta">Last updated: 2026-10-26 07:05 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、実装に役立つ内容に絞って短く整理します。</div></header>
 <nav class="topnav page-actions"><a href="../index.html">先頭ページへ</a><a href="index.html">履歴を見る</a></nav>
-<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、推論、安全性、インフラの公式・一次情報から、開発で試せる内容を選びます。</section>
-<section class="note"><strong>今日の判断:</strong> エージェント実行環境、利用状況の把握、漏えい対応、安全な隔離設計の4件を選びました。</section>
-<section class="summary"><ol><li>実行環境の境界とネットワーク制御を、アプリ側の責任として設計する。</li><li>利用状況の可視化と漏えい通知は、実際の是正処理までつなげて評価する。</li></ol></section>
-<section><h2>今日読むべき4本</h2>
-<div class="read"><h3>エージェントのコード実行を管理下の隔離環境へ移す</h3><p><strong>出典:</strong> OpenAI Developers Cookbook · 2026-10-23 · Agents / Infra</p><p><strong>読む価値:</strong> サーバーレス実行環境を使い、アプリから環境を作成・実行・破棄する手順を紹介。ネットワークとファイルへのアクセス範囲も調整できます。</p><p><strong>開発者への示唆:</strong> 実行基盤の分離だけでは統制は完了しません。接続先、データ持ち出し、認証情報をアプリ側で絞る設計が必要です。</p><p><strong>試すなら:</strong> 小さなコード実行例を動かし、許可した接続先とファイルだけにアクセスできること、終了後に環境が破棄されることを確かめる。</p><p><a href="https://developers.openai.com/cookbook/examples/agents_api/sandboxes/databricks/readme">導入手順と例を読む</a></p></div>
-<div class="read"><h3>AI開発支援の利用状況をクライアント別に把握する</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-23 · API / Evals</p><p><strong>読む価値:</strong> 利用状況APIにクライアント別のリクエスト数、セッション数、トークン量、モデル選択区分が追加されました。</p><p><strong>開発者への示唆:</strong> IDE以外の連携を含む利用傾向を見て、導入効果や管理対象を判断しやすくなります。件数はプロンプト数ではなくモデル呼び出し数で、連携元の識別も参考値です。</p><p><strong>試すなら:</strong> 週次レポートでクライアント別の利用量と選択方式を追い、未把握の利用経路がないか確認する。</p><p><a href="https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode/">追加フィールドと集計範囲を読む</a></p></div>
-<div class="read"><h3>漏えいした認証情報の検知から失効までをつなぐ</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-23 · Safety / API</p><p><strong>読む価値:</strong> 公開リポジトリで見つかった認証情報について、状態確認、アラートAPI、Webhook通知、履歴付きのトリアージが追加されました。</p><p><strong>開発者への示唆:</strong> 通知を既存のインシデント対応へ組み込みやすくなりますが、アラートを閉じても認証情報は失効しません。通知後の担当割当と無効化まで設計します。</p><p><strong>試すなら:</strong> Webhookを重複受信しても安全な処理にし、検知から所有者通知・認証情報の失効までを演習する。</p><p><a href="https://github.blog/changelog/2026-10-23-public-monitoring-adds-triage-validity-api-and-webhooks/">APIと対応範囲を読む</a></p></div>
-<div class="read"><h3>高リスクな開発環境を多層で封じ込める</h3><p><strong>出典:</strong> OpenAI · 2026-10-23 · Safety / Infra</p><p><strong>読む価値:</strong> 強力なモデルを使う研究環境の隔離について、アクセス制限、監視、異常時の停止、境界の検証を重ねる考え方を公開しています。</p><p><strong>開発者への示唆:</strong> コンテナ化だけに頼らず、資格情報・ネットワーク・ファイル権限を分け、監視と停止手段を独立して用意する設計の参考になります。</p><p><strong>試すなら:</strong> エージェント実行環境の脅威モデルを書き、越境アクセスを試す演習と停止・復旧手順を確認する。</p><p><a href="https://openai.com/index/securing-our-frontier-model-training-environment/">隔離と検証の考え方を読む</a></p></div>
-</section>
-<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Agents / Safety:</strong> 実行環境の分離、アクセス制御、監視、停止を一続きで設計する。</li><li><strong>API / 運用:</strong> 使用状況やセキュリティ通知を、人が是正できる運用フローにつなぐ。</li></ul></div></section>
-<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>隔離実行環境の提供地域、認証、ネットワーク制御の運用要件。</li><li>クライアント別メトリクスの網羅性と継続的なシークレット対応。</li></ul></div></section>
-<section><h2>Caveat</h2><div class="note">利用状況APIはクライアント申告に基づくため、厳密な監査台帳にはなりません。漏えい監視や隔離実行の機能は提供条件・対象範囲を確認し、自社の失効手順と権限設計で検証してください。</div></section>
+<section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、RAG、推論、安全性、インフラの公式・一次情報から、開発で試せる内容を選びます。</section>
+<section class="note"><strong>今日の判断:</strong> 直近24〜48時間で、実装価値の高い新規記事は確認できませんでした。弱い候補は加えず、短い更新にしています。</section>
+<section class="summary"><p>新着記事の掲載はありません。次の更新で確認したい一次情報をWatchlistに残します。</p></section>
+<section><h2>今日読むべき記事</h2><div class="read"><p>今回は該当なし。10月23日以前の発表は対象期間外のため、今日の記事として再掲していません。</p></div></section>
+<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>選定:</strong> 公開日が新しく、API・SDK・評価・運用に具体的な変更や試行手順がある記事を優先します。</li><li><strong>今回:</strong> 話題性だけで候補数を埋めず、公式情報の追加公開を待ちます。</li></ul></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>エージェント向けの公開仕様群について、実装ガイド、互換性、権限設計の具体化を確認。<a href="https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox">10月22日の公式発表</a></li><li>制約された選択肢に答えるAPIの一般提供後、構造化入力・画像・まとめて判定する機能の実例と運用条件を確認。<a href="https://openai.com/index/decisions-api/">10月22日の公式記事</a></li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">今回確認した公開情報の範囲では、対象期間に掲載基準を満たす記事が見つかりませんでした。更新の時差や個別ドキュメントの改訂は次回も確認します。</div></section>
 <footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
 </main></body></html>
