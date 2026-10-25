@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HN AI Watch - 2026-10-26</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main class="page">
+<header><div class="meta">最終更新: 2026-10-26 07:30 JST</div><h1>HN AI Watch</h1><div class="sub">Hacker Newsで話題のAI・LLM・エージェント関連投稿を、開発者向けに毎日整理します。</div></header>
+<nav class="topnav page-actions"><a href="../../index.html">トップへ戻る</a><a href="../index.html">HN AI Watchの履歴</a></nav>
+<section class="note"><strong>このページについて:</strong> Hacker News公式Firebase APIとAlgoliaで直近48時間の候補を集め、反応、実装価値、世界のAIニュースとの接続から選んでいます。HNは開発者コミュニティの反応を見る補助情報です。元記事や製品元の主張は、リンク先で確認してください。</section>
+<section class="summary"><h2>3行サマリー</h2><ol>
+<li>皮膚病変200件の比較で、作者は10年前のCNNが汎用LLMを上回ったと報告。専門特化と汎用モデルを比べる際の評価設計が焦点です。</li>
+<li>UC Berkeleyの数学教授が、AI利用を受け宿題を正誤採点しない方針を語りました。一教員の事例から、学習と評価の分離が議論されています。</li>
+<li>OpenAIの数学記事を共同で補う公開プロジェクトが始動。AIの成果発表では、証明だけでなく説明・引用・第三者レビューの仕組みも問われます。</li>
+</ol></section>
+<section><h2>注目シグナル</h2>
+<article class="item high"><h3>1. 皮膚画像の限定比較で、10年前のCNNが汎用LLMを上回る</h3><div class="badges"><span class="badge hot">335ポイント</span><span class="badge">174コメント</span><span class="badge">投稿: 2026-10-26 02:15 JST</span><span class="badge">分野: 医療画像評価</span></div><p><strong>シグナル:</strong> 皮膚科医Magnus Lynchは、病理で確認された皮膚病変200件について、旧式のInception v3とGPT-6 Astra、Claude Fable 5.1を比較し、CNNが病変の分類で多くを正しく判定したと報告しました。汎用モデルの広い能力が、限定された画像診断で専門モデルを自動的に上回るわけではない、という評価上の示唆です。</p><p><strong>読むポイント:</strong> これは記事作者自身による比較で、病変数は200件、悪性黒色腫は30件です。LLMは各症例1回の実行で、回答の揺れもあります。CNNは現代の最先端専門システムではなく、実臨床での安全性を示す研究でもありません。著者が公開した症例・プロンプト・採点コードを確認し、結果を診断用途へ一般化しないでください。</p><div class="sources"><a href="https://lynchlab.net/llm-skin-cancer">作者の比較とデータ</a><a href="https://news.ycombinator.com/item?id=50233779">HNの議論</a></div></article>
+<article class="item high"><h3>2. AI利用を受け、数学の宿題を正誤採点しない教員の判断</h3><div class="badges"><span class="badge hot">166ポイント</span><span class="badge">251コメント</span><span class="badge">投稿: 2026-10-26 01:28 JST</span><span class="badge">分野: 教育・評価</span></div><p><strong>シグナル:</strong> The Daily Californianによると、UC Berkeleyの数学教授Richard Borcherdsは、学生がAIで宿題の高得点を得る状況を見て、正誤による採点をやめ、提出の完了を評価していると話しました。HNでは、宿題の役割、授業内試験、口頭確認、学習過程をどう評価するかに議論が広がりました。</p><p><strong>読むポイント:</strong> 報道が扱うのは一教員の方針とインタビューで、大学全体の実態やAIが学習成果に与える一般的な影響を示す調査ではありません。実務上は、練習課題と成績評価を分け、理解を確かめる場面や評価基準を明示する方法を検討する材料になります。</p><div class="sources"><a href="https://www.dailycal.org/news/campus/academics/ai-use-leads-uc-berkeley-math-professor-to-see-no-point-in-grading-homework/article_bdf1eae2-c08b-491f-b9f1-81a7cea177de.html">The Daily Californianの記事</a><a href="https://news.ycombinator.com/item?id=50233304">HNの議論</a></div></article>
+<article class="item high"><h3>3. OpenAIの数学記事を共同で修正するコミュニティ拠点</h3><div class="badges"><span class="badge hot">51ポイント</span><span class="badge">41コメント</span><span class="badge">投稿: 2026-10-25 00:35 JST</span><span class="badge">分野: 数学研究・再現性</span></div><p><strong>シグナル:</strong> Terence Taoのブログに掲載された研究者4人の投稿が、OpenAIの数学解説の読みやすさや引用の不足を補う共同プロジェクトを紹介しました。学生から研究者まで参加を募り、分野ごとのレビュー担当も募集しています。大規模なAI生成研究成果を、専門家コミュニティが読み直し、出典を整えるための具体的な入口です。</p><p><strong>読むポイント:</strong> これは論文の正しさを認定する第三者機関ではなく、解説と引用を改善する協働の試みです。対象記事、修正履歴、査読者の役割を追い、文章の改善と数学的検証を区別して読む必要があります。</p><div class="sources"><a href="https://terrytao.wordpress.com/2026/10/24/oai-math-revised-a-community-hub-for-revising-openais-math-write-ups/">Taoのブログ記事</a><a href="https://github.com/mathcommunity/oai-math-revised/">共同プロジェクト</a><a href="https://news.ycombinator.com/item?id=50222283">HNの議論</a></div></article>
+</section>
+<section><h2>開発者向けシグナル</h2><div class="grid two">
+<div class="mini-card"><h3>Webエージェントは必要な情報を段階的に取得</h3><div class="badges"><span class="badge">21ポイント</span><span class="badge">2コメント</span><span class="badge">投稿: 2026-10-25 01:30 JST</span></div><p>Skyvernは、DOMを事前に細かく解析する方式から、エージェントが必要に応じてHTMLや画面を読む方式へ変更し、平均実行時間が593秒から262秒になったと報告しました。約10万件の顧客実行を使った自社A/B比較では、費用も1回0.039ドルから0.0302ドルへ下がったとしています。すべての文脈を毎回詰め込まず、必要に応じて道具で取りに行く設計を考える材料です。</p><p>測定は提供元によるもので、他のWeb作業やモデル・サイト構成でも同じ差が出るとは限りません。成功率、再試行、費用、サイトごとの失敗を同時に比較してください。</p><div class="sources"><a href="https://www.skyvern.com/blog/deleting-rag-from-our-web-agent-made-it-2-3x-faster/">Skyvernの測定と実装説明</a><a href="https://news.ycombinator.com/item?id=50222826">HNの議論</a></div></div>
+<div class="mini-card"><h3>ブログ本文をMarkdownでも提供し、AIの取得を助ける</h3><div class="badges"><span class="badge">33ポイント</span><span class="badge">9コメント</span><span class="badge">投稿: 2026-10-25 06:21 JST</span></div><p>個人ブログの作者が、各記事のMarkdown版、Acceptヘッダーによる形式切り替え、サイト全体の案内ファイルを追加した実装を紹介しました。静的サイトでも、HTML画面とは別に機械可読な本文を配り、エージェントが出典へ戻りやすい形にできます。</p><p>これは一つのサイトでの実装例です。検索エンジン向け設定とAIクローラーへの許可、引用の正確さは別々に設計・確認してください。</p><div class="sources"><a href="https://deallocatedobjects.com/posts/making-my-blog-readable-by-ai-agents">作者の実装メモ</a><a href="https://news.ycombinator.com/item?id=50225443">HNの議論</a></div></div>
+</div></section>
+<section><h2>世界のAIニュースとの接続</h2><p>今週の投稿は、AIの能力を主張するだけでなく、何をどう測り、誰が根拠を確認できるかを問うています。医療では専門特化モデルと汎用モデルの公平な比較、教育では提出物と理解度の評価、数学では出典や説明の共同検証が課題になります。エージェント開発でも、必要な文脈を絞る設計と、機械が読みやすい情報公開の両方が運用品質に関わります。</p><p>紹介した性能や方針は研究者、報道機関、サービス提供者の説明です。HNのポイントや返信数は開発者コミュニティの関心を示す補助情報であり、主張の正しさや一般性を証明しません。</p></section>
+<section class="note"><h2>注意事項</h2><p>候補はHN AlgoliaでAI、LLM、OpenAI、Anthropic、agent、coding agent、inference、CUDA、GPU、MCP、RAG、Claude、ChatGPT、Gemini、Show HN AIの15語を検索し、2026-10-23 22:26 UTC以降の投稿を重複除外して選びました。掲載項目の種別、タイトル、ポイント、コメント数、投稿時刻、投稿者、元URLはHN公式Firebase APIで再確認しています。コメント数は公式APIの返信数、時刻はJSTです。コメント全文は保存せず、論点だけを要約しています。</p></section>
+</main>
+</body>
+</html>
