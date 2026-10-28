@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HN AI Watch - 2026-10-29</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main class="page">
+<header><div class="meta">最終更新: 2026-10-29 07:30 JST</div><h1>HN AI Watch</h1><div class="sub">Hacker Newsで話題のAI・LLM・エージェント関連投稿を、開発者向けに毎日整理します。</div></header>
+<nav class="topnav page-actions"><a href="../index.html">トップへ戻る</a><a href="index.html">HN AI Watchの履歴</a></nav>
+<section class="note"><strong>このページについて:</strong> Hacker News公式Firebase APIとAlgoliaで直近48時間の候補を集め、反応、実装価値、世界のAIニュースとの接続から選んでいます。HNは開発者コミュニティの反応を見る補助情報です。元記事や製品元の主張は、リンク先で確認してください。</section>
+<section class="summary"><h2>3行サマリー</h2><ol>
+<li>GoogleのGemini 4 Carbon発表に大きな反応が集まり、長時間の開発作業とサイバー防御の評価を前面に出しました。</li>
+<li>専門家が作った税務業務ベンチマークでは、依頼文にない重要論点を自ら見つける力が依然として難題です。</li>
+<li>エージェントをコードとして管理・配備するSDKや、学習後に知識を定着させる研究も登場。各結果は提供元の条件と限界を確認する必要があります。</li>
+</ol></section>
+<section><h2>注目シグナル</h2>
+<article class="item high"><h3>1. Google、長時間の開発・サイバー防御を掲げるGemini 4 Carbonを発表</h3><div class="badges"><span class="badge hot">705ポイント</span><span class="badge">572コメント</span><span class="badge">投稿: 2026-10-29 02:01 JST</span><span class="badge">分野: 基盤モデル・サイバー防御</span></div><p><strong>シグナル:</strong> GoogleはGemini 4 Carbonを同社の最上位モデルと位置づけ、複数日にまたがる開発課題や脆弱性の発見・検証・修正を強調しました。発表ではSEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0%などを示し、初期提供は一部のサイバー防御担当者から段階的に始めるとしています。</p><p><strong>読むポイント:</strong> 数値はGoogleが紹介した評価で、ガードレールなしの測定も含みます。一般開発者向けにはまだ提供前です。ベンチマークの対象範囲、第三者再現性、実運用の権限管理を分けて確認し、モデルの脆弱性発見能力をそのまま安全な自律実行と見なさないことが重要です。</p><div class="sources"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Googleの発表</a><a href="https://news.ycombinator.com/item?id=50276792">HNの議論</a></div></article>
+<article class="item high"><h3>2. 税務エージェント評価、依頼に書かれていない重大論点を問う</h3><div class="badges"><span class="badge hot">169ポイント</span><span class="badge">99コメント</span><span class="badge">投稿: 2026-10-29 00:46 JST</span><span class="badge">分野: エージェント評価・専門業務</span></div><p><strong>シグナル:</strong> Surge AIのDAYJOB: Taxは、1,789ファイルを含む50の税務業務環境で、申告書や助言書の作成だけでなく、記録の矛盾や顧客が尋ねていない重要事項を見つける力を評価します。紹介例では住宅売却時期の比較に正答しても、税控除の適格性が失われる期限を見落としたモデルがありました。</p><p><strong>読むポイント:</strong> ベンチマーク提供元による評価で、全50課題の公開結果や採点条件を確認して読む必要があります。専門業務では、明示された問いへの正答率だけでなく、前提の検証、見落としの発見、不確実性の説明を評価に含める設計が実務的な示唆です。</p><div class="sources"><a href="https://surgehq.ai/blog/dayjob-tax">DAYJOB: Taxの説明</a><a href="https://surgehq.ai/benchmarks/dayjob-tax">公開ベンチマーク</a><a href="https://news.ycombinator.com/item?id=50275626">HNの議論</a></div></article>
+<article class="item high"><h3>3. Cursor、コードで定義・評価・配備するAgent SDKを公開</h3><div class="badges"><span class="badge hot">84ポイント</span><span class="badge">101コメント</span><span class="badge">投稿: 2026-10-28 23:02 JST</span><span class="badge">分野: 開発基盤・エージェント運用</span></div><p><strong>シグナル:</strong> CursorのAgent SDKは、指示、ツール、外部連携、評価をMarkdownとTypeScriptのプロジェクトとして管理し、イベント起動型エージェントをCursor基盤または自前環境へ配備できる仕組みです。イベント再生と評価機能、複数エージェントへの引き継ぎも紹介されています。</p><p><strong>読むポイント:</strong> 機能や導入事例はCursorおよび顧客の説明です。マネージド実行を選ぶ場合は、データ保持、秘密情報、実行権限、費用、移行可能性を確認してください。自前実行とホスト型の境界、評価を継続運用へ組み込めるかが比較軸になります。</p><div class="sources"><a href="https://cursor.com/blog/agent-sdk">Cursorの紹介</a><a href="https://cursor.com/docs/agent-sdk">公式ドキュメント</a><a href="https://news.ycombinator.com/item?id=50273731">HNの議論</a></div></article>
+<article class="item high"><h3>4. Google Research、学習後の知識保持を狙う「Sleep」方式を報告</h3><div class="badges"><span class="badge hot">25ポイント</span><span class="badge">3コメント</span><span class="badge">投稿: 2026-10-28 21:24 JST</span><span class="badge">分野: 継続学習・研究</span></div><p><strong>シグナル:</strong> Google Researchは、モデルの短期記憶を整理する「統合」と、合成経験を用いる「夢見る」段階を交互に行う継続学習手法を紹介しました。未学習言語の翻訳、長文文脈、事実更新、数学など複数の評価で、既存手法より忘却を抑えたと報告しています。</p><p><strong>読むポイント:</strong> 研究チームの発表であり、評価対象のモデル、データ規模、比較条件、長期運用での再現性が適用範囲を決めます。固定された学習済みモデルに対し、知識を更新しつつ既存能力を保てるかという研究課題として読むのが適切です。</p><div class="sources"><a href="https://www.research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/">Google Researchの報告</a><a href="https://news.ycombinator.com/item?id=50272479">HNの議論</a></div></article>
+</section>
+<section><h2>開発者向けシグナル</h2><div class="grid two">
+<div class="mini-card"><h3>Claudeによる脆弱性発見報告の読み方</h3><div class="badges"><span class="badge">10ポイント</span><span class="badge">4コメント</span><span class="badge">投稿: 2026-10-28 16:11 JST</span></div><p>AnthropicはClaudeを使って重要ソフトウェアの脆弱性を発見・悪用した研究を公表。少数の高プロファイル事例でモデルの能力を示す一方、修正や再現を含む各主張は報告本文と対象バージョンで確認が必要です。セキュリティ能力の向上は、防御側の検証と公開手順にも直結します。</p><div class="sources"><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude">Anthropicの研究報告</a><a href="https://news.ycombinator.com/item?id=50270131">HNの議論</a></div></div>
+<div class="mini-card"><h3>ソフトウェア開発でのAI利用指針</h3><div class="badges"><span class="badge">14ポイント</span><span class="badge">2コメント</span><span class="badge">投稿: 2026-10-28 18:23 JST</span></div><p>Amazonがソフトウェアエンジニア職のAI利用に関する指針を公開しました。組織の利用規則は、個人向けのモデル性能論より、コードや顧客情報の取り扱い、確認責任、許可されたツールをどう業務手順に落とすかを見る材料になります。</p><div class="sources"><a href="https://www.aboutamazon.com/news/company-news/amazon-software-engineer-role-guideline-ai">Amazonの案内</a><a href="https://news.ycombinator.com/item?id=50270974">HNの議論</a></div></div>
+<div class="mini-card"><h3>税務ベンチマークは「問いを直す」能力を測る</h3><div class="badges"><span class="badge">169ポイント</span><span class="badge">99コメント</span></div><p>顧客が提示した質問に答えるだけでなく、資料から隠れた期限や前提を探す評価設計は、医療・法務・会計などでも重要です。モデル比較では、最終回答の正しさに加えて、必要な確認を行ったか、証拠の不足を指摘したかを採点できる課題が役立ちます。</p><div class="sources"><a href="https://surgehq.ai/blog/dayjob-tax">評価の背景</a><a href="https://news.ycombinator.com/item?id=50275626">HNの議論</a></div></div>
+</div></section>
+<section><h2>世界のAIニュースとの接続</h2><p>今週の話題は、モデル能力の向上を実務へつなぐ際の二つの境界を示します。Gemini 4 Carbonのサイバー評価は高能力モデルへの段階的アクセスや防御利用の議論を促し、DAYJOB: Taxは専門家の仕事を最後まで担うには、正答だけでなく重要な論点を自分で発見する必要があると示します。Agent SDKは、エージェントを通常のソフトウェアと同様に版管理・評価・配備する方向を具体化します。</p><p>HNのポイント数やコメント数はコミュニティの関心を示す補助情報であり、製品性能、ベンチマークの妥当性、研究結果を証明するものではありません。</p></section>
+<section class="note"><h2>注意事項</h2><p>候補はHN AlgoliaでAI、LLM、OpenAI、Anthropic、agent、coding agent、inference、CUDA、GPU、MCP、RAG、Claude、ChatGPT、Gemini、Show HN AIの15語を検索し、2026-10-27 22:25 UTC以降の直近48時間分を重複除外して選びました。掲載項目の種別、タイトル、ポイント、返信数、投稿時刻、投稿者、元URLはHN公式Firebase APIで再確認しています。コメント全文は保存せず、論点だけを要約しています。表示時刻はJSTです。</p></section>
+</main>
+</body>
+</html>
