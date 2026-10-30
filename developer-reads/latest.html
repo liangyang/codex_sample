@@ -1,21 +1,13 @@
 <!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-30</title><link rel="stylesheet" href="../assets/site.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-10-31</title><link rel="stylesheet" href="../assets/site.css"></head>
 <body><main>
-<header><div class="meta">Last updated: 2026-10-30 07:07 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、通勤中にも読める長さで整理します。</div></header>
+<header><div class="meta">Last updated: 2026-10-31 07:15 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、通勤中にも読める長さで整理します。</div></header>
 <nav class="topnav page-actions"><a href="../index.html">先頭ページへ</a><a href="index.html">履歴を見る</a></nav>
 <section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、RAG、推論、安全性、インフラの公式・一次情報から、実装に使えるものを選びます。</section>
-<section class="note"><strong>今日の判断:</strong> モデル振り分け、コードのセキュリティ修正、共有コンテキスト、エージェント基盤、稼働後の監視から5件を選びました。</section>
-<section class="summary"><ol><li>エージェントは権限・隔離・評価・ロールバック・費用把握をひとつの運用契約として設計する。</li><li>複数モデルや自動修正は、タスク別の品質・費用と人の確認範囲を測ってから広げる。</li></ol></section>
-<section><h2>今日読むべき5本</h2>
-<div class="read"><h3>複数モデルの振り分けを品質と単価で検証する</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-28 · Coding Agents / Inference</p><p><strong>読む価値:</strong> 1モデルで解く方式、軽量な初回回答を判定して必要時に上位へ渡す方式、別モデルが批評する方式を整理。利用時は内部で呼んだモデルごとに課金されます。</p><p><strong>開発者への示唆:</strong> 自動選択は手動のモデル切替を減らせますが、請求も品質もタスクごとに変わります。提供元の比較値を自分のコード課題でも測る必要があります。</p><p><strong>試すなら:</strong> 同じ修正タスク群で固定モデルと自動振り分けを比較し、成功率、レビュー指摘、時間、総費用を記録する。</p><p><a href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/">振り分け方式と課金条件を読む</a></p></div>
-<div class="read"><h3>セキュリティ指摘の説明から修正までを同じ作業面で行う</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-28 · Safety / Coding Agents</p><p><strong>読む価値:</strong> 既存のコードスキャン警告を重要度順に確認し、修正案をローカル作業コピーに適用できます。コミットやプッシュは自動実行されず、変更後の再レビューも促します。</p><p><strong>開発者への示唆:</strong> 脆弱性対応の往復を減らしつつ、変更を人が確認してから取り込む境界を保てます。利用可能範囲や必要な契約条件も確認できます。</p><p><strong>試すなら:</strong> 優先度の高い既存警告を1件選び、修正差分を通常のレビューとテストに通して、誤修正や追加指摘を記録する。</p><p><a href="https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/">プレビュー範囲と確認手順を読む</a></p></div>
-<div class="read"><h3>リポジトリの決まりと過去の知見をエージェントに引き継ぐ</h3><p><strong>出典:</strong> GitHub Changelog · 2026-10-28 · Agents</p><p><strong>読む価値:</strong> セッション間の記憶、継続的な指示の見直し、複数リポジトリをまたぐコード検索を、既存の開発履歴や規約に結び付ける設計を説明しています。</p><p><strong>開発者への示唆:</strong> 記憶は古い指示や不要な情報も残し得ます。どの範囲を参照できるか、内容を閲覧・削除できるかをチームの知識管理に含めます。</p><p><strong>試すなら:</strong> よく繰り返す規約とテスト手順を小さなリポジトリで記録し、次のセッションで正しく使われるか、誤った記憶を修正できるか確かめる。</p><p><a href="https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/">記憶・検索・管理範囲を読む</a></p></div>
-<div class="read"><h3>エージェント基盤をチーム単位の安全な境界で繰り返し展開する</h3><p><strong>出典:</strong> AWS Machine Learning Blog · 2026-10-28 · Agents / Infra</p><p><strong>読む価値:</strong> 中央のガバナンスとチーム別の実行環境を分け、モデル・ツールのゲート、短期認証、隔離、評価ゲート、ロールバック、費用按分を一体で検証する設計図です。</p><p><strong>開発者への示唆:</strong> 本番化の条件を機能の動作だけにせず、未許可の接続拒否、チーム間分離、復旧、削除確認まで明文化できます。参考実装の対象リージョンや前提条件は別途確認が必要です。</p><p><strong>試すなら:</strong> 代表的な1チーム環境で許可・拒否の両方を試し、認証、ツール範囲、評価、ロールバック、後片付けの証跡を残す。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/">設計図とライフサイクル検証を読む</a></p></div>
-<div class="read"><h3>記録済み事故・模擬攻撃・ランダム監査でエージェント監視を評価する</h3><p><strong>出典:</strong> OpenAI · 2026-10-29 · Safety / Evals</p><p><strong>読む価値:</strong> 過去事例の再生だけでなく、模擬攻撃、稼働中のランダム監査、監視回避のレッドチームを組み合わせ、検知率と人への通知優先度を更新前後で測る方法を示します。</p><p><strong>開発者への示唆:</strong> 監視器も見逃しや回帰を起こすため、検知ルールを追加するたびに既知事例を再評価します。環境の隔離や権限制限を監視の代わりにせず、多層で運用します。</p><p><strong>試すなら:</strong> ツール権限逸脱や隔離環境からの脱出を模擬するケースを用意し、検知率、誤警報、通知までの時間を変更前後で比較する。</p><p><a href="https://openai.com/index/how-we-detect-frontier-model-misalignment/">監視構成と評価方法を読む</a></p></div>
-</section>
-<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Coding Agents:</strong> 自動修正は差分をローカルに留め、通常のレビューを経由させる。</li><li><strong>Agents / Infra:</strong> チーム境界、短期認証、評価、監査、費用追跡を基盤の標準にする。</li><li><strong>Evals / Safety:</strong> 監視とモデル選択を固定ケースで継続比較し、失敗時の介入手順も測る。</li></ul></div></section>
-<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>モデル振り分けの実測費用と品質が、複雑度・タスク種別でどう変わるか。</li><li>AI支援のセキュリティ修正で、修正受け入れ率や回帰テスト結果が公開されるか。</li><li>エージェント監視の誤警報、検知遅延、未知の攻撃への適応評価。</li></ul></div></section>
-<section><h2>Caveat</h2><div class="note">紹介した機能と参考実装には提供条件や環境依存があります。特にクラウド基盤と自動修正は、権限・リージョン・費用を確認してから小さく試してください。</div></section>
+<section class="note"><strong>今日の判断:</strong> 直近24〜48時間に、採用基準を満たす大きな新規記事は見つかりませんでした。前回号との重複や告知だけの記事は加えず、次に確認する論点を残します。</section>
+<section><h2>今日は主要な新着なし</h2><div class="read"><p>公式・一次情報を確認しましたが、今日読むべき新規の開発者向け記事はありません。10月28〜29日の記事は前回号で扱っているため、再掲していません。</p></div></section>
+<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>モデル自動振り分けの品質・遅延・総費用を、タスク別に比較できる実測情報。</li><li>コーディングエージェントの権限、承認境界、CI評価を実運用で検証する手順。</li><li>共有メモリや長期コンテキストの更新・削除・監査の管理方法。</li></ul></div></section>
+<section><h2>Caveat</h2><div class="note">公開日は各公式フィードの表示を基準に確認しています。更新が出たら、実装手順や評価可能な根拠があるものを次号で扱います。</div></section>
 <footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
 </main></body></html>
