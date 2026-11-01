@@ -1,20 +1,13 @@
 <!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-11-01</title><link rel="stylesheet" href="../assets/site.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Developer Reads - 2026-11-02</title><link rel="stylesheet" href="../assets/site.css"></head>
 <body><main>
-<header><div class="meta">Last updated: 2026-11-01 07:10 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、通勤中にも読める長さで整理します。</div></header>
+<header><div class="meta">Last updated: 2026-11-02 07:12 JST</div><h1>Developer Reads</h1><div class="sub">AI開発者向けの公式・一次情報を、通勤中にも読める長さで整理します。</div></header>
 <nav class="topnav page-actions"><a href="../index.html">先頭ページへ</a><a href="index.html">履歴を見る</a></nav>
 <section class="note"><strong>このページについて:</strong> API、SDK、エージェント、評価、RAG、推論、安全性、インフラの公式・一次情報から、実装に使えるものを選びます。</section>
-<section class="note"><strong>今日の判断:</strong> 評価資産の移行期限に加え、GPU共有、推論基盤の再現性、実行時の権限制御を試せる4件を選びました。</section>
-<section class="summary"><ol><li>既存の評価資産は読み取り専用化したため、11月の終了前に移行確認を始める。</li><li>GPUやエージェントの基盤は、容量再配分と実行時ポリシーを小さく検証してから広げる。</li></ol></section>
-<section><h2>今日読むべき4本</h2>
-<div class="read"><h3>評価データと採点処理を終了前に移行する</h3><p><strong>出典:</strong> OpenAI API ドキュメント · 2026-10-31 更新 · Evals / API</p><p><strong>読む価値:</strong> 既存の評価は10月31日から読み取り専用となり、管理画面とAPIは11月30日に終了予定です。公式の移行先案内と対象日をまとめて確認できます。</p><p><strong>開発者への示唆:</strong> 評価データセットや採点処理を保有している場合、実行できるうちに取り出し、次の評価環境で再現できるか確かめる必要があります。</p><p><strong>試すなら:</strong> 利用中の評価一覧を作り、データと採点処理をエクスポート。移行先で同じ入力・判定が再現できるか、代表ケースで照合する。</p><p><a href="https://developers.openai.com/api/docs/deprecations">終了日と移行案内を確認する</a></p></div>
-<div class="read"><h3>共有GPUを空き容量の貸し借りで使い切る</h3><p><strong>出典:</strong> AWS Machine Learning Blog · 2026-10-29 · Infra</p><p><strong>読む価値:</strong> チーム別の容量枠、未使用分の貸し出し、所有チームが必要になった際の回収、枠内の優先度制御を、学習ジョブの実例で解説しています。</p><p><strong>開発者への示唆:</strong> 固定枠の余りを活用しながら、優先ジョブが容量を取り戻せます。借り手側の中断・再試行動作を、学習処理と運用手順に含める必要があります。</p><p><strong>試すなら:</strong> 小さな検証環境で2つの容量枠を作り、余剰枠を使うジョブと優先ジョブを順に投入。回収時の再実行、待ち時間、GPU稼働率を記録する。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/">容量共有と優先制御の手順を読む</a></p></div>
-<div class="read"><h3>Kubernetes推論基盤を版固定と検証で再現する</h3><p><strong>出典:</strong> NVIDIA Technical Blog · 2026-10-30 · Inference / Infra</p><p><strong>読む価値:</strong> GPUドライバー、割当、スケジューラー、監視、入口の設定をひとまとめにし、コンポーネント版と検証条件を固定してから推論アプリを載せる実例です。要求の振り分け方も比較しています。</p><p><strong>開発者への示唆:</strong> 推論の不調をモデル設定だけの問題とせず、クラスター構成を再現し、アプリ投入前に基盤の適合性を確認できます。</p><p><strong>試すなら:</strong> 検証用クラスターでレシピの生成・適用・適合確認を行い、入口の2方式について負荷、キャッシュ再利用、監視指標を比較する。</p><p><a href="https://developer.nvidia.com/blog/build-a-validated-kubernetes-runtime-for-nvidia-dynamo/">再現可能な構成と検証手順を読む</a></p></div>
-<div class="read"><h3>エージェントの権限を実行時に強制する</h3><p><strong>出典:</strong> NVIDIA Technical Blog · 2026-10-30 · Agents / Safety</p><p><strong>読む価値:</strong> エージェントの実行基盤、モデル、道具を組み合わせる設計を紹介し、ファイル・ネットワーク・認証情報へのアクセスを実行時ポリシーで制限する方法を示します。</p><p><strong>開発者への示唆:</strong> 指示や記憶だけに頼らず、意図しない操作が提案された場合も実行環境側で拒否できる境界を設けられます。</p><p><strong>試すなら:</strong> 代表タスクを許可範囲内で動かし、禁止したファイル書き込み・外部通信・認証情報参照が実際に拒否され、監査記録に残るか確かめる。</p><p><a href="https://developer.nvidia.com/blog/build-specialized-agents-on-a-stack-you-control-with-nvidia-nemoclaw/">実行時の制御境界と構成例を読む</a></p></div>
-</section>
-<section><h2>テーマ別メモ</h2><div class="read"><ul><li><strong>Evals:</strong> 終了日から逆算し、データ・採点処理・定期実行を一緒に移す。</li><li><strong>Infra:</strong> 共有GPUは優先度と中断後の再開を、推論基盤は版固定と事前検証を測る。</li><li><strong>Agents / Safety:</strong> 道具の利用範囲を実行時に拒否できるか、監査可能な形で確かめる。</li></ul></div></section>
-<section><h2>明日以降のWatchlist</h2><div class="read"><ul><li>評価資産の移行先で、採点ロジックや実行結果をどこまで再現できるか。</li><li>GPU容量の回収時に、学習ジョブが安全に中断・再試行できる条件。</li><li>推論基盤とエージェント実行環境の検証レシピ、監査・権限設定の成熟度。</li></ul></div></section>
-<section><h2>Caveat</h2><div class="note">クラウド機能や参考構成には、リージョン、契約、GPU構成などの前提があります。移行期限と利用条件は各公式ページで再確認してください。</div></section>
+<section class="note"><strong>今日の判断:</strong> 直近24〜48時間では、前号と重複しない大きな開発者向け新着を確認できませんでした。弱い記事で本数を補わず、継続確認する論点を残します。</section>
+<section class="summary"><h2>明日以降のWatchlist</h2><div class="read"><ul><li>評価資産の移行期限に向け、公式の移行案内と再現性を確認する。</li><li>共有GPUの容量回収と推論基盤の版固定について、運用上の実測例を追う。</li><li>エージェントの権限境界を実行時に強制・監査する実装例を確認する。</li></ul></div></section>
+<section><h2>候補の確認</h2><div class="read"><p>AWS Machine Learning Blog、GitHub Changelog、NVIDIA Technical Blogなどの公式情報を確認しました。直近の候補は10月29〜30日公開で、前号に掲載済み、または開発者が新たに試せる具体性が不足していました。</p></div></section>
+<section><h2>Caveat</h2><div class="note">公開タイミングや記事の更新は地域・配信面で前後することがあります。移行期限や利用条件は各公式ページで確認してください。</div></section>
 <footer>公開情報ベースの整理です。重要な実装判断では元記事と公式ドキュメントを確認してください。</footer>
 </main></body></html>
